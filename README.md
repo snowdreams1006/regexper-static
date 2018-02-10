@@ -20,14 +20,6 @@ To start a development server, run:
 
     $ yarn start
 
-This will build the site into the ./build directory, start a local start on port 8080, and begin watching the source files for modifications. The site will automatically be rebuilt when files are changed. Also, if you browser has the LiveReload extension, then the page will be reloaded.
-
-These other gulp tasks are available:
-
-    $ gulp docs # Build documentation into the ./docs directory
-    $ gulp build # Build the site into the ./build directory
-    $ yarn test # Run JSCS lint and Karma tests
-
 ## License
 
 See [LICENSE.txt](/LICENSE.txt) file for licensing details.
