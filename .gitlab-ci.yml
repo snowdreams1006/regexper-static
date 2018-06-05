@@ -18,6 +18,8 @@ test:
       - reports/
   script:
     yarn test
+  tags:
+    - shared
 
 build:
   stage: build
@@ -26,6 +28,8 @@ build:
       - build/
   script:
     - yarn build
+  tags:
+    - shared
 
 deploy_preview:
   stage: deploy
@@ -42,6 +46,8 @@ deploy_preview:
     - yarn deploy
   only:
     - react # TODO: Change to master once merged
+  tags:
+    - shared
 
 deploy_production:
   stage: deploy
@@ -52,3 +58,5 @@ deploy_production:
     - yarn deploy
   only:
     - tags
+  tags:
+    - shared
