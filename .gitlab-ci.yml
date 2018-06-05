@@ -1,64 +1,102 @@
 image: node:latest
 
-cache:
-  paths:
-    - node_modules
-
-before_script:
-  - yarn install
-
 stages:
+  - setup
   - test
   - build
   - deploy
 
+.shared_runner: &shared_runner
+  tags:
+    - shared
+
+.cache_consumer: &cache_consumer
+  cache:
+    policy: pull
+    paths:
+      - node_modules
+
+.preview_job: &preview_job
+  only:
+    - react # TODO: Change to master once merged
+
+.production_job: &production_job
+  only:
+    - /^release-.*$/
+
+.build_template: &build_template
+  <<: *shared_runner
+  <<: *cache_consumer
+  stage: build
+  dependencies: []
+  artifacts:
+    paths:
+      - build/
+  script:
+    - yarn build
+
+.deploy_template: &deploy_template
+  <<: *shared_runner
+  <<: *cache_consumer
+  stage: deploy
+  script:
+    - yarn deploy
+
+setup:
+  <<: *shared_runner
+  stage: setup
+  cache:
+    paths:
+      - node_modules
+  script:
+    - yarn install
+
 test:
+  <<: *shared_runner
+  <<: *cache_consumer
   stage: test
   coverage: '/^Statements\s*:\s*([^%]+)/'
   artifacts:
     paths:
       - reports/
   script:
-    yarn test
-  tags:
-    - shared
+    - yarn test
 
-build:
-  stage: build
-  artifacts:
-    paths:
-      - build/
-  script:
-    - yarn build
-  tags:
-    - shared
+build_preview:
+  <<: *build_template
+  <<: *preview_job
+  variables:
+    BANNER: preview
+    DEPLOY_ENV: preview
+    GA_PROPERTY: $PREVIEW_GA_PROPERTY
+
+build_production:
+  <<: *build_template
+  <<: *production_job
+  variables:
+    DEPLOY_ENV: production
+    GA_PROPERTY: $PROD_GA_PROPERTY
 
 deploy_preview:
-  stage: deploy
+  <<: *deploy_template
+  <<: *preview_job
+  dependencies:
+    - build_preview
   environment:
     name: preview
     url: https://preview.regexper.com
   variables:
-    BANNER: preview
     CLOUD_FRONT_ID: $PREVIEW_CLOUDFRONT_ID
     DEPLOY_BUCKET: $PREVIEW_DEPLOY_BUCKET
-    DEPLOY_ENV: preview
-    GA_PROPERTY: $PREVIEW_GA_PROPERTY
-  script:
-    - yarn deploy
-  only:
-    - react # TODO: Change to master once merged
-  tags:
-    - shared
 
 deploy_production:
-  stage: deploy
+  <<: *deploy_template
+  <<: *production_job
+  dependencies:
+    - build_production
   environment:
     name: production
     url: https://regexper.com
-  script:
-    - yarn deploy
-  only:
-    - tags
-  tags:
-    - shared
+  variables:
+    CLOUD_FRONT_ID: $PROD_CLOUDFRONT_ID
+    DEPLOY_BUCKET: $PROD_DEPLOY_BUCKET
