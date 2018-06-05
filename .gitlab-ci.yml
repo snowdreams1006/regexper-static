@@ -1,0 +1,54 @@
+cache:
+  paths:
+    - node_modules
+
+before_script:
+  - yarn install
+
+stages:
+  - test
+  - build
+  - deploy
+
+test:
+  stage: test
+  coverage: '/^Statements\s*:\s*([^%]+)/'
+  artifacts:
+    paths:
+      - reports/
+  script:
+    yarn test
+
+build:
+  stage: build
+  artifacts:
+    paths:
+      - build/
+  script:
+    - yarn build
+
+deploy_preview:
+  stage: deploy
+  environment:
+    name: preview
+    url: https://preview.regexper.com
+  variables:
+    BANNER: preview
+    CLOUD_FRONT_ID: $PREVIEW_CLOUDFRONT_ID
+    DEPLOY_BUCKET: $PREVIEW_DEPLOY_BUCKET
+    DEPLOY_ENV: preview
+    GA_PROPERTY: $PREVIEW_GA_PROPERTY
+  script:
+    - yarn deploy
+  only:
+    - react # TODO: Change to master once merged
+
+deploy_production:
+  stage: deploy
+  environment:
+    name: production
+    url: https://regexper.com
+  script:
+    - yarn deploy
+  only:
+    - tags

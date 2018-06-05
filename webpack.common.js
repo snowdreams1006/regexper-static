@@ -8,9 +8,8 @@ const HtmlPlugin = require('html-webpack-plugin');
 
 const pkg = require('./package.json');
 const buildId = [
-  process.env.CIRCLE_BRANCH || 'prerelease',
-  process.env.CIRCLE_BUILD_NUM || '##',
-  (process.env.CIRCLE_SHA1 || 'gitsha').slice(0, 7)
+  process.env.CI_COMMIT_REF_SLUG || 'prerelease',
+  (process.env.CI_COMMIT_SHA || 'gitsha').slice(0, 7)
 ].join('-');
 
 const pages = fs.readdirSync(path.resolve(__dirname, 'src/pages'));
