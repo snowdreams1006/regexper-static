@@ -1,4 +1,4 @@
-# Regexper [![CircleCI](https://circleci.com/gh/javallone/regexper-static.svg?style=svg)](https://circleci.com/gh/javallone/regexper-static)
+# Regexper [![pipeline status](https://gitlab.com/javallone/regexper-static/badges/master/pipeline.svg)](https://gitlab.com/javallone/regexper-static/commits/master) [![coverage report](https://gitlab.com/javallone/regexper-static/badges/master/coverage.svg)](https://gitlab.com/javallone/regexper-static/commits/master)
 
 Code for the http://regexper.com/ site.
 
