@@ -16,7 +16,7 @@ Privacy Policy: Privacy Policy
 Privacy Policy Content: >
   <0>Regexper and the tools used to create it are all open source. If you are
   concerned that the JavaScript being delivered is in any way malicious, please
-  inspect the source in the <1>GitHub repository</1>.</0>
+  inspect the source in the <1>GitLab repository</1>.</0>
 
   <1>There are two data collection tools integrated in the app. These tools are
   not used to collect personal information:</1>
@@ -35,6 +35,6 @@ Privacy Policy Content: >
   reports.</3>
 
   <4>Regexper is not supported by ad revenue or sales of any kind.</4>
-Source on GitHub: Source on GitHub
+Source on GitLab: Source on GitLab
 The page you have requested could not be found: The page you have requested could not be found
 This error has been logged: This error has been logged. You may also <1>fill out a report</1>.

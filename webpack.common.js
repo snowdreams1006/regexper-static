@@ -76,7 +76,7 @@ module.exports = {
       favicons: {
         appName: 'Regexper',
         appDescription: pkg.description,
-        developerURL: 'https://github.com/javallone/',
+        developerURL: 'https://gitlab.com/javallone/',
         background: '#6b6659',
         theme_color: '#bada55',
         start_url: '/',

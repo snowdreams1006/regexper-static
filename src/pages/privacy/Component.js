@@ -10,7 +10,7 @@ const Component = () => (
   <React.Fragment>
     <Header/>
     <Message type="info" icon={ InfoIcon } heading="Privacy Policy"><Trans i18nKey="Privacy Policy Content">
-      <p>Regexper and the tools used to create it are all open source. If you are concerned that the JavaScript being delivered is in any way malicious, please inspect the source by following the <a href="https://github.com/javallone/regexper-static" rel="external noopener noreferrer" target="_blank">GitHub repository</a>.</p>
+      <p>Regexper and the tools used to create it are all open source. If you are concerned that the JavaScript being delivered is in any way malicious, please inspect the source by following the <a href="https://gitlab.com/javallone/regexper-static" rel="external noopener noreferrer" target="_blank">GitLab repository</a>.</p>
       <p>There are two data collection tools integrated in the app. These tools are not used to collect personal information:</p>
       <ul>
         <li><b>Google Analytics</b> is used to track browser usage data and application performance.</li>

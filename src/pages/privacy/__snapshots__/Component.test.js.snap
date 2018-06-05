@@ -14,11 +14,11 @@ exports[`Privacy policy page component rendering 1`] = `
       <p>
         Regexper and the tools used to create it are all open source. If you are concerned that the JavaScript being delivered is in any way malicious, please inspect the source by following the 
         <a
-          href="https://github.com/javallone/regexper-static"
+          href="https://gitlab.com/javallone/regexper-static"
           rel="external noopener noreferrer"
           target="_blank"
         >
-          GitHub repository
+          GitLab repository
         </a>
         .
       </p>

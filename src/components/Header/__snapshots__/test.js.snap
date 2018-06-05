@@ -15,13 +15,13 @@ exports[`Header rendering 1`] = `
   <ul>
     <li>
       <a
-        href="https://github.com/javallone/regexper-static"
+        href="https://gitlab.com/javallone/regexper-static"
         rel="external noopener noreferrer"
         target="_blank"
       >
         <SvgMock />
         <Trans>
-          Source on GitHub
+          Source on GitLab
         </Trans>
       </a>
     </li>
