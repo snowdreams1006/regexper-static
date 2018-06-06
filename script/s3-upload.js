@@ -84,7 +84,7 @@ Promise.all([bucketContents, uploadDetails]).then(([bucket, upload]) => {
       return cloudFront.createInvalidation({
         DistributionId: config.cloudFrontId,
         InvalidationBatch: {
-          CallerReference: `circleci-deploy-${ process.env.CIRCLE_BRANCH }-${ process.env.CIRCLE_BUILD_NUM }-${ process.env.CIRCLE_SHA1 }`,
+          CallerReference: `deploy-${ process.env.CI_COMMIT_REF_SLUG }-${ process.env.CI_COMMIT_SHA }`,
           Paths: {
             Quantity: 1,
             Items: [
