@@ -22,12 +22,8 @@ const localeToAvailable = (locale, available, defaultLocale) => {
 };
 
 class LocaleSwitcher extends React.PureComponent {
-  constructor() {
-    super();
-
-    this.state = {
-      current: localeToAvailable(i18n.language || '', Object.keys(locales), 'en')
-    };
+  state = {
+    current: localeToAvailable(i18n.language || '', Object.keys(locales), 'en')
   }
 
   localeSelector = React.createRef()
