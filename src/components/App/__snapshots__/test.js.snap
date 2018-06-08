@@ -4,6 +4,7 @@ exports[`App rendering 1`] = `
 <React.Fragment>
   <Translate(Form)
     downloadUrls={Array []}
+    key="expr=undefined&syntax=undefined"
     onSubmit={[Function]}
     syntaxes={
       Object {

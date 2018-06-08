@@ -18,6 +18,8 @@ const syntaxes = {
   pcre: 'PCRE'
 };
 
+const toUrl = params => new URLSearchParams(params).toString();
+
 class App extends React.PureComponent {
   state = {}
 
@@ -110,8 +112,7 @@ class App extends React.PureComponent {
 
   handleSubmit = ({expr, syntax}) => {
     if (expr) {
-      const params = new URLSearchParams({ syntax, expr });
-      document.location.hash = params.toString();
+      document.location.hash = toUrl({ syntax, expr });
     }
   }
 
@@ -192,6 +193,7 @@ class App extends React.PureComponent {
 
     return <React.Fragment>
       <Form
+        key={ toUrl({ expr, syntax }) }
         syntaxes={ syntaxes }
         downloadUrls={ downloadUrls }
         permalinkUrl={ permalinkUrl }

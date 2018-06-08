@@ -10,23 +10,8 @@ import style from './style.css';
 
 class Form extends React.PureComponent {
   state = {
-    syntax: Object.keys(this.props.syntaxes)[0],
-    prevProps: {}
-  }
-
-  static getDerivedStateFromProps(props, state) {
-    let changes = { prevProps: props };
-    const { prevProps } = state;
-
-    if (props.expr && props.expr !== prevProps.expr) {
-      changes.expr = props.expr;
-    }
-
-    if (props.syntax && props.syntax !== prevProps.syntax) {
-      changes.syntax = props.syntax;
-    }
-
-    return changes;
+    expr: this.props.expr,
+    syntax: this.props.syntax || Object.keys(this.props.syntaxes)[0]
   }
 
   handleSubmit = event => {
