@@ -22,8 +22,8 @@ node_modules/
 build/
 script/__build__/
 
-# Testing reports
-reports/
+# Coverage reports
+coverage/
 
 # Favicon cache
 .wwp-cache/

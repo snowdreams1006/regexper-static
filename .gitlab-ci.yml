@@ -58,7 +58,7 @@ test:
   coverage: '/^Statements\s*:\s*([^%]+)/'
   artifacts:
     paths:
-      - reports/
+      - coverage/
   script:
     - yarn test
 
