@@ -26,8 +26,6 @@ class LocaleSwitcher extends React.PureComponent {
     current: localeToAvailable(i18n.language || '', Object.keys(locales), 'en')
   }
 
-  localeSelector = React.createRef()
-
   componentDidMount() {
     i18n.on('languageChanged', this.handleLanguageChange);
   }
@@ -36,8 +34,8 @@ class LocaleSwitcher extends React.PureComponent {
     i18n.off('languageChanged', this.handleLanguageChange);
   }
 
-  handleSelectChange = () => {
-    i18n.changeLanguage(this.localeSelector.current.value);
+  handleSelectChange = ({ target }) => {
+    i18n.changeLanguage(target.value);
   }
 
   handleLanguageChange = lang => {
@@ -50,7 +48,7 @@ class LocaleSwitcher extends React.PureComponent {
     return <label>
       <Trans>Language</Trans>
       <div className={ style.switcher }>
-        <select value={ current } ref={ this.localeSelector } onChange={ this.handleSelectChange }>
+        <select value={ current } onChange={ this.handleSelectChange }>
           { Object.keys(locales).map(locale => (
             <option value={ locale } key={ locale }>{ i18n.getFixedT(locale)('/displayName') }</option>
           )) }

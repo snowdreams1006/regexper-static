@@ -42,8 +42,13 @@ describe('Form', () => {
       const component = shallow(
         <Form t={ translate } syntaxes={ syntaxes } onSubmit={ onSubmit }/>
       );
+
+      const exprInput = component.find('[name="expr"]');
+      const syntaxInput = component.find('[name="syntax"]');
+      exprInput.simulate('change', { target: { name: 'expr', value: 'Test expression' } });
+      syntaxInput.simulate('change', { target: { name: 'syntax', value: 'test' } });
+
       const eventObj = { preventDefault: jest.fn() };
-      component.setState({ syntax: 'test', expr: 'Test expression' });
       component.find('form').simulate('submit', eventObj);
 
       expect(eventObj.preventDefault).toHaveBeenCalled();

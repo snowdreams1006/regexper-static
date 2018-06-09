@@ -11,7 +11,20 @@ exports[`LocaleSwitcher rendering 1`] = `
     <select
       onChange={[Function]}
       value="en"
-    />
+    >
+      <option
+        key="en"
+        value="en"
+      >
+        /displayName
+      </option>
+      <option
+        key="fr"
+        value="fr"
+      >
+        /displayName
+      </option>
+    </select>
     <SvgMock />
   </div>
 </label>
