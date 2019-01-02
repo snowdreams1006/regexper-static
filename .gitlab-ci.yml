@@ -1,6 +1,7 @@
 image: node:8
 
 stages:
+  - test
   - build
 
 cache:
@@ -9,6 +10,11 @@ cache:
 
 before_script:
   - yarn install
+
+lint:
+  stage: test
+  script:
+    - yarn test:lint
 
 pages:
   stage: build
