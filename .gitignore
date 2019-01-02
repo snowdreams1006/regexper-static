@@ -17,3 +17,7 @@ node_modules/
 
 # Yarn Integrity file
 .yarn-integrity
+
+# Gatsby build files
+.cache/
+public/
