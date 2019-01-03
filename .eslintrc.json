@@ -6,8 +6,7 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:import/recommended"
+    "plugin:react/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -17,8 +16,7 @@
     "sourceType": "module"
   },
   "plugins": [
-    "react",
-    "import"
+    "react"
   ],
   "rules": {
     "indent": [
