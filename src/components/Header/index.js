@@ -1,12 +1,22 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, StaticQuery, graphql } from 'gatsby';
 
 import GitlabIcon from 'react-feather/dist/icons/gitlab';
 
 import style from './style.module.css';
 
-const Header = () => (
-  <header className={ style.header }>
+const query = graphql`
+  query HeaderQuery {
+    site {
+      siteMetadata {
+        banner
+      }
+    }
+  }
+`;
+
+const Header = () => <StaticQuery query={ query } render={ ({ site: { siteMetadata } }) => (
+  <header className={ style.header } data-banner={ siteMetadata.banner || null }>
     <h1>
       <Link to="/">Regexper</Link>
     </h1>
@@ -23,6 +33,6 @@ const Header = () => (
       </li>
     </ul>
   </header>
-);
+) } />;
 
 export default Header;
