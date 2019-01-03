@@ -1,0 +1,26 @@
+@import url('../../globals.module.css');
+
+.footer {
+  display: flex;
+  align-items: flex-start;
+  margin: var(--spacing-margin) 0;
+
+  @media screen and (max-width: 800px) {
+    display: block;
+  }
+
+  & img {
+    vertical-align: text-top;
+    width: 80px;
+    height: 15px;
+  }
+}
+
+.list {
+  composes: inline-list with-separator-left;
+  flex: 1;
+}
+
+.buildId {
+  color: color(var(--color-brown) blend(var(--color-tan) 25%));
+}

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 
 import Header from 'components/Header';
+import Footer from 'components/Footer';
 
 const Layout = ({ title, children }) => <React.Fragment>
   <Helmet>
@@ -10,6 +11,7 @@ const Layout = ({ title, children }) => <React.Fragment>
   </Helmet>
   <Header />
   { children }
+  <Footer />
 </React.Fragment>;
 
 Layout.propTypes = {
