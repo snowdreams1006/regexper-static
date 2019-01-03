@@ -1,0 +1,51 @@
+@import url('../../globals.module.css');
+
+.header {
+  display: flex;
+  align-items: center;
+  background: var(--color-green) var(--gradient-green);
+  box-shadow: 0 0 1rem color(var(--color-black) alpha(0.7));
+  padding: 0 var(--content-margin);
+  margin: 0 calc(-1 * var(--content-margin)) var(--spacing-margin) calc(-1 * var(--content-margin));
+  position: relative;
+  color: var(--color-black);
+
+  & h1 {
+    flex-grow: 1;
+    font-family: 'Bangers', 'cursive';
+    font-size: 4rem;
+    font-weight: normal;
+    display: inline-block;
+    margin: 0;
+    line-height: var(--header-height);
+    text-shadow: 0 0 5px var(--color-green);
+  }
+
+  & a {
+    text-decoration: none;
+    display: inline-block;
+  }
+}
+
+.list {
+  composes: inline-list with-separator-right;
+  text-align: right;
+  margin: 1rem 0;
+
+  & li {
+    line-height: 2.4rem;
+
+    & a:hover,
+    & a:active {
+      text-decoration: underline;
+    }
+
+    & a svg {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      margin-right: 0.5rem;
+      vertical-align: text-top
+    }
+  }
+}

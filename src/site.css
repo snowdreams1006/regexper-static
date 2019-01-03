@@ -1,4 +1,4 @@
-@import url('./globals.css');
+@import url('./globals.module.css');
 
 html {
   font-size: 62.5%;
