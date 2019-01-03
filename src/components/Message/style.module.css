@@ -1,0 +1,72 @@
+@import url('../../globals.module.css');
+
+.message {
+  background: var(--color-tan);
+  color: var(--color-black);
+  margin: var(--spacing-margin) 0;
+  box-shadow: 0 0 1rem color(var(--color-black) alpha(0.7));
+}
+
+.header {
+  & h2 {
+    display: inline-block;
+    padding: var(--spacing-margin);
+    line-height: 2.8rem;
+    margin: 0;
+  }
+
+  & svg {
+    padding: var(--spacing-margin);
+    height: 2.8rem;
+    width: 2.8rem;
+    vertical-align: bottom;
+  }
+}
+
+.content {
+  padding: var(--spacing-margin);
+
+  & p {
+    margin-top: 0;
+    margin-bottom: var(--spacing-margin);
+  }
+
+  & p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.error {
+  & .header {
+    background: var(--color-red);
+    color: var(--color-white);
+
+    & svg {
+      background: var(--color-white);
+      color: var(--color-red);
+    }
+  }
+}
+
+.warning {
+  & .header {
+    background: var(--color-orange);
+
+    & svg {
+      background: var(--color-black);
+      color: var(--color-orange);
+    }
+  }
+}
+
+.info {
+  & .header {
+    background: var(--color-blue);
+    color: var(--color-white);
+
+    & svg {
+      background: var(--color-white);
+      color: var(--color-blue);
+    }
+  }
+}
