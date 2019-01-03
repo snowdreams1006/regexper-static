@@ -1,4 +1,4 @@
-image: node:8
+image: node:latest
 
 stages:
   - test
@@ -18,11 +18,8 @@ lint:
 
 pages:
   stage: build
-  variables:
-    GA_PROP: $PROD_GA_PROPERTY
   script:
-  - BUILD_PATH="$(pwd)/public" yarn gulp build
-  - rm -r public/__discard__
+  - yarn build
   - gzip -k -6 $(find public/ -type f)
   artifacts:
     paths:
