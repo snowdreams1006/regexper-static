@@ -19,6 +19,15 @@ module.exports = {
         anonymize: true,
         respectDNT: true
       }
+    },
+    {
+      resolve: 'gatsby-plugin-sentry',
+      options: {
+        dsn: process.env.SENTRY_DSN,
+        environment: process.env.DEPLOY_ENV || process.env.NODE_ENV,
+        debug: (process.env.NODE_ENV !== 'production'),
+        release: buildId
+      }
     }
   ]
 };

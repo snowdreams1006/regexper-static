@@ -2,17 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 
+import SentryBoundary from 'components/SentryBoundary';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 
-const Layout = ({ title, children }) => <React.Fragment>
+const Layout = ({ title, children }) => <SentryBoundary>
   <Helmet>
     <title>{ title ? `Regexper - ${ title }` : 'Regexper' }</title>
   </Helmet>
   <Header />
-  { children }
+  <SentryBoundary>
+    { children }
+  </SentryBoundary>
   <Footer />
-</React.Fragment>;
+</SentryBoundary>;
 
 Layout.propTypes = {
   title: PropTypes.string,
