@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link, StaticQuery, graphql } from 'gatsby';
 
 import GitlabIcon from 'react-feather/dist/icons/gitlab';
@@ -15,7 +16,7 @@ const query = graphql`
   }
 `;
 
-const Header = () => <StaticQuery query={ query } render={ ({ site: { siteMetadata } }) => (
+export const HeaderImpl = ({ site: { siteMetadata } }) => (
   <header className={ style.header } data-banner={ siteMetadata.banner || null }>
     <h1>
       <Link to="/">Regexper</Link>
@@ -33,6 +34,21 @@ const Header = () => <StaticQuery query={ query } render={ ({ site: { siteMetada
       </li>
     </ul>
   </header>
+);
+
+HeaderImpl.propTypes = {
+  site: PropTypes.shape({
+    siteMetadata: PropTypes.shape({
+      banner: PropTypes.oneOfType([
+        PropTypes.bool,
+        PropTypes.string
+      ]).isRequired
+    }).isRequired
+  }).isRequired
+};
+
+const Header = () => <StaticQuery query={ query } render={ data => (
+  <HeaderImpl { ...data } />
 ) } />;
 
 export default Header;

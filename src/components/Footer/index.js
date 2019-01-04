@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
 import style from './style.module.css';
@@ -13,7 +14,7 @@ const query = graphql`
   }
 `;
 
-const Footer = () => (
+export const FooterImpl = ({ site: { siteMetadata } }) => (
   <footer className={ style.footer }>
     <ul className={ style.list }>
       <li>
@@ -26,9 +27,21 @@ const Footer = () => (
       </li>
     </ul>
     <div className={ style.buildId }>
-      <StaticQuery query={ query } render={ ({ site: { siteMetadata } }) => siteMetadata.buildId } />
+      { siteMetadata.buildId }
     </div>
   </footer>
 );
+
+FooterImpl.propTypes = {
+  site: PropTypes.shape({
+    siteMetadata: PropTypes.shape({
+      buildId: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired
+};
+
+const Footer = () => <StaticQuery query={ query } render={ data => (
+  <FooterImpl { ...data } />
+) } />;
 
 export default Footer;

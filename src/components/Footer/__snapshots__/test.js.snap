@@ -1,0 +1,469 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer rendering implementation 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <FooterImpl
+    site={
+      Object {
+        "siteMetadata": Object {
+          "buildId": "abc-123",
+        },
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <ul
+          className="list"
+        >
+          <li>
+            Created by 
+            <a
+              href="mailto:jeff.avallone@gmail.com"
+            >
+              Jeff Avallone
+            </a>
+          </li>
+          <li>
+            Generated images licensed: 
+            <a
+              href="http://creativecommons.org/licenses/by/3.0/"
+              rel="license external noopener noreferrer"
+              target="_blank"
+            >
+              <img
+                alt="Creative Commons CC-BY-3.0 License"
+                src="https://licensebuttons.net/l/by/3.0/80x15.png"
+              />
+            </a>
+          </li>
+        </ul>,
+        <div
+          className="buildId"
+        >
+          abc-123
+        </div>,
+      ],
+      "className": "footer",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <li>
+              Created by 
+              <a
+                href="mailto:jeff.avallone@gmail.com"
+              >
+                Jeff Avallone
+              </a>
+            </li>,
+            <li>
+              Generated images licensed: 
+              <a
+                href="http://creativecommons.org/licenses/by/3.0/"
+                rel="license external noopener noreferrer"
+                target="_blank"
+              >
+                <img
+                  alt="Creative Commons CC-BY-3.0 License"
+                  src="https://licensebuttons.net/l/by/3.0/80x15.png"
+                />
+              </a>
+            </li>,
+          ],
+          "className": "list",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Created by ",
+                <a
+                  href="mailto:jeff.avallone@gmail.com"
+                >
+                  Jeff Avallone
+                </a>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Created by ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Jeff Avallone",
+                  "href": "mailto:jeff.avallone@gmail.com",
+                },
+                "ref": null,
+                "rendered": "Jeff Avallone",
+                "type": "a",
+              },
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Generated images licensed: ",
+                <a
+                  href="http://creativecommons.org/licenses/by/3.0/"
+                  rel="license external noopener noreferrer"
+                  target="_blank"
+                >
+                  <img
+                    alt="Creative Commons CC-BY-3.0 License"
+                    src="https://licensebuttons.net/l/by/3.0/80x15.png"
+                  />
+                </a>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Generated images licensed: ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <img
+                    alt="Creative Commons CC-BY-3.0 License"
+                    src="https://licensebuttons.net/l/by/3.0/80x15.png"
+                  />,
+                  "href": "http://creativecommons.org/licenses/by/3.0/",
+                  "rel": "license external noopener noreferrer",
+                  "target": "_blank",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "Creative Commons CC-BY-3.0 License",
+                    "src": "https://licensebuttons.net/l/by/3.0/80x15.png",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                "type": "a",
+              },
+            ],
+            "type": "li",
+          },
+        ],
+        "type": "ul",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "abc-123",
+          "className": "buildId",
+        },
+        "ref": null,
+        "rendered": "abc-123",
+        "type": "div",
+      },
+    ],
+    "type": "footer",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <ul
+            className="list"
+          >
+            <li>
+              Created by 
+              <a
+                href="mailto:jeff.avallone@gmail.com"
+              >
+                Jeff Avallone
+              </a>
+            </li>
+            <li>
+              Generated images licensed: 
+              <a
+                href="http://creativecommons.org/licenses/by/3.0/"
+                rel="license external noopener noreferrer"
+                target="_blank"
+              >
+                <img
+                  alt="Creative Commons CC-BY-3.0 License"
+                  src="https://licensebuttons.net/l/by/3.0/80x15.png"
+                />
+              </a>
+            </li>
+          </ul>,
+          <div
+            className="buildId"
+          >
+            abc-123
+          </div>,
+        ],
+        "className": "footer",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <li>
+                Created by 
+                <a
+                  href="mailto:jeff.avallone@gmail.com"
+                >
+                  Jeff Avallone
+                </a>
+              </li>,
+              <li>
+                Generated images licensed: 
+                <a
+                  href="http://creativecommons.org/licenses/by/3.0/"
+                  rel="license external noopener noreferrer"
+                  target="_blank"
+                >
+                  <img
+                    alt="Creative Commons CC-BY-3.0 License"
+                    src="https://licensebuttons.net/l/by/3.0/80x15.png"
+                  />
+                </a>
+              </li>,
+            ],
+            "className": "list",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Created by ",
+                  <a
+                    href="mailto:jeff.avallone@gmail.com"
+                  >
+                    Jeff Avallone
+                  </a>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Created by ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Jeff Avallone",
+                    "href": "mailto:jeff.avallone@gmail.com",
+                  },
+                  "ref": null,
+                  "rendered": "Jeff Avallone",
+                  "type": "a",
+                },
+              ],
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Generated images licensed: ",
+                  <a
+                    href="http://creativecommons.org/licenses/by/3.0/"
+                    rel="license external noopener noreferrer"
+                    target="_blank"
+                  >
+                    <img
+                      alt="Creative Commons CC-BY-3.0 License"
+                      src="https://licensebuttons.net/l/by/3.0/80x15.png"
+                    />
+                  </a>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Generated images licensed: ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <img
+                      alt="Creative Commons CC-BY-3.0 License"
+                      src="https://licensebuttons.net/l/by/3.0/80x15.png"
+                    />,
+                    "href": "http://creativecommons.org/licenses/by/3.0/",
+                    "rel": "license external noopener noreferrer",
+                    "target": "_blank",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "alt": "Creative Commons CC-BY-3.0 License",
+                      "src": "https://licensebuttons.net/l/by/3.0/80x15.png",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "img",
+                  },
+                  "type": "a",
+                },
+              ],
+              "type": "li",
+            },
+          ],
+          "type": "ul",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "abc-123",
+            "className": "buildId",
+          },
+          "ref": null,
+          "rendered": "abc-123",
+          "type": "div",
+        },
+      ],
+      "type": "footer",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`Footer rendering with query 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Footer />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "query": "
+  query FooterQuery {
+    site {
+      siteMetadata {
+        buildId
+      }
+    }
+  }
+",
+      "render": [Function],
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [MockFunction],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "query": "
+  query FooterQuery {
+    site {
+      siteMetadata {
+        buildId
+      }
+    }
+  }
+",
+        "render": [Function],
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [MockFunction],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

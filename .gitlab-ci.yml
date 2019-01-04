@@ -11,18 +11,27 @@ cache:
 before_script:
   - yarn install
 
-lint:
+test-lint:
   stage: test
   script:
     - yarn test:lint
 
+test-unit:
+  stage: test
+  coverage: '/^Statements\s*:\s*([^%]+)/'
+  script:
+    - yarn test:unit
+  artifacts:
+    paths:
+      - coverage/
+
 pages:
   stage: build
   script:
-  - yarn build
-  - gzip -k -6 $(find public/ -type f)
+    - yarn build
+    - gzip -k -6 $(find public/ -type f)
   artifacts:
     paths:
-    - public
+      - public
   only:
-  - master
+    - master

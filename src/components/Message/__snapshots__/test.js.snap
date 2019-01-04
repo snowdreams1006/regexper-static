@@ -1,0 +1,669 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Message rendering 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Message
+    heading="Testing"
+  >
+    <p>
+      Message content
+    </p>
+  </Message>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="header"
+        >
+          <h2>
+            Testing
+          </h2>
+        </div>,
+        <div
+          className="content"
+        >
+          <p>
+            Message content
+          </p>
+        </div>,
+      ],
+      "className": "message",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            undefined,
+            <h2>
+              Testing
+            </h2>,
+          ],
+          "className": "header",
+        },
+        "ref": null,
+        "rendered": Array [
+          undefined,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Testing",
+            },
+            "ref": null,
+            "rendered": "Testing",
+            "type": "h2",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <p>
+            Message content
+          </p>,
+          "className": "content",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Message content",
+          },
+          "ref": null,
+          "rendered": "Message content",
+          "type": "p",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="header"
+          >
+            <h2>
+              Testing
+            </h2>
+          </div>,
+          <div
+            className="content"
+          >
+            <p>
+              Message content
+            </p>
+          </div>,
+        ],
+        "className": "message",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              undefined,
+              <h2>
+                Testing
+              </h2>,
+            ],
+            "className": "header",
+          },
+          "ref": null,
+          "rendered": Array [
+            undefined,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Testing",
+              },
+              "ref": null,
+              "rendered": "Testing",
+              "type": "h2",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <p>
+              Message content
+            </p>,
+            "className": "content",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Message content",
+            },
+            "ref": null,
+            "rendered": "Message content",
+            "type": "p",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`Message rendering with icon 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Message
+    heading="Testing"
+    icon={[Function]}
+  >
+    <p>
+      Message content
+    </p>
+  </Message>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="header"
+        >
+          <Icon />
+          <h2>
+            Testing
+          </h2>
+        </div>,
+        <div
+          className="content"
+        >
+          <p>
+            Message content
+          </p>
+        </div>,
+      ],
+      "className": "message",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <Icon />,
+            <h2>
+              Testing
+            </h2>,
+          ],
+          "className": "header",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Testing",
+            },
+            "ref": null,
+            "rendered": "Testing",
+            "type": "h2",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <p>
+            Message content
+          </p>,
+          "className": "content",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Message content",
+          },
+          "ref": null,
+          "rendered": "Message content",
+          "type": "p",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="header"
+          >
+            <Icon />
+            <h2>
+              Testing
+            </h2>
+          </div>,
+          <div
+            className="content"
+          >
+            <p>
+              Message content
+            </p>
+          </div>,
+        ],
+        "className": "message",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Icon />,
+              <h2>
+                Testing
+              </h2>,
+            ],
+            "className": "header",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Testing",
+              },
+              "ref": null,
+              "rendered": "Testing",
+              "type": "h2",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <p>
+              Message content
+            </p>,
+            "className": "content",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Message content",
+            },
+            "ref": null,
+            "rendered": "Message content",
+            "type": "p",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`Message rendering with type 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Message
+    heading="Testing"
+    type="error"
+  >
+    <p>
+      Message content
+    </p>
+  </Message>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="header"
+        >
+          <AlertOctagon
+            color="currentColor"
+            size="24"
+          />
+          <h2>
+            Testing
+          </h2>
+        </div>,
+        <div
+          className="content"
+        >
+          <p>
+            Message content
+          </p>
+        </div>,
+      ],
+      "className": "message error",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <AlertOctagon
+              color="currentColor"
+              size="24"
+            />,
+            <h2>
+              Testing
+            </h2>,
+          ],
+          "className": "header",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "color": "currentColor",
+              "size": "24",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Testing",
+            },
+            "ref": null,
+            "rendered": "Testing",
+            "type": "h2",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <p>
+            Message content
+          </p>,
+          "className": "content",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Message content",
+          },
+          "ref": null,
+          "rendered": "Message content",
+          "type": "p",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="header"
+          >
+            <AlertOctagon
+              color="currentColor"
+              size="24"
+            />
+            <h2>
+              Testing
+            </h2>
+          </div>,
+          <div
+            className="content"
+          >
+            <p>
+              Message content
+            </p>
+          </div>,
+        ],
+        "className": "message error",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <AlertOctagon
+                color="currentColor"
+                size="24"
+              />,
+              <h2>
+                Testing
+              </h2>,
+            ],
+            "className": "header",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "color": "currentColor",
+                "size": "24",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Testing",
+              },
+              "ref": null,
+              "rendered": "Testing",
+              "type": "h2",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <p>
+              Message content
+            </p>,
+            "className": "content",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Message content",
+            },
+            "ref": null,
+            "rendered": "Message content",
+            "type": "p",
+          },
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
