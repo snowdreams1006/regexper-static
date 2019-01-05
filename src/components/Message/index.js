@@ -24,7 +24,10 @@ const renderIcon = (type, icon) => {
 };
 
 const Message = ({ type, icon, heading, children }) => (
-  <div className={ [style.message, type && style[type] ].filter(Boolean).join(' ') }>
+  <div className={ [
+    style.message,
+    type && style[type]
+  ].filter(Boolean).join(' ') }>
     <div className={ style.header }>
       { renderIcon(type, icon) }
       <h2>{ heading }</h2>

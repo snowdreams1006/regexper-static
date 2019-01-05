@@ -15,7 +15,7 @@ describe('SentryError', () => {
   });
 
   describe('error reporting', () => {
-    test('clicking to fill out a report when an event has been logged', () => {
+    test('fill out a report when an event has been logged', () => {
       Sentry.lastEventId.mockReturnValue(1);
       const component = shallow(
         <SentryError />
@@ -27,7 +27,7 @@ describe('SentryError', () => {
       expect(Sentry.showReportDialog).toHaveBeenCalled();
     });
 
-    test('clicking to fill out a report when an event has not been logged', () => {
+    test('fill out a report when an event has not been logged', () => {
       Sentry.lastEventId.mockReturnValue(false);
       const component = shallow(
         <SentryError />

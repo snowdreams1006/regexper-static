@@ -17,14 +17,18 @@ const query = graphql`
 `;
 
 export const HeaderImpl = ({ site: { siteMetadata } }) => (
-  <header className={ style.header } data-banner={ siteMetadata.banner || null }>
+  <header
+    className={ style.header }
+    data-banner={ siteMetadata.banner || null }>
     <h1>
       <Link to="/">Regexper</Link>
     </h1>
 
     <ul className={ style.list }>
       <li>
-        <a href="https://gitlab.com/javallone/regexper-static" rel="external noopener noreferrer" target="_blank">
+        <a href="https://gitlab.com/javallone/regexper-static"
+          rel="external noopener noreferrer"
+          target="_blank">
           <GitlabIcon />
           Source on GitLab
         </a>

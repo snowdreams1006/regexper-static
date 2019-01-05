@@ -27,9 +27,13 @@ describe('SentryBoundary', () => {
 
     const error = new Error('Example error');
     component.find('Child').simulateError(error);
-    component.setState({ hasError: true }); // NOTE: Enzyme doesn't call getDerivedStateFromError yet
+    // NOTE: Enzyme doesn't call getDerivedStateFromError yet, so we have to
+    // set the state manually
+    component.setState({ hasError: true });
 
-    expect(Sentry.captureException).toHaveBeenCalledWith(error, expect.anything());
+    expect(Sentry.captureException).toHaveBeenCalledWith(
+      error,
+      expect.anything());
     expect(component).toMatchSnapshot();
   });
 });

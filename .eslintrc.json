@@ -23,6 +23,27 @@
     "jest"
   ],
   "rules": {
+    "arrow-parens": [
+      "error",
+      "as-needed"
+    ],
+    "arrow-spacing": [
+      "error",
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "comma-dangle": [
+      "error",
+      {
+        "objects": "never",
+        "arrays": "never",
+        "imports": "never",
+        "exports": "never",
+        "functions": "never"
+      }
+    ],
     "indent": [
       "error",
       2
@@ -31,11 +52,30 @@
       "error",
       "unix"
     ],
+    "max-len": [
+      "warn",
+      {
+        "code": 80
+      }
+    ],
+    "no-var": "error",
     "quotes": [
       "error",
       "single"
     ],
     "semi": [
+      "error",
+      "always"
+    ],
+    "space-before-function-paren": [
+      "error",
+      {
+        "named": "never",
+        "anonymous": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "template-curly-spacing": [
       "error",
       "always"
     ]

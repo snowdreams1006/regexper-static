@@ -21,8 +21,12 @@ export const FooterImpl = ({ site: { siteMetadata } }) => (
         Created by <a href="mailto:jeff.avallone@gmail.com">Jeff Avallone</a>
       </li>
       <li>
-        Generated images licensed: <a href="http://creativecommons.org/licenses/by/3.0/" rel="license external noopener noreferrer" target="_blank">
-          <img src="https://licensebuttons.net/l/by/3.0/80x15.png" alt="Creative Commons CC-BY-3.0 License" />
+        Generated images licensed: <a
+          href="http://creativecommons.org/licenses/by/3.0/"
+          rel="license external noopener noreferrer"
+          target="_blank">
+          <img src="https://licensebuttons.net/l/by/3.0/80x15.png"
+            alt="Creative Commons CC-BY-3.0 License" />
         </a>
       </li>
     </ul>
