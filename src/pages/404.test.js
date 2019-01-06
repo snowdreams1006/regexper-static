@@ -1,12 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import ErrorPage from 'pages/404';
+import { mockT } from 'i18n';
+import { ErrorPageImpl } from 'pages/404';
 
 describe('Error Page', () => {
   test('rendering', () => {
     const component = shallow(
-      <ErrorPage />
+      <ErrorPageImpl t={ mockT } />
     );
     expect(component).toMatchSnapshot();
   });

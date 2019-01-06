@@ -1,12 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import PrivacyPage from 'pages/privacy';
+import { mockT } from 'i18n';
+import { PrivacyPageImpl } from 'pages/privacy';
 
 describe('Privacy Page', () => {
   test('rendering', () => {
     const component = shallow(
-      <PrivacyPage />
+      <PrivacyPageImpl t={ mockT } />
     );
     expect(component).toMatchSnapshot();
   });

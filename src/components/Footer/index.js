@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
+import { withNamespaces, Trans } from 'react-i18next';
 
 import style from './style.module.css';
 
@@ -14,20 +15,21 @@ const query = graphql`
   }
 `;
 
-export const FooterImpl = ({ site: { siteMetadata } }) => (
+export const FooterImpl = ({ t, site: { siteMetadata } }) => (
   <footer className={ style.footer }>
     <ul className={ style.list }>
       <li>
-        Created by <a href="mailto:jeff.avallone@gmail.com">Jeff Avallone</a>
+        <Trans>Created by <a
+          href="mailto:jeff.avallone@gmail.com">Jeff Avallone</a></Trans>
       </li>
       <li>
-        Generated images licensed: <a
+        <Trans>Generated images licensed: <a
           href="http://creativecommons.org/licenses/by/3.0/"
           rel="license external noopener noreferrer"
           target="_blank">
           <img src="https://licensebuttons.net/l/by/3.0/80x15.png"
-            alt="Creative Commons CC-BY-3.0 License" />
-        </a>
+            alt={ t('Creative Commons CC-BY-3.0 License') } />
+        </a></Trans>
       </li>
     </ul>
     <div className={ style.buildId }>
@@ -37,6 +39,7 @@ export const FooterImpl = ({ site: { siteMetadata } }) => (
 );
 
 FooterImpl.propTypes = {
+  t: PropTypes.func.isRequired,
   site: PropTypes.shape({
     siteMetadata: PropTypes.shape({
       buildId: PropTypes.string.isRequired
@@ -44,8 +47,9 @@ FooterImpl.propTypes = {
   }).isRequired
 };
 
+const TranslatedFooter = withNamespaces()(FooterImpl);
 const Footer = () => <StaticQuery query={ query } render={ data => (
-  <FooterImpl { ...data } />
+  <TranslatedFooter { ...data } />
 ) } />;
 
 export default Footer;

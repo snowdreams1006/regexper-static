@@ -1,2 +1,45 @@
 "Language": |
   LANGUAGE
+"Source on GitLab": |
+  SOURCE ON GITLAB
+"Privacy Policy": |
+  PRIVACY POLICY
+"Created by <1>Jeff Avallone</1>": |
+  CREATED BY <1>JEFF AVALLONE</1>
+"Generated images licensed: <1><0></0></1>": |
+  GENERATED IMAGES LICENSED: <1><0></0></1>
+"Creative Commons CC-BY-3.0 License": |
+  CREATIVE COMMONS CC-BY-3.0 LICENSE
+"An error has occurred": |
+  AN ERROR HAS OCCURRED
+"This error has been logged. You may also <1>fill out a report</1>.": |
+  THIS ERROR HAS BEEN LOGGED. YOU MAY ALSO <1>FILL OUT A REPORT</1>.
+"Hello world": |
+  HELLO WORLD
+"Privacy policy copy": |
+  <0>REGEXPER AND THE TOOLS USED TO CREATE IT ARE ALL OPEN SOURCE. If you are
+  concerned that the JavaScript being delivered is in any way malicious, please
+  inspect the source in the <1>GitLab repository</1>.</0>
+  <1>There are two data collection tools integrated in the app. These tools are
+  not used to collect personal information:</1>
+  <2>
+    <0><0>Google Analytics</0> is used to track browser usage data and
+    application performance. It is configured to anonymize the client IP
+    address.</0>
+    <1><0>Sentry.io</0> is a tool used to capture and report client-side
+    JavaScript errors. It is configured to not store the client IP address.</1>
+  </2>
+  <3>Regexper honors the browser <1>“Do Not Track”</1> setting and will not
+  enable these data collection tools if that setting is enabled. Also, most
+  popular ad blockers will prevent these tools from sending any tracking data.
+  Disabling or blocking these data collection tools will <3>not</3> impact the
+  performance of this app. The information collected by these tools is used to
+  monitor application performance, determine browser support, and collect error
+  reports.</3>
+  <4>Regexper is not supported by ad revenue or sales of any kind.</4>
+"Page Not Found": |
+  PAGE NOT FOUND
+"404 Page Not Found": |
+  404 PAGE NOT FOUND
+"The page you have requested could not be found.": |
+  THE PAGE YOU HAVE REQUESTED COULD NOT BE FOUND.

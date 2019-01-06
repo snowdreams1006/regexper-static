@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import * as Sentry from '@sentry/browser';
+import { withNamespaces, Trans } from 'react-i18next';
 
 import Message from 'components/Message';
 
-class SentryError extends React.Component {
+export class SentryErrorImpl extends React.Component {
   reportError = event => {
     event.preventDefault();
 
@@ -13,11 +15,19 @@ class SentryError extends React.Component {
   }
 
   render() {
-    return <Message type="error" heading="An error has occurred">
-      <p>This error has been logged. You may also <a href="#error-report"
-        onClick={ this.reportError }>fill out a report</a>.</p>
+    const { t } = this.props;
+
+    return <Message type="error" heading={ t('An error has occurred') }>
+      <p>
+        <Trans>This error has been logged. You may also <a href="#error-report"
+          onClick={ this.reportError }>fill out a report</a>.</Trans>
+      </p>
     </Message>;
   }
 }
 
-export default SentryError;
+SentryErrorImpl.propTypes = {
+  t: PropTypes.func.isRequired
+};
+
+export default withNamespaces()(SentryErrorImpl);

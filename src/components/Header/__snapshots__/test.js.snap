@@ -46,14 +46,18 @@ ShallowWrapper {
                 color="currentColor"
                 size="24"
               />
-              Source on GitLab
+              <WithMergedOptions(TransComponent)>
+                Source on GitLab
+              </WithMergedOptions(TransComponent)>
             </a>
           </li>
           <li>
             <mockConstructor
               to="/privacy"
             >
-              Privacy Policy
+              <WithMergedOptions(TransComponent)>
+                Privacy Policy
+              </WithMergedOptions(TransComponent)>
             </mockConstructor>
           </li>
           <li>
@@ -108,14 +112,18 @@ ShallowWrapper {
                   color="currentColor"
                   size="24"
                 />
-                Source on GitLab
+                <WithMergedOptions(TransComponent)>
+                  Source on GitLab
+                </WithMergedOptions(TransComponent)>
               </a>
             </li>,
             <li>
               <mockConstructor
                 to="/privacy"
               >
-                Privacy Policy
+                <WithMergedOptions(TransComponent)>
+                  Privacy Policy
+                </WithMergedOptions(TransComponent)>
               </mockConstructor>
             </li>,
             <li>
@@ -140,7 +148,9 @@ ShallowWrapper {
                   color="currentColor"
                   size="24"
                 />
-                Source on GitLab
+                <WithMergedOptions(TransComponent)>
+                  Source on GitLab
+                </WithMergedOptions(TransComponent)>
               </a>,
             },
             "ref": null,
@@ -154,7 +164,9 @@ ShallowWrapper {
                     color="currentColor"
                     size="24"
                   />,
-                  "Source on GitLab",
+                  <WithMergedOptions(TransComponent)>
+                    Source on GitLab
+                  </WithMergedOptions(TransComponent)>,
                 ],
                 "href": "https://gitlab.com/javallone/regexper-static",
                 "rel": "external noopener noreferrer",
@@ -174,7 +186,17 @@ ShallowWrapper {
                   "rendered": null,
                   "type": [Function],
                 },
-                "Source on GitLab",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Source on GitLab",
+                  },
+                  "ref": null,
+                  "rendered": "Source on GitLab",
+                  "type": [Function],
+                },
               ],
               "type": "a",
             },
@@ -188,7 +210,9 @@ ShallowWrapper {
               "children": <mockConstructor
                 to="/privacy"
               >
-                Privacy Policy
+                <WithMergedOptions(TransComponent)>
+                  Privacy Policy
+                </WithMergedOptions(TransComponent)>
               </mockConstructor>,
             },
             "ref": null,
@@ -197,11 +221,23 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
-                "children": "Privacy Policy",
+                "children": <WithMergedOptions(TransComponent)>
+                  Privacy Policy
+                </WithMergedOptions(TransComponent)>,
                 "to": "/privacy",
               },
               "ref": null,
-              "rendered": "Privacy Policy",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Privacy Policy",
+                },
+                "ref": null,
+                "rendered": "Privacy Policy",
+                "type": [Function],
+              },
               "type": [MockFunction],
             },
             "type": "li",
@@ -258,14 +294,18 @@ ShallowWrapper {
                   color="currentColor"
                   size="24"
                 />
-                Source on GitLab
+                <WithMergedOptions(TransComponent)>
+                  Source on GitLab
+                </WithMergedOptions(TransComponent)>
               </a>
             </li>
             <li>
               <mockConstructor
                 to="/privacy"
               >
-                Privacy Policy
+                <WithMergedOptions(TransComponent)>
+                  Privacy Policy
+                </WithMergedOptions(TransComponent)>
               </mockConstructor>
             </li>
             <li>
@@ -320,14 +360,18 @@ ShallowWrapper {
                     color="currentColor"
                     size="24"
                   />
-                  Source on GitLab
+                  <WithMergedOptions(TransComponent)>
+                    Source on GitLab
+                  </WithMergedOptions(TransComponent)>
                 </a>
               </li>,
               <li>
                 <mockConstructor
                   to="/privacy"
                 >
-                  Privacy Policy
+                  <WithMergedOptions(TransComponent)>
+                    Privacy Policy
+                  </WithMergedOptions(TransComponent)>
                 </mockConstructor>
               </li>,
               <li>
@@ -352,7 +396,9 @@ ShallowWrapper {
                     color="currentColor"
                     size="24"
                   />
-                  Source on GitLab
+                  <WithMergedOptions(TransComponent)>
+                    Source on GitLab
+                  </WithMergedOptions(TransComponent)>
                 </a>,
               },
               "ref": null,
@@ -366,7 +412,9 @@ ShallowWrapper {
                       color="currentColor"
                       size="24"
                     />,
-                    "Source on GitLab",
+                    <WithMergedOptions(TransComponent)>
+                      Source on GitLab
+                    </WithMergedOptions(TransComponent)>,
                   ],
                   "href": "https://gitlab.com/javallone/regexper-static",
                   "rel": "external noopener noreferrer",
@@ -386,7 +434,17 @@ ShallowWrapper {
                     "rendered": null,
                     "type": [Function],
                   },
-                  "Source on GitLab",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Source on GitLab",
+                    },
+                    "ref": null,
+                    "rendered": "Source on GitLab",
+                    "type": [Function],
+                  },
                 ],
                 "type": "a",
               },
@@ -400,7 +458,9 @@ ShallowWrapper {
                 "children": <mockConstructor
                   to="/privacy"
                 >
-                  Privacy Policy
+                  <WithMergedOptions(TransComponent)>
+                    Privacy Policy
+                  </WithMergedOptions(TransComponent)>
                 </mockConstructor>,
               },
               "ref": null,
@@ -409,11 +469,23 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
-                  "children": "Privacy Policy",
+                  "children": <WithMergedOptions(TransComponent)>
+                    Privacy Policy
+                  </WithMergedOptions(TransComponent)>,
                   "to": "/privacy",
                 },
                 "ref": null,
-                "rendered": "Privacy Policy",
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Privacy Policy",
+                  },
+                  "ref": null,
+                  "rendered": "Privacy Policy",
+                  "type": [Function],
+                },
                 "type": [MockFunction],
               },
               "type": "li",
@@ -510,14 +582,18 @@ ShallowWrapper {
                 color="currentColor"
                 size="24"
               />
-              Source on GitLab
+              <WithMergedOptions(TransComponent)>
+                Source on GitLab
+              </WithMergedOptions(TransComponent)>
             </a>
           </li>
           <li>
             <mockConstructor
               to="/privacy"
             >
-              Privacy Policy
+              <WithMergedOptions(TransComponent)>
+                Privacy Policy
+              </WithMergedOptions(TransComponent)>
             </mockConstructor>
           </li>
           <li>
@@ -572,14 +648,18 @@ ShallowWrapper {
                   color="currentColor"
                   size="24"
                 />
-                Source on GitLab
+                <WithMergedOptions(TransComponent)>
+                  Source on GitLab
+                </WithMergedOptions(TransComponent)>
               </a>
             </li>,
             <li>
               <mockConstructor
                 to="/privacy"
               >
-                Privacy Policy
+                <WithMergedOptions(TransComponent)>
+                  Privacy Policy
+                </WithMergedOptions(TransComponent)>
               </mockConstructor>
             </li>,
             <li>
@@ -604,7 +684,9 @@ ShallowWrapper {
                   color="currentColor"
                   size="24"
                 />
-                Source on GitLab
+                <WithMergedOptions(TransComponent)>
+                  Source on GitLab
+                </WithMergedOptions(TransComponent)>
               </a>,
             },
             "ref": null,
@@ -618,7 +700,9 @@ ShallowWrapper {
                     color="currentColor"
                     size="24"
                   />,
-                  "Source on GitLab",
+                  <WithMergedOptions(TransComponent)>
+                    Source on GitLab
+                  </WithMergedOptions(TransComponent)>,
                 ],
                 "href": "https://gitlab.com/javallone/regexper-static",
                 "rel": "external noopener noreferrer",
@@ -638,7 +722,17 @@ ShallowWrapper {
                   "rendered": null,
                   "type": [Function],
                 },
-                "Source on GitLab",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Source on GitLab",
+                  },
+                  "ref": null,
+                  "rendered": "Source on GitLab",
+                  "type": [Function],
+                },
               ],
               "type": "a",
             },
@@ -652,7 +746,9 @@ ShallowWrapper {
               "children": <mockConstructor
                 to="/privacy"
               >
-                Privacy Policy
+                <WithMergedOptions(TransComponent)>
+                  Privacy Policy
+                </WithMergedOptions(TransComponent)>
               </mockConstructor>,
             },
             "ref": null,
@@ -661,11 +757,23 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
-                "children": "Privacy Policy",
+                "children": <WithMergedOptions(TransComponent)>
+                  Privacy Policy
+                </WithMergedOptions(TransComponent)>,
                 "to": "/privacy",
               },
               "ref": null,
-              "rendered": "Privacy Policy",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Privacy Policy",
+                },
+                "ref": null,
+                "rendered": "Privacy Policy",
+                "type": [Function],
+              },
               "type": [MockFunction],
             },
             "type": "li",
@@ -722,14 +830,18 @@ ShallowWrapper {
                   color="currentColor"
                   size="24"
                 />
-                Source on GitLab
+                <WithMergedOptions(TransComponent)>
+                  Source on GitLab
+                </WithMergedOptions(TransComponent)>
               </a>
             </li>
             <li>
               <mockConstructor
                 to="/privacy"
               >
-                Privacy Policy
+                <WithMergedOptions(TransComponent)>
+                  Privacy Policy
+                </WithMergedOptions(TransComponent)>
               </mockConstructor>
             </li>
             <li>
@@ -784,14 +896,18 @@ ShallowWrapper {
                     color="currentColor"
                     size="24"
                   />
-                  Source on GitLab
+                  <WithMergedOptions(TransComponent)>
+                    Source on GitLab
+                  </WithMergedOptions(TransComponent)>
                 </a>
               </li>,
               <li>
                 <mockConstructor
                   to="/privacy"
                 >
-                  Privacy Policy
+                  <WithMergedOptions(TransComponent)>
+                    Privacy Policy
+                  </WithMergedOptions(TransComponent)>
                 </mockConstructor>
               </li>,
               <li>
@@ -816,7 +932,9 @@ ShallowWrapper {
                     color="currentColor"
                     size="24"
                   />
-                  Source on GitLab
+                  <WithMergedOptions(TransComponent)>
+                    Source on GitLab
+                  </WithMergedOptions(TransComponent)>
                 </a>,
               },
               "ref": null,
@@ -830,7 +948,9 @@ ShallowWrapper {
                       color="currentColor"
                       size="24"
                     />,
-                    "Source on GitLab",
+                    <WithMergedOptions(TransComponent)>
+                      Source on GitLab
+                    </WithMergedOptions(TransComponent)>,
                   ],
                   "href": "https://gitlab.com/javallone/regexper-static",
                   "rel": "external noopener noreferrer",
@@ -850,7 +970,17 @@ ShallowWrapper {
                     "rendered": null,
                     "type": [Function],
                   },
-                  "Source on GitLab",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Source on GitLab",
+                    },
+                    "ref": null,
+                    "rendered": "Source on GitLab",
+                    "type": [Function],
+                  },
                 ],
                 "type": "a",
               },
@@ -864,7 +994,9 @@ ShallowWrapper {
                 "children": <mockConstructor
                   to="/privacy"
                 >
-                  Privacy Policy
+                  <WithMergedOptions(TransComponent)>
+                    Privacy Policy
+                  </WithMergedOptions(TransComponent)>
                 </mockConstructor>,
               },
               "ref": null,
@@ -873,11 +1005,23 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
-                  "children": "Privacy Policy",
+                  "children": <WithMergedOptions(TransComponent)>
+                    Privacy Policy
+                  </WithMergedOptions(TransComponent)>,
                   "to": "/privacy",
                 },
                 "ref": null,
-                "rendered": "Privacy Policy",
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Privacy Policy",
+                  },
+                  "ref": null,
+                  "rendered": "Privacy Policy",
+                  "type": [Function],
+                },
                 "type": [MockFunction],
               },
               "type": "li",

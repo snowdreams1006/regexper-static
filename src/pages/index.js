@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { withNamespaces, Trans } from 'react-i18next';
 
 import Metadata from 'components/Metadata';
 import Message from 'components/Message';
 
-const IndexPage = () => <>
+export const IndexPageImpl = () => <>
   <Metadata/>
   <noscript>
     <Message type="error" heading="JavaScript Required">
@@ -13,7 +14,7 @@ const IndexPage = () => <>
         please see the <Link to="/privacy">Privacy Policy</Link>.</p>
     </Message>
   </noscript>
-  <div>Hello world</div>
+  <div><Trans>Hello world</Trans></div>
 </>;
 
-export default IndexPage;
+export default withNamespaces()(IndexPageImpl);

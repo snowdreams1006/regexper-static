@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, StaticQuery, graphql } from 'gatsby';
+import { withNamespaces, Trans } from 'react-i18next';
 
 import GitlabIcon from 'react-feather/dist/icons/gitlab';
 
@@ -32,11 +33,13 @@ export const HeaderImpl = ({ site: { siteMetadata } }) => (
           rel="external noopener noreferrer"
           target="_blank">
           <GitlabIcon />
-          Source on GitLab
+          <Trans>Source on GitLab</Trans>
         </a>
       </li>
       <li>
-        <Link to="/privacy">Privacy Policy</Link>
+        <Link to="/privacy">
+          <Trans>Privacy Policy</Trans>
+        </Link>
       </li>
       <li>
         <LocaleSwitcher />
@@ -56,8 +59,9 @@ HeaderImpl.propTypes = {
   }).isRequired
 };
 
+const TranslatedHeader = withNamespaces()(HeaderImpl);
 const Header = () => <StaticQuery query={ query } render={ data => (
-  <HeaderImpl { ...data } />
+  <TranslatedHeader { ...data } />
 ) } />;
 
 export default Header;

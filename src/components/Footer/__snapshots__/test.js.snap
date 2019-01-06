@@ -11,6 +11,7 @@ ShallowWrapper {
         },
       }
     }
+    t={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -30,25 +31,29 @@ ShallowWrapper {
           className="list"
         >
           <li>
-            Created by 
-            <a
-              href="mailto:jeff.avallone@gmail.com"
-            >
-              Jeff Avallone
-            </a>
+            <WithMergedOptions(TransComponent)>
+              Created by 
+              <a
+                href="mailto:jeff.avallone@gmail.com"
+              >
+                Jeff Avallone
+              </a>
+            </WithMergedOptions(TransComponent)>
           </li>
           <li>
-            Generated images licensed: 
-            <a
-              href="http://creativecommons.org/licenses/by/3.0/"
-              rel="license external noopener noreferrer"
-              target="_blank"
-            >
-              <img
-                alt="Creative Commons CC-BY-3.0 License"
-                src="https://licensebuttons.net/l/by/3.0/80x15.png"
-              />
-            </a>
+            <WithMergedOptions(TransComponent)>
+              Generated images licensed: 
+              <a
+                href="http://creativecommons.org/licenses/by/3.0/"
+                rel="license external noopener noreferrer"
+                target="_blank"
+              >
+                <img
+                  alt="TRANSLATE(Creative Commons CC-BY-3.0 License)"
+                  src="https://licensebuttons.net/l/by/3.0/80x15.png"
+                />
+              </a>
+            </WithMergedOptions(TransComponent)>
           </li>
         </ul>,
         <div
@@ -68,25 +73,29 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <li>
-              Created by 
-              <a
-                href="mailto:jeff.avallone@gmail.com"
-              >
-                Jeff Avallone
-              </a>
+              <WithMergedOptions(TransComponent)>
+                Created by 
+                <a
+                  href="mailto:jeff.avallone@gmail.com"
+                >
+                  Jeff Avallone
+                </a>
+              </WithMergedOptions(TransComponent)>
             </li>,
             <li>
-              Generated images licensed: 
-              <a
-                href="http://creativecommons.org/licenses/by/3.0/"
-                rel="license external noopener noreferrer"
-                target="_blank"
-              >
-                <img
-                  alt="Creative Commons CC-BY-3.0 License"
-                  src="https://licensebuttons.net/l/by/3.0/80x15.png"
-                />
-              </a>
+              <WithMergedOptions(TransComponent)>
+                Generated images licensed: 
+                <a
+                  href="http://creativecommons.org/licenses/by/3.0/"
+                  rel="license external noopener noreferrer"
+                  target="_blank"
+                >
+                  <img
+                    alt="TRANSLATE(Creative Commons CC-BY-3.0 License)"
+                    src="https://licensebuttons.net/l/by/3.0/80x15.png"
+                  />
+                </a>
+              </WithMergedOptions(TransComponent)>
             </li>,
           ],
           "className": "list",
@@ -98,31 +107,48 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": Array [
-                "Created by ",
+              "children": <WithMergedOptions(TransComponent)>
+                Created by 
                 <a
                   href="mailto:jeff.avallone@gmail.com"
                 >
                   Jeff Avallone
-                </a>,
-              ],
+                </a>
+              </WithMergedOptions(TransComponent)>,
             },
             "ref": null,
-            "rendered": Array [
-              "Created by ",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Jeff Avallone",
-                  "href": "mailto:jeff.avallone@gmail.com",
-                },
-                "ref": null,
-                "rendered": "Jeff Avallone",
-                "type": "a",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  "Created by ",
+                  <a
+                    href="mailto:jeff.avallone@gmail.com"
+                  >
+                    Jeff Avallone
+                  </a>,
+                ],
               },
-            ],
+              "ref": null,
+              "rendered": Array [
+                "Created by ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Jeff Avallone",
+                    "href": "mailto:jeff.avallone@gmail.com",
+                  },
+                  "ref": null,
+                  "rendered": "Jeff Avallone",
+                  "type": "a",
+                },
+              ],
+              "type": [Function],
+            },
             "type": "li",
           },
           Object {
@@ -130,52 +156,74 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": Array [
-                "Generated images licensed: ",
+              "children": <WithMergedOptions(TransComponent)>
+                Generated images licensed: 
                 <a
                   href="http://creativecommons.org/licenses/by/3.0/"
                   rel="license external noopener noreferrer"
                   target="_blank"
                 >
                   <img
-                    alt="Creative Commons CC-BY-3.0 License"
+                    alt="TRANSLATE(Creative Commons CC-BY-3.0 License)"
                     src="https://licensebuttons.net/l/by/3.0/80x15.png"
                   />
-                </a>,
-              ],
+                </a>
+              </WithMergedOptions(TransComponent)>,
             },
             "ref": null,
-            "rendered": Array [
-              "Generated images licensed: ",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": <img
-                    alt="Creative Commons CC-BY-3.0 License"
-                    src="https://licensebuttons.net/l/by/3.0/80x15.png"
-                  />,
-                  "href": "http://creativecommons.org/licenses/by/3.0/",
-                  "rel": "license external noopener noreferrer",
-                  "target": "_blank",
-                },
-                "ref": null,
-                "rendered": Object {
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  "Generated images licensed: ",
+                  <a
+                    href="http://creativecommons.org/licenses/by/3.0/"
+                    rel="license external noopener noreferrer"
+                    target="_blank"
+                  >
+                    <img
+                      alt="TRANSLATE(Creative Commons CC-BY-3.0 License)"
+                      src="https://licensebuttons.net/l/by/3.0/80x15.png"
+                    />
+                  </a>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Generated images licensed: ",
+                Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "alt": "Creative Commons CC-BY-3.0 License",
-                    "src": "https://licensebuttons.net/l/by/3.0/80x15.png",
+                    "children": <img
+                      alt="TRANSLATE(Creative Commons CC-BY-3.0 License)"
+                      src="https://licensebuttons.net/l/by/3.0/80x15.png"
+                    />,
+                    "href": "http://creativecommons.org/licenses/by/3.0/",
+                    "rel": "license external noopener noreferrer",
+                    "target": "_blank",
                   },
                   "ref": null,
-                  "rendered": null,
-                  "type": "img",
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "alt": "TRANSLATE(Creative Commons CC-BY-3.0 License)",
+                      "src": "https://licensebuttons.net/l/by/3.0/80x15.png",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "img",
+                  },
+                  "type": "a",
                 },
-                "type": "a",
-              },
-            ],
+              ],
+              "type": [Function],
+            },
             "type": "li",
           },
         ],
@@ -207,25 +255,29 @@ ShallowWrapper {
             className="list"
           >
             <li>
-              Created by 
-              <a
-                href="mailto:jeff.avallone@gmail.com"
-              >
-                Jeff Avallone
-              </a>
+              <WithMergedOptions(TransComponent)>
+                Created by 
+                <a
+                  href="mailto:jeff.avallone@gmail.com"
+                >
+                  Jeff Avallone
+                </a>
+              </WithMergedOptions(TransComponent)>
             </li>
             <li>
-              Generated images licensed: 
-              <a
-                href="http://creativecommons.org/licenses/by/3.0/"
-                rel="license external noopener noreferrer"
-                target="_blank"
-              >
-                <img
-                  alt="Creative Commons CC-BY-3.0 License"
-                  src="https://licensebuttons.net/l/by/3.0/80x15.png"
-                />
-              </a>
+              <WithMergedOptions(TransComponent)>
+                Generated images licensed: 
+                <a
+                  href="http://creativecommons.org/licenses/by/3.0/"
+                  rel="license external noopener noreferrer"
+                  target="_blank"
+                >
+                  <img
+                    alt="TRANSLATE(Creative Commons CC-BY-3.0 License)"
+                    src="https://licensebuttons.net/l/by/3.0/80x15.png"
+                  />
+                </a>
+              </WithMergedOptions(TransComponent)>
             </li>
           </ul>,
           <div
@@ -245,25 +297,29 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <li>
-                Created by 
-                <a
-                  href="mailto:jeff.avallone@gmail.com"
-                >
-                  Jeff Avallone
-                </a>
+                <WithMergedOptions(TransComponent)>
+                  Created by 
+                  <a
+                    href="mailto:jeff.avallone@gmail.com"
+                  >
+                    Jeff Avallone
+                  </a>
+                </WithMergedOptions(TransComponent)>
               </li>,
               <li>
-                Generated images licensed: 
-                <a
-                  href="http://creativecommons.org/licenses/by/3.0/"
-                  rel="license external noopener noreferrer"
-                  target="_blank"
-                >
-                  <img
-                    alt="Creative Commons CC-BY-3.0 License"
-                    src="https://licensebuttons.net/l/by/3.0/80x15.png"
-                  />
-                </a>
+                <WithMergedOptions(TransComponent)>
+                  Generated images licensed: 
+                  <a
+                    href="http://creativecommons.org/licenses/by/3.0/"
+                    rel="license external noopener noreferrer"
+                    target="_blank"
+                  >
+                    <img
+                      alt="TRANSLATE(Creative Commons CC-BY-3.0 License)"
+                      src="https://licensebuttons.net/l/by/3.0/80x15.png"
+                    />
+                  </a>
+                </WithMergedOptions(TransComponent)>
               </li>,
             ],
             "className": "list",
@@ -275,31 +331,48 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": Array [
-                  "Created by ",
+                "children": <WithMergedOptions(TransComponent)>
+                  Created by 
                   <a
                     href="mailto:jeff.avallone@gmail.com"
                   >
                     Jeff Avallone
-                  </a>,
-                ],
+                  </a>
+                </WithMergedOptions(TransComponent)>,
               },
               "ref": null,
-              "rendered": Array [
-                "Created by ",
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Jeff Avallone",
-                    "href": "mailto:jeff.avallone@gmail.com",
-                  },
-                  "ref": null,
-                  "rendered": "Jeff Avallone",
-                  "type": "a",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    "Created by ",
+                    <a
+                      href="mailto:jeff.avallone@gmail.com"
+                    >
+                      Jeff Avallone
+                    </a>,
+                  ],
                 },
-              ],
+                "ref": null,
+                "rendered": Array [
+                  "Created by ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Jeff Avallone",
+                      "href": "mailto:jeff.avallone@gmail.com",
+                    },
+                    "ref": null,
+                    "rendered": "Jeff Avallone",
+                    "type": "a",
+                  },
+                ],
+                "type": [Function],
+              },
               "type": "li",
             },
             Object {
@@ -307,52 +380,74 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": Array [
-                  "Generated images licensed: ",
+                "children": <WithMergedOptions(TransComponent)>
+                  Generated images licensed: 
                   <a
                     href="http://creativecommons.org/licenses/by/3.0/"
                     rel="license external noopener noreferrer"
                     target="_blank"
                   >
                     <img
-                      alt="Creative Commons CC-BY-3.0 License"
+                      alt="TRANSLATE(Creative Commons CC-BY-3.0 License)"
                       src="https://licensebuttons.net/l/by/3.0/80x15.png"
                     />
-                  </a>,
-                ],
+                  </a>
+                </WithMergedOptions(TransComponent)>,
               },
               "ref": null,
-              "rendered": Array [
-                "Generated images licensed: ",
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": <img
-                      alt="Creative Commons CC-BY-3.0 License"
-                      src="https://licensebuttons.net/l/by/3.0/80x15.png"
-                    />,
-                    "href": "http://creativecommons.org/licenses/by/3.0/",
-                    "rel": "license external noopener noreferrer",
-                    "target": "_blank",
-                  },
-                  "ref": null,
-                  "rendered": Object {
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    "Generated images licensed: ",
+                    <a
+                      href="http://creativecommons.org/licenses/by/3.0/"
+                      rel="license external noopener noreferrer"
+                      target="_blank"
+                    >
+                      <img
+                        alt="TRANSLATE(Creative Commons CC-BY-3.0 License)"
+                        src="https://licensebuttons.net/l/by/3.0/80x15.png"
+                      />
+                    </a>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Generated images licensed: ",
+                  Object {
                     "instance": null,
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "alt": "Creative Commons CC-BY-3.0 License",
-                      "src": "https://licensebuttons.net/l/by/3.0/80x15.png",
+                      "children": <img
+                        alt="TRANSLATE(Creative Commons CC-BY-3.0 License)"
+                        src="https://licensebuttons.net/l/by/3.0/80x15.png"
+                      />,
+                      "href": "http://creativecommons.org/licenses/by/3.0/",
+                      "rel": "license external noopener noreferrer",
+                      "target": "_blank",
                     },
                     "ref": null,
-                    "rendered": null,
-                    "type": "img",
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "alt": "TRANSLATE(Creative Commons CC-BY-3.0 License)",
+                        "src": "https://licensebuttons.net/l/by/3.0/80x15.png",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "img",
+                    },
+                    "type": "a",
                   },
-                  "type": "a",
-                },
-              ],
+                ],
+                "type": [Function],
+              },
               "type": "li",
             },
           ],
