@@ -12,13 +12,4 @@ describe('Layout', () => {
     );
     expect(component).toMatchSnapshot();
   });
-
-  test('rendering with a title', () => {
-    const component = shallow(
-      <Layout title="Testing">
-        Example content
-      </Layout>
-    );
-    expect(component).toMatchSnapshot();
-  });
 });

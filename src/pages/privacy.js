@@ -1,9 +1,10 @@
 import React from 'react';
 
-import Layout from 'components/Layout';
+import Metadata from 'components/Metadata';
 import Message from 'components/Message';
 
-const PrivacyPage = () => <Layout title="Privacy Policy">
+const PrivacyPage = () => <>
+  <Metadata title="Privacy Policy" />
   <Message type="info" heading="Privacy Policy">
     <p>
       Regexper and the tools used to create it are all open source. If you are
@@ -41,6 +42,6 @@ const PrivacyPage = () => <Layout title="Privacy Policy">
       Regexper is not supported by ad revenue or sales of any kind.
     </p>
   </Message>
-</Layout>;
+</>;
 
 export default PrivacyPage;

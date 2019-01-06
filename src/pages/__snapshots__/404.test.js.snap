@@ -17,51 +17,11 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
-      "children": <Message
-        heading="404 Page Not Found"
-        type="error"
-      >
-        <p>
-          The page you have requrested could not be found.
-        </p>
-      </Message>,
-      "title": "Page Not Found",
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "children": <p>
-          The page you have requrested could not be found.
-        </p>,
-        "heading": "404 Page Not Found",
-        "type": "error",
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "The page you have requrested could not be found.",
-        },
-        "ref": null,
-        "rendered": "The page you have requrested could not be found.",
-        "type": "p",
-      },
-      "type": [Function],
-    },
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "children": <Message
+      "children": Array [
+        <Metadata
+          title="Page Not Found"
+        />,
+        <Message
           heading="404 Page Not Found"
           type="error"
         >
@@ -69,10 +29,22 @@ ShallowWrapper {
             The page you have requrested could not be found.
           </p>
         </Message>,
-        "title": "Page Not Found",
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "title": "Page Not Found",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
       },
-      "ref": null,
-      "rendered": Object {
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "function",
@@ -97,7 +69,69 @@ ShallowWrapper {
         },
         "type": [Function],
       },
-      "type": [Function],
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <Metadata
+            title="Page Not Found"
+          />,
+          <Message
+            heading="404 Page Not Found"
+            type="error"
+          >
+            <p>
+              The page you have requrested could not be found.
+            </p>
+          </Message>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "title": "Page Not Found",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <p>
+              The page you have requrested could not be found.
+            </p>,
+            "heading": "404 Page Not Found",
+            "type": "error",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "The page you have requrested could not be found.",
+            },
+            "ref": null,
+            "rendered": "The page you have requrested could not be found.",
+            "type": "p",
+          },
+          "type": [Function],
+        },
+      ],
+      "type": Symbol(react.fragment),
     },
   ],
   Symbol(enzyme.__options__): Object {

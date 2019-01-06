@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import Layout from 'components/Layout';
+import Metadata from 'components/Metadata';
 import Message from 'components/Message';
 
-const IndexPage = () => <Layout>
+const IndexPage = () => <>
+  <Metadata/>
   <noscript>
     <Message type="error" heading="JavaScript Required">
       <p>You need JavaScript to use Regexper.</p>
@@ -13,6 +14,6 @@ const IndexPage = () => <Layout>
     </Message>
   </noscript>
   <div>Hello world</div>
-</Layout>;
+</>;
 
 export default IndexPage;

@@ -17,312 +17,11 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
-      "children": <Message
-        heading="Privacy Policy"
-        type="info"
-      >
-        <p>
-          Regexper and the tools used to create it are all open source. If you are concerned that the JavaScript being delivered is in any way malicious, please inspect the source in the 
-          <a
-            href="https://gitlab.com/javallone/regexper-static"
-            rel="external noopener noreferrer"
-            target="_blank"
-          >
-            GitLab repository
-          </a>
-          .
-        </p>
-        <p>
-          There are two data collection tools integrated in the app. These tools are not used to collect personal information:
-        </p>
-        <ul>
-          <li>
-            <b>
-              Google Analytics
-            </b>
-             is used to track browser usage data and application performance. It is configured to anonymize the client IP address.
-          </li>
-          <li>
-            <b>
-              Sentry.io
-            </b>
-             is a tool used to capture and report client-side JavaScript errors. It is configured to not store the client IP address.
-          </li>
-        </ul>
-        <p>
-          Regexper honors the browser 
-          <b>
-            “Do Not Track”
-          </b>
-           setting and will not enable these data collection tools if that setting is enabled. Also, most popular ad blockers will prevent these tools from sending any tracking data. Disabling or blocking these data collection tools will 
-          <b>
-            not
-          </b>
-           impact the performance of this app. The information collected by these tools is used to monitor application performance, determine browser support, and collect error reports.
-        </p>
-        <p>
-          Regexper is not supported by ad revenue or sales of any kind.
-        </p>
-      </Message>,
-      "title": "Privacy Policy",
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "children": Array [
-          <p>
-            Regexper and the tools used to create it are all open source. If you are concerned that the JavaScript being delivered is in any way malicious, please inspect the source in the 
-            <a
-              href="https://gitlab.com/javallone/regexper-static"
-              rel="external noopener noreferrer"
-              target="_blank"
-            >
-              GitLab repository
-            </a>
-            .
-          </p>,
-          <p>
-            There are two data collection tools integrated in the app. These tools are not used to collect personal information:
-          </p>,
-          <ul>
-            <li>
-              <b>
-                Google Analytics
-              </b>
-               is used to track browser usage data and application performance. It is configured to anonymize the client IP address.
-            </li>
-            <li>
-              <b>
-                Sentry.io
-              </b>
-               is a tool used to capture and report client-side JavaScript errors. It is configured to not store the client IP address.
-            </li>
-          </ul>,
-          <p>
-            Regexper honors the browser 
-            <b>
-              “Do Not Track”
-            </b>
-             setting and will not enable these data collection tools if that setting is enabled. Also, most popular ad blockers will prevent these tools from sending any tracking data. Disabling or blocking these data collection tools will 
-            <b>
-              not
-            </b>
-             impact the performance of this app. The information collected by these tools is used to monitor application performance, determine browser support, and collect error reports.
-          </p>,
-          <p>
-            Regexper is not supported by ad revenue or sales of any kind.
-          </p>,
-        ],
-        "heading": "Privacy Policy",
-        "type": "info",
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              "Regexper and the tools used to create it are all open source. If you are concerned that the JavaScript being delivered is in any way malicious, please inspect the source in the ",
-              <a
-                href="https://gitlab.com/javallone/regexper-static"
-                rel="external noopener noreferrer"
-                target="_blank"
-              >
-                GitLab repository
-              </a>,
-              ".",
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            "Regexper and the tools used to create it are all open source. If you are concerned that the JavaScript being delivered is in any way malicious, please inspect the source in the ",
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "GitLab repository",
-                "href": "https://gitlab.com/javallone/regexper-static",
-                "rel": "external noopener noreferrer",
-                "target": "_blank",
-              },
-              "ref": null,
-              "rendered": "GitLab repository",
-              "type": "a",
-            },
-            ".",
-          ],
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "There are two data collection tools integrated in the app. These tools are not used to collect personal information:",
-          },
-          "ref": null,
-          "rendered": "There are two data collection tools integrated in the app. These tools are not used to collect personal information:",
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <li>
-                <b>
-                  Google Analytics
-                </b>
-                 is used to track browser usage data and application performance. It is configured to anonymize the client IP address.
-              </li>,
-              <li>
-                <b>
-                  Sentry.io
-                </b>
-                 is a tool used to capture and report client-side JavaScript errors. It is configured to not store the client IP address.
-              </li>,
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <b>
-                    Google Analytics
-                  </b>,
-                  " is used to track browser usage data and application performance. It is configured to anonymize the client IP address.",
-                ],
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Google Analytics",
-                  },
-                  "ref": null,
-                  "rendered": "Google Analytics",
-                  "type": "b",
-                },
-                " is used to track browser usage data and application performance. It is configured to anonymize the client IP address.",
-              ],
-              "type": "li",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  <b>
-                    Sentry.io
-                  </b>,
-                  " is a tool used to capture and report client-side JavaScript errors. It is configured to not store the client IP address.",
-                ],
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Sentry.io",
-                  },
-                  "ref": null,
-                  "rendered": "Sentry.io",
-                  "type": "b",
-                },
-                " is a tool used to capture and report client-side JavaScript errors. It is configured to not store the client IP address.",
-              ],
-              "type": "li",
-            },
-          ],
-          "type": "ul",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              "Regexper honors the browser ",
-              <b>
-                “Do Not Track”
-              </b>,
-              " setting and will not enable these data collection tools if that setting is enabled. Also, most popular ad blockers will prevent these tools from sending any tracking data. Disabling or blocking these data collection tools will ",
-              <b>
-                not
-              </b>,
-              " impact the performance of this app. The information collected by these tools is used to monitor application performance, determine browser support, and collect error reports.",
-            ],
-          },
-          "ref": null,
-          "rendered": Array [
-            "Regexper honors the browser ",
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "“Do Not Track”",
-              },
-              "ref": null,
-              "rendered": "“Do Not Track”",
-              "type": "b",
-            },
-            " setting and will not enable these data collection tools if that setting is enabled. Also, most popular ad blockers will prevent these tools from sending any tracking data. Disabling or blocking these data collection tools will ",
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "not",
-              },
-              "ref": null,
-              "rendered": "not",
-              "type": "b",
-            },
-            " impact the performance of this app. The information collected by these tools is used to monitor application performance, determine browser support, and collect error reports.",
-          ],
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Regexper is not supported by ad revenue or sales of any kind.",
-          },
-          "ref": null,
-          "rendered": "Regexper is not supported by ad revenue or sales of any kind.",
-          "type": "p",
-        },
-      ],
-      "type": [Function],
-    },
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "children": <Message
+      "children": Array [
+        <Metadata
+          title="Privacy Policy"
+        />,
+        <Message
           heading="Privacy Policy"
           type="info"
         >
@@ -369,10 +68,22 @@ ShallowWrapper {
             Regexper is not supported by ad revenue or sales of any kind.
           </p>
         </Message>,
-        "title": "Privacy Policy",
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "title": "Privacy Policy",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
       },
-      "ref": null,
-      "rendered": Object {
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "function",
@@ -619,7 +330,330 @@ ShallowWrapper {
         ],
         "type": [Function],
       },
-      "type": [Function],
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <Metadata
+            title="Privacy Policy"
+          />,
+          <Message
+            heading="Privacy Policy"
+            type="info"
+          >
+            <p>
+              Regexper and the tools used to create it are all open source. If you are concerned that the JavaScript being delivered is in any way malicious, please inspect the source in the 
+              <a
+                href="https://gitlab.com/javallone/regexper-static"
+                rel="external noopener noreferrer"
+                target="_blank"
+              >
+                GitLab repository
+              </a>
+              .
+            </p>
+            <p>
+              There are two data collection tools integrated in the app. These tools are not used to collect personal information:
+            </p>
+            <ul>
+              <li>
+                <b>
+                  Google Analytics
+                </b>
+                 is used to track browser usage data and application performance. It is configured to anonymize the client IP address.
+              </li>
+              <li>
+                <b>
+                  Sentry.io
+                </b>
+                 is a tool used to capture and report client-side JavaScript errors. It is configured to not store the client IP address.
+              </li>
+            </ul>
+            <p>
+              Regexper honors the browser 
+              <b>
+                “Do Not Track”
+              </b>
+               setting and will not enable these data collection tools if that setting is enabled. Also, most popular ad blockers will prevent these tools from sending any tracking data. Disabling or blocking these data collection tools will 
+              <b>
+                not
+              </b>
+               impact the performance of this app. The information collected by these tools is used to monitor application performance, determine browser support, and collect error reports.
+            </p>
+            <p>
+              Regexper is not supported by ad revenue or sales of any kind.
+            </p>
+          </Message>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "title": "Privacy Policy",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              <p>
+                Regexper and the tools used to create it are all open source. If you are concerned that the JavaScript being delivered is in any way malicious, please inspect the source in the 
+                <a
+                  href="https://gitlab.com/javallone/regexper-static"
+                  rel="external noopener noreferrer"
+                  target="_blank"
+                >
+                  GitLab repository
+                </a>
+                .
+              </p>,
+              <p>
+                There are two data collection tools integrated in the app. These tools are not used to collect personal information:
+              </p>,
+              <ul>
+                <li>
+                  <b>
+                    Google Analytics
+                  </b>
+                   is used to track browser usage data and application performance. It is configured to anonymize the client IP address.
+                </li>
+                <li>
+                  <b>
+                    Sentry.io
+                  </b>
+                   is a tool used to capture and report client-side JavaScript errors. It is configured to not store the client IP address.
+                </li>
+              </ul>,
+              <p>
+                Regexper honors the browser 
+                <b>
+                  “Do Not Track”
+                </b>
+                 setting and will not enable these data collection tools if that setting is enabled. Also, most popular ad blockers will prevent these tools from sending any tracking data. Disabling or blocking these data collection tools will 
+                <b>
+                  not
+                </b>
+                 impact the performance of this app. The information collected by these tools is used to monitor application performance, determine browser support, and collect error reports.
+              </p>,
+              <p>
+                Regexper is not supported by ad revenue or sales of any kind.
+              </p>,
+            ],
+            "heading": "Privacy Policy",
+            "type": "info",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Regexper and the tools used to create it are all open source. If you are concerned that the JavaScript being delivered is in any way malicious, please inspect the source in the ",
+                  <a
+                    href="https://gitlab.com/javallone/regexper-static"
+                    rel="external noopener noreferrer"
+                    target="_blank"
+                  >
+                    GitLab repository
+                  </a>,
+                  ".",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Regexper and the tools used to create it are all open source. If you are concerned that the JavaScript being delivered is in any way malicious, please inspect the source in the ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "GitLab repository",
+                    "href": "https://gitlab.com/javallone/regexper-static",
+                    "rel": "external noopener noreferrer",
+                    "target": "_blank",
+                  },
+                  "ref": null,
+                  "rendered": "GitLab repository",
+                  "type": "a",
+                },
+                ".",
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "There are two data collection tools integrated in the app. These tools are not used to collect personal information:",
+              },
+              "ref": null,
+              "rendered": "There are two data collection tools integrated in the app. These tools are not used to collect personal information:",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <li>
+                    <b>
+                      Google Analytics
+                    </b>
+                     is used to track browser usage data and application performance. It is configured to anonymize the client IP address.
+                  </li>,
+                  <li>
+                    <b>
+                      Sentry.io
+                    </b>
+                     is a tool used to capture and report client-side JavaScript errors. It is configured to not store the client IP address.
+                  </li>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <b>
+                        Google Analytics
+                      </b>,
+                      " is used to track browser usage data and application performance. It is configured to anonymize the client IP address.",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Google Analytics",
+                      },
+                      "ref": null,
+                      "rendered": "Google Analytics",
+                      "type": "b",
+                    },
+                    " is used to track browser usage data and application performance. It is configured to anonymize the client IP address.",
+                  ],
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <b>
+                        Sentry.io
+                      </b>,
+                      " is a tool used to capture and report client-side JavaScript errors. It is configured to not store the client IP address.",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Sentry.io",
+                      },
+                      "ref": null,
+                      "rendered": "Sentry.io",
+                      "type": "b",
+                    },
+                    " is a tool used to capture and report client-side JavaScript errors. It is configured to not store the client IP address.",
+                  ],
+                  "type": "li",
+                },
+              ],
+              "type": "ul",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Regexper honors the browser ",
+                  <b>
+                    “Do Not Track”
+                  </b>,
+                  " setting and will not enable these data collection tools if that setting is enabled. Also, most popular ad blockers will prevent these tools from sending any tracking data. Disabling or blocking these data collection tools will ",
+                  <b>
+                    not
+                  </b>,
+                  " impact the performance of this app. The information collected by these tools is used to monitor application performance, determine browser support, and collect error reports.",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Regexper honors the browser ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "“Do Not Track”",
+                  },
+                  "ref": null,
+                  "rendered": "“Do Not Track”",
+                  "type": "b",
+                },
+                " setting and will not enable these data collection tools if that setting is enabled. Also, most popular ad blockers will prevent these tools from sending any tracking data. Disabling or blocking these data collection tools will ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "not",
+                  },
+                  "ref": null,
+                  "rendered": "not",
+                  "type": "b",
+                },
+                " impact the performance of this app. The information collected by these tools is used to monitor application performance, determine browser support, and collect error reports.",
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Regexper is not supported by ad revenue or sales of any kind.",
+              },
+              "ref": null,
+              "rendered": "Regexper is not supported by ad revenue or sales of any kind.",
+              "type": "p",
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": Symbol(react.fragment),
     },
   ],
   Symbol(enzyme.__options__): Object {
