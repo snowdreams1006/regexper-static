@@ -56,6 +56,9 @@ ShallowWrapper {
               Privacy Policy
             </mockConstructor>
           </li>
+          <li>
+            <LoadNamespace(LocaleSwitcherImpl) />
+          </li>
         </ul>,
       ],
       "className": "header",
@@ -114,6 +117,9 @@ ShallowWrapper {
               >
                 Privacy Policy
               </mockConstructor>
+            </li>,
+            <li>
+              <LoadNamespace(LocaleSwitcherImpl) />
             </li>,
           ],
           "className": "list",
@@ -200,6 +206,25 @@ ShallowWrapper {
             },
             "type": "li",
           },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <LoadNamespace(LocaleSwitcherImpl) />,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": "li",
+          },
         ],
         "type": "ul",
       },
@@ -242,6 +267,9 @@ ShallowWrapper {
               >
                 Privacy Policy
               </mockConstructor>
+            </li>
+            <li>
+              <LoadNamespace(LocaleSwitcherImpl) />
             </li>
           </ul>,
         ],
@@ -301,6 +329,9 @@ ShallowWrapper {
                 >
                   Privacy Policy
                 </mockConstructor>
+              </li>,
+              <li>
+                <LoadNamespace(LocaleSwitcherImpl) />
               </li>,
             ],
             "className": "list",
@@ -384,6 +415,25 @@ ShallowWrapper {
                 "ref": null,
                 "rendered": "Privacy Policy",
                 "type": [MockFunction],
+              },
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <LoadNamespace(LocaleSwitcherImpl) />,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
               },
               "type": "li",
             },
@@ -470,6 +520,9 @@ ShallowWrapper {
               Privacy Policy
             </mockConstructor>
           </li>
+          <li>
+            <LoadNamespace(LocaleSwitcherImpl) />
+          </li>
         </ul>,
       ],
       "className": "header",
@@ -528,6 +581,9 @@ ShallowWrapper {
               >
                 Privacy Policy
               </mockConstructor>
+            </li>,
+            <li>
+              <LoadNamespace(LocaleSwitcherImpl) />
             </li>,
           ],
           "className": "list",
@@ -614,6 +670,25 @@ ShallowWrapper {
             },
             "type": "li",
           },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <LoadNamespace(LocaleSwitcherImpl) />,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": "li",
+          },
         ],
         "type": "ul",
       },
@@ -656,6 +731,9 @@ ShallowWrapper {
               >
                 Privacy Policy
               </mockConstructor>
+            </li>
+            <li>
+              <LoadNamespace(LocaleSwitcherImpl) />
             </li>
           </ul>,
         ],
@@ -715,6 +793,9 @@ ShallowWrapper {
                 >
                   Privacy Policy
                 </mockConstructor>
+              </li>,
+              <li>
+                <LoadNamespace(LocaleSwitcherImpl) />
               </li>,
             ],
             "className": "list",
@@ -798,6 +879,25 @@ ShallowWrapper {
                 "ref": null,
                 "rendered": "Privacy Policy",
                 "type": [MockFunction],
+              },
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <LoadNamespace(LocaleSwitcherImpl) />,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
               },
               "type": "li",
             },

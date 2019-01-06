@@ -4,6 +4,8 @@ import { Link, StaticQuery, graphql } from 'gatsby';
 
 import GitlabIcon from 'react-feather/dist/icons/gitlab';
 
+import LocaleSwitcher from 'components/LocaleSwitcher';
+
 import style from './style.module.css';
 
 const query = graphql`
@@ -35,6 +37,9 @@ export const HeaderImpl = ({ site: { siteMetadata } }) => (
       </li>
       <li>
         <Link to="/privacy">Privacy Policy</Link>
+      </li>
+      <li>
+        <LocaleSwitcher />
       </li>
     </ul>
   </header>

@@ -1,0 +1,11 @@
+@import url('../../globals.module.css');
+
+:root {
+  --control-gradient: var(--color-tan) var(--gradient-tan);
+  --select-height: 2.4rem;
+  --select-width: 10rem;
+}
+
+.switcher {
+  composes: fancy-select;
+}

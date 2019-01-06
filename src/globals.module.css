@@ -11,12 +11,20 @@
   --gradient-green: linear-gradient(to bottom,
     var(--color-green) 0%,
     color(var(--color-green) shade(40%)) 100%);
+  --gradient-tan: linear-gradient(to bottom,
+    var(--color-tan) 0%,
+    color(var(--color-tan) shade(40%)) 100%);
 
   --header-height: 6rem;
   --content-margin: 2rem;
   --spacing-margin: 1rem;
 
   --list-separator-width: 2ex;
+
+  --control-gradient: var(--color-green) var(--gradient-green);
+  --select-height: 2.8rem;
+  --select-width: 12rem;
+  --select-separator-inset: 0.2rem;
 }
 
 .inline-list {
@@ -78,5 +86,44 @@
 
   & li:last-child:after {
     visibility: hidden;
+  }
+}
+
+.fancy-select {
+  margin-left: 1ex;
+  position: relative;
+  vertical-align: bottom;
+  display: inline-block;
+  height: var(--select-height);
+  width: var(--select-width);
+  background: var(--control-gradient);
+  color: var(--color-black);
+  overflow: hidden;
+
+  & select {
+    background: transparent;
+    border: 0 none;
+    font-size: inherit;
+    height: var(--select-height);
+    width: calc(var(--select-width) + 2rem);
+  }
+
+  & svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: var(--select-height);
+    width: var(--select-height);
+    pointer-events: none;
+    background: var(--control-gradient);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: var(--select-separator-inset);
+    right: var(--select-height);
+    height: calc(var(--select-height) - var(--select-separator-inset) * 2);
+    border-right: 0.1rem solid color(var(--color-black) alpha(0.2));
   }
 }
