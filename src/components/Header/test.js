@@ -6,14 +6,14 @@ import { Header } from 'components/Header';
 describe('Header', () => {
   test('rendering', () => {
     const component = shallow(
-      <Header banner="testing" />
+      <Header site={{ siteMetadata: { banner: 'testing' } }} />
     );
     expect(component).toMatchSnapshot();
   });
 
   test('rendering with no banner', () => {
     const component = shallow(
-      <Header banner={ false } />
+      <Header site={{ siteMetadata: { banner: false } }} />
     );
     expect(component).toMatchSnapshot();
   });

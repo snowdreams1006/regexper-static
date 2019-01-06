@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 import { withNamespaces, Trans } from 'react-i18next';
-
-import withQuery from 'lib/with-query';
 
 import style from './style.module.css';
 
@@ -17,7 +15,7 @@ const query = graphql`
   }
 `;
 
-export const Footer = ({ t, buildId }) => (
+export const Footer = ({ t, site: { siteMetadata } }) => (
   <footer className={ style.footer }>
     <ul className={ style.list }>
       <li>
@@ -35,19 +33,22 @@ export const Footer = ({ t, buildId }) => (
       </li>
     </ul>
     <div className={ style.buildId }>
-      { buildId }
+      { siteMetadata.buildId }
     </div>
   </footer>
 );
 
 Footer.propTypes = {
   t: PropTypes.func.isRequired,
-  buildId: PropTypes.string.isRequired
+  site: PropTypes.shape({
+    siteMetadata: PropTypes.shape({
+      buildId: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired
 };
 
-export default [
-  withQuery(query, {
-    toProps: ({ site: { siteMetadata } }) => siteMetadata
-  }),
-  withNamespaces()
-].reduce((component, fn) => fn(component), Footer);
+export default withNamespaces()(props => (
+  <StaticQuery query={ query } render={ data => (
+    <Footer { ...props } { ...data } />
+  ) } />
+));
