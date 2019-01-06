@@ -29,7 +29,7 @@ describe('SentryBoundary', () => {
     component.find('Child').simulateError(error);
     // NOTE: Enzyme doesn't call getDerivedStateFromError yet, so we have to
     // set the state manually
-    component.setState({ hasError: true });
+    component.setState(SentryBoundary.getDerivedStateFromError(error));
 
     expect(Sentry.captureException).toHaveBeenCalledWith(
       error,
