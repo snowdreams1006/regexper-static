@@ -7,7 +7,7 @@ import { Footer } from 'components/Footer';
 describe('Footer', () => {
   test('rendering', () => {
     const component = shallow(
-      <Footer site={{ siteMetadata: { buildId: 'abc-123' } }} t={ mockT } />
+      <Footer buildId="abc-123" t={ mockT } />
     );
     expect(component).toMatchSnapshot();
   });

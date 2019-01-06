@@ -19,10 +19,10 @@ const query = graphql`
   }
 `;
 
-export const Header = ({ site: { siteMetadata } }) => (
+export const Header = ({ banner }) => (
   <header
     className={ style.header }
-    data-banner={ siteMetadata.banner || null }>
+    data-banner={ banner || null }>
     <h1>
       <Link to="/">Regexper</Link>
     </h1>
@@ -49,18 +49,14 @@ export const Header = ({ site: { siteMetadata } }) => (
 );
 
 Header.propTypes = {
-  site: PropTypes.shape({
-    siteMetadata: PropTypes.shape({
-      banner: PropTypes.oneOfType([
-        PropTypes.bool,
-        PropTypes.string
-      ]).isRequired
-    }).isRequired
-  }).isRequired
+  banner: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.string
+  ]).isRequired
 };
 
 export default withNamespaces()(props => (
-  <StaticQuery query={ query } render={ data => (
-    <Header { ...props } { ...data } />
+  <StaticQuery query={ query } render={ ({ site: { siteMetadata } }) => (
+    <Header { ...props } { ...siteMetadata } />
   ) } />
 ));

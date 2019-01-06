@@ -4,13 +4,7 @@ exports[`Footer rendering 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Footer
-    site={
-      Object {
-        "siteMetadata": Object {
-          "buildId": "abc-123",
-        },
-      }
-    }
+    buildId="abc-123"
     t={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
