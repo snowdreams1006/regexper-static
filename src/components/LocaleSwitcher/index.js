@@ -5,21 +5,8 @@ import ExpandIcon from 'react-feather/dist/icons/chevrons-down';
 
 import i18n, { locales } from 'i18n';
 
+import localeToAvailable from './locale-to-available';
 import style from './style.module.css';
-
-const localeToAvailable = (locale, available, defaultLocale) => {
-  if (available.includes(locale)) {
-    return locale;
-  }
-
-  const parts = locale.split('-');
-
-  if (parts.length > 0 && available.includes(parts[0])) {
-    return parts[0];
-  }
-
-  return defaultLocale;
-};
 
 export class LocaleSwitcher extends React.PureComponent {
   state = {
