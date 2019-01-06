@@ -20,11 +20,11 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": Array [
-        <LoadNamespace(Component) />,
+        <LoadNamespace(WithQuery(Header)) />,
         <SentryBoundary>
           Example content
         </SentryBoundary>,
-        <LoadNamespace(Component) />,
+        <LoadNamespace(WithQuery(Footer)) />,
       ],
     },
     "ref": null,
@@ -68,11 +68,11 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": Array [
-          <LoadNamespace(Component) />,
+          <LoadNamespace(WithQuery(Header)) />,
           <SentryBoundary>
             Example content
           </SentryBoundary>,
-          <LoadNamespace(Component) />,
+          <LoadNamespace(WithQuery(Footer)) />,
         ],
       },
       "ref": null,

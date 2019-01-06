@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, StaticQuery, graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import { withNamespaces, Trans } from 'react-i18next';
 
 import GitlabIcon from 'react-feather/dist/icons/gitlab';
 
+import withQuery from 'lib/with-query';
 import LocaleSwitcher from 'components/LocaleSwitcher';
 
 import style from './style.module.css';
@@ -19,10 +20,10 @@ const query = graphql`
   }
 `;
 
-export const Header = ({ site: { siteMetadata } }) => (
+export const Header = ({ banner }) => (
   <header
     className={ style.header }
-    data-banner={ siteMetadata.banner || null }>
+    data-banner={ banner || null }>
     <h1>
       <Link to="/">Regexper</Link>
     </h1>
@@ -49,18 +50,15 @@ export const Header = ({ site: { siteMetadata } }) => (
 );
 
 Header.propTypes = {
-  site: PropTypes.shape({
-    siteMetadata: PropTypes.shape({
-      banner: PropTypes.oneOfType([
-        PropTypes.bool,
-        PropTypes.string
-      ]).isRequired
-    }).isRequired
-  }).isRequired
+  banner: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.string
+  ]).isRequired
 };
 
-export default withNamespaces()(props => (
-  <StaticQuery query={ query } render={ data => (
-    <Header { ...props } { ...data } />
-  ) } />
-));
+export default [
+  withQuery(query, {
+    toProps: ({ site: { siteMetadata } }) => siteMetadata
+  }),
+  withNamespaces()
+].reduce((component, fn) => fn(component), Header);

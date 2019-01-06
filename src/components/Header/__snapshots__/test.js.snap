@@ -4,13 +4,7 @@ exports[`Header rendering 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Header
-    site={
-      Object {
-        "siteMetadata": Object {
-          "banner": "testing",
-        },
-      }
-    }
+    banner="testing"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -540,13 +534,7 @@ exports[`Header rendering with no banner 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Header
-    site={
-      Object {
-        "siteMetadata": Object {
-          "banner": false,
-        },
-      }
-    }
+    banner={false}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
