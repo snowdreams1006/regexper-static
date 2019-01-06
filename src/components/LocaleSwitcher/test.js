@@ -2,12 +2,12 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import i18n from 'i18n';
-import { LocaleSwitcherImpl } from 'components/LocaleSwitcher';
+import { LocaleSwitcher } from 'components/LocaleSwitcher';
 
 describe('LocaleSwitcher', () => {
   test('rendering', () => {
     const component = shallow(
-      <LocaleSwitcherImpl />
+      <LocaleSwitcher />
     );
     expect(component).toMatchSnapshot();
   });
@@ -16,7 +16,7 @@ describe('LocaleSwitcher', () => {
     jest.spyOn(i18n, 'changeLanguage');
 
     const component = shallow(
-      <LocaleSwitcherImpl />
+      <LocaleSwitcher />
     );
     const selectInput = component.find('select');
     selectInput.value = 'other';

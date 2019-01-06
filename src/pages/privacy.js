@@ -5,7 +5,7 @@ import { withNamespaces, Trans } from 'react-i18next';
 import Metadata from 'components/Metadata';
 import Message from 'components/Message';
 
-export const PrivacyPageImpl = ({ t }) => <>
+export const PrivacyPage = ({ t }) => <>
   <Metadata title={ t('Privacy Policy') } />
   <Message type="info" heading={ t('Privacy Policy') }>
     <Trans i18nKey="Privacy policy copy">
@@ -49,8 +49,8 @@ export const PrivacyPageImpl = ({ t }) => <>
   </Message>
   </>;
 
-PrivacyPageImpl.propTypes = {
+PrivacyPage.propTypes = {
   t: PropTypes.func.isRequired
 };
 
-export default withNamespaces()(PrivacyPageImpl);
+export default withNamespaces()(PrivacyPage);

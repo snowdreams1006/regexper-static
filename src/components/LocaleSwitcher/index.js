@@ -21,7 +21,7 @@ const localeToAvailable = (locale, available, defaultLocale) => {
   return defaultLocale;
 };
 
-export class LocaleSwitcherImpl extends React.PureComponent {
+export class LocaleSwitcher extends React.PureComponent {
   state = {
     current: localeToAvailable(
       i18n.language || '',
@@ -64,4 +64,4 @@ export class LocaleSwitcherImpl extends React.PureComponent {
   }
 }
 
-export default withNamespaces()(LocaleSwitcherImpl);
+export default withNamespaces()(LocaleSwitcher);

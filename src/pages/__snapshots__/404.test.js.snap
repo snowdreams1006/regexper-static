@@ -3,7 +3,7 @@
 exports[`Error Page rendering 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ErrorPageImpl
+  Symbol(enzyme.__unrendered__): <ErrorPage
     t={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {

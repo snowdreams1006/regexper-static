@@ -5,7 +5,7 @@ import { withNamespaces, Trans } from 'react-i18next';
 import Metadata from 'components/Metadata';
 import Message from 'components/Message';
 
-export const IndexPageImpl = () => <>
+export const IndexPage = () => <>
   <Metadata/>
   <noscript>
     <Message type="error" heading="JavaScript Required">
@@ -17,4 +17,4 @@ export const IndexPageImpl = () => <>
   <div><Trans>Hello world</Trans></div>
 </>;
 
-export default withNamespaces()(IndexPageImpl);
+export default withNamespaces()(IndexPage);

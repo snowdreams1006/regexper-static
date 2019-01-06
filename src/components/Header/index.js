@@ -19,7 +19,7 @@ const query = graphql`
   }
 `;
 
-export const HeaderImpl = ({ site: { siteMetadata } }) => (
+export const Header = ({ site: { siteMetadata } }) => (
   <header
     className={ style.header }
     data-banner={ siteMetadata.banner || null }>
@@ -48,7 +48,7 @@ export const HeaderImpl = ({ site: { siteMetadata } }) => (
   </header>
 );
 
-HeaderImpl.propTypes = {
+Header.propTypes = {
   site: PropTypes.shape({
     siteMetadata: PropTypes.shape({
       banner: PropTypes.oneOfType([
@@ -59,9 +59,8 @@ HeaderImpl.propTypes = {
   }).isRequired
 };
 
-const TranslatedHeader = withNamespaces()(HeaderImpl);
-const Header = () => <StaticQuery query={ query } render={ data => (
-  <TranslatedHeader { ...data } />
-) } />;
-
-export default Header;
+export default withNamespaces()(props => (
+  <StaticQuery query={ query } render={ data => (
+    <Header { ...props } { ...data } />
+  ) } />
+));

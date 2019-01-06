@@ -5,7 +5,7 @@ import { withNamespaces, Trans } from 'react-i18next';
 
 import Message from 'components/Message';
 
-export class SentryErrorImpl extends React.Component {
+export class SentryError extends React.Component {
   reportError = event => {
     event.preventDefault();
 
@@ -26,8 +26,8 @@ export class SentryErrorImpl extends React.Component {
   }
 }
 
-SentryErrorImpl.propTypes = {
+SentryError.propTypes = {
   t: PropTypes.func.isRequired
 };
 
-export default withNamespaces()(SentryErrorImpl);
+export default withNamespaces()(SentryError);

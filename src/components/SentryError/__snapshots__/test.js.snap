@@ -3,7 +3,7 @@
 exports[`SentryError rendering 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <SentryErrorImpl
+  Symbol(enzyme.__unrendered__): <SentryError
     t={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {

@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Footer rendering implementation 1`] = `
+exports[`Footer rendering 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <FooterImpl
+  Symbol(enzyme.__unrendered__): <Footer
     site={
       Object {
         "siteMetadata": Object {
@@ -467,80 +467,6 @@ ShallowWrapper {
         },
       ],
       "type": "footer",
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getDerivedStateFromProps": true,
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-  },
-}
-`;
-
-exports[`Footer rendering with query 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Footer />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "function",
-    "props": Object {
-      "query": "
-  query FooterQuery {
-    site {
-      siteMetadata {
-        buildId
-      }
-    }
-  }
-",
-      "render": [Function],
-    },
-    "ref": null,
-    "rendered": null,
-    "type": [MockFunction],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "query": "
-  query FooterQuery {
-    site {
-      siteMetadata {
-        buildId
-      }
-    }
-  }
-",
-        "render": [Function],
-      },
-      "ref": null,
-      "rendered": null,
-      "type": [MockFunction],
     },
   ],
   Symbol(enzyme.__options__): Object {

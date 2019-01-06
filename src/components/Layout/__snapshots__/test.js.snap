@@ -20,11 +20,11 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": Array [
-        <Header />,
+        <LoadNamespace(Component) />,
         <SentryBoundary>
           Example content
         </SentryBoundary>,
-        <Footer />,
+        <LoadNamespace(Component) />,
       ],
     },
     "ref": null,
@@ -32,7 +32,7 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {},
         "ref": null,
         "rendered": null,
@@ -52,7 +52,7 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {},
         "ref": null,
         "rendered": null,
@@ -68,11 +68,11 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": Array [
-          <Header />,
+          <LoadNamespace(Component) />,
           <SentryBoundary>
             Example content
           </SentryBoundary>,
-          <Footer />,
+          <LoadNamespace(Component) />,
         ],
       },
       "ref": null,
@@ -80,7 +80,7 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {},
           "ref": null,
           "rendered": null,
@@ -100,7 +100,7 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {},
           "ref": null,
           "rendered": null,

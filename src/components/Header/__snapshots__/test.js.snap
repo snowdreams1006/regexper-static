@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header rendering implementation 1`] = `
+exports[`Header rendering 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <HeaderImpl
+  Symbol(enzyme.__unrendered__): <Header
     site={
       Object {
         "siteMetadata": Object {
@@ -61,7 +61,7 @@ ShallowWrapper {
             </mockConstructor>
           </li>
           <li>
-            <LoadNamespace(LocaleSwitcherImpl) />
+            <LoadNamespace(LocaleSwitcher) />
           </li>
         </ul>,
       ],
@@ -127,7 +127,7 @@ ShallowWrapper {
               </mockConstructor>
             </li>,
             <li>
-              <LoadNamespace(LocaleSwitcherImpl) />
+              <LoadNamespace(LocaleSwitcher) />
             </li>,
           ],
           "className": "list",
@@ -247,7 +247,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": <LoadNamespace(LocaleSwitcherImpl) />,
+              "children": <LoadNamespace(LocaleSwitcher) />,
             },
             "ref": null,
             "rendered": Object {
@@ -309,7 +309,7 @@ ShallowWrapper {
               </mockConstructor>
             </li>
             <li>
-              <LoadNamespace(LocaleSwitcherImpl) />
+              <LoadNamespace(LocaleSwitcher) />
             </li>
           </ul>,
         ],
@@ -375,7 +375,7 @@ ShallowWrapper {
                 </mockConstructor>
               </li>,
               <li>
-                <LoadNamespace(LocaleSwitcherImpl) />
+                <LoadNamespace(LocaleSwitcher) />
               </li>,
             ],
             "className": "list",
@@ -495,7 +495,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <LoadNamespace(LocaleSwitcherImpl) />,
+                "children": <LoadNamespace(LocaleSwitcher) />,
               },
               "ref": null,
               "rendered": Object {
@@ -536,10 +536,10 @@ ShallowWrapper {
 }
 `;
 
-exports[`Header rendering implementation with no banner 1`] = `
+exports[`Header rendering with no banner 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <HeaderImpl
+  Symbol(enzyme.__unrendered__): <Header
     site={
       Object {
         "siteMetadata": Object {
@@ -597,7 +597,7 @@ ShallowWrapper {
             </mockConstructor>
           </li>
           <li>
-            <LoadNamespace(LocaleSwitcherImpl) />
+            <LoadNamespace(LocaleSwitcher) />
           </li>
         </ul>,
       ],
@@ -663,7 +663,7 @@ ShallowWrapper {
               </mockConstructor>
             </li>,
             <li>
-              <LoadNamespace(LocaleSwitcherImpl) />
+              <LoadNamespace(LocaleSwitcher) />
             </li>,
           ],
           "className": "list",
@@ -783,7 +783,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": <LoadNamespace(LocaleSwitcherImpl) />,
+              "children": <LoadNamespace(LocaleSwitcher) />,
             },
             "ref": null,
             "rendered": Object {
@@ -845,7 +845,7 @@ ShallowWrapper {
               </mockConstructor>
             </li>
             <li>
-              <LoadNamespace(LocaleSwitcherImpl) />
+              <LoadNamespace(LocaleSwitcher) />
             </li>
           </ul>,
         ],
@@ -911,7 +911,7 @@ ShallowWrapper {
                 </mockConstructor>
               </li>,
               <li>
-                <LoadNamespace(LocaleSwitcherImpl) />
+                <LoadNamespace(LocaleSwitcher) />
               </li>,
             ],
             "className": "list",
@@ -1031,7 +1031,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": <LoadNamespace(LocaleSwitcherImpl) />,
+                "children": <LoadNamespace(LocaleSwitcher) />,
               },
               "ref": null,
               "rendered": Object {
@@ -1050,80 +1050,6 @@ ShallowWrapper {
         },
       ],
       "type": "header",
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getDerivedStateFromProps": true,
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-  },
-}
-`;
-
-exports[`Header rendering with query 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Header />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "function",
-    "props": Object {
-      "query": "
-  query HeaderQuery {
-    site {
-      siteMetadata {
-        banner
-      }
-    }
-  }
-",
-      "render": [Function],
-    },
-    "ref": null,
-    "rendered": null,
-    "type": [MockFunction],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "query": "
-  query HeaderQuery {
-    site {
-      siteMetadata {
-        banner
-      }
-    }
-  }
-",
-        "render": [Function],
-      },
-      "ref": null,
-      "rendered": null,
-      "type": [MockFunction],
     },
   ],
   Symbol(enzyme.__options__): Object {

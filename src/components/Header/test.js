@@ -1,26 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Header, { HeaderImpl } from 'components/Header';
+import { Header } from 'components/Header';
 
 describe('Header', () => {
-  test('rendering with query', () => {
+  test('rendering', () => {
     const component = shallow(
-      <Header />
+      <Header site={{ siteMetadata: { banner: 'testing' } }} />
     );
     expect(component).toMatchSnapshot();
   });
 
-  test('rendering implementation', () => {
+  test('rendering with no banner', () => {
     const component = shallow(
-      <HeaderImpl site={{ siteMetadata: { banner: 'testing' } }} />
-    );
-    expect(component).toMatchSnapshot();
-  });
-
-  test('rendering implementation with no banner', () => {
-    const component = shallow(
-      <HeaderImpl site={{ siteMetadata: { banner: false } }} />
+      <Header site={{ siteMetadata: { banner: false } }} />
     );
     expect(component).toMatchSnapshot();
   });

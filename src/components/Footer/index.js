@@ -15,7 +15,7 @@ const query = graphql`
   }
 `;
 
-export const FooterImpl = ({ t, site: { siteMetadata } }) => (
+export const Footer = ({ t, site: { siteMetadata } }) => (
   <footer className={ style.footer }>
     <ul className={ style.list }>
       <li>
@@ -38,7 +38,7 @@ export const FooterImpl = ({ t, site: { siteMetadata } }) => (
   </footer>
 );
 
-FooterImpl.propTypes = {
+Footer.propTypes = {
   t: PropTypes.func.isRequired,
   site: PropTypes.shape({
     siteMetadata: PropTypes.shape({
@@ -47,9 +47,8 @@ FooterImpl.propTypes = {
   }).isRequired
 };
 
-const TranslatedFooter = withNamespaces()(FooterImpl);
-const Footer = () => <StaticQuery query={ query } render={ data => (
-  <TranslatedFooter { ...data } />
-) } />;
-
-export default Footer;
+export default withNamespaces()(props => (
+  <StaticQuery query={ query } render={ data => (
+    <Footer { ...props } { ...data } />
+  ) } />
+));
