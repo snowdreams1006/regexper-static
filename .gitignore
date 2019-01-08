@@ -24,3 +24,7 @@ public/
 
 # Test coverage
 coverage/
+
+# Firebase
+.firebase/
+firebase-debug.log
