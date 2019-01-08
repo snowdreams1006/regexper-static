@@ -51,6 +51,7 @@
       "node_modules"
     ],
     "setupTestFrameworkScriptFile": "<rootDir>/jest/setup.js",
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
     "testPathIgnorePatterns": [
       "node_modules",
       ".cache"
