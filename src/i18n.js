@@ -18,6 +18,10 @@ i18n
     saveMissing: true,
     saveMissingTo: 'current',
     missingKeyHandler: (lng, ns, key, fallback) => {
+      if (!i18n.getResourceBundle(lng)) {
+        return; // Don't bother logging if the resource bundle isn't loaded
+      }
+
       const escapedKey = key.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
       // eslint-disable-next-line no-console
       if (console && console.group && console.log) {
@@ -35,14 +39,14 @@ i18n
     backend: {
       loadPath: '{{lng}}',
       parse: data => data,
-      ajax: (lng, options, callback) => {
+      ajax: async (lng, options, callback) => {
         try {
-          import(`locales/${ lng }.yaml`).then(
-            locale => callback(locale, { status: '200' }),
-            () => callback(null, { status: '404' }));
+          const { default: locale } = await import(`locales/${ lng }.yaml`);
+
+          callback(locale, { status: '200' });
         }
         catch (e) {
-          callback(null, { status: '404' });
+          callback(null, { status: '500' });
         }
       }
     }
