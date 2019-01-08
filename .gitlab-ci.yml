@@ -3,6 +3,30 @@ image: node:latest
 stages:
   - test
   - build
+  - deploy
+
+.preview_job: &preview_job
+  only:
+    - gatsby # TODO: Change to master once merged
+
+.production_job: &production_job
+  only:
+    - /^release-.*$/
+
+.build_template: &build_template
+  stage: build
+  dependencies: []
+  artifacts:
+    paths:
+      - public/
+  script:
+    - yarn build
+
+.deploy_template: &deploy_template
+  stage: deploy
+  script:
+    - yarn firebase use --token $FIREBASE_DEPLOY_KEY default
+    - yarn firebase deploy --only hosting:$DEPLOY_ENV -m "Pipeline $CI_PIPELINE_ID, Build $CI_BUILD_ID" --non-interactive --token $FIREBASE_DEPLOY_KEY
 
 cache:
   paths:
@@ -25,13 +49,39 @@ test-unit:
     paths:
       - coverage/
 
-pages:
-  stage: build
-  script:
-    - yarn build
-    - gzip -k -6 $(find public/ -type f)
-  artifacts:
-    paths:
-      - public
-  only:
-    - master
+build-preview:
+  <<: *build_template
+  <<: *preview_job
+  variables:
+    BANNER: preview
+    DEPLOY_ENV: preview
+    GA_PROPERTY: $PREVIEW_GA_PROPERTY
+
+build-production:
+  <<: *build_template
+  <<: *production_job
+  variables:
+    DEPLOY_ENV: production
+    GA_PROPERTY: $PROD_GA_PROPERTY
+
+deploy-preview:
+  <<: *deploy_template
+  <<: *preview_job
+  dependencies:
+    - build-preview
+  environment:
+    name: preview
+    url: https://preview.regexper.com
+  variables:
+    DEPLOY_ENV: preview
+
+deploy-production:
+  <<: *deploy_template
+  <<: *production_job
+  dependencies:
+    - build-production
+  environment:
+    name: production
+    url: https://regexper.com
+  variables:
+    DEPLOY_ENV: production
