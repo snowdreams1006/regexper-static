@@ -3,7 +3,10 @@
 exports[`Layout rendering 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Layout>
+  Symbol(enzyme.__unrendered__): <Layout
+    banner="Test Banner"
+    buildId="test-buildid"
+  >
     Example content
   </Layout>,
   Symbol(enzyme.__renderer__): Object {
@@ -20,11 +23,15 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": Array [
-        <LoadNamespace(Component) />,
+        <LoadNamespace(Header)
+          banner="Test Banner"
+        />,
         <SentryBoundary>
           Example content
         </SentryBoundary>,
-        <LoadNamespace(Component) />,
+        <LoadNamespace(Footer)
+          buildId="test-buildid"
+        />,
       ],
     },
     "ref": null,
@@ -33,7 +40,9 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {},
+        "props": Object {
+          "banner": "Test Banner",
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -53,7 +62,9 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {},
+        "props": Object {
+          "buildId": "test-buildid",
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -68,11 +79,15 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": Array [
-          <LoadNamespace(Component) />,
+          <LoadNamespace(Header)
+            banner="Test Banner"
+          />,
           <SentryBoundary>
             Example content
           </SentryBoundary>,
-          <LoadNamespace(Component) />,
+          <LoadNamespace(Footer)
+            buildId="test-buildid"
+          />,
         ],
       },
       "ref": null,
@@ -81,7 +96,9 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {},
+          "props": Object {
+            "banner": "Test Banner",
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -101,7 +118,9 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {},
+          "props": Object {
+            "buildId": "test-buildid",
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],

@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Layout from 'components/Layout';
+import { Layout } from 'components/Layout';
 
 describe('Layout', () => {
   test('rendering', () => {
     const component = shallow(
-      <Layout>
+      <Layout banner="Test Banner" buildId="test-buildid">
         Example content
       </Layout>
     );

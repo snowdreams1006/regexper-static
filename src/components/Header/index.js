@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, StaticQuery, graphql } from 'gatsby';
+import { Link } from 'gatsby';
 import { withNamespaces, Trans } from 'react-i18next';
 
 import GitlabIcon from 'react-feather/dist/icons/gitlab';
@@ -8,16 +8,6 @@ import GitlabIcon from 'react-feather/dist/icons/gitlab';
 import LocaleSwitcher from 'components/LocaleSwitcher';
 
 import style from './style.module.css';
-
-const query = graphql`
-  query HeaderQuery {
-    site {
-      siteMetadata {
-        banner
-      }
-    }
-  }
-`;
 
 export const Header = ({ banner }) => (
   <header
@@ -55,8 +45,4 @@ Header.propTypes = {
   ]).isRequired
 };
 
-export default withNamespaces()(props => (
-  <StaticQuery query={ query } render={ ({ site: { siteMetadata } }) => (
-    <Header { ...props } { ...siteMetadata } />
-  ) } />
-));
+export default withNamespaces()(Header);
