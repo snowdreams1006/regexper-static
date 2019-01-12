@@ -41,7 +41,10 @@ i18n
       parse: data => data,
       ajax: async (lng, options, callback) => {
         try {
-          const { default: locale } = await import(`locales/${ lng }.yaml`);
+          const { default: locale } = await import(
+            /* webpackInclude: /\.yaml$/ */
+            /* webpackChunkName: "locale-[index]" */
+            `locales/${ lng }.yaml`);
 
           callback(locale, { status: '200' });
         }
