@@ -6,7 +6,7 @@ import style from './style.module.css';
 
 import AppContext from 'components/AppContext';
 
-class SVG extends React.PureComponent {
+class Render extends React.PureComponent {
   static contextType = AppContext
 
   svgContainer = React.createRef()
@@ -33,6 +33,10 @@ class SVG extends React.PureComponent {
   }
 
   render() {
+    const { syntax, expr } = this.context;
+
+    console.log('Render:', syntax, expr); // eslint-disable-line no-console
+
     // Demo rendering for now
     return <div className={ style.render } ref={ this.svgContainer }>
       <PlaceholderIcon />
@@ -40,4 +44,4 @@ class SVG extends React.PureComponent {
   }
 }
 
-export default SVG;
+export default Render;

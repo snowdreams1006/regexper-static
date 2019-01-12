@@ -4,13 +4,12 @@ import { AppContextProvider } from 'components/AppContext';
 import Form from 'components/Form';
 import Loader from 'components/Loader';
 import Message from 'components/Message';
-import SVG from 'components/SVG';
+import Render from 'components/Render';
 
 class App extends React.PureComponent {
   state={}
 
   handleRender = ({ syntax, expr }) => {
-    console.log('Render:', syntax, expr); // eslint-disable-line no-console
     this.setState({ syntax, expr });
   }
 
@@ -30,7 +29,7 @@ class App extends React.PureComponent {
         <a href="#retry" onClick={ this.handleRetry }>Retry</a>
       </Message>
 
-      <SVG />
+      <Render />
     </AppContextProvider>;
   }
 }
