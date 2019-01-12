@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { withNamespaces, Trans } from 'react-i18next';
 
 import Metadata from 'components/Metadata';
 import Message from 'components/Message';
+import App from 'components/App';
 
 export const IndexPage = () => <>
   <Metadata/>
@@ -14,7 +14,7 @@ export const IndexPage = () => <>
         please see the <Link to="/privacy">Privacy Policy</Link>.</p>
     </Message>
   </noscript>
-  <div><Trans>Hello world</Trans></div>
+  <App />
 </>;
 
-export default withNamespaces()(IndexPage);
+export default IndexPage;

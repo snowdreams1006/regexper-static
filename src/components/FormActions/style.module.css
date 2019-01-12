@@ -1,0 +1,19 @@
+@import url('../../globals.module.css');
+
+.actions {
+  composes: inline-list with-separator-left;
+  float: right;
+
+  @media (max-width: 700px) {
+    & li {
+      display: block;
+    }
+  }
+
+  & svg {
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+}

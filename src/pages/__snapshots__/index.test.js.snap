@@ -22,10 +22,6 @@ exports[`Index Page rendering 1`] = `
       </p>
     </Message>
   </noscript>
-  <div>
-    <WithMergedOptions(TransComponent)>
-      Hello world
-    </WithMergedOptions(TransComponent)>
-  </div>
+  <App />
 </Fragment>
 `;

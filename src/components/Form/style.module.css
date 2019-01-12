@@ -1,0 +1,49 @@
+@import url('../../globals.module.css');
+
+:root {
+  --control-gradient: var(--color-green) var(--gradient-green);
+  --select-height: 2.8rem;
+  --select-width: 12rem;
+  --entry-line-height: 1.5em;
+}
+
+.form {
+  margin: var(--spacing-margin) 0;
+  overflow: hidden; /* Keep floated content in the box */
+
+  & textarea {
+    display: block;
+    font-size: inherit;
+    line-height: var(--entry-line-height);
+    border: 0 none;
+    outline: none;
+    background: var(--color-tan);
+    padding: 0 1rem;
+    margin-bottom: var(--spacing-margin);
+    width: 100% !important; /* "!important" to prevent user changing width */
+    height: calc(3 * var(--entry-line-height));
+    box-sizing: border-box;
+    font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  }
+
+  & textarea::placeholder {
+    color: var(--color-brown);
+  }
+
+  & button {
+    font-size: inherit;
+    font-weight: bold;
+    line-height: 2.8rem;
+    width: 10rem;
+    border: 0 none;
+    background: var(--control-gradient);
+    color: var(--color-black);
+    cursor: pointer;
+    padding: 0;
+    margin-right: 1rem;
+  }
+}
+
+.select {
+  composes: fancy-select;
+}
