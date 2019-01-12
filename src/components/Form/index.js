@@ -20,6 +20,15 @@ class Form extends React.PureComponent {
     syntax: this.context.syntax
   }
 
+  componentDidUpdate() {
+    if (this.state.expr === undefined && this.state.syntax === undefined) {
+      this.setState({
+        syntax: this.context.syntax,
+        expr: this.context.expr
+      });
+    }
+  }
+
   handleSubmit = event => {
     event.preventDefault();
 

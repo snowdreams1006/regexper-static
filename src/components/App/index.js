@@ -146,7 +146,7 @@ class App extends React.PureComponent {
     };
 
     return <AppContext.Provider value={ context }>
-      { syntax && <Form /> }
+      <Form />
 
       <Loader />
 
