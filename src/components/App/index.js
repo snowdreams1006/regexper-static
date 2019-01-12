@@ -76,11 +76,13 @@ const createPngLink = async ({ svg, width, height }) => {
 };
 
 class App extends React.PureComponent {
-  state={
-    ...readURLHash()
-  }
+  state={}
 
   componentDidMount() {
+    // Gatsby doesn't have document.location, so readURLHash can't be called
+    // until here
+    this.setState(readURLHash());
+
     window.addEventListener('hashchange', this.handleHashChange);
     this.handleHashChange();
   }
@@ -144,7 +146,7 @@ class App extends React.PureComponent {
     };
 
     return <AppContext.Provider value={ context }>
-      <Form />
+      { syntax && <Form /> }
 
       <Loader />
 
