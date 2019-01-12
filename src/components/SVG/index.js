@@ -17,7 +17,7 @@ class SVG extends React.PureComponent {
     }
 
     const svg = this.svgContainer.current.querySelector('svg');
-    this.context.svgData({
+    this.context.setSvgMarkup({
       svg: svg.outerHTML,
       width: svg.getAttribute('width'),
       height: svg.getAttribute('height')

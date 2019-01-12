@@ -76,7 +76,7 @@ class AppContextProvider extends React.PureComponent {
   state = {}
 
   mutations = {
-    svgData: async ({ svg, width, height }) => {
+    setSvgMarkup: async ({ svg, width, height }) => {
       if (svg !== this.state.svg) {
         this.setState({
           svg,
