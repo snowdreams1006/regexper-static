@@ -31,9 +31,11 @@ describe('SentryBoundary', () => {
     // set the state manually
     component.setState(SentryBoundary.getDerivedStateFromError(error));
 
-    expect(Sentry.captureException).toHaveBeenCalledWith(
-      error,
-      expect.anything());
+    const scope = { setExtra: jest.fn() };
+    expect(Sentry.withScope).toHaveBeenCalled();
+
+    Sentry.withScope.mock.calls[0][0](scope);
+    expect(Sentry.captureException).toHaveBeenCalledWith(error);
     expect(component).toMatchSnapshot();
   });
 });
