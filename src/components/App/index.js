@@ -37,7 +37,10 @@ class App extends React.PureComponent {
       });
     }
     catch (e) {
-      Sentry.captureException(e, { syntax });
+      Sentry.withScope(scope => {
+        scope.setExtra('syntax', syntax);
+        Sentry.captureException(e);
+      });
       this.setState({
         loading: false,
         loadingError: e
