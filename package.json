@@ -63,6 +63,10 @@
     },
     "transformIgnorePatterns": [
       "node_modules/(?!(gatsby)/)"
+    ],
+    "watchPathIgnorePatterns": [
+      "<rootDir>/coverage",
+      "<rootDir>/public"
     ]
   },
   "dependencies": {
