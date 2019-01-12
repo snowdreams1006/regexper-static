@@ -19,7 +19,7 @@ const readURLHash = () => {
     // Assuming old-style URL
     return {
       syntax: 'js',
-      expr: query || ''
+      expr: query
     };
   }
 };
