@@ -4,7 +4,7 @@ import PlaceholderIcon from 'react-feather/dist/icons/file-text';
 
 import style from './style.module.css';
 
-import AppContext from 'components/App/context';
+import AppContext from 'components/AppContext';
 
 class SVG extends React.PureComponent {
   static contextType = AppContext

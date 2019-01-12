@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AppContextProvider } from 'components/App/context';
+import { AppContextProvider } from 'components/AppContext';
 import Form from 'components/Form';
 import Loader from 'components/Loader';
 import Message from 'components/Message';

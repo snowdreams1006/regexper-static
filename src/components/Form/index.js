@@ -4,7 +4,7 @@ import ExpandIcon from 'react-feather/dist/icons/chevrons-down';
 
 import style from './style.module.css';
 
-import AppContext from 'components/App/context';
+import AppContext from 'components/AppContext';
 import FormActions from 'components/FormActions';
 
 const syntaxList = [

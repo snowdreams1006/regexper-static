@@ -5,7 +5,7 @@ import LinkIcon from 'react-feather/dist/icons/link';
 
 import style from './style.module.css';
 
-import AppContext from 'components/App/context';
+import AppContext from 'components/AppContext';
 
 class FormActions extends React.PureComponent {
   static contextType = AppContext
