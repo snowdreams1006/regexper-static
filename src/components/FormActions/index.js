@@ -9,16 +9,15 @@ import style from './style.module.css';
 import { createPngLink, createSvgLink } from './links';
 
 class FormActions extends React.PureComponent {
-  state = {}
+  state = {
+    svgLink: null,
+    pngLink: null
+  }
 
   componentDidMount() {
     const { imageDetails } = this.props;
 
-    if (!imageDetails) {
-      return;
-    }
-
-    if (imageDetails.svg) {
+    if (imageDetails && imageDetails.svg) {
       this.generateDownloadLinks();
     }
   }
@@ -28,6 +27,7 @@ class FormActions extends React.PureComponent {
     const { imageDetails: prevImageDetails } = prevProps;
 
     if (!imageDetails) {
+      this.setState({ svgLink: null, pngLink: null });
       return;
     }
 

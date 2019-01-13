@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormActions rendering 1`] = `
+<ul
+  className="actions"
+/>
+`;
+
+exports[`FormActions rendering download links 1`] = `
+<ul
+  className="actions"
+>
+  <li>
+    <a
+      download="image.png"
+      href="http://example.com/image.png"
+      type="image/png"
+    >
+      <Download
+        color="currentColor"
+        size="24"
+      />
+      Example PNG Link
+    </a>
+  </li>
+  <li>
+    <a
+      download="image.svg"
+      href="http://example.com/image.svg"
+      type="image/svg+xml"
+    >
+      <Download
+        color="currentColor"
+        size="24"
+      />
+      Example SVG Link
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`FormActions rendering download links with data after mounting 1`] = `
+<ul
+  className="actions"
+>
+  <li>
+    <a
+      href="http://example.com"
+    >
+      <Link
+        color="currentColor"
+        size="24"
+      />
+      Permalink
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`FormActions rendering download links with data after mounting 2`] = `
+<ul
+  className="actions"
+>
+  <li>
+    <a
+      download="image.png"
+      href="http://example.com/image.png"
+      type="image/png"
+    >
+      <Download
+        color="currentColor"
+        size="24"
+      />
+      Example PNG Link
+    </a>
+  </li>
+  <li>
+    <a
+      download="image.svg"
+      href="http://example.com/image.svg"
+      type="image/svg+xml"
+    >
+      <Download
+        color="currentColor"
+        size="24"
+      />
+      Example SVG Link
+    </a>
+  </li>
+  <li>
+    <a
+      href="http://example.com"
+    >
+      <Link
+        color="currentColor"
+        size="24"
+      />
+      Permalink
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`FormActions rendering download links with data after mounting 3`] = `
+<ul
+  className="actions"
+>
+  <li>
+    <a
+      download="image.png"
+      href="http://example.com/image.png"
+      type="image/png"
+    >
+      <Download
+        color="currentColor"
+        size="24"
+      />
+      Example PNG Link
+    </a>
+  </li>
+  <li>
+    <a
+      download="image.svg"
+      href="http://example.com/image.svg"
+      type="image/svg+xml"
+    >
+      <Download
+        color="currentColor"
+        size="24"
+      />
+      Example SVG Link
+    </a>
+  </li>
+  <li>
+    <a
+      href="http://example.com"
+    >
+      <Link
+        color="currentColor"
+        size="24"
+      />
+      Permalink
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`FormActions rendering with a permalink 1`] = `
+<ul
+  className="actions"
+>
+  <li>
+    <a
+      href="http://example.com"
+    >
+      <Link
+        color="currentColor"
+        size="24"
+      />
+      Permalink
+    </a>
+  </li>
+</ul>
+`;
