@@ -25,7 +25,19 @@ exports[`Index Page rendering 1`] = `
   <App
     expr=""
     permalinkUrl={null}
-    syntax="js"
+    syntax="testJs"
+    syntaxList={
+      Array [
+        Object {
+          "id": "testJS",
+          "name": "Testing JS",
+        },
+        Object {
+          "id": "other",
+          "name": "Other",
+        },
+      ]
+    }
   />
 </Fragment>
 `;
@@ -56,6 +68,18 @@ exports[`Index Page rendering with an expression on the URL 1`] = `
     expr="testing"
     permalinkUrl="http://example.com"
     syntax="test"
+    syntaxList={
+      Array [
+        Object {
+          "id": "testJS",
+          "name": "Testing JS",
+        },
+        Object {
+          "id": "other",
+          "name": "Other",
+        },
+      ]
+    }
   />
 </Fragment>
 `;
