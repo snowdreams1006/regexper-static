@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form rendering 1`] = `
+<div
+  className="form"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <textarea
+      autoFocus={true}
+      name="expr"
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      placeholder="Enter regular expression to display"
+    />
+    <button
+      type="submit"
+    >
+      Display
+    </button>
+    <div
+      className="select"
+    >
+      <select
+        name="syntax"
+        onChange={[Function]}
+      >
+        <option
+          key="testJS"
+          value="testJS"
+        />
+        <option
+          key="other"
+          value="other"
+        />
+      </select>
+      <ChevronsDown
+        color="currentColor"
+        size="24"
+      />
+    </div>
+    Actions
+  </form>
+</div>
+`;
