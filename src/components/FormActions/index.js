@@ -1,15 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import DownloadIcon from 'react-feather/dist/icons/download';
 import LinkIcon from 'react-feather/dist/icons/link';
 
 import style from './style.module.css';
 
-import AppContext from 'components/AppContext';
-
 class FormActions extends React.PureComponent {
-  static contextType = AppContext
-
   downloadLink({ url, filename, type, label }) {
     return <li>
       <a href={ url } download={ filename } type={ type }>
@@ -23,7 +20,7 @@ class FormActions extends React.PureComponent {
       permalinkUrl,
       svgLink,
       pngLink
-    } = this.context;
+    } = this.props;
 
     return <ul className={ style.actions }>
       { pngLink && this.downloadLink(pngLink) }
@@ -34,5 +31,11 @@ class FormActions extends React.PureComponent {
     </ul>;
   }
 }
+
+FormActions.propTypes = {
+  permalinkUrl: PropTypes.string,
+  svgLink: PropTypes.object,
+  pngLink: PropTypes.object
+};
 
 export default FormActions;

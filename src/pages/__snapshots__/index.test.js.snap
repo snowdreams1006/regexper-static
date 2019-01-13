@@ -22,6 +22,40 @@ exports[`Index Page rendering 1`] = `
       </p>
     </Message>
   </noscript>
-  <App />
+  <App
+    expr=""
+    permalinkUrl={null}
+    syntax="js"
+  />
+</Fragment>
+`;
+
+exports[`Index Page rendering with an expression on the URL 1`] = `
+<Fragment>
+  <Metadata />
+  <noscript>
+    <Message
+      heading="JavaScript Required"
+      type="error"
+    >
+      <p>
+        You need JavaScript to use Regexper.
+      </p>
+      <p>
+        If you have concerns regarding the use of tracking code on Regexper, please see the 
+        <mockConstructor
+          to="/privacy"
+        >
+          Privacy Policy
+        </mockConstructor>
+        .
+      </p>
+    </Message>
+  </noscript>
+  <App
+    expr="testing"
+    permalinkUrl="http://example.com"
+    syntax="test"
+  />
 </Fragment>
 `;

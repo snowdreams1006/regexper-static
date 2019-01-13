@@ -1,10 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import ExpandIcon from 'react-feather/dist/icons/chevrons-down';
 
 import style from './style.module.css';
 
-import AppContext from 'components/AppContext';
 import FormActions from 'components/FormActions';
 
 const syntaxList = [
@@ -13,20 +13,9 @@ const syntaxList = [
 ];
 
 class Form extends React.PureComponent {
-  static contextType = AppContext
-
   state = {
-    expr: this.context.expr,
-    syntax: this.context.syntax
-  }
-
-  componentDidUpdate() {
-    if (this.state.expr === undefined && this.state.syntax === undefined) {
-      this.setState({
-        syntax: this.context.syntax,
-        expr: this.context.expr
-      });
-    }
+    expr: this.props.expr,
+    syntax: this.props.syntax
   }
 
   handleSubmit = event => {
@@ -34,7 +23,7 @@ class Form extends React.PureComponent {
 
     const { expr, syntax } = this.state;
 
-    this.context.renderExpr({ expr, syntax });
+    this.props.onSubmit({ expr, syntax });
   }
 
   handleKeyPress = event => {
@@ -48,6 +37,9 @@ class Form extends React.PureComponent {
   })
 
   render() {
+    const {
+      actions
+    } = this.props;
     const { expr, syntax } = this.state;
 
     return <div className={ style.form }>
@@ -71,10 +63,17 @@ class Form extends React.PureComponent {
           </select>
           <ExpandIcon />
         </div>
-        <FormActions />
+        <FormActions { ...actions } />
       </form>
     </div>;
   }
 }
+
+Form.propTypes = {
+  expr: PropTypes.string,
+  syntax: PropTypes.string,
+  actions: PropTypes.object,
+  onSubmit: PropTypes.func.isRequired
+};
 
 export default Form;

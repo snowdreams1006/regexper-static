@@ -1,14 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import PlaceholderIcon from 'react-feather/dist/icons/file-text';
 
 import style from './style.module.css';
 
-import AppContext from 'components/AppContext';
-
 class Render extends React.PureComponent {
-  static contextType = AppContext
-
   svgContainer = React.createRef()
 
   provideSVGData() {
@@ -17,7 +14,7 @@ class Render extends React.PureComponent {
     }
 
     const svg = this.svgContainer.current.querySelector('svg');
-    this.context.setSvgMarkup({
+    this.props.onRender({
       svg: svg.outerHTML,
       width: svg.getAttribute('width'),
       height: svg.getAttribute('height')
@@ -33,7 +30,7 @@ class Render extends React.PureComponent {
   }
 
   render() {
-    const { syntax, expr } = this.context;
+    const { syntax, expr } = this.props;
 
     console.log('Render:', syntax, expr); // eslint-disable-line no-console
 
@@ -43,5 +40,11 @@ class Render extends React.PureComponent {
     </div>;
   }
 }
+
+Render.propTypes = {
+  syntax: PropTypes.string,
+  expr: PropTypes.string,
+  onRender: PropTypes.func.isRequired
+};
 
 export default Render;

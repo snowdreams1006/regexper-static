@@ -1,10 +1,61 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import * as Sentry from '@sentry/browser';
+import URLSearchParams from '@ungap/url-search-params';
 
-import { AppContextProvider } from 'components/AppContext';
 import Form from 'components/Form';
 import Loader from 'components/Loader';
 import Message from 'components/Message';
+
+const toUrl = params => new URLSearchParams(params).toString();
+
+const createSvgLink = async ({ svg }) => {
+  try {
+    const type = 'image/svg+xml';
+    const blob = new Blob([svg], { type });
+
+    return {
+      url: URL.createObjectURL(blob),
+      label: 'Download SVG',
+      filename: 'image.svg',
+      type
+    };
+  }
+  catch (e) {
+    console.error(e); // eslint-disable-line no-console
+  }
+};
+
+const createPngLink = async ({ svg, width, height }) => {
+  try {
+    const type = 'image/png';
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    const loader = new Image();
+
+    loader.width = canvas.width = Number(width) * 2;
+    loader.height = canvas.height = Number(height) * 2;
+
+    await new Promise(resolve => {
+      loader.onload = resolve;
+      loader.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
+    });
+
+    context.drawImage(loader, 0, 0, loader.width, loader.height);
+
+    const blob = await new Promise(resolve => canvas.toBlob(resolve, type));
+
+    return {
+      url: URL.createObjectURL(blob),
+      label: 'Download PNG',
+      filename: 'image.png',
+      type
+    };
+  }
+  catch (e) {
+    console.error(e); // eslint-disable-line no-console
+  }
+};
 
 class App extends React.PureComponent {
   state = {
@@ -13,13 +64,41 @@ class App extends React.PureComponent {
     Render: null
   }
 
-  handleRender = async ({ syntax, expr }) => {
+  componentDidMount() {
+    if (this.props.expr) {
+      this.handleRender();
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    const { syntax, expr } = this.props;
+
+    if (syntax !== prevProps.syntax || expr !== prevProps.expr) {
+      this.handleRender();
+    }
+  }
+
+  handleSubmit = ({ syntax, expr }) => {
+    if (expr) {
+      document.location.hash = toUrl({ syntax, expr });
+    }
+  }
+
+  handleRender = async () => {
+    const { syntax, expr } = this.props;
+
     this.setState({
-      syntax,
-      expr,
-      loading: true,
+      loading: false,
       loadingError: null,
       Render: null
+    });
+
+    if (!expr) {
+      return;
+    }
+
+    this.setState({
+      loading: true
     });
 
     try {
@@ -51,18 +130,51 @@ class App extends React.PureComponent {
 
   handleRetry = event => {
     event.preventDefault();
-    this.handleRender(this.state);
+    this.handleRender();
+  }
+
+  handleSvgMarkup = async ({ svg, width, height }) => {
+    if (svg !== this.state.svg) {
+      this.setState({
+        svg,
+        svgLink: await createSvgLink({ svg }),
+        pngLink: await createPngLink({ svg, width, height })
+      });
+    }
   }
 
   render() {
     const {
+      syntax,
+      expr,
+      permalinkUrl
+    } = this.props;
+    const {
       loading,
       loadingError,
-      Render
+      Render,
+      svgLink,
+      pngLink
     } = this.state;
 
-    return <AppContextProvider onExpressionChange={ this.handleRender }>
-      <Form />
+    const formProps = {
+      onSubmit: this.handleSubmit,
+      syntax,
+      expr,
+      actions: {
+        permalinkUrl,
+        svgLink,
+        pngLink
+      }
+    };
+    const renderProps = {
+      onRender: this.handleSvgMarkup,
+      syntax,
+      expr
+    };
+
+    return <>
+      <Form { ...formProps } />
 
       { loading && <Loader /> }
 
@@ -71,9 +183,15 @@ class App extends React.PureComponent {
         <a href="#retry" onClick={ this.handleRetry }>Retry</a>
       </Message> }
 
-      { Render && <Render /> }
-    </AppContextProvider>;
+      { Render && <Render { ...renderProps } /> }
+    </>;
   }
 }
+
+App.propTypes = {
+  syntax: PropTypes.string,
+  expr: PropTypes.string,
+  permalinkUrl: PropTypes.string
+};
 
 export default App;
