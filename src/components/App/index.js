@@ -4,6 +4,7 @@ import * as Sentry from '@sentry/browser';
 import URLSearchParams from '@ungap/url-search-params';
 
 import Form from 'components/Form';
+import FormActions from 'components/FormActions';
 import Loader from 'components/Loader';
 import Message from 'components/Message';
 
@@ -160,12 +161,12 @@ class App extends React.PureComponent {
     const formProps = {
       onSubmit: this.handleSubmit,
       syntax,
-      expr,
-      actions: {
-        permalinkUrl,
-        svgLink,
-        pngLink
-      }
+      expr
+    };
+    const actions = {
+      permalinkUrl,
+      svgLink,
+      pngLink
     };
     const renderProps = {
       onRender: this.handleSvgMarkup,
@@ -174,7 +175,9 @@ class App extends React.PureComponent {
     };
 
     return <>
-      <Form { ...formProps } />
+      <Form { ...formProps }>
+        <FormActions { ...actions } />
+      </Form>
 
       { loading && <Loader /> }
 
