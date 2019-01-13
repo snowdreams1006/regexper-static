@@ -10,54 +10,6 @@ import Message from 'components/Message';
 
 const toUrl = params => new URLSearchParams(params).toString();
 
-const createSvgLink = async ({ svg }) => {
-  try {
-    const type = 'image/svg+xml';
-    const blob = new Blob([svg], { type });
-
-    return {
-      url: URL.createObjectURL(blob),
-      label: 'Download SVG',
-      filename: 'image.svg',
-      type
-    };
-  }
-  catch (e) {
-    console.error(e); // eslint-disable-line no-console
-  }
-};
-
-const createPngLink = async ({ svg, width, height }) => {
-  try {
-    const type = 'image/png';
-    const canvas = document.createElement('canvas');
-    const context = canvas.getContext('2d');
-    const loader = new Image();
-
-    loader.width = canvas.width = Number(width) * 2;
-    loader.height = canvas.height = Number(height) * 2;
-
-    await new Promise(resolve => {
-      loader.onload = resolve;
-      loader.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
-    });
-
-    context.drawImage(loader, 0, 0, loader.width, loader.height);
-
-    const blob = await new Promise(resolve => canvas.toBlob(resolve, type));
-
-    return {
-      url: URL.createObjectURL(blob),
-      label: 'Download PNG',
-      filename: 'image.png',
-      type
-    };
-  }
-  catch (e) {
-    console.error(e); // eslint-disable-line no-console
-  }
-};
-
 class App extends React.PureComponent {
   state = {
     loading: false,
@@ -134,15 +86,7 @@ class App extends React.PureComponent {
     this.handleRender();
   }
 
-  handleSvgMarkup = async ({ svg, width, height }) => {
-    if (svg !== this.state.svg) {
-      this.setState({
-        svg,
-        svgLink: await createSvgLink({ svg }),
-        pngLink: await createPngLink({ svg, width, height })
-      });
-    }
-  }
+  handleSvg = imageDetails => this.setState({ imageDetails });
 
   render() {
     const {
@@ -154,8 +98,7 @@ class App extends React.PureComponent {
       loading,
       loadingError,
       Render,
-      svgLink,
-      pngLink
+      imageDetails
     } = this.state;
 
     const formProps = {
@@ -163,20 +106,19 @@ class App extends React.PureComponent {
       syntax,
       expr
     };
-    const actions = {
-      permalinkUrl,
-      svgLink,
-      pngLink
+    const actionProps = {
+      imageDetails,
+      permalinkUrl
     };
     const renderProps = {
-      onRender: this.handleSvgMarkup,
+      onRender: this.handleSvg,
       syntax,
       expr
     };
 
     return <>
       <Form { ...formProps }>
-        <FormActions { ...actions } />
+        { Render && <FormActions { ...actionProps } /> }
       </Form>
 
       { loading && <Loader /> }
