@@ -30,9 +30,10 @@ class Render extends React.PureComponent {
   }
 
   render() {
-    const { syntax, expr } = this.props;
+    const { expr } = this.props;
 
-    console.log('Render:', syntax, expr); // eslint-disable-line no-console
+    // eslint-disable-next-line no-console
+    console.log('Render:', this.constructor.name, expr);
 
     // Demo rendering for now
     return <div className={ style.render } ref={ this.svgContainer }>
@@ -42,7 +43,6 @@ class Render extends React.PureComponent {
 }
 
 Render.propTypes = {
-  syntax: PropTypes.string,
   expr: PropTypes.string,
   onRender: PropTypes.func.isRequired
 };

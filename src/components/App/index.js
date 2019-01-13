@@ -58,7 +58,7 @@ class App extends React.PureComponent {
     try {
       const Render = await import(
         /* webpackChunkName: "render-[index]" */
-        'components/Render' // TODO: Import syntax-specific render component
+        `syntax/${ syntax }`
       );
 
       // HACK: Fake loading time
@@ -115,7 +115,6 @@ class App extends React.PureComponent {
     };
     const renderProps = {
       onRender: this.handleSvg,
-      syntax,
       expr
     };
 
