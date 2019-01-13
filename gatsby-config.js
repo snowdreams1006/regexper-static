@@ -9,7 +9,12 @@ const banner = process.env.BANNER || (process.env.NODE_ENV === 'production'
 module.exports = {
   siteMetadata: {
     buildId,
-    banner
+    banner,
+    defaultSyntax: 'js',
+    syntaxList: [
+      { id: 'js', label: 'JavaScript' },
+      { id: 'pcre', label: 'PCRE' }
+    ]
   },
   plugins: [
     'gatsby-plugin-react-helmet',

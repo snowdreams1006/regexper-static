@@ -1,13 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import URLSearchParams from '@ungap/url-search-params';
 
 import Metadata from 'components/Metadata';
 import Message from 'components/Message';
 import App from 'components/App';
 
-const readURLHash = location => {
+export const query = graphql`
+  query IndexPageQuery {
+    site {
+      siteMetadata {
+        defaultSyntax
+        syntaxList { id, label }
+      }
+    }
+  }
+`;
+
+const readURLHash = (location, defaultSyntax) => {
   const query = location.hash.slice(1);
   const params = new URLSearchParams(query);
   const permalinkUrl = query ? location.href : null;
@@ -21,14 +32,17 @@ const readURLHash = location => {
   } else {
     // Assuming old-style URL
     return {
-      syntax: 'js',
+      syntax: defaultSyntax,
       expr: query,
       permalinkUrl
     };
   }
 };
 
-export const IndexPage = ({ location }) => <>
+export const IndexPage = ({
+  location,
+  data: { site: { siteMetadata } }
+}) => <>
   <Metadata/>
   <noscript>
     <Message type="error" heading="JavaScript Required">
@@ -37,11 +51,24 @@ export const IndexPage = ({ location }) => <>
         please see the <Link to="/privacy">Privacy Policy</Link>.</p>
     </Message>
   </noscript>
-  <App { ...readURLHash(location) } />
+  <App
+    syntaxList={ siteMetadata.syntaxList }
+    { ...readURLHash(location, siteMetadata.defaultSyntax) } />
 </>;
 
 IndexPage.propTypes = {
-  location: PropTypes.object
+  location: PropTypes.object,
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        defaultSyntax: PropTypes.string,
+        syntaxList: PropTypes.arrayOf(PropTypes.shape({
+          id: PropTypes.string,
+          label: PropTypes.string
+        }))
+      })
+    })
+  })
 };
 
 export default IndexPage;

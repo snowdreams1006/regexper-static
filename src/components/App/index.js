@@ -93,7 +93,8 @@ class App extends React.PureComponent {
     const {
       syntax,
       expr,
-      permalinkUrl
+      permalinkUrl,
+      syntaxList
     } = this.props;
     const {
       loading,
@@ -105,7 +106,8 @@ class App extends React.PureComponent {
     const formProps = {
       onSubmit: this.handleSubmit,
       syntax,
-      expr
+      expr,
+      syntaxList
     };
     const actionProps = {
       imageDetails,
@@ -137,7 +139,11 @@ class App extends React.PureComponent {
 App.propTypes = {
   syntax: PropTypes.string,
   expr: PropTypes.string,
-  permalinkUrl: PropTypes.string
+  permalinkUrl: PropTypes.string,
+  syntaxList: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    label: PropTypes.string
+  }))
 };
 
 export default App;

@@ -5,11 +5,6 @@ import ExpandIcon from 'react-feather/dist/icons/chevrons-down';
 
 import style from './style.module.css';
 
-const syntaxList = [
-  { id: 'js', label: 'JavaScript' },
-  { id: 'pcre', label: 'PCRE' }
-];
-
 class Form extends React.PureComponent {
   state = {
     expr: this.props.expr,
@@ -36,6 +31,7 @@ class Form extends React.PureComponent {
 
   render() {
     const {
+      syntaxList,
       children
     } = this.props;
     const { expr, syntax } = this.state;
@@ -70,6 +66,10 @@ class Form extends React.PureComponent {
 Form.propTypes = {
   expr: PropTypes.string,
   syntax: PropTypes.string,
+  syntaxList: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    label: PropTypes.string
+  })),
   onSubmit: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
