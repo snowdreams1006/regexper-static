@@ -12,7 +12,7 @@ class App extends React.PureComponent {
   state = {
     loading: false,
     loadingError: null,
-    Render: null
+    render: {}
   }
 
   componentDidMount() {
@@ -44,7 +44,7 @@ class App extends React.PureComponent {
     this.setState({
       loading: false,
       loadingError: null,
-      Render: null
+      render: {}
     });
 
     if (!expr) {
@@ -56,7 +56,7 @@ class App extends React.PureComponent {
     });
 
     try {
-      const Render = await import(
+      const Component = await import(
         /* webpackChunkName: "render-[index]" */
         `syntax/${ syntax }`
       );
@@ -66,7 +66,10 @@ class App extends React.PureComponent {
 
       this.setState({
         loading: false,
-        Render: Render.default
+        render: {
+          syntax,
+          Component: Component.default
+        }
       });
     }
     catch (e) {
@@ -99,9 +102,13 @@ class App extends React.PureComponent {
     const {
       loading,
       loadingError,
-      Render,
-      imageDetails
+      imageDetails,
+      render: {
+        syntax: renderSyntax,
+        Component
+      }
     } = this.state;
+
 
     const formProps = {
       onSubmit: this.handleSubmit,
@@ -118,9 +125,11 @@ class App extends React.PureComponent {
       expr
     };
 
+    const doRender = renderSyntax === syntax;
+
     return <>
       <Form { ...formProps }>
-        { Render && <FormActions { ...actionProps } /> }
+        { doRender && <FormActions { ...actionProps } /> }
       </Form>
 
       { loading && <Loader /> }
@@ -130,7 +139,7 @@ class App extends React.PureComponent {
         <a href="#retry" onClick={ this.handleRetry }>Retry</a>
       </Message> }
 
-      { Render && <Render { ...renderProps } /> }
+      { doRender && <Component { ...renderProps } /> }
     </>;
   }
 }
