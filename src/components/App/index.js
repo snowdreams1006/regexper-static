@@ -8,8 +8,6 @@ import FormActions from 'components/FormActions';
 import Loader from 'components/Loader';
 import Message from 'components/Message';
 
-const toUrl = params => new URLSearchParams(params).toString();
-
 class App extends React.PureComponent {
   state = {
     loading: false,
@@ -33,7 +31,10 @@ class App extends React.PureComponent {
 
   handleSubmit = ({ syntax, expr }) => {
     if (expr) {
-      document.location.hash = toUrl({ syntax, expr });
+      document.location.hash = new URLSearchParams({
+        syntax,
+        expr
+      }).toString();
     }
   }
 
