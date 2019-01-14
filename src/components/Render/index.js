@@ -6,6 +6,11 @@ import PlaceholderIcon from 'react-feather/dist/icons/file-text';
 import style from './style.module.css';
 
 class Render extends React.PureComponent {
+  propTypes = {
+    expr: PropTypes.string,
+    onRender: PropTypes.func.isRequired
+  }
+
   svgContainer = React.createRef()
 
   provideSVGData() {
@@ -41,10 +46,5 @@ class Render extends React.PureComponent {
     </div>;
   }
 }
-
-Render.propTypes = {
-  expr: PropTypes.string,
-  onRender: PropTypes.func.isRequired
-};
 
 export default Render;

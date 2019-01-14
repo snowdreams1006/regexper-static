@@ -15,6 +15,16 @@ class App extends React.PureComponent {
     render: {}
   }
 
+  propTypes = {
+    syntax: PropTypes.string,
+    expr: PropTypes.string,
+    permalinkUrl: PropTypes.string,
+    syntaxList: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.string,
+      label: PropTypes.string
+    }))
+  }
+
   componentDidMount() {
     if (this.props.expr) {
       this.handleRender();
@@ -143,15 +153,5 @@ class App extends React.PureComponent {
     </>;
   }
 }
-
-App.propTypes = {
-  syntax: PropTypes.string,
-  expr: PropTypes.string,
-  permalinkUrl: PropTypes.string,
-  syntaxList: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string,
-    label: PropTypes.string
-  }))
-};
 
 export default App;

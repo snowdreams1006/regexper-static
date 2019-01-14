@@ -9,6 +9,13 @@ class SentryBoundary extends React.Component {
     hasError: false
   }
 
+  propTypes = {
+    children: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.node),
+      PropTypes.node
+    ]).isRequired
+  }
+
   static getDerivedStateFromError() {
     return { hasError: true };
   }
@@ -32,12 +39,5 @@ class SentryBoundary extends React.Component {
     }
   }
 }
-
-SentryBoundary.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]).isRequired
-};
 
 export default SentryBoundary;

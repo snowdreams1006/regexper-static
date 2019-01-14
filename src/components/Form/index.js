@@ -11,6 +11,20 @@ class Form extends React.PureComponent {
     syntax: this.props.syntax
   }
 
+  propTypes = {
+    expr: PropTypes.string,
+    syntax: PropTypes.string,
+    syntaxList: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.string,
+      label: PropTypes.string
+    })),
+    onSubmit: PropTypes.func.isRequired,
+    children: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.node),
+      PropTypes.node
+    ])
+  }
+
   handleSubmit = event => {
     event.preventDefault();
 
@@ -62,19 +76,5 @@ class Form extends React.PureComponent {
     </div>;
   }
 }
-
-Form.propTypes = {
-  expr: PropTypes.string,
-  syntax: PropTypes.string,
-  syntaxList: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string,
-    label: PropTypes.string
-  })),
-  onSubmit: PropTypes.func.isRequired,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ])
-};
 
 export default Form;

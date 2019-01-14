@@ -14,6 +14,15 @@ class FormActions extends React.PureComponent {
     pngLink: null
   }
 
+  propTypes = {
+    permalinkUrl: PropTypes.string,
+    imageDetails: PropTypes.shape({
+      svg: PropTypes.string,
+      width: PropTypes.number,
+      height: PropTypes.number
+    })
+  }
+
   componentDidMount() {
     const { imageDetails } = this.props;
 
@@ -79,14 +88,5 @@ class FormActions extends React.PureComponent {
     </ul>;
   }
 }
-
-FormActions.propTypes = {
-  permalinkUrl: PropTypes.string,
-  imageDetails: PropTypes.shape({
-    svg: PropTypes.string,
-    width: PropTypes.number,
-    height: PropTypes.number
-  })
-};
 
 export default FormActions;
