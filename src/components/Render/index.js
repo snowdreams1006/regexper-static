@@ -6,7 +6,7 @@ import PlaceholderIcon from 'react-feather/dist/icons/file-text';
 import style from './style.module.css';
 
 class Render extends React.PureComponent {
-  propTypes = {
+  static propTypes = {
     expr: PropTypes.string,
     onRender: PropTypes.func.isRequired
   }

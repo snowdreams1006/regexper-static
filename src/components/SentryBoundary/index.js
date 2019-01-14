@@ -5,15 +5,15 @@ import * as Sentry from '@sentry/browser';
 import SentryError from 'components/SentryError';
 
 class SentryBoundary extends React.Component {
-  state = {
-    hasError: false
-  }
-
-  propTypes = {
+  static propTypes = {
     children: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.node),
       PropTypes.node
     ]).isRequired
+  }
+
+  state = {
+    hasError: false
   }
 
   static getDerivedStateFromError() {

@@ -9,13 +9,7 @@ import Loader from 'components/Loader';
 import Message from 'components/Message';
 
 class App extends React.PureComponent {
-  state = {
-    loading: false,
-    loadingError: null,
-    render: {}
-  }
-
-  propTypes = {
+  static propTypes = {
     syntax: PropTypes.string,
     expr: PropTypes.string,
     permalinkUrl: PropTypes.string,
@@ -23,6 +17,12 @@ class App extends React.PureComponent {
       id: PropTypes.string,
       label: PropTypes.string
     }))
+  }
+
+  state = {
+    loading: false,
+    loadingError: null,
+    render: {}
   }
 
   componentDidMount() {

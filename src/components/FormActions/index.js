@@ -9,18 +9,18 @@ import style from './style.module.css';
 import { createPngLink, createSvgLink } from './links';
 
 class FormActions extends React.PureComponent {
-  state = {
-    svgLink: null,
-    pngLink: null
-  }
-
-  propTypes = {
+  static propTypes = {
     permalinkUrl: PropTypes.string,
     imageDetails: PropTypes.shape({
       svg: PropTypes.string,
       width: PropTypes.number,
       height: PropTypes.number
     })
+  }
+
+  state = {
+    svgLink: null,
+    pngLink: null
   }
 
   componentDidMount() {

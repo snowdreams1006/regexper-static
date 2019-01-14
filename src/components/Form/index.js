@@ -6,12 +6,7 @@ import ExpandIcon from 'react-feather/dist/icons/chevrons-down';
 import style from './style.module.css';
 
 class Form extends React.PureComponent {
-  state = {
-    expr: this.props.expr,
-    syntax: this.props.syntax
-  }
-
-  propTypes = {
+  static propTypes = {
     expr: PropTypes.string,
     syntax: PropTypes.string,
     syntaxList: PropTypes.arrayOf(PropTypes.shape({
@@ -23,6 +18,11 @@ class Form extends React.PureComponent {
       PropTypes.arrayOf(PropTypes.node),
       PropTypes.node
     ])
+  }
+
+  state = {
+    expr: this.props.expr,
+    syntax: this.props.syntax
   }
 
   handleSubmit = event => {
