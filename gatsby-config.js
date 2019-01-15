@@ -24,7 +24,9 @@ module.exports = {
       options: {
         trackingId: process.env.GA_PROPERTY,
         anonymize: true,
-        respectDNT: true
+        respectDNT: true,
+        storeGac: false,
+        cookieExpires: 0
       }
     },
     {
