@@ -1,0 +1,289 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App removing rendered expression 1`] = `
+<Fragment>
+  <Form
+    expr="test expression"
+    onSubmit={[Function]}
+    syntax="js"
+    syntaxList={
+      Array [
+        Object {
+          "id": "testJS",
+          "name": "Testing JS",
+        },
+        Object {
+          "id": "other",
+          "name": "Other",
+        },
+      ]
+    }
+  >
+    <FormActions />
+  </Form>
+  <RenderJS
+    expr="test expression"
+    onRender={[Function]}
+  />
+</Fragment>
+`;
+
+exports[`App removing rendered expression 2`] = `
+<Fragment>
+  <Form
+    expr=""
+    onSubmit={[Function]}
+    syntax="js"
+    syntaxList={
+      Array [
+        Object {
+          "id": "testJS",
+          "name": "Testing JS",
+        },
+        Object {
+          "id": "other",
+          "name": "Other",
+        },
+      ]
+    }
+  />
+</Fragment>
+`;
+
+exports[`App rendering 1`] = `
+<Fragment>
+  <Form
+    expr=""
+    onSubmit={[Function]}
+    syntax="js"
+    syntaxList={
+      Array [
+        Object {
+          "id": "testJS",
+          "name": "Testing JS",
+        },
+        Object {
+          "id": "other",
+          "name": "Other",
+        },
+      ]
+    }
+  />
+</Fragment>
+`;
+
+exports[`App rendering an expression 1`] = `
+<Fragment>
+  <Form
+    expr=""
+    onSubmit={[Function]}
+    syntax="js"
+    syntaxList={
+      Array [
+        Object {
+          "id": "testJS",
+          "name": "Testing JS",
+        },
+        Object {
+          "id": "other",
+          "name": "Other",
+        },
+      ]
+    }
+  />
+</Fragment>
+`;
+
+exports[`App rendering an expression 2`] = `
+<Fragment>
+  <Form
+    expr="test expression"
+    onSubmit={[Function]}
+    syntax="js"
+    syntaxList={
+      Array [
+        Object {
+          "id": "testJS",
+          "name": "Testing JS",
+        },
+        Object {
+          "id": "other",
+          "name": "Other",
+        },
+      ]
+    }
+  />
+  <Loader />
+</Fragment>
+`;
+
+exports[`App rendering an expression 3`] = `
+<Fragment>
+  <Form
+    expr="test expression"
+    onSubmit={[Function]}
+    syntax="js"
+    syntaxList={
+      Array [
+        Object {
+          "id": "testJS",
+          "name": "Testing JS",
+        },
+        Object {
+          "id": "other",
+          "name": "Other",
+        },
+      ]
+    }
+  >
+    <FormActions />
+  </Form>
+  <RenderJS
+    expr="test expression"
+    onRender={[Function]}
+  />
+</Fragment>
+`;
+
+exports[`App rendering image details 1`] = `
+<Fragment>
+  <Form
+    expr="test expression"
+    onSubmit={[Function]}
+    syntax="js"
+    syntaxList={
+      Array [
+        Object {
+          "id": "testJS",
+          "name": "Testing JS",
+        },
+        Object {
+          "id": "other",
+          "name": "Other",
+        },
+      ]
+    }
+  >
+    <FormActions />
+  </Form>
+  <RenderJS
+    expr="test expression"
+    onRender={[Function]}
+  />
+</Fragment>
+`;
+
+exports[`App rendering image details 2`] = `
+<Fragment>
+  <Form
+    expr="test expression"
+    onSubmit={[Function]}
+    syntax="js"
+    syntaxList={
+      Array [
+        Object {
+          "id": "testJS",
+          "name": "Testing JS",
+        },
+        Object {
+          "id": "other",
+          "name": "Other",
+        },
+      ]
+    }
+  >
+    <FormActions
+      imageDetails={
+        Object {
+          "svg": "test svg content",
+        }
+      }
+    />
+  </Form>
+  <RenderJS
+    expr="test expression"
+    onRender={[Function]}
+  />
+</Fragment>
+`;
+
+exports[`App rendering with an invalid syntax 1`] = `
+<Fragment>
+  <Form
+    expr=""
+    onSubmit={[Function]}
+    syntax="invalid"
+    syntaxList={
+      Array [
+        Object {
+          "id": "testJS",
+          "name": "Testing JS",
+        },
+        Object {
+          "id": "other",
+          "name": "Other",
+        },
+      ]
+    }
+  />
+</Fragment>
+`;
+
+exports[`App rendering with an invalid syntax 2`] = `
+<Fragment>
+  <Form
+    expr="test expression"
+    onSubmit={[Function]}
+    syntax="invalid"
+    syntaxList={
+      Array [
+        Object {
+          "id": "testJS",
+          "name": "Testing JS",
+        },
+        Object {
+          "id": "other",
+          "name": "Other",
+        },
+      ]
+    }
+  />
+  <Loader />
+</Fragment>
+`;
+
+exports[`App rendering with an invalid syntax 3`] = `
+<Fragment>
+  <Form
+    expr="test expression"
+    onSubmit={[Function]}
+    syntax="invalid"
+    syntaxList={
+      Array [
+        Object {
+          "id": "testJS",
+          "name": "Testing JS",
+        },
+        Object {
+          "id": "other",
+          "name": "Other",
+        },
+      ]
+    }
+  />
+  <Message
+    heading="Render Failure"
+    type="error"
+  >
+    <p>
+      An error occurred while rendering the regular expression.
+    </p>
+    <a
+      href="#retry"
+      onClick={[Function]}
+    >
+      Retry
+    </a>
+  </Message>
+</Fragment>
+`;

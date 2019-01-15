@@ -10,8 +10,8 @@ import Message from 'components/Message';
 
 class App extends React.PureComponent {
   static propTypes = {
-    syntax: PropTypes.string,
-    expr: PropTypes.string,
+    syntax: PropTypes.string.isRequired,
+    expr: PropTypes.string.isRequired,
     permalinkUrl: PropTypes.string,
     syntaxList: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.string,
@@ -71,9 +71,6 @@ class App extends React.PureComponent {
         `syntax/${ syntax }`
       );
 
-      // HACK: Fake loading time
-      await new Promise(resolve => setTimeout(resolve, 2000));
-
       this.setState({
         loading: false,
         render: {
@@ -91,7 +88,8 @@ class App extends React.PureComponent {
         loading: false,
         loadingError: e
       });
-      throw e;
+      // eslint-disable-next-line no-console
+      console.error(e);
     }
   }
 
