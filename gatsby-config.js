@@ -37,6 +37,19 @@ module.exports = {
         debug: (process.env.NODE_ENV !== 'production'),
         release: buildId
       }
-    }
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Regexper',
+        short_name: 'Regexper',
+        start_url: '/',
+        background_color: '#6b6659',
+        theme_color: '#bada55',
+        display: 'standalone',
+        icon: 'src/icon.svg'
+      }
+    },
+    'gatsby-plugin-offline'
   ]
 };

@@ -85,6 +85,8 @@
     "firebase-tools": "^6.2.2",
     "gatsby": "^2.0.81",
     "gatsby-plugin-google-analytics": "^2.0.8",
+    "gatsby-plugin-manifest": "^2.0.13",
+    "gatsby-plugin-offline": "^2.0.21",
     "gatsby-plugin-postcss": "^2.0.2",
     "gatsby-plugin-react-helmet": "^3.0.5",
     "gatsby-plugin-sentry": "^1.0.0",
