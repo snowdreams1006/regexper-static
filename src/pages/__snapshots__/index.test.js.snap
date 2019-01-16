@@ -2,7 +2,9 @@
 
 exports[`Index Page rendering 1`] = `
 <Fragment>
-  <Metadata />
+  <LoadNamespace(Metadata)
+    description="Test description"
+  />
   <noscript>
     <Message
       heading="JavaScript Required"
@@ -44,7 +46,9 @@ exports[`Index Page rendering 1`] = `
 
 exports[`Index Page rendering with an expression on the URL 1`] = `
 <Fragment>
-  <Metadata />
+  <LoadNamespace(Metadata)
+    description="Test description"
+  />
   <noscript>
     <Message
       heading="JavaScript Required"

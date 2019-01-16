@@ -1,15 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withNamespaces } from 'react-i18next';
 import { Helmet } from 'react-helmet';
 
-const Metadata = ({ title }) => (
-  <Helmet>
-    <title>{ title ? `Regexper - ${ title }` : 'Regexper' }</title>
-  </Helmet>
-);
+class Metadata extends React.PureComponent {
+  static propTypes = {
+    title: PropTypes.string,
+    description: PropTypes.string,
+    i18n: PropTypes.shape({
+      language: PropTypes.string.isRequired
+    }).isRequired
+  }
 
-Metadata.propTypes = {
-  title: PropTypes.string
-};
+  render() {
+    const { title, description, i18n } = this.props;
+    const htmlAttributes = {
+      lang: i18n.language
+    };
 
-export default Metadata;
+    return <Helmet htmlAttributes={ htmlAttributes }>
+      <title>{ title ? `Regexper - ${ title }` : 'Regexper' }</title>
+      { description && <meta name="description" content={ description } /> }
+    </Helmet>;
+  }
+}
+
+export { Metadata };
+export default withNamespaces()(Metadata);

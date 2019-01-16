@@ -4,6 +4,11 @@ exports[`Metadata rendering 1`] = `
 <HelmetWrapper
   defer={true}
   encodeSpecialCharacters={true}
+  htmlAttributes={
+    Object {
+      "lang": "test-lang",
+    }
+  }
 >
   <title>
     Regexper
@@ -11,13 +16,22 @@ exports[`Metadata rendering 1`] = `
 </HelmetWrapper>
 `;
 
-exports[`Metadata rendering with a title 1`] = `
+exports[`Metadata rendering with a title and description 1`] = `
 <HelmetWrapper
   defer={true}
   encodeSpecialCharacters={true}
+  htmlAttributes={
+    Object {
+      "lang": "test-lang",
+    }
+  }
 >
   <title>
     Regexper - Testing
   </title>
+  <meta
+    content="Test description"
+    name="description"
+  />
 </HelmetWrapper>
 `;

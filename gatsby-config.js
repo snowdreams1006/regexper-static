@@ -1,3 +1,5 @@
+const pkg = require('./package.json');
+
 const buildId = [
   process.env.CI_COMMIT_REF_SLUG || 'prerelese',
   (process.env.CI_COMMIT_SHA || 'gitsha').slice(0, 7)
@@ -8,6 +10,7 @@ const banner = process.env.BANNER || (process.env.NODE_ENV === 'production'
 
 module.exports = {
   siteMetadata: {
+    description: pkg.description,
     buildId,
     banner,
     defaultSyntax: 'js',

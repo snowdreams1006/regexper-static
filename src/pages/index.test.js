@@ -6,6 +6,7 @@ import { IndexPage } from 'pages/index';
 const queryResult = {
   site: {
     siteMetadata: {
+      description: 'Test description',
       defaultSyntax: 'testJs',
       syntaxList: [
         { id: 'testJS', name: 'Testing JS' },

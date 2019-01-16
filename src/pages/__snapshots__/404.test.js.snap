@@ -2,7 +2,7 @@
 
 exports[`Error Page rendering 1`] = `
 <Fragment>
-  <Metadata
+  <LoadNamespace(Metadata)
     title="TRANSLATE(Page Not Found)"
   />
   <Message

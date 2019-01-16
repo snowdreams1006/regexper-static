@@ -11,6 +11,7 @@ export const query = graphql`
   query IndexPageQuery {
     site {
       siteMetadata {
+        description
         defaultSyntax
         syntaxList { id, label }
       }
@@ -43,7 +44,7 @@ export const IndexPage = ({
   location,
   data: { site: { siteMetadata } }
 }) => <>
-  <Metadata/>
+  <Metadata description={ siteMetadata.description } />
   <noscript>
     <Message type="error" heading="JavaScript Required">
       <p>You need JavaScript to use Regexper.</p>
@@ -61,6 +62,7 @@ IndexPage.propTypes = {
   data: PropTypes.shape({
     site: PropTypes.shape({
       siteMetadata: PropTypes.shape({
+        description: PropTypes.string,
         defaultSyntax: PropTypes.string,
         syntaxList: PropTypes.arrayOf(PropTypes.shape({
           id: PropTypes.string,
