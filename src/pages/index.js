@@ -39,36 +39,44 @@ const readURLHash = (location, defaultSyntax) => {
   }
 };
 
-export const IndexPage = ({
-  location,
-  data: { site: { siteMetadata } }
-}) => <>
-  <Metadata/>
-  <noscript>
-    <Message type="error" heading="JavaScript Required">
-      <p>You need JavaScript to use Regexper.</p>
-      <p>If you have concerns regarding the use of tracking code on Regexper,
-        please see the <Link to="/privacy">Privacy Policy</Link>.</p>
-    </Message>
-  </noscript>
-  <App
-    syntaxList={ siteMetadata.syntaxList }
-    { ...readURLHash(location, siteMetadata.defaultSyntax) } />
-</>;
-
-IndexPage.propTypes = {
-  location: PropTypes.object,
-  data: PropTypes.shape({
-    site: PropTypes.shape({
-      siteMetadata: PropTypes.shape({
-        defaultSyntax: PropTypes.string,
-        syntaxList: PropTypes.arrayOf(PropTypes.shape({
-          id: PropTypes.string,
-          label: PropTypes.string
-        }))
+class IndexPage extends React.PureComponent {
+  static propTypes = {
+    location: PropTypes.object,
+    data: PropTypes.shape({
+      site: PropTypes.shape({
+        siteMetadata: PropTypes.shape({
+          defaultSyntax: PropTypes.string,
+          syntaxList: PropTypes.arrayOf(PropTypes.shape({
+            id: PropTypes.string,
+            label: PropTypes.string
+          }))
+        })
       })
     })
-  })
-};
+  }
+
+  render() {
+    const {
+      location,
+      data: { site: { siteMetadata } }
+    } = this.props;
+
+    return <>
+      <Metadata/>
+      <noscript>
+        <Message type="error" heading="JavaScript Required">
+          <p>You need JavaScript to use Regexper.</p>
+          <p>
+            If you have concerns regarding the use of tracking code on Regexper,
+            please see the <Link to="/privacy">Privacy Policy</Link>.
+          </p>
+        </Message>
+      </noscript>
+      <App
+        syntaxList={ siteMetadata.syntaxList }
+        { ...readURLHash(location, siteMetadata.defaultSyntax) } />
+    </>;
+  }
+}
 
 export default IndexPage;

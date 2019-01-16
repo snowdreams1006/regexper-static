@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { IndexPage } from 'pages/index';
+import IndexPage from 'pages/index';
 
 const queryResult = {
   site: {
