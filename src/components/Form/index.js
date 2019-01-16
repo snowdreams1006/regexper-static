@@ -53,7 +53,7 @@ class Form extends React.PureComponent {
     } = this.props;
     const { expr, syntax } = this.state;
 
-    return <div className={ style.form }>
+    return <div className={ style.form } data-requires-js>
       <form onSubmit={ this.handleSubmit }>
         <textarea
           name="expr"

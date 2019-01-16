@@ -3,6 +3,7 @@
 exports[`Form rendering 1`] = `
 <div
   className="form"
+  data-requires-js={true}
 >
   <form
     onSubmit={[Function]}

@@ -2,6 +2,17 @@
 
 exports[`Layout rendering 1`] = `
 <SentryBoundary>
+  <noscript>
+    <style
+      type="text/css"
+    >
+      
+  [data-requires-js] {
+    display: none !important;
+  }
+
+    </style>
+  </noscript>
   <LoadNamespace(Header)
     banner="Test Banner"
   />

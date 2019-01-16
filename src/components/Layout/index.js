@@ -17,7 +17,16 @@ const query = graphql`
   }
 `;
 
+const noscriptStyle = `
+  [data-requires-js] {
+    display: none !important;
+  }
+`;
+
 export const Layout = ({ banner, buildId, children }) => <SentryBoundary>
+  <noscript>
+    <style type="text/css">{ noscriptStyle }</style>
+  </noscript>
   <Header banner={ banner } />
   <SentryBoundary>
     { children }

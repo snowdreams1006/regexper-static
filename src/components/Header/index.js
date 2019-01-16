@@ -31,7 +31,7 @@ export const Header = ({ banner }) => (
           <Trans>Privacy Policy</Trans>
         </Link>
       </li>
-      <li>
+      <li data-requires-js>
         <LocaleSwitcher />
       </li>
     </ul>

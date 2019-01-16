@@ -39,7 +39,9 @@ exports[`Header rendering 1`] = `
         </WithMergedOptions(TransComponent)>
       </mockConstructor>
     </li>
-    <li>
+    <li
+      data-requires-js={true}
+    >
       <LoadNamespace(LocaleSwitcher) />
     </li>
   </ul>
@@ -85,7 +87,9 @@ exports[`Header rendering with no banner 1`] = `
         </WithMergedOptions(TransComponent)>
       </mockConstructor>
     </li>
-    <li>
+    <li
+      data-requires-js={true}
+    >
       <LoadNamespace(LocaleSwitcher) />
     </li>
   </ul>
