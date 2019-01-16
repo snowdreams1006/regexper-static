@@ -113,7 +113,7 @@ exports[`App rendering an expression 2`] = `
       ]
     }
   />
-  <Loader />
+  <LoadNamespace(Loader) />
 </Fragment>
 `;
 
@@ -248,7 +248,7 @@ exports[`App rendering with an invalid syntax 2`] = `
       ]
     }
   />
-  <Loader />
+  <LoadNamespace(Loader) />
 </Fragment>
 `;
 
