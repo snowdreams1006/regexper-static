@@ -12,12 +12,14 @@ exports[`Form rendering 1`] = `
       name="expr"
       onChange={[Function]}
       onKeyPress={[Function]}
-      placeholder="Enter regular expression to display"
+      placeholder="TRANSLATE(Enter regular expression to display)"
     />
     <button
       type="submit"
     >
-      Display
+      <WithMergedOptions(TransComponent)>
+        Display
+      </WithMergedOptions(TransComponent)>
     </button>
     <div
       className="select"
@@ -29,11 +31,15 @@ exports[`Form rendering 1`] = `
         <option
           key="testJS"
           value="testJS"
-        />
+        >
+          TRANSLATE(Testing JS)
+        </option>
         <option
           key="other"
           value="other"
-        />
+        >
+          TRANSLATE(Other)
+        </option>
       </select>
       <ChevronsDown
         color="currentColor"

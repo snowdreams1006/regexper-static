@@ -1,17 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Form from 'components/Form';
+import { mockT } from 'i18n';
+import { Form } from 'components/Form';
 
 const syntaxList = [
-  { id: 'testJS', name: 'Testing JS' },
-  { id: 'other', name: 'Other' }
+  { id: 'testJS', label: 'Testing JS' },
+  { id: 'other', label: 'Other' }
 ];
+const commonProps = { syntaxList, t: mockT };
 
 describe('Form', () => {
   test('rendering', () => {
     const component = shallow(
-      <Form syntaxList={ syntaxList } onSubmit={ jest.fn() }>
+      <Form onSubmit={ jest.fn() } { ...commonProps }>
         Actions
       </Form>
     );
@@ -22,7 +24,7 @@ describe('Form', () => {
     test('submitting form', () => {
       const onSubmit = jest.fn();
       const component = shallow(
-        <Form syntaxList={ syntaxList } onSubmit={ onSubmit } />
+        <Form onSubmit={ onSubmit } { ...commonProps } />
       );
 
       const exprInput = component.find('[name="expr"]');
@@ -52,7 +54,7 @@ describe('Form', () => {
 
     test('submitting form with Shift+Enter', () => {
       const component = shallow(
-        <Form syntaxList={ syntaxList } onSubmit={ jest.fn() } />
+        <Form onSubmit={ jest.fn() } { ...commonProps } />
       );
       const form = component.instance();
       const eventObj = {
@@ -68,7 +70,7 @@ describe('Form', () => {
 
     test('not submitting with just Enter', () => {
       const component = shallow(
-        <Form syntaxList={ syntaxList } onSubmit={ jest.fn() } />
+        <Form onSubmit={ jest.fn() } { ...commonProps } />
       );
       const form = component.instance();
       const eventObj = {

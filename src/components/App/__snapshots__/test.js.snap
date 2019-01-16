@@ -2,7 +2,7 @@
 
 exports[`App removing rendered expression 1`] = `
 <Fragment>
-  <Form
+  <LoadNamespace(Form)
     expr="test expression"
     onSubmit={[Function]}
     syntax="js"
@@ -20,7 +20,7 @@ exports[`App removing rendered expression 1`] = `
     }
   >
     <FormActions />
-  </Form>
+  </LoadNamespace(Form)>
   <RenderJS
     expr="test expression"
     onRender={[Function]}
@@ -30,7 +30,7 @@ exports[`App removing rendered expression 1`] = `
 
 exports[`App removing rendered expression 2`] = `
 <Fragment>
-  <Form
+  <LoadNamespace(Form)
     expr=""
     onSubmit={[Function]}
     syntax="js"
@@ -52,7 +52,7 @@ exports[`App removing rendered expression 2`] = `
 
 exports[`App rendering 1`] = `
 <Fragment>
-  <Form
+  <LoadNamespace(Form)
     expr=""
     onSubmit={[Function]}
     syntax="js"
@@ -74,7 +74,7 @@ exports[`App rendering 1`] = `
 
 exports[`App rendering an expression 1`] = `
 <Fragment>
-  <Form
+  <LoadNamespace(Form)
     expr=""
     onSubmit={[Function]}
     syntax="js"
@@ -96,7 +96,7 @@ exports[`App rendering an expression 1`] = `
 
 exports[`App rendering an expression 2`] = `
 <Fragment>
-  <Form
+  <LoadNamespace(Form)
     expr="test expression"
     onSubmit={[Function]}
     syntax="js"
@@ -119,7 +119,7 @@ exports[`App rendering an expression 2`] = `
 
 exports[`App rendering an expression 3`] = `
 <Fragment>
-  <Form
+  <LoadNamespace(Form)
     expr="test expression"
     onSubmit={[Function]}
     syntax="js"
@@ -137,7 +137,7 @@ exports[`App rendering an expression 3`] = `
     }
   >
     <FormActions />
-  </Form>
+  </LoadNamespace(Form)>
   <RenderJS
     expr="test expression"
     onRender={[Function]}
@@ -147,7 +147,7 @@ exports[`App rendering an expression 3`] = `
 
 exports[`App rendering image details 1`] = `
 <Fragment>
-  <Form
+  <LoadNamespace(Form)
     expr="test expression"
     onSubmit={[Function]}
     syntax="js"
@@ -165,7 +165,7 @@ exports[`App rendering image details 1`] = `
     }
   >
     <FormActions />
-  </Form>
+  </LoadNamespace(Form)>
   <RenderJS
     expr="test expression"
     onRender={[Function]}
@@ -175,7 +175,7 @@ exports[`App rendering image details 1`] = `
 
 exports[`App rendering image details 2`] = `
 <Fragment>
-  <Form
+  <LoadNamespace(Form)
     expr="test expression"
     onSubmit={[Function]}
     syntax="js"
@@ -199,7 +199,7 @@ exports[`App rendering image details 2`] = `
         }
       }
     />
-  </Form>
+  </LoadNamespace(Form)>
   <RenderJS
     expr="test expression"
     onRender={[Function]}
@@ -209,7 +209,7 @@ exports[`App rendering image details 2`] = `
 
 exports[`App rendering with an invalid syntax 1`] = `
 <Fragment>
-  <Form
+  <LoadNamespace(Form)
     expr=""
     onSubmit={[Function]}
     syntax="invalid"
@@ -231,7 +231,7 @@ exports[`App rendering with an invalid syntax 1`] = `
 
 exports[`App rendering with an invalid syntax 2`] = `
 <Fragment>
-  <Form
+  <LoadNamespace(Form)
     expr="test expression"
     onSubmit={[Function]}
     syntax="invalid"
@@ -254,7 +254,7 @@ exports[`App rendering with an invalid syntax 2`] = `
 
 exports[`App rendering with an invalid syntax 3`] = `
 <Fragment>
-  <Form
+  <LoadNamespace(Form)
     expr="test expression"
     onSubmit={[Function]}
     syntax="invalid"

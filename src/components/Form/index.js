@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withNamespaces, Trans } from 'react-i18next';
 
 import ExpandIcon from 'react-feather/dist/icons/chevrons-down';
 
@@ -17,7 +18,8 @@ class Form extends React.PureComponent {
     children: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.node),
       PropTypes.node
-    ])
+    ]),
+    t: PropTypes.func.isRequired
   }
 
   state = {
@@ -46,7 +48,8 @@ class Form extends React.PureComponent {
   render() {
     const {
       syntaxList,
-      children
+      children,
+      t
     } = this.props;
     const { expr, syntax } = this.state;
 
@@ -58,15 +61,15 @@ class Form extends React.PureComponent {
           onKeyPress={ this.handleKeyPress }
           onChange={ this.handleChange }
           autoFocus
-          placeholder="Enter regular expression to display"></textarea>
-        <button type="submit">Display</button>
+          placeholder={ t('Enter regular expression to display') }></textarea>
+        <button type="submit"><Trans>Display</Trans></button>
         <div className={ style.select }>
           <select
             name="syntax"
             value={ syntax }
             onChange={ this.handleChange } >
             { syntaxList.map(({ id, label }) => (
-              <option value={ id } key={ id }>{ label }</option>
+              <option value={ id } key={ id }>{ t(label) }</option>
             )) }
           </select>
           <ExpandIcon />
@@ -77,4 +80,5 @@ class Form extends React.PureComponent {
   }
 }
 
-export default Form;
+export { Form };
+export default withNamespaces()(Form);
