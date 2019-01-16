@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withNamespaces, Trans } from 'react-i18next';
 import * as Sentry from '@sentry/browser';
 import URLSearchParams from '@ungap/url-search-params';
 
@@ -16,7 +17,8 @@ class App extends React.PureComponent {
     syntaxList: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.string,
       label: PropTypes.string
-    }))
+    })),
+    t: PropTypes.func.isRequired
   }
 
   state = {
@@ -105,7 +107,8 @@ class App extends React.PureComponent {
       syntax,
       expr,
       permalinkUrl,
-      syntaxList
+      syntaxList,
+      t
     } = this.props;
     const {
       loading,
@@ -142,9 +145,11 @@ class App extends React.PureComponent {
 
       { loading && <Loader /> }
 
-      { loadingError && <Message type="error" heading="Render Failure">
-        <p>An error occurred while rendering the regular expression.</p>
-        <a href="#retry" onClick={ this.handleRetry }>Retry</a>
+      { loadingError && <Message type="error" heading={ t('Render Failure') }>
+        <p><Trans>
+          An error occurred while rendering the regular expression.
+        </Trans></p>
+        <a href="#retry" onClick={ this.handleRetry }><Trans>Retry</Trans></a>
       </Message> }
 
       { doRender && <Component { ...renderProps } /> }
@@ -152,4 +157,5 @@ class App extends React.PureComponent {
   }
 }
 
-export default App;
+export { App };
+export default withNamespaces()(App);

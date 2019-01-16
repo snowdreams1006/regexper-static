@@ -1,24 +1,26 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import App from 'components/App';
+import { mockT } from 'i18n';
+import { App } from 'components/App';
 
 const syntaxList = [
-  { id: 'testJS', name: 'Testing JS' },
-  { id: 'other', name: 'Other' }
+  { id: 'testJS', label: 'Testing JS' },
+  { id: 'other', label: 'Other' }
 ];
+const commonProps = { syntaxList, t: mockT };
 
 describe('App', () => {
   test('rendering', () => {
     const component = shallow(
-      <App expr="" syntax="js" syntaxList={ syntaxList } />
+      <App expr="" syntax="js" { ...commonProps } />
     );
     expect(component).toMatchSnapshot();
   });
 
   test('rendering an expression', async () => {
     const component = shallow(
-      <App expr="" syntax="js" syntaxList={ syntaxList } />
+      <App expr="" syntax="js" { ...commonProps } />
     );
     expect(component).toMatchSnapshot();
 
@@ -38,7 +40,7 @@ describe('App', () => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
 
     const component = shallow(
-      <App expr="" syntax="invalid" syntaxList={ syntaxList } />
+      <App expr="" syntax="invalid" { ...commonProps } />
     );
     expect(component).toMatchSnapshot();
 
@@ -56,7 +58,7 @@ describe('App', () => {
 
   test('removing rendered expression', async () => {
     const component = shallow(
-      <App expr="test expression" syntax="js" syntaxList={ syntaxList } />
+      <App expr="test expression" syntax="js" { ...commonProps } />
     );
 
     // Give a beat for module to load
@@ -73,7 +75,7 @@ describe('App', () => {
 
   test('rendering image details', async () => {
     const component = shallow(
-      <App expr="test expression" syntax="js" syntaxList={ syntaxList } />
+      <App expr="test expression" syntax="js" { ...commonProps } />
     );
 
     // Give a beat for module to load
@@ -92,7 +94,7 @@ describe('App', () => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
 
     const component = shallow(
-      <App expr="test expression" syntax="invalid" syntaxList={ syntaxList } />
+      <App expr="test expression" syntax="invalid" { ...commonProps } />
     );
 
     const instance = component.instance();
@@ -108,7 +110,7 @@ describe('App', () => {
 
   test('submitting an expression to render', () => {
     const component = shallow(
-      <App expr="" syntax="js" syntaxList={ syntaxList } />
+      <App expr="" syntax="js" { ...commonProps } />
     );
 
     const instance = component.instance();

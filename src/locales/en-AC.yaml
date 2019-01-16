@@ -43,3 +43,9 @@
   404 PAGE NOT FOUND
 "The page you have requested could not be found.": |
   THE PAGE YOU HAVE REQUESTED COULD NOT BE FOUND.
+"Render Failure": |
+  RENDER FAILURE
+"An error occurred while rendering the regular expression.": |
+  AN ERROR OCCURRED WHILE RENDERING THE REGULAR EXPRESSION.
+"Retry": |
+  RETRY

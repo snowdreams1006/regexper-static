@@ -10,11 +10,11 @@ exports[`App removing rendered expression 1`] = `
       Array [
         Object {
           "id": "testJS",
-          "name": "Testing JS",
+          "label": "Testing JS",
         },
         Object {
           "id": "other",
-          "name": "Other",
+          "label": "Other",
         },
       ]
     }
@@ -38,11 +38,11 @@ exports[`App removing rendered expression 2`] = `
       Array [
         Object {
           "id": "testJS",
-          "name": "Testing JS",
+          "label": "Testing JS",
         },
         Object {
           "id": "other",
-          "name": "Other",
+          "label": "Other",
         },
       ]
     }
@@ -60,11 +60,11 @@ exports[`App rendering 1`] = `
       Array [
         Object {
           "id": "testJS",
-          "name": "Testing JS",
+          "label": "Testing JS",
         },
         Object {
           "id": "other",
-          "name": "Other",
+          "label": "Other",
         },
       ]
     }
@@ -82,11 +82,11 @@ exports[`App rendering an expression 1`] = `
       Array [
         Object {
           "id": "testJS",
-          "name": "Testing JS",
+          "label": "Testing JS",
         },
         Object {
           "id": "other",
-          "name": "Other",
+          "label": "Other",
         },
       ]
     }
@@ -104,11 +104,11 @@ exports[`App rendering an expression 2`] = `
       Array [
         Object {
           "id": "testJS",
-          "name": "Testing JS",
+          "label": "Testing JS",
         },
         Object {
           "id": "other",
-          "name": "Other",
+          "label": "Other",
         },
       ]
     }
@@ -127,11 +127,11 @@ exports[`App rendering an expression 3`] = `
       Array [
         Object {
           "id": "testJS",
-          "name": "Testing JS",
+          "label": "Testing JS",
         },
         Object {
           "id": "other",
-          "name": "Other",
+          "label": "Other",
         },
       ]
     }
@@ -155,11 +155,11 @@ exports[`App rendering image details 1`] = `
       Array [
         Object {
           "id": "testJS",
-          "name": "Testing JS",
+          "label": "Testing JS",
         },
         Object {
           "id": "other",
-          "name": "Other",
+          "label": "Other",
         },
       ]
     }
@@ -183,11 +183,11 @@ exports[`App rendering image details 2`] = `
       Array [
         Object {
           "id": "testJS",
-          "name": "Testing JS",
+          "label": "Testing JS",
         },
         Object {
           "id": "other",
-          "name": "Other",
+          "label": "Other",
         },
       ]
     }
@@ -217,11 +217,11 @@ exports[`App rendering with an invalid syntax 1`] = `
       Array [
         Object {
           "id": "testJS",
-          "name": "Testing JS",
+          "label": "Testing JS",
         },
         Object {
           "id": "other",
-          "name": "Other",
+          "label": "Other",
         },
       ]
     }
@@ -239,11 +239,11 @@ exports[`App rendering with an invalid syntax 2`] = `
       Array [
         Object {
           "id": "testJS",
-          "name": "Testing JS",
+          "label": "Testing JS",
         },
         Object {
           "id": "other",
-          "name": "Other",
+          "label": "Other",
         },
       ]
     }
@@ -262,27 +262,31 @@ exports[`App rendering with an invalid syntax 3`] = `
       Array [
         Object {
           "id": "testJS",
-          "name": "Testing JS",
+          "label": "Testing JS",
         },
         Object {
           "id": "other",
-          "name": "Other",
+          "label": "Other",
         },
       ]
     }
   />
   <Message
-    heading="Render Failure"
+    heading="TRANSLATE(Render Failure)"
     type="error"
   >
     <p>
-      An error occurred while rendering the regular expression.
+      <WithMergedOptions(TransComponent)>
+        An error occurred while rendering the regular expression.
+      </WithMergedOptions(TransComponent)>
     </p>
     <a
       href="#retry"
       onClick={[Function]}
     >
-      Retry
+      <WithMergedOptions(TransComponent)>
+        Retry
+      </WithMergedOptions(TransComponent)>
     </a>
   </Message>
 </Fragment>

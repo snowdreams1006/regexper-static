@@ -22,7 +22,7 @@ exports[`Index Page rendering 1`] = `
       </p>
     </Message>
   </noscript>
-  <App
+  <LoadNamespace(App)
     expr=""
     permalinkUrl={null}
     syntax="testJs"
@@ -64,7 +64,7 @@ exports[`Index Page rendering with an expression on the URL 1`] = `
       </p>
     </Message>
   </noscript>
-  <App
+  <LoadNamespace(App)
     expr="testing"
     permalinkUrl="http://example.com"
     syntax="test"
