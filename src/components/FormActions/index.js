@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withNamespaces, Trans } from 'react-i18next';
 
 import DownloadIcon from 'react-feather/dist/icons/download';
 import LinkIcon from 'react-feather/dist/icons/link';
@@ -15,7 +16,8 @@ class FormActions extends React.PureComponent {
       svg: PropTypes.string,
       width: PropTypes.number,
       height: PropTypes.number
-    })
+    }),
+    t: PropTypes.func.isRequired
   }
 
   state = {
@@ -63,9 +65,11 @@ class FormActions extends React.PureComponent {
   }
 
   downloadLink({ url, filename, type, label }) {
+    const { t } = this.props;
+
     return <li>
       <a href={ url } download={ filename } type={ type }>
-        <DownloadIcon />{ label }
+        <DownloadIcon />{ t(label) }
       </a>
     </li>;
   }
@@ -83,10 +87,11 @@ class FormActions extends React.PureComponent {
       { pngLink && this.downloadLink(pngLink) }
       { svgLink && this.downloadLink(svgLink) }
       { permalinkUrl && <li>
-        <a href={ permalinkUrl }><LinkIcon />Permalink</a>
+        <a href={ permalinkUrl }><LinkIcon /><Trans>Permalink</Trans></a>
       </li> }
     </ul>;
   }
 }
 
-export default FormActions;
+export { FormActions };
+export default withNamespaces()(FormActions);

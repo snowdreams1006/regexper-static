@@ -3,7 +3,8 @@ jest.mock('./links');
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import FormActions from 'components/FormActions';
+import { mockT } from 'i18n';
+import { FormActions } from 'components/FormActions';
 import { createPngLink, createSvgLink } from './links';
 
 createPngLink.mockResolvedValue({
@@ -22,14 +23,14 @@ createSvgLink.mockResolvedValue({
 describe('FormActions', () => {
   test('rendering', () => {
     const component = shallow(
-      <FormActions />
+      <FormActions t={ mockT } />
     );
     expect(component).toMatchSnapshot();
   });
 
   test('rendering with a permalink', () => {
     const component = shallow(
-      <FormActions permalinkUrl="http://example.com" />
+      <FormActions permalinkUrl="http://example.com" t={ mockT } />
     );
     expect(component).toMatchSnapshot();
   });
@@ -42,7 +43,7 @@ describe('FormActions', () => {
     };
 
     const component = shallow(
-      <FormActions imageDetails={ imageDetails }/>
+      <FormActions imageDetails={ imageDetails } t={ mockT } />
     );
 
     // Give a beat for mocked promises to resolve
@@ -53,7 +54,7 @@ describe('FormActions', () => {
 
   test('rendering download links with data after mounting', async () => {
     const component = shallow(
-      <FormActions />
+      <FormActions t={ mockT } />
     );
 
     component.setProps({ permalinkUrl: 'http://example.com' });

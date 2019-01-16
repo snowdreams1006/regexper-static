@@ -20,7 +20,7 @@ exports[`FormActions rendering download links 1`] = `
         color="currentColor"
         size="24"
       />
-      Example PNG Link
+      TRANSLATE(Example PNG Link)
     </a>
   </li>
   <li>
@@ -33,7 +33,7 @@ exports[`FormActions rendering download links 1`] = `
         color="currentColor"
         size="24"
       />
-      Example SVG Link
+      TRANSLATE(Example SVG Link)
     </a>
   </li>
 </ul>
@@ -51,7 +51,9 @@ exports[`FormActions rendering download links with data after mounting 1`] = `
         color="currentColor"
         size="24"
       />
-      Permalink
+      <WithMergedOptions(TransComponent)>
+        Permalink
+      </WithMergedOptions(TransComponent)>
     </a>
   </li>
 </ul>
@@ -71,7 +73,7 @@ exports[`FormActions rendering download links with data after mounting 2`] = `
         color="currentColor"
         size="24"
       />
-      Example PNG Link
+      TRANSLATE(Example PNG Link)
     </a>
   </li>
   <li>
@@ -84,7 +86,7 @@ exports[`FormActions rendering download links with data after mounting 2`] = `
         color="currentColor"
         size="24"
       />
-      Example SVG Link
+      TRANSLATE(Example SVG Link)
     </a>
   </li>
   <li>
@@ -95,7 +97,9 @@ exports[`FormActions rendering download links with data after mounting 2`] = `
         color="currentColor"
         size="24"
       />
-      Permalink
+      <WithMergedOptions(TransComponent)>
+        Permalink
+      </WithMergedOptions(TransComponent)>
     </a>
   </li>
 </ul>
@@ -115,7 +119,7 @@ exports[`FormActions rendering download links with data after mounting 3`] = `
         color="currentColor"
         size="24"
       />
-      Example PNG Link
+      TRANSLATE(Example PNG Link)
     </a>
   </li>
   <li>
@@ -128,7 +132,7 @@ exports[`FormActions rendering download links with data after mounting 3`] = `
         color="currentColor"
         size="24"
       />
-      Example SVG Link
+      TRANSLATE(Example SVG Link)
     </a>
   </li>
   <li>
@@ -139,7 +143,9 @@ exports[`FormActions rendering download links with data after mounting 3`] = `
         color="currentColor"
         size="24"
       />
-      Permalink
+      <WithMergedOptions(TransComponent)>
+        Permalink
+      </WithMergedOptions(TransComponent)>
     </a>
   </li>
 </ul>
@@ -157,7 +163,9 @@ exports[`FormActions rendering with a permalink 1`] = `
         color="currentColor"
         size="24"
       />
-      Permalink
+      <WithMergedOptions(TransComponent)>
+        Permalink
+      </WithMergedOptions(TransComponent)>
     </a>
   </li>
 </ul>

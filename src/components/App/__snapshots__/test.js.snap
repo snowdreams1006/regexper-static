@@ -19,7 +19,7 @@ exports[`App removing rendered expression 1`] = `
       ]
     }
   >
-    <FormActions />
+    <LoadNamespace(FormActions) />
   </LoadNamespace(Form)>
   <RenderJS
     expr="test expression"
@@ -136,7 +136,7 @@ exports[`App rendering an expression 3`] = `
       ]
     }
   >
-    <FormActions />
+    <LoadNamespace(FormActions) />
   </LoadNamespace(Form)>
   <RenderJS
     expr="test expression"
@@ -164,7 +164,7 @@ exports[`App rendering image details 1`] = `
       ]
     }
   >
-    <FormActions />
+    <LoadNamespace(FormActions) />
   </LoadNamespace(Form)>
   <RenderJS
     expr="test expression"
@@ -192,7 +192,7 @@ exports[`App rendering image details 2`] = `
       ]
     }
   >
-    <FormActions
+    <LoadNamespace(FormActions)
       imageDetails={
         Object {
           "svg": "test svg content",
