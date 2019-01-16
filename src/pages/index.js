@@ -6,6 +6,7 @@ import URLSearchParams from '@ungap/url-search-params';
 import Metadata from 'components/Metadata';
 import Message from 'components/Message';
 import App from 'components/App';
+import InstallPrompt from 'components/InstallPrompt';
 
 export const query = graphql`
   query IndexPageQuery {
@@ -40,6 +41,10 @@ const readURLHash = (location, defaultSyntax) => {
 };
 
 class IndexPage extends React.PureComponent {
+  state={
+    installPrompt: null
+  }
+
   static propTypes = {
     location: PropTypes.object,
     data: PropTypes.shape({
@@ -55,7 +60,37 @@ class IndexPage extends React.PureComponent {
     })
   }
 
+  componentDidMount() {
+    window.addEventListener('beforeinstallprompt', this.handleInstallPrompt);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('beforeinstallprompt', this.handleInstallPrompt);
+  }
+
+  handleInstallPrompt = event => {
+    event.preventDefault();
+
+    this.setState({
+      installPrompt: event
+    });
+  }
+
+  handleInstallReject = () => {
+    this.setState({ installPrompt: null });
+  }
+
+  handleInstallAccept = () => {
+    const { installPrompt } = this.state;
+
+    this.setState({ installPrompt: null });
+    installPrompt.prompt();
+  }
+
   render() {
+    const {
+      installPrompt
+    } = this.state;
     const {
       location,
       data: { site: { siteMetadata } }
@@ -75,6 +110,9 @@ class IndexPage extends React.PureComponent {
       <App
         syntaxList={ siteMetadata.syntaxList }
         { ...readURLHash(location, siteMetadata.defaultSyntax) } />
+      { installPrompt && <InstallPrompt
+        onAccept={ this.handleInstallAccept }
+        onReject={ this.handleInstallReject } /> }
     </>;
   }
 }
