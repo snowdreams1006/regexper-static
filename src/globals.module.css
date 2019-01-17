@@ -46,6 +46,10 @@
     padding-right: var(--list-separator-width);
   }
 
+  & li:empty {
+    display: none;
+  }
+
   & li:before {
     content: '//';
     padding: 0 0.5rem;
@@ -69,6 +73,10 @@
 
   & li {
     padding-left: var(--list-separator-width);
+  }
+
+  & li:empty {
+    display: none;
   }
 
   & li:after {

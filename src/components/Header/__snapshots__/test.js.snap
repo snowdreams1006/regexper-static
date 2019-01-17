@@ -39,6 +39,9 @@ exports[`Header rendering 1`] = `
         </WithMergedOptions(TransComponent)>
       </mockConstructor>
     </li>
+    <li>
+      <LoadNamespace(InstallPrompt) />
+    </li>
     <li
       data-requires-js={true}
     >
@@ -86,6 +89,9 @@ exports[`Header rendering with no banner 1`] = `
           Privacy Policy
         </WithMergedOptions(TransComponent)>
       </mockConstructor>
+    </li>
+    <li>
+      <LoadNamespace(InstallPrompt) />
     </li>
     <li
       data-requires-js={true}

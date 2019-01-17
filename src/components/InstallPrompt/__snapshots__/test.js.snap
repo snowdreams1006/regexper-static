@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InstallPrompt rendering 1`] = `""`;
+
+exports[`InstallPrompt rendering after an install prompt has been requested 1`] = `""`;
+
+exports[`InstallPrompt rendering after an install prompt has been requested 2`] = `
+<a
+  href="#install"
+  onClick={[Function]}
+>
+  <WithMergedOptions(TransComponent)>
+    Add to Home Screen
+  </WithMergedOptions(TransComponent)>
+</a>
+`;

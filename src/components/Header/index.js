@@ -6,6 +6,7 @@ import { withNamespaces, Trans } from 'react-i18next';
 import GitlabIcon from 'react-feather/dist/icons/gitlab';
 
 import LocaleSwitcher from 'components/LocaleSwitcher';
+import InstallPrompt from 'components/InstallPrompt';
 
 import style from './style.module.css';
 
@@ -30,6 +31,9 @@ export const Header = ({ banner }) => (
         <Link to="/privacy">
           <Trans>Privacy Policy</Trans>
         </Link>
+      </li>
+      <li>
+        <InstallPrompt />
       </li>
       <li data-requires-js>
         <LocaleSwitcher />
