@@ -9,6 +9,7 @@
   margin: 0 calc(-1 * var(--content-margin)) var(--spacing-margin) calc(-1 * var(--content-margin));
   position: relative;
   color: var(--color-black);
+  min-width: 320px;
 
   &:after {
     content: attr(data-banner);
