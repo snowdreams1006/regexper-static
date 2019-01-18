@@ -30,6 +30,20 @@ describe('Header', () => {
     expect(component).toMatchSnapshot();
   });
 
+  ['shift', 'ctrl', 'alt', 'meta'].forEach(key => {
+    test(`opening the Privacy Policy modal while holding ${ key } key`, () => {
+      const component = shallow(
+        <Header banner={ false } />
+      );
+      const eventObj = { preventDefault: jest.fn() };
+
+      component.instance().handleOpen({ [key + 'Key']: true, ...eventObj });
+
+      expect(eventObj.preventDefault).not.toHaveBeenCalled();
+      expect(component.state('showModal')).toEqual(false);
+    });
+  });
+
   test('closing the Privacy Policy modal', () => {
     const component = shallow(
       <Header banner={ false } />

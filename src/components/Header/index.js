@@ -26,6 +26,10 @@ class Header extends React.PureComponent {
   }
 
   handleOpen = event => {
+    if (event.shiftKey || event.ctrlKey || event.altKey || event.metaKey) {
+      return;
+    }
+
     event.preventDefault();
     this.setState({ showModal: true });
   }
