@@ -1,103 +1,401 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header rendering 1`] = `
-<header
-  className="header"
-  data-banner="testing"
->
-  <h1>
-    <mockConstructor
-      to="/"
-    >
-      Regexper
-    </mockConstructor>
-  </h1>
-  <ul
-    className="list"
+exports[`Header closing the Privacy Policy modal 1`] = `
+<Fragment>
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    isOpen={true}
+    onRequestClose={[Function]}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
   >
-    <li>
-      <a
-        href="https://gitlab.com/javallone/regexper-static"
-        rel="external noopener noreferrer"
-        target="_blank"
-      >
-        <Gitlab
-          color="currentColor"
-          size="24"
-        />
-        <WithMergedOptions(TransComponent)>
-          Source on GitLab
-        </WithMergedOptions(TransComponent)>
-      </a>
-    </li>
-    <li>
-      <mockConstructor
-        to="/privacy"
-      >
-        <WithMergedOptions(TransComponent)>
-          Privacy Policy
-        </WithMergedOptions(TransComponent)>
-      </mockConstructor>
-    </li>
-    <li>
-      <LoadNamespace(InstallPrompt) />
-    </li>
-    <li
-      data-requires-js={true}
+    <LoadNamespace(PrivacyPolicy) />
+    <a
+      className="modalClose"
+      href="#close"
+      onClick={[Function]}
     >
-      <LoadNamespace(LocaleSwitcher) />
-    </li>
-  </ul>
-</header>
+      <XSquare
+        color="currentColor"
+        size="24"
+      />
+    </a>
+  </Modal>
+  <header
+    className="header"
+    data-banner={null}
+  >
+    <h1>
+      <mockConstructor
+        to="/"
+      >
+        Regexper
+      </mockConstructor>
+    </h1>
+    <ul
+      className="list"
+    >
+      <li>
+        <a
+          href="https://gitlab.com/javallone/regexper-static"
+          rel="external noopener noreferrer"
+          target="_blank"
+        >
+          <Gitlab
+            color="currentColor"
+            size="24"
+          />
+          <WithMergedOptions(TransComponent)>
+            Source on GitLab
+          </WithMergedOptions(TransComponent)>
+        </a>
+      </li>
+      <li>
+        <mockConstructor
+          onClick={[Function]}
+          to="/privacy"
+        >
+          <WithMergedOptions(TransComponent)>
+            Privacy Policy
+          </WithMergedOptions(TransComponent)>
+        </mockConstructor>
+      </li>
+      <li>
+        <LoadNamespace(InstallPrompt) />
+      </li>
+      <li
+        data-requires-js={true}
+      >
+        <LoadNamespace(LocaleSwitcher) />
+      </li>
+    </ul>
+  </header>
+</Fragment>
+`;
+
+exports[`Header closing the Privacy Policy modal 2`] = `
+<Fragment>
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    isOpen={false}
+    onRequestClose={[Function]}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+  >
+    <LoadNamespace(PrivacyPolicy) />
+    <a
+      className="modalClose"
+      href="#close"
+      onClick={[Function]}
+    >
+      <XSquare
+        color="currentColor"
+        size="24"
+      />
+    </a>
+  </Modal>
+  <header
+    className="header"
+    data-banner={null}
+  >
+    <h1>
+      <mockConstructor
+        to="/"
+      >
+        Regexper
+      </mockConstructor>
+    </h1>
+    <ul
+      className="list"
+    >
+      <li>
+        <a
+          href="https://gitlab.com/javallone/regexper-static"
+          rel="external noopener noreferrer"
+          target="_blank"
+        >
+          <Gitlab
+            color="currentColor"
+            size="24"
+          />
+          <WithMergedOptions(TransComponent)>
+            Source on GitLab
+          </WithMergedOptions(TransComponent)>
+        </a>
+      </li>
+      <li>
+        <mockConstructor
+          onClick={[Function]}
+          to="/privacy"
+        >
+          <WithMergedOptions(TransComponent)>
+            Privacy Policy
+          </WithMergedOptions(TransComponent)>
+        </mockConstructor>
+      </li>
+      <li>
+        <LoadNamespace(InstallPrompt) />
+      </li>
+      <li
+        data-requires-js={true}
+      >
+        <LoadNamespace(LocaleSwitcher) />
+      </li>
+    </ul>
+  </header>
+</Fragment>
+`;
+
+exports[`Header opening the Privacy Policy modal 1`] = `
+<Fragment>
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    isOpen={true}
+    onRequestClose={[Function]}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+  >
+    <LoadNamespace(PrivacyPolicy) />
+    <a
+      className="modalClose"
+      href="#close"
+      onClick={[Function]}
+    >
+      <XSquare
+        color="currentColor"
+        size="24"
+      />
+    </a>
+  </Modal>
+  <header
+    className="header"
+    data-banner={null}
+  >
+    <h1>
+      <mockConstructor
+        to="/"
+      >
+        Regexper
+      </mockConstructor>
+    </h1>
+    <ul
+      className="list"
+    >
+      <li>
+        <a
+          href="https://gitlab.com/javallone/regexper-static"
+          rel="external noopener noreferrer"
+          target="_blank"
+        >
+          <Gitlab
+            color="currentColor"
+            size="24"
+          />
+          <WithMergedOptions(TransComponent)>
+            Source on GitLab
+          </WithMergedOptions(TransComponent)>
+        </a>
+      </li>
+      <li>
+        <mockConstructor
+          onClick={[Function]}
+          to="/privacy"
+        >
+          <WithMergedOptions(TransComponent)>
+            Privacy Policy
+          </WithMergedOptions(TransComponent)>
+        </mockConstructor>
+      </li>
+      <li>
+        <LoadNamespace(InstallPrompt) />
+      </li>
+      <li
+        data-requires-js={true}
+      >
+        <LoadNamespace(LocaleSwitcher) />
+      </li>
+    </ul>
+  </header>
+</Fragment>
+`;
+
+exports[`Header rendering 1`] = `
+<Fragment>
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    isOpen={false}
+    onRequestClose={[Function]}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+  >
+    <LoadNamespace(PrivacyPolicy) />
+    <a
+      className="modalClose"
+      href="#close"
+      onClick={[Function]}
+    >
+      <XSquare
+        color="currentColor"
+        size="24"
+      />
+    </a>
+  </Modal>
+  <header
+    className="header"
+    data-banner="testing"
+  >
+    <h1>
+      <mockConstructor
+        to="/"
+      >
+        Regexper
+      </mockConstructor>
+    </h1>
+    <ul
+      className="list"
+    >
+      <li>
+        <a
+          href="https://gitlab.com/javallone/regexper-static"
+          rel="external noopener noreferrer"
+          target="_blank"
+        >
+          <Gitlab
+            color="currentColor"
+            size="24"
+          />
+          <WithMergedOptions(TransComponent)>
+            Source on GitLab
+          </WithMergedOptions(TransComponent)>
+        </a>
+      </li>
+      <li>
+        <mockConstructor
+          onClick={[Function]}
+          to="/privacy"
+        >
+          <WithMergedOptions(TransComponent)>
+            Privacy Policy
+          </WithMergedOptions(TransComponent)>
+        </mockConstructor>
+      </li>
+      <li>
+        <LoadNamespace(InstallPrompt) />
+      </li>
+      <li
+        data-requires-js={true}
+      >
+        <LoadNamespace(LocaleSwitcher) />
+      </li>
+    </ul>
+  </header>
+</Fragment>
 `;
 
 exports[`Header rendering with no banner 1`] = `
-<header
-  className="header"
-  data-banner={null}
->
-  <h1>
-    <mockConstructor
-      to="/"
-    >
-      Regexper
-    </mockConstructor>
-  </h1>
-  <ul
-    className="list"
+<Fragment>
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    isOpen={false}
+    onRequestClose={[Function]}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
   >
-    <li>
-      <a
-        href="https://gitlab.com/javallone/regexper-static"
-        rel="external noopener noreferrer"
-        target="_blank"
-      >
-        <Gitlab
-          color="currentColor"
-          size="24"
-        />
-        <WithMergedOptions(TransComponent)>
-          Source on GitLab
-        </WithMergedOptions(TransComponent)>
-      </a>
-    </li>
-    <li>
-      <mockConstructor
-        to="/privacy"
-      >
-        <WithMergedOptions(TransComponent)>
-          Privacy Policy
-        </WithMergedOptions(TransComponent)>
-      </mockConstructor>
-    </li>
-    <li>
-      <LoadNamespace(InstallPrompt) />
-    </li>
-    <li
-      data-requires-js={true}
+    <LoadNamespace(PrivacyPolicy) />
+    <a
+      className="modalClose"
+      href="#close"
+      onClick={[Function]}
     >
-      <LoadNamespace(LocaleSwitcher) />
-    </li>
-  </ul>
-</header>
+      <XSquare
+        color="currentColor"
+        size="24"
+      />
+    </a>
+  </Modal>
+  <header
+    className="header"
+    data-banner={null}
+  >
+    <h1>
+      <mockConstructor
+        to="/"
+      >
+        Regexper
+      </mockConstructor>
+    </h1>
+    <ul
+      className="list"
+    >
+      <li>
+        <a
+          href="https://gitlab.com/javallone/regexper-static"
+          rel="external noopener noreferrer"
+          target="_blank"
+        >
+          <Gitlab
+            color="currentColor"
+            size="24"
+          />
+          <WithMergedOptions(TransComponent)>
+            Source on GitLab
+          </WithMergedOptions(TransComponent)>
+        </a>
+      </li>
+      <li>
+        <mockConstructor
+          onClick={[Function]}
+          to="/privacy"
+        >
+          <WithMergedOptions(TransComponent)>
+            Privacy Policy
+          </WithMergedOptions(TransComponent)>
+        </mockConstructor>
+      </li>
+      <li>
+        <LoadNamespace(InstallPrompt) />
+      </li>
+      <li
+        data-requires-js={true}
+      >
+        <LoadNamespace(LocaleSwitcher) />
+      </li>
+    </ul>
+  </header>
+</Fragment>
 `;

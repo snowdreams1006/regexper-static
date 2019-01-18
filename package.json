@@ -108,6 +108,7 @@
     "react-dom": "^16.7.0",
     "react-feather": "^1.1.5",
     "react-helmet": "^5.2.0",
-    "react-i18next": "^9.0.2"
+    "react-i18next": "^9.0.2",
+    "react-modal": "^3.8.1"
   }
 }
