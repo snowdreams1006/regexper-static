@@ -73,6 +73,10 @@
   right: 2rem;
   line-height: 2.8rem;
   padding: 1rem;
+  margin: 0;
+  border: 0 none;
+  background: transparent;
+  color: inherit;
 
   &:hover svg,
   &:active svg {

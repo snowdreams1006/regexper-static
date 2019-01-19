@@ -17,16 +17,15 @@ exports[`Header closing the Privacy Policy modal 1`] = `
     shouldReturnFocusAfterClose={true}
   >
     <LoadNamespace(PrivacyPolicy) />
-    <a
+    <button
       className="modalClose"
-      href="#close"
       onClick={[Function]}
     >
       <XSquare
         color="currentColor"
         size="24"
       />
-    </a>
+    </button>
   </Modal>
   <header
     className="header"
@@ -97,16 +96,15 @@ exports[`Header closing the Privacy Policy modal 2`] = `
     shouldReturnFocusAfterClose={true}
   >
     <LoadNamespace(PrivacyPolicy) />
-    <a
+    <button
       className="modalClose"
-      href="#close"
       onClick={[Function]}
     >
       <XSquare
         color="currentColor"
         size="24"
       />
-    </a>
+    </button>
   </Modal>
   <header
     className="header"
@@ -177,16 +175,15 @@ exports[`Header opening the Privacy Policy modal 1`] = `
     shouldReturnFocusAfterClose={true}
   >
     <LoadNamespace(PrivacyPolicy) />
-    <a
+    <button
       className="modalClose"
-      href="#close"
       onClick={[Function]}
     >
       <XSquare
         color="currentColor"
         size="24"
       />
-    </a>
+    </button>
   </Modal>
   <header
     className="header"
@@ -257,16 +254,15 @@ exports[`Header rendering 1`] = `
     shouldReturnFocusAfterClose={true}
   >
     <LoadNamespace(PrivacyPolicy) />
-    <a
+    <button
       className="modalClose"
-      href="#close"
       onClick={[Function]}
     >
       <XSquare
         color="currentColor"
         size="24"
       />
-    </a>
+    </button>
   </Modal>
   <header
     className="header"
@@ -337,16 +333,15 @@ exports[`Header rendering with no banner 1`] = `
     shouldReturnFocusAfterClose={true}
   >
     <LoadNamespace(PrivacyPolicy) />
-    <a
+    <button
       className="modalClose"
-      href="#close"
       onClick={[Function]}
     >
       <XSquare
         color="currentColor"
         size="24"
       />
-    </a>
+    </button>
   </Modal>
   <header
     className="header"

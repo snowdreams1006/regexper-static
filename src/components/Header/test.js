@@ -48,15 +48,13 @@ describe('Header', () => {
     const component = shallow(
       <Header banner={ false } />
     );
-    const eventObj = { preventDefault: jest.fn() };
 
     component.setState({ showModal: true });
 
     expect(component).toMatchSnapshot();
 
-    component.instance().handleClose(eventObj);
+    component.instance().handleClose();
 
-    expect(eventObj.preventDefault).toHaveBeenCalled();
     expect(component).toMatchSnapshot();
   });
 });

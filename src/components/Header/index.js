@@ -34,8 +34,7 @@ class Header extends React.PureComponent {
     this.setState({ showModal: true });
   }
 
-  handleClose = event => {
-    event.preventDefault();
+  handleClose = () => {
     this.setState({ showModal: false });
   }
 
@@ -49,12 +48,11 @@ class Header extends React.PureComponent {
         onRequestClose={ this.handleClose }
         shouldCloseOnOverlayClick={ true }>
         <PrivacyPolicy />
-        <a
-          href="#close"
+        <button
           className={ style.modalClose }
           onClick={ this.handleClose }>
           <CloseIcon />
-        </a>
+        </button>
       </Modal>
       <header
         className={ style.header }
