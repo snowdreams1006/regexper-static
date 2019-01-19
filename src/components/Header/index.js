@@ -45,8 +45,7 @@ class Header extends React.PureComponent {
     return <>
       <Modal
         isOpen={ showModal }
-        onRequestClose={ this.handleClose }
-        shouldCloseOnOverlayClick={ true }>
+        onRequestClose={ this.handleClose }>
         <PrivacyPolicy />
         <button
           className={ style.modalClose }
