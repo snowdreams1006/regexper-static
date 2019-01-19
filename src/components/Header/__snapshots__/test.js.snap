@@ -16,16 +16,9 @@ exports[`Header closing the Privacy Policy modal 1`] = `
     shouldFocusAfterRender={true}
     shouldReturnFocusAfterClose={true}
   >
-    <LoadNamespace(PrivacyPolicy) />
-    <button
-      className="modalClose"
-      onClick={[Function]}
-    >
-      <XSquare
-        color="currentColor"
-        size="24"
-      />
-    </button>
+    <LoadNamespace(PrivacyPolicy)
+      onClose={[Function]}
+    />
   </Modal>
   <header
     className="header"
@@ -95,16 +88,9 @@ exports[`Header closing the Privacy Policy modal 2`] = `
     shouldFocusAfterRender={true}
     shouldReturnFocusAfterClose={true}
   >
-    <LoadNamespace(PrivacyPolicy) />
-    <button
-      className="modalClose"
-      onClick={[Function]}
-    >
-      <XSquare
-        color="currentColor"
-        size="24"
-      />
-    </button>
+    <LoadNamespace(PrivacyPolicy)
+      onClose={[Function]}
+    />
   </Modal>
   <header
     className="header"
@@ -174,16 +160,9 @@ exports[`Header opening the Privacy Policy modal 1`] = `
     shouldFocusAfterRender={true}
     shouldReturnFocusAfterClose={true}
   >
-    <LoadNamespace(PrivacyPolicy) />
-    <button
-      className="modalClose"
-      onClick={[Function]}
-    >
-      <XSquare
-        color="currentColor"
-        size="24"
-      />
-    </button>
+    <LoadNamespace(PrivacyPolicy)
+      onClose={[Function]}
+    />
   </Modal>
   <header
     className="header"
@@ -253,16 +232,9 @@ exports[`Header rendering 1`] = `
     shouldFocusAfterRender={true}
     shouldReturnFocusAfterClose={true}
   >
-    <LoadNamespace(PrivacyPolicy) />
-    <button
-      className="modalClose"
-      onClick={[Function]}
-    >
-      <XSquare
-        color="currentColor"
-        size="24"
-      />
-    </button>
+    <LoadNamespace(PrivacyPolicy)
+      onClose={[Function]}
+    />
   </Modal>
   <header
     className="header"
@@ -332,16 +304,9 @@ exports[`Header rendering with no banner 1`] = `
     shouldFocusAfterRender={true}
     shouldReturnFocusAfterClose={true}
   >
-    <LoadNamespace(PrivacyPolicy) />
-    <button
-      className="modalClose"
-      onClick={[Function]}
-    >
-      <XSquare
-        color="currentColor"
-        size="24"
-      />
-    </button>
+    <LoadNamespace(PrivacyPolicy)
+      onClose={[Function]}
+    />
   </Modal>
   <header
     className="header"

@@ -6,6 +6,7 @@ import style from './style.module.css';
 import InfoIcon from 'react-feather/dist/icons/info';
 import ErrorIcon from 'react-feather/dist/icons/alert-octagon';
 import WarningIcon from 'react-feather/dist/icons/alert-triangle';
+import CloseIcon from 'react-feather/dist/icons/x-square';
 
 const iconTypes = {
   info: InfoIcon,
@@ -23,7 +24,7 @@ const renderIcon = (type, icon) => {
   return <Icon />;
 };
 
-const Message = ({ type, icon, heading, children }) => (
+const Message = ({ type, icon, heading, onClose, children }) => (
   <div className={ [
     style.message,
     type && style[type]
@@ -31,6 +32,9 @@ const Message = ({ type, icon, heading, children }) => (
     <div className={ style.header }>
       { renderIcon(type, icon) }
       <h2>{ heading }</h2>
+      { onClose && <button onClick={ onClose }>
+        <CloseIcon /> Close
+      </button> }
     </div>
     <div className={ style.content }>
       { children }
@@ -49,6 +53,7 @@ Message.propTypes = {
     PropTypes.func
   ]),
   heading: PropTypes.string.isRequired,
+  onClose: PropTypes.func,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node

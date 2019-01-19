@@ -5,7 +5,6 @@ import { Link } from 'gatsby';
 import { withNamespaces, Trans } from 'react-i18next';
 
 import GitlabIcon from 'react-feather/dist/icons/gitlab';
-import CloseIcon from 'react-feather/dist/icons/x-square';
 
 import LocaleSwitcher from 'components/LocaleSwitcher';
 import InstallPrompt from 'components/InstallPrompt';
@@ -46,12 +45,7 @@ class Header extends React.PureComponent {
       <Modal
         isOpen={ showModal }
         onRequestClose={ this.handleClose }>
-        <PrivacyPolicy />
-        <button
-          className={ style.modalClose }
-          onClick={ this.handleClose }>
-          <CloseIcon />
-        </button>
+        <PrivacyPolicy onClose={ this.handleClose } />
       </Modal>
       <header
         className={ style.header }

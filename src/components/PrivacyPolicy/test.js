@@ -7,7 +7,7 @@ import { PrivacyPolicy } from 'components/PrivacyPolicy';
 describe('PrivacyPolicy', () => {
   test('rendering', () => {
     const component = shallow(
-      <PrivacyPolicy t={ mockT } />
+      <PrivacyPolicy onClose={ jest.fn() } t={ mockT } />
     );
     expect(component).toMatchSnapshot();
   });

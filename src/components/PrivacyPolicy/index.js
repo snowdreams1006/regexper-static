@@ -4,8 +4,8 @@ import { withNamespaces, Trans } from 'react-i18next';
 
 import Message from 'components/Message';
 
-export const PrivacyPolicy = ({ t }) => (
-  <Message type="info" heading={ t('Privacy Policy') }>
+export const PrivacyPolicy = ({ t, ...props }) => (
+  <Message type="info" heading={ t('Privacy Policy') } { ...props }>
     <Trans i18nKey="Privacy policy copy">
       <p>
         Regexper and the tools used to create it are all open source. If you are

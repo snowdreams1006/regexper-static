@@ -31,4 +31,13 @@ describe('Message', () => {
     );
     expect(component).toMatchSnapshot();
   });
+
+  test('rendering with a close button', () => {
+    const component = shallow(
+      <Message heading="Testing" onClose={ jest.fn() }>
+        <p>Message content</p>
+      </Message>
+    );
+    expect(component).toMatchSnapshot();
+  });
 });

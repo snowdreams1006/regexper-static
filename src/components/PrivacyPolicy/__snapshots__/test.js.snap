@@ -3,6 +3,7 @@
 exports[`PrivacyPolicy rendering 1`] = `
 <Message
   heading="TRANSLATE(Privacy Policy)"
+  onClose={[MockFunction]}
   type="info"
 >
   <WithMergedOptions(TransComponent)

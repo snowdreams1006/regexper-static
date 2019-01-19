@@ -24,6 +24,22 @@
     width: 2.8rem;
     vertical-align: bottom;
   }
+
+  & button {
+    padding: 0;
+    margin: 0;
+    border: 0 none;
+    background: transparent;
+    color: var(--color-tan);
+    cursor: pointer;
+    float: right;
+    font-size: 0;
+
+    &:hover,
+    &:active {
+      color: var(--color-white);
+    }
+  }
 }
 
 .content {
@@ -56,7 +72,7 @@
   & .header {
     background: var(--color-orange);
 
-    & svg {
+    & > svg {
       background: var(--color-black);
       color: var(--color-orange);
     }
@@ -68,7 +84,7 @@
     background: var(--color-blue);
     color: var(--color-white);
 
-    & svg {
+    & > svg {
       background: var(--color-white);
       color: var(--color-blue);
     }

@@ -21,6 +21,36 @@ exports[`Message rendering 1`] = `
 </div>
 `;
 
+exports[`Message rendering with a close button 1`] = `
+<div
+  className="message"
+>
+  <div
+    className="header"
+  >
+    <h2>
+      Testing
+    </h2>
+    <button
+      onClick={[MockFunction]}
+    >
+      <XSquare
+        color="currentColor"
+        size="24"
+      />
+       Close
+    </button>
+  </div>
+  <div
+    className="content"
+  >
+    <p>
+      Message content
+    </p>
+  </div>
+</div>
+`;
+
 exports[`Message rendering with icon 1`] = `
 <div
   className="message"

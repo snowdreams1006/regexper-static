@@ -66,27 +66,3 @@
     }
   }
 }
-
-.modalClose {
-  position: absolute;
-  top: 3rem;
-  right: 2rem;
-  line-height: 2.8rem;
-  padding: 1rem;
-  margin: 0;
-  border: 0 none;
-  background: transparent;
-  color: inherit;
-
-  &:hover svg,
-  &:active svg {
-    color: var(--color-white);
-  }
-
-  & svg {
-    display: inline-block;
-    width: 2.8rem;
-    height: 2.8rem;
-    vertical-align: middle;
-  }
-}
