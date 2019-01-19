@@ -134,3 +134,26 @@
     border-right: 0.1rem solid color(var(--color-black) alpha(0.2));
   }
 }
+
+.modal {
+  position: absolute;
+  top: 9rem;
+  bottom: 9rem;
+  left: 4rem;
+  right: 4rem;
+  outline: none;
+  pointer-events: none;
+
+  & > * {
+    pointer-events: auto;
+  }
+}
+
+.modalOverlay {
+  background-color: rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

@@ -7,24 +7,14 @@ import i18n from 'i18n';
 import Layout from 'components/Layout';
 
 import 'site.css';
+import style from 'globals.module.css';
 
 Modal.setAppElement('#___gatsby');
 
-Modal.defaultStyles.overlay = {
-  ...Modal.defaultStyles.overlay,
-  backgroundColor: 'rgba(0, 0, 0, 0.25)'
-};
-Modal.defaultStyles.content = {
-  ...Modal.defaultStyles.content,
-  background: 'transparent',
-  border: '0 solid',
-  borderRadius: '0',
-  overflow: null,
-  padding: '2rem',
-  top: '7rem',
-  bottom: '7rem',
-  left: '2rem',
-  right: '2rem'
+Modal.defaultProps = {
+  ...Modal.defaultProps,
+  className: style.modal,
+  overlayClassName: style.modalOverlay
 };
 
 export const onClientEntry = () => {
