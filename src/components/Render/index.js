@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import PlaceholderIcon from 'react-feather/dist/icons/file-text';
+import SVG from 'rendering/SVG';
+import Text from 'rendering/Text';
 
 import style from './style.module.css';
 
@@ -13,7 +14,7 @@ class Render extends React.PureComponent {
 
   svgContainer = React.createRef()
 
-  provideSVGData() {
+  provideSVGData = () => {
     if (!this.svgContainer.current) {
       return;
     }
@@ -26,23 +27,14 @@ class Render extends React.PureComponent {
     });
   }
 
-  componentDidMount() {
-    this.provideSVGData();
-  }
-
-  componentDidUpdate() {
-    this.provideSVGData();
-  }
-
   render() {
     const { expr } = this.props;
 
-    // eslint-disable-next-line no-console
-    console.log('Render:', this.constructor.name, expr);
-
     // Demo rendering for now
     return <div className={ style.render } ref={ this.svgContainer }>
-      <PlaceholderIcon />
+      <SVG onReflow={ this.provideSVGData }>
+        <Text>{ this.constructor.name } =&gt; { expr }</Text>
+      </SVG>
     </div>;
   }
 }
