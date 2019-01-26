@@ -28,13 +28,21 @@ const render = (data, extraProps) => {
 
 class Render extends React.PureComponent {
   static propTypes = {
-    parsed: PropTypes.object.isRequired,
+    data: PropTypes.object.isRequired,
     onRender: PropTypes.func.isRequired
   }
 
   svgContainer = React.createRef()
 
-  provideSVGData = () => {
+  componentDidMount() {
+    this.provideSVGData();
+  }
+
+  componentDidUpdate() {
+    this.provideSVGData();
+  }
+
+  provideSVGData() {
     if (!this.svgContainer.current) {
       return;
     }
@@ -48,10 +56,10 @@ class Render extends React.PureComponent {
   }
 
   render() {
-    const { parsed } = this.props;
+    const { data } = this.props;
 
     return <div className={ style.render } ref={ this.svgContainer }>
-      { render(parsed, { onReflow: this.provideSVGData }) }
+      { render(data, { onReflow: this.provideSVGData }) }
     </div>;
   }
 }

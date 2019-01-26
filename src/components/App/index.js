@@ -73,13 +73,13 @@ class App extends React.PureComponent {
         `syntax/${ syntax }`
       );
 
-      const parsed = syntaxModule.parse(expr);
+      const exprData = syntaxModule.layout(syntaxModule.parse(expr));
 
       this.setState({
         loading: false,
         render: {
           syntax,
-          parsed,
+          exprData,
           Component: syntaxModule.Render
         }
       });
@@ -119,7 +119,7 @@ class App extends React.PureComponent {
       imageDetails,
       render: {
         syntax: renderSyntax,
-        parsed,
+        exprData,
         Component
       }
     } = this.state;
@@ -137,7 +137,7 @@ class App extends React.PureComponent {
     };
     const renderProps = {
       onRender: this.handleSvg,
-      parsed
+      data: exprData
     };
 
     const doRender = renderSyntax === syntax;

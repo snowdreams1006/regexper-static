@@ -6,6 +6,7 @@ import { App } from 'components/App';
 
 jest.mock('syntax/js', () => ({
   parse: expr => `PARSED(${ expr })`,
+  layout: parsed => `LAYOUT(${ parsed })`,
   Render: () => ''
 }));
 

@@ -24,7 +24,9 @@ class SVG extends React.PureComponent {
   static propTypes = {
     onReflow: PropTypes.func,
     children: PropTypes.node,
-    padding: PropTypes.number
+    padding: PropTypes.number,
+    innerWidth: PropTypes.number,
+    innerHeight: PropTypes.number
   }
 
   static defaultProps = {
@@ -36,18 +38,11 @@ class SVG extends React.PureComponent {
     height: 0
   }
 
-  handleReflow = box => {
-    const { padding } = this.props;
-
-    this.setState({
-      width: Math.round(box.width + 2 * padding),
-      height: Math.round(box.height + 2 * padding)
-    }, () => this.props.onReflow(this));
-  }
-
   render() {
-    const { width, height } = this.state;
-    const { padding, children } = this.props;
+    const { padding, innerWidth, innerHeight, children } = this.props;
+
+    const width = Math.round(innerWidth + 2 * padding);
+    const height = Math.round(innerHeight + 2 * padding);
 
     const svgProps = {
       width,
@@ -60,9 +55,7 @@ class SVG extends React.PureComponent {
     return <svg { ...svgProps }>
       <metadata dangerouslySetInnerHTML={{ __html: metadata }}></metadata>
       <g transform={ `translate(${ padding } ${ padding })` }>
-        { React.cloneElement(React.Children.only(children), {
-          onReflow: this.handleReflow
-        }) }
+        { children }
       </g>
     </svg>;
   }

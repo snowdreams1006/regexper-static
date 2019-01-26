@@ -1,4 +1,5 @@
 import Render from 'components/Render';
+import layout from 'layout';
 
 const parse = expr => {
   return {
@@ -19,5 +20,6 @@ const parse = expr => {
 
 export {
   parse,
+  layout,
   Render
 };
