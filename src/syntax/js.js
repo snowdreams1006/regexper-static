@@ -1,5 +1,23 @@
 import Render from 'components/Render';
 
-class RenderJS extends Render {}
+const parse = expr => {
+  return {
+    type: 'SVG',
+    children: [
+      {
+        type: 'Text',
+        props: {
+          quoted: true
+        },
+        children: [
+          `JS => ${ expr }`
+        ]
+      }
+    ]
+  };
+};
 
-export default RenderJS;
+export {
+  parse,
+  Render
+};

@@ -68,16 +68,19 @@ class App extends React.PureComponent {
     });
 
     try {
-      const Component = await import(
+      const syntaxModule = await import(
         /* webpackChunkName: "render-[index]" */
         `syntax/${ syntax }`
       );
+
+      const parsed = syntaxModule.parse(expr);
 
       this.setState({
         loading: false,
         render: {
           syntax,
-          Component: Component.default
+          parsed,
+          Component: syntaxModule.Render
         }
       });
     }
@@ -116,6 +119,7 @@ class App extends React.PureComponent {
       imageDetails,
       render: {
         syntax: renderSyntax,
+        parsed,
         Component
       }
     } = this.state;
@@ -133,7 +137,7 @@ class App extends React.PureComponent {
     };
     const renderProps = {
       onRender: this.handleSvg,
-      expr
+      parsed
     };
 
     const doRender = renderSyntax === syntax;

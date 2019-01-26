@@ -6,9 +6,29 @@ import Text from 'rendering/Text';
 
 import style from './style.module.css';
 
+const nodeTypes = {
+  SVG,
+  Text
+};
+
+const render = (data, extraProps) => {
+  if (typeof data === 'string') {
+    return data;
+  }
+
+  const { type, props } = data;
+  const children = (data.children || []).map(
+    (data, key) => render(data, { key }));
+
+  return React.createElement(
+    nodeTypes[type] || type,
+    { ...extraProps, ...props },
+    children.length === 1 ? children[0] : children);
+};
+
 class Render extends React.PureComponent {
   static propTypes = {
-    expr: PropTypes.string,
+    parsed: PropTypes.object.isRequired,
     onRender: PropTypes.func.isRequired
   }
 
@@ -28,13 +48,10 @@ class Render extends React.PureComponent {
   }
 
   render() {
-    const { expr } = this.props;
+    const { parsed } = this.props;
 
-    // Demo rendering for now
     return <div className={ style.render } ref={ this.svgContainer }>
-      <SVG onReflow={ this.provideSVGData }>
-        <Text>{ this.constructor.name } =&gt; { expr }</Text>
-      </SVG>
+      { render(parsed, { onReflow: this.provideSVGData }) }
     </div>;
   }
 }

@@ -21,9 +21,9 @@ exports[`App removing rendered expression 1`] = `
   >
     <LoadNamespace(FormActions) />
   </LoadNamespace(Form)>
-  <RenderJS
-    expr="test expression"
+  <Render
     onRender={[Function]}
+    parsed="PARSED(test expression)"
   />
 </Fragment>
 `;
@@ -138,9 +138,9 @@ exports[`App rendering an expression 3`] = `
   >
     <LoadNamespace(FormActions) />
   </LoadNamespace(Form)>
-  <RenderJS
-    expr="test expression"
+  <Render
     onRender={[Function]}
+    parsed="PARSED(test expression)"
   />
 </Fragment>
 `;
@@ -166,9 +166,9 @@ exports[`App rendering image details 1`] = `
   >
     <LoadNamespace(FormActions) />
   </LoadNamespace(Form)>
-  <RenderJS
-    expr="test expression"
+  <Render
     onRender={[Function]}
+    parsed="PARSED(test expression)"
   />
 </Fragment>
 `;
@@ -200,9 +200,9 @@ exports[`App rendering image details 2`] = `
       }
     />
   </LoadNamespace(Form)>
-  <RenderJS
-    expr="test expression"
+  <Render
     onRender={[Function]}
+    parsed="PARSED(test expression)"
   />
 </Fragment>
 `;

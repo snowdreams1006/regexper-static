@@ -4,6 +4,11 @@ import { shallow } from 'enzyme';
 import { mockT } from 'i18n';
 import { App } from 'components/App';
 
+jest.mock('syntax/js', () => ({
+  parse: expr => `PARSED(${ expr })`,
+  Render: () => ''
+}));
+
 const syntaxList = [
   { id: 'testJS', label: 'Testing JS' },
   { id: 'other', label: 'Other' }

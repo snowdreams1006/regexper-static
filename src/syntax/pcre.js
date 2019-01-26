@@ -1,5 +1,23 @@
 import Render from 'components/Render';
 
-class RenderPCRE extends Render {}
+const parse = expr => {
+  return {
+    type: 'SVG',
+    children: [
+      {
+        type: 'Text',
+        props: {
+          quoted: true
+        },
+        children: [
+          `PCRE => ${ expr }`
+        ]
+      }
+    ]
+  };
+};
 
-export default RenderPCRE;
+export {
+  parse,
+  Render
+};
