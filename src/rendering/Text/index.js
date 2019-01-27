@@ -5,9 +5,9 @@ import { getBBox } from 'layout';
 
 import * as style from './style';
 
-const Text = ({ transform, quoted, children }) => {
+const Text = ({ transform, quoted, theme, children }) => {
   const textProps = {
-    style: style.text,
+    style: { ...style.text, ...style[theme] },
     transform
   };
 
@@ -22,6 +22,7 @@ const Text = ({ transform, quoted, children }) => {
 
 Text.propTypes = {
   quoted: PropTypes.bool,
+  theme: PropTypes.string,
   transform: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
