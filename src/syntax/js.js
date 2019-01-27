@@ -6,12 +6,20 @@ const parse = expr => {
     type: 'SVG',
     children: [
       {
-        type: 'Text',
+        type: 'Box',
         props: {
-          quoted: true
+          theme: 'literal'
         },
         children: [
-          `JS => ${ expr }`
+          {
+            type: 'Text',
+            props: {
+              quoted: true
+            },
+            children: [
+              `JS => ${ expr }`
+            ]
+          }
         ]
       }
     ]
