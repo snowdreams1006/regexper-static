@@ -21,10 +21,7 @@ const metadata = `<rdf:rdf>
 </rdf:rdf>`;
 /* eslint-enable max-len */
 
-const SVG = ({ innerWidth, innerHeight, children }) => {
-  const width = Math.round(innerWidth + 2 * padding);
-  const height = Math.round(innerHeight + 2 * padding);
-
+const SVG = ({ width, height, children }) => {
   const svgProps = {
     width,
     height,
@@ -43,15 +40,21 @@ const SVG = ({ innerWidth, innerHeight, children }) => {
 
 SVG.propTypes = {
   children: PropTypes.node,
-  innerWidth: PropTypes.number,
-  innerHeight: PropTypes.number
+  width: PropTypes.number,
+  height: PropTypes.number
 };
 
 const layout = data => {
-  const child = data.children[0];
+  const childBox = data.children[0].box;
 
-  data.props.innerWidth = child.box.width;
-  data.props.innerHeight = child.box.height;
+  data.box = {
+    width: Math.round(childBox.width + 2 * padding),
+    height: Math.round(childBox.height + 2 * padding)
+  };
+  data.props = {
+    ...data.props,
+    ...data.box
+  };
 
   return data;
 };
