@@ -16,6 +16,10 @@ const layout = data => {
 
   const { type } = data;
 
+  if (data.children) {
+    data.children = data.children.map(layout);
+  }
+
   return nodeTypes[type]({
     props: {},
     ...data
