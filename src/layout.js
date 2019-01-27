@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import SVG from 'rendering/SVG/layout';
-import Text from 'rendering/Text/layout';
+import * as SVG from 'rendering/SVG';
+import * as Text from 'rendering/Text';
 
 const nodeTypes = {
   SVG,
@@ -20,7 +20,7 @@ const layout = data => {
     data.children = data.children.map(layout);
   }
 
-  return nodeTypes[type]({
+  return nodeTypes[type].layout({
     props: {},
     ...data
   });

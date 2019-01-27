@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { getBBox } from 'layout';
+
 import * as style from './style';
 
 const Text = ({ transform, quoted, children }) => {
@@ -27,4 +29,14 @@ Text.propTypes = {
   ]).isRequired
 };
 
+const layout = data => {
+  const {x, y, width, height } = getBBox(
+    <Text { ...data.props }>{ data.children }</Text>);
+
+  data.box = { width, height };
+  data.props.transform = `translate(${ -x } ${ -y })`;
+  return data;
+};
+
 export default Text;
+export { layout };
