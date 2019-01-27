@@ -3,42 +3,28 @@ import PropTypes from 'prop-types';
 
 import * as style from './style';
 
-class Text extends React.PureComponent {
-  static propTypes = {
-    quoted: PropTypes.bool,
-    transform: PropTypes.string,
-    children: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.node),
-      PropTypes.node
-    ]).isRequired
-  }
+const Text = ({ transform, quoted, children }) => {
+  const textProps = {
+    style: style.text,
+    transform
+  };
 
-  renderContent() {
-    const { children, quoted } = this.props;
-
-    if (!quoted) {
-      return children;
-    }
-
-    return <>
+  return <text { ...textProps }>
+    { quoted ? <>
       <tspan style={ style.quote }>&ldquo;</tspan>
       <tspan>{ children }</tspan>
       <tspan style={ style.quote }>&rdquo;</tspan>
-    </>;
-  }
+    </> : children }
+  </text>;
+};
 
-  render() {
-    const { transform } = this.props;
-
-    const textProps = {
-      style: style.text,
-      transform
-    };
-
-    return <text { ...textProps }>
-      { this.renderContent() }
-    </text>;
-  }
-}
+Text.propTypes = {
+  quoted: PropTypes.bool,
+  transform: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired
+};
 
 export default Text;

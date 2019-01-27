@@ -21,34 +21,30 @@ const metadata = `<rdf:rdf>
 </rdf:rdf>`;
 /* eslint-enable max-len */
 
-class SVG extends React.PureComponent {
-  static propTypes = {
-    children: PropTypes.node,
-    innerWidth: PropTypes.number,
-    innerHeight: PropTypes.number
-  }
+const SVG = ({ innerWidth, innerHeight, children }) => {
+  const width = Math.round(innerWidth + 2 * padding);
+  const height = Math.round(innerHeight + 2 * padding);
 
-  render() {
-    const { innerWidth, innerHeight, children } = this.props;
+  const svgProps = {
+    width,
+    height,
+    viewBox: [0, 0, width, height].join(' '),
+    style: style.image,
+    ...namespaceProps
+  };
 
-    const width = Math.round(innerWidth + 2 * padding);
-    const height = Math.round(innerHeight + 2 * padding);
+  return <svg { ...svgProps }>
+    <metadata dangerouslySetInnerHTML={{ __html: metadata }}></metadata>
+    <g transform={ `translate(${ padding } ${ padding })` }>
+      { children }
+    </g>
+  </svg>;
+};
 
-    const svgProps = {
-      width,
-      height,
-      viewBox: [0, 0, width, height].join(' '),
-      style: style.image,
-      ...namespaceProps
-    };
-
-    return <svg { ...svgProps }>
-      <metadata dangerouslySetInnerHTML={{ __html: metadata }}></metadata>
-      <g transform={ `translate(${ padding } ${ padding })` }>
-        { children }
-      </g>
-    </svg>;
-  }
-}
+SVG.propTypes = {
+  children: PropTypes.node,
+  innerWidth: PropTypes.number,
+  innerHeight: PropTypes.number
+};
 
 export default SVG;
