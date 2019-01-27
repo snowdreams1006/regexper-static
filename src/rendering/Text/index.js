@@ -7,7 +7,6 @@ class Text extends React.PureComponent {
   static propTypes = {
     quoted: PropTypes.bool,
     transform: PropTypes.string,
-    onReflow: PropTypes.func,
     children: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.node),
       PropTypes.node

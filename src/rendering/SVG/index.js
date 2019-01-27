@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import * as style from './style';
 
+const padding = 10;
 const namespaceProps = {
   'xmlns': 'http://www.w3.org/2000/svg',
   'xmlns:cc': 'http://creativecommons.org/ns#',
@@ -22,24 +23,13 @@ const metadata = `<rdf:rdf>
 
 class SVG extends React.PureComponent {
   static propTypes = {
-    onReflow: PropTypes.func,
     children: PropTypes.node,
-    padding: PropTypes.number,
     innerWidth: PropTypes.number,
     innerHeight: PropTypes.number
   }
 
-  static defaultProps = {
-    padding: 10
-  }
-
-  state = {
-    width: 0,
-    height: 0
-  }
-
   render() {
-    const { padding, innerWidth, innerHeight, children } = this.props;
+    const { innerWidth, innerHeight, children } = this.props;
 
     const width = Math.round(innerWidth + 2 * padding);
     const height = Math.round(innerHeight + 2 * padding);
