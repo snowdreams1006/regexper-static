@@ -1,15 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import SVG from 'rendering/SVG';
-import Text from 'rendering/Text';
+import nodeTypes from 'rendering/types';
 
 import style from './style.module.css';
-
-const nodeTypes = {
-  SVG,
-  Text
-};
 
 const render = (data, extraProps) => {
   if (typeof data === 'string') {
@@ -21,7 +15,7 @@ const render = (data, extraProps) => {
     (data, key) => render(data, { key }));
 
   return React.createElement(
-    nodeTypes[type] || type,
+    nodeTypes[type] ? nodeTypes[type].default : type,
     { ...extraProps, ...props },
     children.length === 1 ? children[0] : children);
 };

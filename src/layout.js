@@ -1,13 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import * as SVG from 'rendering/SVG';
-import * as Text from 'rendering/Text';
-
-const nodeTypes = {
-  SVG,
-  Text
-};
+import nodeTypes from 'rendering/types';
 
 const layout = data => {
   if (typeof data == 'string') {
