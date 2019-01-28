@@ -23,22 +23,21 @@ const renderDebug = ({ x, y, width, height, axisX1, axisX2, axisY }) => <>
   <circle style={ debugPin } cx={ axisX2 } cy={ axisY } r="3" />
 </>;
 
-const render = (data, extraProps) => {
+const render = (data, key) => {
   if (typeof data === 'string') {
     return data;
   }
 
   const { type, props, debug, box } = data;
-  const children = (data.children || []).map(
-    (data, key) => render(data, { key }));
+  const children = (data.children || []).map(render);
 
-  return <>
+  return <React.Fragment key={ key }>
     { React.createElement(
       nodeTypes[type] ? nodeTypes[type].default : type,
-      { ...extraProps, ...props },
+      props,
       children.length === 1 ? children[0] : children) }
     { debug && renderDebug(box) }
-  </>;
+  </React.Fragment>;
 };
 
 class Render extends React.PureComponent {
@@ -74,7 +73,13 @@ class Render extends React.PureComponent {
     const { data } = this.props;
 
     return <div className={ style.render } ref={ this.svgContainer }>
-      { render(data, { onReflow: this.provideSVGData }) }
+      { render({
+        ...data,
+        props: {
+          ...data.props,
+          onReflow: this.provideSVGData
+        }
+      }) }
     </div>;
   }
 }
