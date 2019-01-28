@@ -12,6 +12,9 @@ const parse = expr => {
         },
         children: [
           {
+            type: 'Pin'
+          },
+          {
             type: 'Box',
             props: {
               theme: 'literal'
@@ -38,6 +41,9 @@ const parse = expr => {
                 ]
               }
             ]
+          },
+          {
+            type: 'Pin'
           }
         ]
       }
