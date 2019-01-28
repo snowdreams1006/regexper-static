@@ -18,3 +18,8 @@ export const strokeBase = {
   strokeWidth: '2px',
   stroke: black
 };
+
+export const connectors = {
+  fillOpacity: 0,
+  ...strokeBase
+};
