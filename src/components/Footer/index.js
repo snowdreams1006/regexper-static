@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withNamespaces, Trans } from 'react-i18next';
 
+import ccLogo from './cc-by.svg';
+
 import style from './style.module.css';
 
 export const Footer = ({ t, buildId }) => (
@@ -16,7 +18,7 @@ export const Footer = ({ t, buildId }) => (
           href="http://creativecommons.org/licenses/by/3.0/"
           rel="license external noopener noreferrer"
           target="_blank">
-          <img src="https://licensebuttons.net/l/by/3.0/80x15.png"
+          <img src={ ccLogo }
             alt={ t('Creative Commons CC-BY-3.0 License') } />
         </a></Trans>
       </li>

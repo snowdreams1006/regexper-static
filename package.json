@@ -64,7 +64,8 @@
       ".cache"
     ],
     "transform": {
-      "\\.js$": "<rootDir>/jest/preprocess.js"
+      "\\.js$": "<rootDir>/jest/preprocess.js",
+      "\\.svg$": "<rootDir>/jest/static-file-transform.js"
     },
     "transformIgnorePatterns": [
       "node_modules/(?!(gatsby)/)"

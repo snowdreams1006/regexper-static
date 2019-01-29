@@ -27,7 +27,7 @@ exports[`Footer rendering 1`] = `
         >
           <img
             alt="TRANSLATE(Creative Commons CC-BY-3.0 License)"
-            src="https://licensebuttons.net/l/by/3.0/80x15.png"
+            src="cc-by.svg"
           />
         </a>
       </WithMergedOptions(TransComponent)>
