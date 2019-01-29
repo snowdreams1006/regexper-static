@@ -17,27 +17,46 @@ const parse = expr => {
           {
             type: 'Box',
             props: {
-              theme: 'literal'
+              theme: 'capture',
+              label: 'Demo rendering',
+              useAnchors: true
             },
             children: [
               {
-                type: 'Text',
+                type: 'HorizontalLayout',
+                props: {
+                  withConnectors: true
+                },
                 children: [
-                  'JS'
-                ]
-              }
-            ]
-          },
-          {
-            type: 'Box',
-            props: {
-              theme: 'literal'
-            },
-            children: [
-              {
-                type: 'Text',
-                children: [
-                  expr
+                  {
+                    type: 'Box',
+                    props: {
+                      theme: 'literal'
+                    },
+                    children: [
+                      {
+                        type: 'Text',
+                        children: [
+                          'JS'
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    type: 'Box',
+                    props: {
+                      theme: 'literal',
+                      label: 'Expression'
+                    },
+                    children: [
+                      {
+                        type: 'Text',
+                        children: [
+                          expr
+                        ]
+                      }
+                    ]
+                  }
                 ]
               }
             ]
