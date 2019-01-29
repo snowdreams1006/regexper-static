@@ -5,13 +5,8 @@ import { getBBox } from 'layout';
 
 import * as style from './style';
 
-const Text = ({ transform, quoted, theme, children }) => {
-  const textProps = {
-    style: { ...style.text, ...style[theme] },
-    transform
-  };
-
-  return <text { ...textProps }>
+const Text = ({ quoted, theme, children }) => {
+  return <text style={{ ...style.text, ...style[theme] }}>
     { quoted ? <>
       <tspan style={ style.quote }>&ldquo;</tspan>
       <tspan>{ children }</tspan>
@@ -23,7 +18,6 @@ const Text = ({ transform, quoted, theme, children }) => {
 Text.propTypes = {
   quoted: PropTypes.bool,
   theme: PropTypes.string,
-  transform: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
@@ -31,11 +25,10 @@ Text.propTypes = {
 };
 
 const layout = data => {
-  const {x, y, width, height } = getBBox(
+  const { width, height } = getBBox(
     <Text { ...data.props }>{ data.children }</Text>);
 
   data.box = { width, height };
-  data.props.transform = `translate(${ -x } ${ -y })`;
   return data;
 };
 

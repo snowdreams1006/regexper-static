@@ -12,7 +12,6 @@ const Box = ({
   width,
   height,
   rectTransform,
-  labelTransform,
   contentTransform,
   children
 }) => {
@@ -24,14 +23,10 @@ const Box = ({
     ry: radius,
     transform: rectTransform
   };
-  const textProps = {
-    transform: labelTransform,
-    style: style.infoText
-  };
 
   return <>
     <rect { ...rectProps }></rect>
-    { label && <text { ...textProps }>{ label }</text> }
+    { label && <text style={ style.infoText }>{ label }</text> }
     <g transform={ contentTransform}>
       { children }
     </g>
@@ -51,7 +46,6 @@ Box.propTypes = {
   width: PropTypes.number,
   height: PropTypes.number,
   rectTransform: PropTypes.string,
-  labelTransform: PropTypes.string,
   contentTransform: PropTypes.string,
   children: PropTypes.node
 };
@@ -75,7 +69,6 @@ const layout = data => {
     width: data.box.width,
     height: childBox.height + 2 * padding,
     rectTransform: `translate(0 ${ labelBox.height })`,
-    labelTransform: `translate(0 ${ labelBox.height })`,
     contentTransform: `translate(${ padding } ${ padding + labelBox.height })`
   };
   return data;
