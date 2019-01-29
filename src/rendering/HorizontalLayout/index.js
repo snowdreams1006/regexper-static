@@ -3,14 +3,17 @@ import PropTypes from 'prop-types';
 
 import * as style from 'rendering/style';
 
-const HorizontalLayout = ({ connectorPath, transforms, children }) => {
-  return <>
-    <path style={ style.connectors } d={ connectorPath }/>
-    { React.Children.map(children, (child, i) => (
-      <g transform={ transforms[i] }>{ child }</g>
-    )) }
-  </>;
-};
+const HorizontalLayout = ({
+  withConnectors,
+  connectorPath,
+  transforms,
+  children
+}) => <>
+  { withConnectors && <path style={ style.connectors } d={ connectorPath }/> }
+  { React.Children.map(children, (child, i) => (
+    <g transform={ transforms[i] }>{ child }</g>
+  )) }
+</>;
 
 HorizontalLayout.defaultProps = {
   withConnectors: false,
@@ -29,35 +32,35 @@ HorizontalLayout.propTypes = {
 };
 
 const generateOffsetBoxes = (boxes, axisY, spacing) => {
-  let offset = 0;
+  let x = 0;
   return boxes.map(box => {
     try {
+      const y = axisY - box.axisY;
       return {
         ...box,
-        offsetX: offset,
-        offsetY: axisY - box.axisY
+        x, y,
+        axisX1: x + box.axisX1,
+        axisX2: x + box.axisX2,
+        axisY: y + box.axisY
       };
     }
     finally {
-      offset += box.width + spacing;
+      x += box.width + spacing;
     }
   });
 };
 const calculateChildTransforms = boxes =>
-  boxes.map(box => `translate(${ box.offsetX } ${ box.offsetY })`);
-const calculateConnectorPath = (boxes, axisY) => {
+  boxes.map(box => `translate(${ box.x } ${ box.y })`);
+const calculateConnectorPath = boxes => {
   let last = boxes[0];
   return boxes.slice(1).map(box => {
     try {
-      return `
-        M${ last.offsetX + last.axisX2 },${ axisY }
-        H${ box.offsetX + box.axisX1 }
-      `;
+      return `M${ last.axisX2 },${ box.axisY } H${ box.axisX1 }`;
     }
     finally {
       last = box;
     }
-  }).join('');
+  }).join('\n');
 };
 const layout = data => {
   const { withConnectors, spacing } = {
@@ -79,7 +82,7 @@ const layout = data => {
     ...data.props,
     transforms: calculateChildTransforms(offsetBoxes),
     connectorPath: withConnectors
-      ? calculateConnectorPath(offsetBoxes, data.box.axisY)
+      ? calculateConnectorPath(offsetBoxes)
       : undefined
   };
 
