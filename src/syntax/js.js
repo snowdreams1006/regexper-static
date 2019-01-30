@@ -1,6 +1,9 @@
 import Render from 'components/Render';
 import layout from 'layout';
 
+const type = 'JS';
+const description = 'JavaScript';
+
 const parse = expr => {
   return {
     type: 'SVG',
@@ -29,15 +32,39 @@ const parse = expr => {
                 },
                 children: [
                   {
-                    type: 'Box',
+                    type: 'VerticalLayout',
                     props: {
-                      theme: 'literal'
+                      withConnectors: true
                     },
                     children: [
                       {
-                        type: 'Text',
+                        type: 'Box',
+                        props: {
+                          theme: 'literal',
+                          label: 'Type'
+                        },
                         children: [
-                          'JS'
+                          {
+                            type: 'Text',
+                            children: [
+                              type
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        type: 'Box',
+                        props: {
+                          theme: 'literal',
+                          label: 'Description'
+                        },
+                        children: [
+                          {
+                            type: 'Text',
+                            children: [
+                              description
+                            ]
+                          }
                         ]
                       }
                     ]
