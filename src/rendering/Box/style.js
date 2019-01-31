@@ -4,11 +4,11 @@ import {
   tan,
   grey,
   blue,
-  fontFamily,
-  fontSizeSmall,
-  strokeBase
+  strokeBase,
+  infoText
 } from 'rendering/style';
 
+export { infoText };
 export const literal = {
   fill: blue,
   strokeWidth: '1px',
@@ -30,8 +30,4 @@ export const capture = {
 };
 export const anchor = {
   fill: brown
-};
-export const infoText = {
-  fontSize: fontSizeSmall,
-  fontFamily
 };

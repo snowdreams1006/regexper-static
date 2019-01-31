@@ -2,6 +2,7 @@ import * as SVG from 'rendering/SVG';
 import * as Pin from 'rendering/Pin';
 import * as Text from 'rendering/Text';
 import * as Box from 'rendering/Box';
+import * as Loop from 'rendering/Loop';
 import * as HorizontalLayout from 'rendering/HorizontalLayout';
 import * as VerticalLayout from 'rendering/VerticalLayout';
 
@@ -10,6 +11,7 @@ export default {
   Pin,
   Text,
   Box,
+  Loop,
   HorizontalLayout,
   VerticalLayout
 };

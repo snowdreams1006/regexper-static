@@ -23,3 +23,8 @@ export const connectors = {
   fillOpacity: 0,
   ...strokeBase
 };
+
+export const infoText = {
+  fontSize: fontSizeSmall,
+  fontFamily
+};
