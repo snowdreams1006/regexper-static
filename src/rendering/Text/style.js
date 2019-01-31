@@ -1,8 +1,7 @@
 import { fontSize, fontFamily, white, grey } from 'rendering/style';
 
 export const text = {
-  fontSize, fontFamily,
-  dominantBaseline: 'text-before-edge'
+  fontSize, fontFamily
 };
 export const anchor = {
   fill: white

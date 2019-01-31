@@ -33,6 +33,5 @@ export const anchor = {
 };
 export const infoText = {
   fontSize: fontSizeSmall,
-  fontFamily: fontFamily,
-  dominantBaseline: 'text-before-edge'
+  fontFamily
 };
