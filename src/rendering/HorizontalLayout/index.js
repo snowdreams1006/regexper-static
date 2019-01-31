@@ -78,6 +78,8 @@ const layout = data => {
   };
 
   const offsetBoxes = generateOffsetBoxes(childBoxes, data.box.axisY, spacing);
+  data.box.axisX1 = offsetBoxes[0].axisX1;
+  data.box.axisX2 = offsetBoxes[offsetBoxes.length - 1].axisX2;
   data.props = {
     ...data.props,
     transforms: calculateChildTransforms(offsetBoxes),
