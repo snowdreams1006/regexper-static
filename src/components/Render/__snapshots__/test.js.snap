@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render debugging 1`] = `
+<div
+  className="render"
+>
+  <SVG
+    onReflow={[Function]}
+  >
+    <Text>
+      Example
+    </Text>
+    <rect
+      height={50}
+      style={
+        Object {
+          "fill": "transparent",
+          "opacity": 0.5,
+          "stroke": "red",
+          "strokeDasharray": "2,2",
+          "strokeWidth": "1px",
+        }
+      }
+      width={100}
+    />
+    <circle
+      cx={5}
+      cy={10}
+      r="3"
+      style={
+        Object {
+          "fill": "red",
+          "opacity": 0.5,
+        }
+      }
+    />
+    <circle
+      cx={95}
+      cy={10}
+      r="3"
+      style={
+        Object {
+          "fill": "red",
+          "opacity": 0.5,
+        }
+      }
+    />
+  </SVG>
+</div>
+`;
+
+exports[`Render types Box 1`] = `
+<div
+  className="render"
+>
+  <SVG
+    onReflow={[Function]}
+  >
+    <Box
+      padding={5}
+      radius={3}
+    >
+      <Text>
+        Example
+      </Text>
+    </Box>
+  </SVG>
+</div>
+`;
+
+exports[`Render types HorizontalLayout 1`] = `
+<div
+  className="render"
+>
+  <SVG
+    onReflow={[Function]}
+  >
+    <HorizontalLayout
+      spacing={10}
+      withConnectors={false}
+    >
+      <Text>
+        Example
+      </Text>
+      <Text>
+        Another Example
+      </Text>
+    </HorizontalLayout>
+  </SVG>
+</div>
+`;
+
+exports[`Render types Loop 1`] = `
+<div
+  className="render"
+>
+  <SVG
+    onReflow={[Function]}
+  >
+    <Loop>
+      <Text>
+        Example
+      </Text>
+    </Loop>
+  </SVG>
+</div>
+`;
+
+exports[`Render types Pin 1`] = `
+<div
+  className="render"
+>
+  <SVG
+    onReflow={[Function]}
+  >
+    <Pin />
+  </SVG>
+</div>
+`;
+
+exports[`Render types Text 1`] = `
+<div
+  className="render"
+>
+  <SVG
+    onReflow={[Function]}
+  >
+    <Text>
+      Example
+    </Text>
+  </SVG>
+</div>
+`;
+
+exports[`Render types VerticalLayout 1`] = `
+<div
+  className="render"
+>
+  <SVG
+    onReflow={[Function]}
+  >
+    <VerticalLayout
+      spacing={10}
+      withConnectors={false}
+    >
+      <Text>
+        Example
+      </Text>
+      <Text>
+        Another Example
+      </Text>
+    </VerticalLayout>
+  </SVG>
+</div>
+`;
