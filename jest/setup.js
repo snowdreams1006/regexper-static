@@ -6,3 +6,5 @@ Enzyme.configure({ adapter: new Adapter() });
 global.___loader = {
   enqueue: jest.fn()
 };
+
+global.Element.prototype.getBBox = jest.fn();

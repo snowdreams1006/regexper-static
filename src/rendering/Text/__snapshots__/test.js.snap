@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text layout 1`] = `
+Object {
+  "box": Object {
+    "height": 20,
+    "width": 100,
+  },
+  "children": Array [
+    "Example content",
+  ],
+  "props": Object {
+    "property": "example",
+    "transform": "translate(0 -18)",
+  },
+  "type": "Text",
+}
+`;
+
+exports[`Text positioning text 1`] = `
+<text
+  style={
+    Object {
+      "fontFamily": "Arial",
+      "fontSize": "16px",
+    }
+  }
+  transform="translate(1 2)"
+>
+  Example
+</text>
+`;
+
+exports[`Text rendering 1`] = `
+<text
+  style={
+    Object {
+      "fontFamily": "Arial",
+      "fontSize": "16px",
+    }
+  }
+>
+  Example
+</text>
+`;
+
+exports[`Text rendering quoted text 1`] = `
+<text
+  style={
+    Object {
+      "fontFamily": "Arial",
+      "fontSize": "16px",
+    }
+  }
+>
+  <tspan
+    style={
+      Object {
+        "fill": "#908c83",
+      }
+    }
+  >
+    “
+  </tspan>
+  <tspan>
+    Example
+  </tspan>
+  <tspan
+    style={
+      Object {
+        "fill": "#908c83",
+      }
+    }
+  >
+    ”
+  </tspan>
+</text>
+`;
+
+exports[`Text rendering with a theme 1`] = `
+<text
+  style={
+    Object {
+      "fill": "#fff",
+      "fontFamily": "Arial",
+      "fontSize": "16px",
+    }
+  }
+>
+  Example
+</text>
+`;
