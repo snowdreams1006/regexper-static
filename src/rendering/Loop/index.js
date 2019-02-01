@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { getBBox } from 'layout';
+import getBBox from 'rendering/getbbox';
 
 import * as style from 'rendering/style';
 
