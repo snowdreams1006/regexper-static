@@ -20,10 +20,12 @@ const layout = data => {
     data.children = data.children.map(layout);
   }
 
-  const result = nodeTypes[type].layout({
+  const normalizedData = {
     props: {},
+    box: {},
     ...data
-  });
+  };
+  const result = nodeTypes[type].layout(normalizedData) || normalizedData;
 
   return {
     ...result,

@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`layout running against a node with a basic bounding box 1`] = `
+Object {
+  "box": Object {
+    "axisX1": 0,
+    "axisX2": 20,
+    "axisY": 5,
+    "height": 10,
+    "width": 20,
+  },
+  "props": Object {},
+  "type": "Example",
+}
+`;
+
+exports[`layout running against a node with a complete bounding box 1`] = `
+Object {
+  "box": Object {
+    "axisX1": 5,
+    "axisX2": 15,
+    "axisY": 2,
+    "height": 10,
+    "width": 20,
+  },
+  "props": Object {},
+  "type": "Example",
+}
+`;
+
+exports[`layout running against a node with props 1`] = `
+Object {
+  "box": Object {
+    "axisX1": 0,
+    "axisX2": 0,
+    "axisY": 0,
+    "height": 0,
+    "width": 0,
+  },
+  "props": Object {
+    "property": "example",
+  },
+  "type": "Example",
+}
+`;
+
+exports[`layout running against a simple node 1`] = `
+Object {
+  "box": Object {
+    "axisX1": 0,
+    "axisX2": 0,
+    "axisY": 0,
+    "height": 0,
+    "width": 0,
+  },
+  "props": Object {},
+  "type": "Example",
+}
+`;
+
+exports[`layout running layout on children 1`] = `
+Object {
+  "box": Object {
+    "axisX1": 0,
+    "axisX2": 0,
+    "axisY": 0,
+    "height": 0,
+    "width": 0,
+  },
+  "children": Array [
+    Object {
+      "box": Object {
+        "axisX1": 0,
+        "axisX2": 20,
+        "axisY": 5,
+        "height": 10,
+        "width": 20,
+      },
+      "props": Object {},
+      "type": "Other",
+    },
+    "string example",
+  ],
+  "props": Object {},
+  "type": "Example",
+}
+`;
