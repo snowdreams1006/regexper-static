@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pin layout 1`] = `
+Object {
+  "box": Object {
+    "height": 10,
+    "width": 10,
+  },
+  "type": "Pin",
+}
+`;
+
+exports[`Pin rendering 1`] = `
+<circle
+  r={5}
+  style={
+    Object {
+      "fill": "#6b6659",
+      "stroke": "#000",
+      "strokeWidth": "2px",
+    }
+  }
+  transform="translate(5 5)"
+/>
+`;
