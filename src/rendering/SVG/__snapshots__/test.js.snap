@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SVG layout 1`] = `
+Object {
+  "box": Object {
+    "height": 40,
+    "width": 120,
+  },
+  "children": Array [
+    Object {
+      "box": Object {
+        "height": 20,
+        "width": 100,
+      },
+      "type": "Text",
+    },
+  ],
+  "props": Object {
+    "height": 40,
+    "width": 120,
+  },
+  "type": "SVG",
+}
+`;
+
+exports[`SVG rendering 1`] = `
+<svg
+  height={20}
+  style={
+    Object {
+      "backgroundColor": "#fff",
+    }
+  }
+  viewBox="0 0 100 20"
+  width={100}
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:cc="http://creativecommons.org/ns#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <metadata
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<rdf:rdf>
+  <cc:license rdf:about=\\"http://creativecommons.org/licenses/by/3.0/\\">
+    <cc:permits rdf:resource=\\"http://creativecommons.org/ns#Reproduction\\"></cc:permits>
+    <cc:permits rdf:resource=\\"http://creativecommons.org/ns#Distribution\\"></cc:permits>
+    <cc:requires rdf:resource=\\"http://creativecommons.org/ns#Notice\\"></cc:requires>
+    <cc:requires rdf:resource=\\"http://creativecommons.org/ns#Attribution\\"></cc:requires>
+    <cc:permits rdf:resource=\\"http://creativecommons.org/ns#DerivativeWorks\\"></cc:permits>
+  </cc:license>
+</rdf:rdf>",
+      }
+    }
+  />
+  <g
+    transform="translate(10 10)"
+  >
+    Content
+  </g>
+</svg>
+`;
