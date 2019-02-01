@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import QuadraticCurve from 'quadratic-curve';
+import QuadraticCurve from './quadratic-curve';
 
 import * as style from 'rendering/style';
 
