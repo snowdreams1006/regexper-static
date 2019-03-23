@@ -2,9 +2,9 @@
 
 exports[`LocaleSwitcher rendering 1`] = `
 <label>
-  <WithMergedOptions(TransComponent)>
+  <Trans>
     Language
-  </WithMergedOptions(TransComponent)>
+  </Trans>
   <div
     className="switcher"
   >

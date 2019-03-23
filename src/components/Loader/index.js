@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withNamespaces } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 
 import LoaderIcon from 'react-feather/dist/icons/loader';
 
@@ -18,4 +18,4 @@ Loader.propTypes = {
 };
 
 export { Loader };
-export default withNamespaces()(Loader);
+export default withTranslation()(Loader);

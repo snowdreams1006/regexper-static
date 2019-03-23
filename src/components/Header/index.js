@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
 import { Link } from 'gatsby';
-import { withNamespaces, Trans } from 'react-i18next';
+import { withTranslation, Trans } from 'react-i18next';
 
 import GitlabIcon from 'react-feather/dist/icons/gitlab';
 
@@ -81,4 +81,4 @@ class Header extends React.PureComponent {
 }
 
 export { Header };
-export default withNamespaces()(Header);
+export default withTranslation()(Header);

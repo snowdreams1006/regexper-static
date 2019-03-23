@@ -13,13 +13,13 @@ exports[`Layout rendering 1`] = `
 
     </style>
   </noscript>
-  <LoadNamespace(Header)
+  <withI18nextTranslation(Header)
     banner="Test Banner"
   />
   <SentryBoundary>
     Example content
   </SentryBoundary>
-  <LoadNamespace(Footer)
+  <withI18nextTranslation(Footer)
     buildId="test-buildid"
   />
 </SentryBoundary>

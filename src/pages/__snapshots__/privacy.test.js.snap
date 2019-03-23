@@ -2,9 +2,9 @@
 
 exports[`Privacy Page rendering 1`] = `
 <Fragment>
-  <LoadNamespace(Metadata)
+  <withI18nextTranslation(Metadata)
     title="TRANSLATE(Privacy Policy)"
   />
-  <LoadNamespace(PrivacyPolicy) />
+  <withI18nextTranslation(PrivacyPolicy) />
 </Fragment>
 `;

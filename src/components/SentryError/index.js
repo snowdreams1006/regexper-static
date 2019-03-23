@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as Sentry from '@sentry/browser';
-import { withNamespaces, Trans } from 'react-i18next';
+import { withTranslation, Trans } from 'react-i18next';
 
 import Message from 'components/Message';
 
@@ -26,4 +26,4 @@ SentryError.propTypes = {
   t: PropTypes.func.isRequired
 };
 
-export default withNamespaces()(SentryError);
+export default withTranslation()(SentryError);

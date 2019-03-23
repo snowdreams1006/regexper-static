@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withNamespaces, Trans } from 'react-i18next';
+import { withTranslation, Trans } from 'react-i18next';
 
 import Metadata from 'components/Metadata';
 import Message from 'components/Message';
@@ -16,4 +16,4 @@ ErrorPage.propTypes = {
   t: PropTypes.func.isRequired
 };
 
-export default withNamespaces()(ErrorPage);
+export default withTranslation()(ErrorPage);

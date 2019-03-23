@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withNamespaces, Trans } from 'react-i18next';
+import { withTranslation, Trans } from 'react-i18next';
 
 import Message from 'components/Message';
 
@@ -51,4 +51,4 @@ PrivacyPolicy.propTypes = {
   t: PropTypes.func.isRequired
 };
 
-export default withNamespaces()(PrivacyPolicy);
+export default withTranslation()(PrivacyPolicy);

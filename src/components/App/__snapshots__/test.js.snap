@@ -2,7 +2,7 @@
 
 exports[`App removing rendered expression 1`] = `
 <Fragment>
-  <LoadNamespace(Form)
+  <withI18nextTranslation(Form)
     expr="test expression"
     onSubmit={[Function]}
     syntax="js"
@@ -19,8 +19,8 @@ exports[`App removing rendered expression 1`] = `
       ]
     }
   >
-    <LoadNamespace(FormActions) />
-  </LoadNamespace(Form)>
+    <withI18nextTranslation(FormActions) />
+  </withI18nextTranslation(Form)>
   <Render
     data="LAYOUT(PARSED(test expression))"
     onRender={[Function]}
@@ -30,7 +30,7 @@ exports[`App removing rendered expression 1`] = `
 
 exports[`App removing rendered expression 2`] = `
 <Fragment>
-  <LoadNamespace(Form)
+  <withI18nextTranslation(Form)
     expr=""
     onSubmit={[Function]}
     syntax="js"
@@ -52,7 +52,7 @@ exports[`App removing rendered expression 2`] = `
 
 exports[`App rendering 1`] = `
 <Fragment>
-  <LoadNamespace(Form)
+  <withI18nextTranslation(Form)
     expr=""
     onSubmit={[Function]}
     syntax="js"
@@ -74,7 +74,7 @@ exports[`App rendering 1`] = `
 
 exports[`App rendering an expression 1`] = `
 <Fragment>
-  <LoadNamespace(Form)
+  <withI18nextTranslation(Form)
     expr=""
     onSubmit={[Function]}
     syntax="js"
@@ -96,7 +96,7 @@ exports[`App rendering an expression 1`] = `
 
 exports[`App rendering an expression 2`] = `
 <Fragment>
-  <LoadNamespace(Form)
+  <withI18nextTranslation(Form)
     expr="test expression"
     onSubmit={[Function]}
     syntax="js"
@@ -113,13 +113,13 @@ exports[`App rendering an expression 2`] = `
       ]
     }
   />
-  <LoadNamespace(Loader) />
+  <withI18nextTranslation(Loader) />
 </Fragment>
 `;
 
 exports[`App rendering an expression 3`] = `
 <Fragment>
-  <LoadNamespace(Form)
+  <withI18nextTranslation(Form)
     expr="test expression"
     onSubmit={[Function]}
     syntax="js"
@@ -136,8 +136,8 @@ exports[`App rendering an expression 3`] = `
       ]
     }
   >
-    <LoadNamespace(FormActions) />
-  </LoadNamespace(Form)>
+    <withI18nextTranslation(FormActions) />
+  </withI18nextTranslation(Form)>
   <Render
     data="LAYOUT(PARSED(test expression))"
     onRender={[Function]}
@@ -147,7 +147,7 @@ exports[`App rendering an expression 3`] = `
 
 exports[`App rendering image details 1`] = `
 <Fragment>
-  <LoadNamespace(Form)
+  <withI18nextTranslation(Form)
     expr="test expression"
     onSubmit={[Function]}
     syntax="js"
@@ -164,8 +164,8 @@ exports[`App rendering image details 1`] = `
       ]
     }
   >
-    <LoadNamespace(FormActions) />
-  </LoadNamespace(Form)>
+    <withI18nextTranslation(FormActions) />
+  </withI18nextTranslation(Form)>
   <Render
     data="LAYOUT(PARSED(test expression))"
     onRender={[Function]}
@@ -175,7 +175,7 @@ exports[`App rendering image details 1`] = `
 
 exports[`App rendering image details 2`] = `
 <Fragment>
-  <LoadNamespace(Form)
+  <withI18nextTranslation(Form)
     expr="test expression"
     onSubmit={[Function]}
     syntax="js"
@@ -192,14 +192,14 @@ exports[`App rendering image details 2`] = `
       ]
     }
   >
-    <LoadNamespace(FormActions)
+    <withI18nextTranslation(FormActions)
       imageDetails={
         Object {
           "svg": "test svg content",
         }
       }
     />
-  </LoadNamespace(Form)>
+  </withI18nextTranslation(Form)>
   <Render
     data="LAYOUT(PARSED(test expression))"
     onRender={[Function]}
@@ -209,7 +209,7 @@ exports[`App rendering image details 2`] = `
 
 exports[`App rendering with an invalid syntax 1`] = `
 <Fragment>
-  <LoadNamespace(Form)
+  <withI18nextTranslation(Form)
     expr=""
     onSubmit={[Function]}
     syntax="invalid"
@@ -231,7 +231,7 @@ exports[`App rendering with an invalid syntax 1`] = `
 
 exports[`App rendering with an invalid syntax 2`] = `
 <Fragment>
-  <LoadNamespace(Form)
+  <withI18nextTranslation(Form)
     expr="test expression"
     onSubmit={[Function]}
     syntax="invalid"
@@ -248,13 +248,13 @@ exports[`App rendering with an invalid syntax 2`] = `
       ]
     }
   />
-  <LoadNamespace(Loader) />
+  <withI18nextTranslation(Loader) />
 </Fragment>
 `;
 
 exports[`App rendering with an invalid syntax 3`] = `
 <Fragment>
-  <LoadNamespace(Form)
+  <withI18nextTranslation(Form)
     expr="test expression"
     onSubmit={[Function]}
     syntax="invalid"
@@ -276,17 +276,17 @@ exports[`App rendering with an invalid syntax 3`] = `
     type="error"
   >
     <p>
-      <WithMergedOptions(TransComponent)>
+      <Trans>
         An error occurred while rendering the regular expression.
-      </WithMergedOptions(TransComponent)>
+      </Trans>
     </p>
     <a
       href="#retry"
       onClick={[Function]}
     >
-      <WithMergedOptions(TransComponent)>
+      <Trans>
         Retry
-      </WithMergedOptions(TransComponent)>
+      </Trans>
     </a>
   </Message>
 </Fragment>

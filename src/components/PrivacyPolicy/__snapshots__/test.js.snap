@@ -6,7 +6,7 @@ exports[`PrivacyPolicy rendering 1`] = `
   onClose={[MockFunction]}
   type="info"
 >
-  <WithMergedOptions(TransComponent)
+  <Trans
     i18nKey="Privacy policy copy"
   >
     <p>
@@ -51,6 +51,6 @@ exports[`PrivacyPolicy rendering 1`] = `
     <p>
       Regexper is not supported by ad revenue or sales of any kind.
     </p>
-  </WithMergedOptions(TransComponent)>
+  </Trans>
 </Message>
 `;

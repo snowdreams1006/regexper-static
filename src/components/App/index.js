@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withNamespaces, Trans } from 'react-i18next';
+import { withTranslation, Trans } from 'react-i18next';
 import * as Sentry from '@sentry/browser';
 import URLSearchParams from '@ungap/url-search-params';
 
@@ -162,4 +162,4 @@ class App extends React.PureComponent {
 }
 
 export { App };
-export default withNamespaces()(App);
+export default withTranslation()(App);

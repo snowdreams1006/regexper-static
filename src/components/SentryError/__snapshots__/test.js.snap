@@ -6,7 +6,7 @@ exports[`SentryError rendering 1`] = `
   type="error"
 >
   <p>
-    <WithMergedOptions(TransComponent)>
+    <Trans>
       This error has been logged. You may also 
       <a
         href="#error-report"
@@ -15,7 +15,7 @@ exports[`SentryError rendering 1`] = `
         fill out a report
       </a>
       .
-    </WithMergedOptions(TransComponent)>
+    </Trans>
   </p>
 </Message>
 `;

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withNamespaces } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 
 import Metadata from 'components/Metadata';
 import PrivacyPolicy from 'components/PrivacyPolicy';
@@ -14,4 +14,4 @@ PrivacyPage.propTypes = {
   t: PropTypes.func.isRequired
 };
 
-export default withNamespaces()(PrivacyPage);
+export default withTranslation()(PrivacyPage);

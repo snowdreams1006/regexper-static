@@ -2,7 +2,7 @@
 
 exports[`Error Page rendering 1`] = `
 <Fragment>
-  <LoadNamespace(Metadata)
+  <withI18nextTranslation(Metadata)
     title="TRANSLATE(Page Not Found)"
   />
   <Message
@@ -10,9 +10,9 @@ exports[`Error Page rendering 1`] = `
     type="error"
   >
     <p>
-      <WithMergedOptions(TransComponent)>
+      <Trans>
         The page you have requested could not be found.
-      </WithMergedOptions(TransComponent)>
+      </Trans>
     </p>
   </Message>
 </Fragment>

@@ -18,9 +18,9 @@ exports[`Form rendering 1`] = `
     <button
       type="submit"
     >
-      <WithMergedOptions(TransComponent)>
+      <Trans>
         Display
-      </WithMergedOptions(TransComponent)>
+      </Trans>
     </button>
     <div
       className="select"

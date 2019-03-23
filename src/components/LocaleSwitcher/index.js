@@ -1,5 +1,5 @@
 import React from 'react';
-import { withNamespaces, Trans } from 'react-i18next';
+import { withTranslation, Trans } from 'react-i18next';
 
 import ExpandIcon from 'react-feather/dist/icons/chevrons-down';
 
@@ -51,4 +51,4 @@ export class LocaleSwitcher extends React.PureComponent {
   }
 }
 
-export default withNamespaces()(LocaleSwitcher);
+export default withTranslation()(LocaleSwitcher);

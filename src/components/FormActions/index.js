@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withNamespaces, Trans } from 'react-i18next';
+import { withTranslation, Trans } from 'react-i18next';
 
 import DownloadIcon from 'react-feather/dist/icons/download';
 import LinkIcon from 'react-feather/dist/icons/link';
@@ -94,4 +94,4 @@ class FormActions extends React.PureComponent {
 }
 
 export { FormActions };
-export default withNamespaces()(FormActions);
+export default withTranslation()(FormActions);

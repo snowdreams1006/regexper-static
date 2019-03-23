@@ -9,8 +9,8 @@ exports[`InstallPrompt rendering after an install prompt has been requested 2`] 
   href="#install"
   onClick={[Function]}
 >
-  <WithMergedOptions(TransComponent)>
+  <Trans>
     Add to Home Screen
-  </WithMergedOptions(TransComponent)>
+  </Trans>
 </a>
 `;

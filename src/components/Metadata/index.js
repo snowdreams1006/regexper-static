@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withNamespaces } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
 
 class Metadata extends React.PureComponent {
@@ -26,4 +26,4 @@ class Metadata extends React.PureComponent {
 }
 
 export { Metadata };
-export default withNamespaces()(Metadata);
+export default withTranslation()(Metadata);

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withNamespaces, Trans } from 'react-i18next';
+import { withTranslation, Trans } from 'react-i18next';
 
 import ccLogo from './cc-by.svg';
 
@@ -34,4 +34,4 @@ Footer.propTypes = {
   buildId: PropTypes.string.isRequired
 };
 
-export default withNamespaces()(Footer);
+export default withTranslation()(Footer);

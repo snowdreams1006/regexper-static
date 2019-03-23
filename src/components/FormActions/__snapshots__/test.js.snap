@@ -51,9 +51,9 @@ exports[`FormActions rendering download links with data after mounting 1`] = `
         color="currentColor"
         size="24"
       />
-      <WithMergedOptions(TransComponent)>
+      <Trans>
         Permalink
-      </WithMergedOptions(TransComponent)>
+      </Trans>
     </a>
   </li>
 </ul>
@@ -97,9 +97,9 @@ exports[`FormActions rendering download links with data after mounting 2`] = `
         color="currentColor"
         size="24"
       />
-      <WithMergedOptions(TransComponent)>
+      <Trans>
         Permalink
-      </WithMergedOptions(TransComponent)>
+      </Trans>
     </a>
   </li>
 </ul>
@@ -143,9 +143,9 @@ exports[`FormActions rendering download links with data after mounting 3`] = `
         color="currentColor"
         size="24"
       />
-      <WithMergedOptions(TransComponent)>
+      <Trans>
         Permalink
-      </WithMergedOptions(TransComponent)>
+      </Trans>
     </a>
   </li>
 </ul>
@@ -163,9 +163,9 @@ exports[`FormActions rendering with a permalink 1`] = `
         color="currentColor"
         size="24"
       />
-      <WithMergedOptions(TransComponent)>
+      <Trans>
         Permalink
-      </WithMergedOptions(TransComponent)>
+      </Trans>
     </a>
   </li>
 </ul>

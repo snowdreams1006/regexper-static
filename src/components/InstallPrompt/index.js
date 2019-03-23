@@ -1,5 +1,5 @@
 import React from 'react';
-import { withNamespaces, Trans } from 'react-i18next';
+import { withTranslation, Trans } from 'react-i18next';
 
 class InstallPrompt extends React.PureComponent {
   state = {
@@ -50,4 +50,4 @@ class InstallPrompt extends React.PureComponent {
 }
 
 export { InstallPrompt };
-export default withNamespaces()(InstallPrompt);
+export default withTranslation()(InstallPrompt);

@@ -2,6 +2,6 @@
 
 exports[`SentryBoundary error handling 1`] = `<Child />`;
 
-exports[`SentryBoundary error handling 2`] = `<LoadNamespace(SentryError) />`;
+exports[`SentryBoundary error handling 2`] = `<withI18nextTranslation(SentryError) />`;
 
 exports[`SentryBoundary rendering 1`] = `"Example content"`;

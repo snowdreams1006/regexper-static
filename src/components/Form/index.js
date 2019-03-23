@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withNamespaces, Trans } from 'react-i18next';
+import { withTranslation, Trans } from 'react-i18next';
 
 import ExpandIcon from 'react-feather/dist/icons/chevrons-down';
 
@@ -81,4 +81,4 @@ class Form extends React.PureComponent {
 }
 
 export { Form };
-export default withNamespaces()(Form);
+export default withTranslation()(Form);
