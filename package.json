@@ -84,7 +84,6 @@
     "babel-jest": "^24.5.0",
     "babel-plugin-dynamic-import-node": "^2.2.0",
     "babel-preset-gatsby": "^0.1.6",
-    "core-js": "2",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
     "enzyme-to-json": "^3.3.5",
