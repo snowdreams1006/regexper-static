@@ -66,6 +66,7 @@
       ".cache"
     ],
     "transform": {
+      "\\.yaml$": "<rootDir>/jest/yaml.js",
       "\\.js$": "<rootDir>/jest/preprocess.js",
       "\\.svg$": "<rootDir>/jest/static-file-transform.js"
     },
@@ -104,6 +105,7 @@
     "i18next-xhr-backend": "^2.0.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.5.0",
+    "js-yaml": "^3.13.0",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^12.0.1",
     "prop-types": "^15.6.2",
