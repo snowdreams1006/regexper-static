@@ -1,6 +1,9 @@
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import Backend from 'i18next-xhr-backend';
+// import Backend from 'i18next-xhr-backend';
+
+import en from 'locales/en.yaml';
+import enAC from 'locales/en-AC.yaml';
 
 export const locales = [
   { code: 'en', name: 'English' },
@@ -9,7 +12,7 @@ export const locales = [
 
 i18n
   .use(LanguageDetector)
-  .use(Backend)
+  // .use(Backend)
   .init({
     fallbackLng: 'en',
     debug: false,
@@ -36,23 +39,27 @@ i18n
     interpolation: {
       escapeValue: false
     },
-    backend: {
-      loadPath: '{{lng}}',
-      parse: data => data,
-      ajax: async (lng, options, callback) => {
-        try {
-          const { default: locale } = await import(
-            /* webpackInclude: /\.yaml$/ */
-            /* webpackChunkName: "locale-[index]" */
-            `locales/${ lng }.yaml`);
-
-          callback(locale, { status: '200' });
-        }
-        catch (e) {
-          callback(null, { status: '500' });
-        }
-      }
+    resources: {
+      'en': { translation: en },
+      'en-AC': { translation: enAC }
     }
+    // backend: {
+    //   loadPath: '{{lng}}',
+    //   parse: data => data,
+    //   ajax: async (lng, options, callback) => {
+    //     try {
+    //       const { default: locale } = await import(
+    //         /* webpackInclude: /\.yaml$/ */
+    //         /* webpackChunkName: "locale-[index]" */
+    //         `locales/${ lng }.yaml`);
+
+    //       callback(locale, { status: '200' });
+    //     }
+    //     catch (e) {
+    //       callback(null, { status: '500' });
+    //     }
+    //   }
+    // }
   });
 
 export default i18n;
