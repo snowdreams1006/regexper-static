@@ -1,20 +1,33 @@
+jest.mock('rendering/Box', () =>
+  require('__mocks__/component-mock')('rendering/Box'));
+jest.mock('rendering/HorizontalLayout', () =>
+  require('__mocks__/component-mock')('rendering/HorizontalLayout'));
+jest.mock('rendering/Loop', () =>
+  require('__mocks__/component-mock')('rendering/Loop'));
+jest.mock('rendering/Pin', () =>
+  require('__mocks__/component-mock')('rendering/Pin'));
+jest.mock('rendering/Text', () =>
+  require('__mocks__/component-mock')('rendering/Text'));
+jest.mock('rendering/VerticalLayout', () =>
+  require('__mocks__/component-mock')('rendering/VerticalLayout'));
+
 import React from 'react';
 import { render } from 'react-testing-library';
 
 import Render from 'components/Render';
 
 const testType = (name, item) => {
-  test.skip(name, () => {
+  test(name, () => {
     const data = { type: 'SVG', children: [item] };
-    const component = shallow(
+    const { asFragment } = render(
       <Render data={ data } onRender={ jest.fn() }/>
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 };
 
 describe('Render', () => {
-  test.skip('debugging', () => {
+  test('debugging', () => {
     const data = {
       type: 'SVG',
       children: [
@@ -34,10 +47,10 @@ describe('Render', () => {
         }
       ]
     };
-    const component = shallow(
+    const { asFragment } = render(
       <Render data={ data } onRender={ jest.fn() }/>
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   describe('types', () => {
