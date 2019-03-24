@@ -1,34 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LocaleSwitcher rendering 1`] = `
-<label>
-  <Trans>
-    Language
-  </Trans>
-  <div
-    className="switcher"
-  >
-    <select
-      onChange={[Function]}
-      value="en"
+<DocumentFragment>
+  <label>
+    <span
+      data-component="Trans"
+      data-props="{}"
     >
-      <option
-        key="en"
-        value="en"
+      Language
+    </span>
+    <div
+      class="switcher"
+    >
+      <select
+        data-testid="language-select"
       >
-        English
-      </option>
-      <option
-        key="other"
-        value="other"
-      >
-        Other
-      </option>
-    </select>
-    <ChevronsDown
-      color="currentColor"
-      size="24"
-    />
-  </div>
-</label>
+        <option
+          value="en"
+        >
+          English
+        </option>
+        <option
+          value="other"
+        >
+          Other
+        </option>
+      </select>
+      <span
+        data-component="ChevronsDown"
+        data-props="{}"
+      />
+    </div>
+  </label>
+</DocumentFragment>
 `;

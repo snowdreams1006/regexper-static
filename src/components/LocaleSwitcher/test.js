@@ -1,5 +1,9 @@
+jest.mock('react-feather/dist/icons/chevrons-down', () =>
+  require('__mocks__/component-mock')(
+    'react-feather/dist/icons/chevrons-down'));
+
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, fireEvent } from 'react-testing-library';
 
 import i18n from 'i18n';
 import { LocaleSwitcher } from 'components/LocaleSwitcher';
@@ -9,44 +13,47 @@ jest.mock('./locale-to-available', () => jest.fn(() => 'en'));
 
 describe('LocaleSwitcher', () => {
   test('rendering', () => {
-    const component = shallow(
+    const { asFragment } = render(
       <LocaleSwitcher />
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('changing language', () => {
     jest.spyOn(i18n, 'changeLanguage');
 
-    const component = shallow(
+    const { getByTestId } = render(
       <LocaleSwitcher />
     );
-    const selectInput = component.find('select');
-    selectInput.value = 'other';
-    selectInput.simulate('change', { target: { value: 'other' } });
+    const event = new Event('change', { bubbles: true });
+    const select = getByTestId('language-select');
+    select.value = 'other';
+
+    fireEvent(select, event);
 
     expect(i18n.changeLanguage).toHaveBeenCalledWith('other');
   });
 
   test('interface update from language change', () => {
-    const component = shallow(
+    const { getByTestId } = render(
       <LocaleSwitcher />
     );
 
-    expect(component.find('select').prop('value')).toEqual('en');
+    expect(getByTestId('language-select').value).toEqual('en');
     i18n.emit('languageChanged', 'other');
-    expect(component.find('select').prop('value')).toEqual('other');
+    expect(getByTestId('language-select').value).toEqual('other');
   });
 
   test('disconnecting event handler on unmount', () => {
-    const component = shallow(
+    const { unmount } = render(
       <LocaleSwitcher />
     );
 
-    jest.spyOn(component, 'setState');
+    jest.spyOn(i18n, 'off');
 
-    component.unmount();
-    i18n.emit('languageChanged', 'other');
-    expect(component.setState).not.toHaveBeenCalled();
+    unmount();
+    expect(i18n.off).toHaveBeenCalledWith(
+      'languageChanged',
+      expect.any(Function));
   });
 });

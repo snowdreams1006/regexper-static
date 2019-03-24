@@ -38,7 +38,10 @@ export class LocaleSwitcher extends React.PureComponent {
     return <label>
       <Trans>Language</Trans>
       <div className={ style.switcher }>
-        <select value={ current } onChange={ this.handleSelectChange }>
+        <select data-testid="language-select"
+          value={ current }
+          onChange={ this.handleSelectChange }
+        >
           { locales.map(locale => (
             <option value={ locale.code } key={ locale.code }>
               { locale.name }
