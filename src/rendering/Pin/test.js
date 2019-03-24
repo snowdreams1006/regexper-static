@@ -1,14 +1,16 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from 'react-testing-library';
 
 import Pin, { layout } from 'rendering/Pin';
 
 describe('Pin', () => {
   test('rendering', () => {
-    const component = shallow(
-      <Pin/>
+    const { asFragment } = render(
+      <svg>
+        <Pin/>
+      </svg>
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('layout', () => {
