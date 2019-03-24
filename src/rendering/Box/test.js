@@ -1,7 +1,7 @@
 jest.mock('rendering/getbbox', () => jest.fn());
 
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from 'react-testing-library';
 
 import getBBox from 'rendering/getbbox';
 
@@ -9,24 +9,30 @@ import Box, { layout } from 'rendering/Box';
 
 describe('Box', () => {
   test('rendering', () => {
-    const component = shallow(
-      <Box>Example</Box>
+    const { asFragment } = render(
+      <svg>
+        <Box>Example</Box>
+      </svg>
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('rendering with a corner radius', () => {
-    const component = shallow(
-      <Box radius={ 5 }>Example</Box>
+    const { asFragment } = render(
+      <svg>
+        <Box radius={ 5 }>Example</Box>
+      </svg>
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('rendering with a label', () => {
-    const component = shallow(
-      <Box label="Test box">Example</Box>
+    const { asFragment } = render(
+      <svg>
+        <Box label="Test box">Example</Box>
+      </svg>
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('rendering with props from layout', () => {
@@ -39,46 +45,58 @@ describe('Box', () => {
       labelTransform: 'LABEL TRANSFORM',
       contentTransform: 'CONTENT TRANSFORM'
     };
-    const component = shallow(
-      <Box { ...props }>Example</Box>
+    const { asFragment } = render(
+      <svg>
+        <Box { ...props }>Example</Box>
+      </svg>
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   describe('themes', () => {
     test('rendering a "literal" Box', () => {
-      const component = shallow(
-        <Box theme="literal">Example</Box>
+      const { asFragment } = render(
+        <svg>
+          <Box theme="literal">Example</Box>
+        </svg>
       );
-      expect(component).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
 
     test('rendering a "escape" Box', () => {
-      const component = shallow(
-        <Box theme="escape">Example</Box>
+      const { asFragment } = render(
+        <svg>
+          <Box theme="escape">Example</Box>
+        </svg>
       );
-      expect(component).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
 
     test('rendering a "charClass" Box', () => {
-      const component = shallow(
-        <Box theme="charClass">Example</Box>
+      const { asFragment } = render(
+        <svg>
+          <Box theme="charClass">Example</Box>
+        </svg>
       );
-      expect(component).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
 
     test('rendering a "capture" Box', () => {
-      const component = shallow(
-        <Box theme="capture">Example</Box>
+      const { asFragment } = render(
+        <svg>
+          <Box theme="capture">Example</Box>
+        </svg>
       );
-      expect(component).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
 
     test('rendering a "anchor" Box', () => {
-      const component = shallow(
-        <Box theme="anchor">Example</Box>
+      const { asFragment } = render(
+        <svg>
+          <Box theme="anchor">Example</Box>
+        </svg>
       );
-      expect(component).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
   });
 
