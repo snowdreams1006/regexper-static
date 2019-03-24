@@ -1,42 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Footer rendering 1`] = `
-<footer
-  className="footer"
->
-  <ul
-    className="list"
+<DocumentFragment>
+  <footer
+    class="footer"
   >
-    <li>
-      <Trans>
-        Created by 
-        <a
-          href="mailto:jeff.avallone@gmail.com"
+    <ul
+      class="list"
+    >
+      <li>
+        <span
+          data-component="Trans"
+          data-props="{}"
         >
-          Jeff Avallone
-        </a>
-      </Trans>
-    </li>
-    <li>
-      <Trans>
-        Generated images licensed: 
-        <a
-          href="http://creativecommons.org/licenses/by/3.0/"
-          rel="license external noopener noreferrer"
-          target="_blank"
+          Created by 
+          <a
+            href="mailto:jeff.avallone@gmail.com"
+          >
+            Jeff Avallone
+          </a>
+        </span>
+      </li>
+      <li>
+        <span
+          data-component="Trans"
+          data-props="{}"
         >
-          <img
-            alt="TRANSLATE(Creative Commons CC-BY-3.0 License)"
-            src="cc-by.svg"
-          />
-        </a>
-      </Trans>
-    </li>
-  </ul>
-  <div
-    className="buildId"
-  >
-    abc-123
-  </div>
-</footer>
+          Generated images licensed: 
+          <a
+            href="http://creativecommons.org/licenses/by/3.0/"
+            rel="license external noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="TRANSLATE(Creative Commons CC-BY-3.0 License)"
+              src="cc-by.svg"
+            />
+          </a>
+        </span>
+      </li>
+    </ul>
+    <div
+      class="buildId"
+    >
+      abc-123
+    </div>
+  </footer>
+</DocumentFragment>
 `;
