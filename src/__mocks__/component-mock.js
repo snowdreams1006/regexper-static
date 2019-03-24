@@ -12,8 +12,8 @@ const buildMock = component => {
 };
 
 module.exports = path => {
-  const actual = jest.requireActual(path).default;
-  return buildMock(actual);
+  const actual = jest.requireActual(path);
+  return buildMock(actual.default || actual);
 };
 
 module.exports.buildMock = buildMock;
