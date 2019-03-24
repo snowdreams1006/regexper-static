@@ -4,12 +4,15 @@ exports[`SentryError rendering 1`] = `
 <DocumentFragment>
   <span
     data-component="Message"
-    heading="TRANSLATE(An error has occurred)"
-    type="error"
+    data-props="{
+  \\"type\\": \\"error\\",
+  \\"heading\\": \\"TRANSLATE(An error has occurred)\\"
+}"
   >
     <p>
       <span
         data-component="Trans"
+        data-props="{}"
       >
         This error has been logged. You may also 
         <a
