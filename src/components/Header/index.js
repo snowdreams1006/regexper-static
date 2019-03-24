@@ -64,7 +64,10 @@ class Header extends React.PureComponent {
             </a>
           </li>
           <li>
-            <Link to="/privacy" onClick={ this.handleOpen }>
+            <Link to="/privacy"
+              data-testid="privacy-link"
+              onClick={ this.handleOpen }
+            >
               <Trans>Privacy Policy</Trans>
             </Link>
           </li>
