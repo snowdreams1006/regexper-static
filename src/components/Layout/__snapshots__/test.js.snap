@@ -1,26 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Layout rendering 1`] = `
-<SentryBoundary>
-  <noscript>
-    <style
-      type="text/css"
+<DocumentFragment>
+  <span
+    data-component="SentryBoundary"
+    data-props="{}"
+  >
+    <noscript />
+    <span
+      data-component="withI18nextTranslation(Header)"
+      data-props="{
+  \\"banner\\": \\"Test Banner\\"
+}"
+    />
+    <span
+      data-component="SentryBoundary"
+      data-props="{}"
     >
-      
-  [data-requires-js] {
-    display: none !important;
-  }
-
-    </style>
-  </noscript>
-  <withI18nextTranslation(Header)
-    banner="Test Banner"
-  />
-  <SentryBoundary>
-    Example content
-  </SentryBoundary>
-  <withI18nextTranslation(Footer)
-    buildId="test-buildid"
-  />
-</SentryBoundary>
+      Example content
+    </span>
+    <span
+      data-component="withI18nextTranslation(Footer)"
+      data-props="{
+  \\"buildId\\": \\"test-buildid\\"
+}"
+    />
+  </span>
+</DocumentFragment>
 `;
