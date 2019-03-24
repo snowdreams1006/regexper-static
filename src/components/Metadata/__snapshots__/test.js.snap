@@ -1,37 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Metadata rendering 1`] = `
-<HelmetWrapper
-  defer={true}
-  encodeSpecialCharacters={true}
-  htmlAttributes={
-    Object {
-      "lang": "test-lang",
-    }
+<DocumentFragment>
+  <span
+    data-component="HelmetWrapper"
+    data-props="{
+  \\"htmlAttributes\\": {
+    \\"lang\\": \\"test-lang\\"
   }
->
-  <title>
-    Regexper
-  </title>
-</HelmetWrapper>
+}"
+  >
+    <title>
+      Regexper
+    </title>
+  </span>
+</DocumentFragment>
 `;
 
 exports[`Metadata rendering with a title and description 1`] = `
-<HelmetWrapper
-  defer={true}
-  encodeSpecialCharacters={true}
-  htmlAttributes={
-    Object {
-      "lang": "test-lang",
-    }
+<DocumentFragment>
+  <span
+    data-component="HelmetWrapper"
+    data-props="{
+  \\"htmlAttributes\\": {
+    \\"lang\\": \\"test-lang\\"
   }
->
-  <title>
-    Regexper - Testing
-  </title>
-  <meta
-    content="Test description"
-    name="description"
-  />
-</HelmetWrapper>
+}"
+  >
+    <title>
+      Regexper - Testing
+    </title>
+    <meta
+      content="Test description"
+      name="description"
+    />
+  </span>
+</DocumentFragment>
 `;

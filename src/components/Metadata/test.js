@@ -1,5 +1,13 @@
+jest.mock('react-helmet', () => {
+  const helmet = jest.requireActual('react-helmet');
+  return {
+    ...helmet,
+    Helmet: require('__mocks__/component-mock').buildMock(helmet.Helmet)
+  };
+});
+
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from 'react-testing-library';
 
 import { Metadata } from 'components/Metadata';
 
@@ -9,19 +17,19 @@ const commonProps = {
 
 describe('Metadata', () => {
   test('rendering', () => {
-    const component = shallow(
+    const { asFragment } = render(
       <Metadata { ...commonProps } />
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('rendering with a title and description', () => {
-    const component = shallow(
+    const { asFragment } = render(
       <Metadata
         title="Testing"
         description="Test description"
         { ...commonProps } />
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
