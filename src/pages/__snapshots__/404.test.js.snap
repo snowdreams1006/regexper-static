@@ -1,19 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Error Page rendering 1`] = `
-<Fragment>
-  <withI18nextTranslation(Metadata)
-    title="TRANSLATE(Page Not Found)"
+<DocumentFragment>
+  <span
+    data-component="withI18nextTranslation(Metadata)"
+    data-props="{
+  \\"title\\": \\"TRANSLATE(Page Not Found)\\"
+}"
   />
-  <Message
-    heading="TRANSLATE(404 Page Not Found)"
-    type="error"
+  <span
+    data-component="Message"
+    data-props="{
+  \\"type\\": \\"error\\",
+  \\"heading\\": \\"TRANSLATE(404 Page Not Found)\\"
+}"
   >
     <p>
-      <Trans>
+      <span
+        data-component="Trans"
+        data-props="{}"
+      >
         The page you have requested could not be found.
-      </Trans>
+      </span>
     </p>
-  </Message>
-</Fragment>
+  </span>
+</DocumentFragment>
 `;
