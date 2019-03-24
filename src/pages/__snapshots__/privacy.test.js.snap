@@ -1,10 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Privacy Page rendering 1`] = `
-<Fragment>
-  <withI18nextTranslation(Metadata)
-    title="TRANSLATE(Privacy Policy)"
+<DocumentFragment>
+  <span
+    data-component="withI18nextTranslation(Metadata)"
+    data-props="{
+  \\"title\\": \\"TRANSLATE(Privacy Policy)\\"
+}"
   />
-  <withI18nextTranslation(PrivacyPolicy) />
-</Fragment>
+  <span
+    data-component="withI18nextTranslation(PrivacyPolicy)"
+    data-props="{}"
+  />
+</DocumentFragment>
 `;
