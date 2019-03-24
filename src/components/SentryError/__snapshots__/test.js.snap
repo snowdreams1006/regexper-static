@@ -1,21 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SentryError rendering 1`] = `
-<Message
-  heading="TRANSLATE(An error has occurred)"
-  type="error"
->
-  <p>
-    <Trans>
-      This error has been logged. You may also 
-      <a
-        href="#error-report"
-        onClick={[Function]}
+<DocumentFragment>
+  <span
+    data-component="Message"
+    heading="TRANSLATE(An error has occurred)"
+    type="error"
+  >
+    <p>
+      <span
+        data-component="Trans"
       >
-        fill out a report
-      </a>
-      .
-    </Trans>
-  </p>
-</Message>
+        This error has been logged. You may also 
+        <a
+          data-testid="error-report"
+          href="#error-report"
+        >
+          fill out a report
+        </a>
+        .
+      </span>
+    </p>
+  </span>
+</DocumentFragment>
 `;
