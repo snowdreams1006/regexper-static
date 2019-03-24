@@ -1,5 +1,12 @@
+jest.mock('components/Metadata', () =>
+  require('__mocks__/component-mock')('components/Metadata'));
+jest.mock('components/Message', () =>
+  require('__mocks__/component-mock')('components/Message'));
+jest.mock('components/App', () =>
+  require('__mocks__/component-mock')('components/App'));
+
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from 'react-testing-library';
 
 import { IndexPage } from 'pages/index';
 
@@ -18,19 +25,19 @@ const queryResult = {
 
 describe('Index Page', () => {
   test('rendering', () => {
-    const component = shallow(
+    const { asFragment } = render(
       <IndexPage location={{ hash: '' }} data={ queryResult } />
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('rendering with an expression on the URL', () => {
-    const component = shallow(
+    const { asFragment } = render(
       <IndexPage location={{
         hash: '#syntax=test&expr=testing',
         href: 'http://example.com'
       }} data={ queryResult } />
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

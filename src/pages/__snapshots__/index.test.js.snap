@@ -1,89 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Index Page rendering 1`] = `
-<Fragment>
-  <withI18nextTranslation(Metadata)
-    description="Test description"
+<DocumentFragment>
+  <span
+    data-component="withI18nextTranslation(Metadata)"
+    data-props="{
+  \\"description\\": \\"Test description\\"
+}"
   />
-  <noscript>
-    <Message
-      heading="JavaScript Required"
-      type="error"
-    >
-      <p>
-        You need JavaScript to use Regexper.
-      </p>
-      <p>
-        If you have concerns regarding the use of tracking code on Regexper, please see the 
-        <mockConstructor
-          to="/privacy"
-        >
-          Privacy Policy
-        </mockConstructor>
-        .
-      </p>
-    </Message>
-  </noscript>
-  <withI18nextTranslation(App)
-    expr=""
-    permalinkUrl={null}
-    syntax="testJs"
-    syntaxList={
-      Array [
-        Object {
-          "id": "testJS",
-          "name": "Testing JS",
-        },
-        Object {
-          "id": "other",
-          "name": "Other",
-        },
-      ]
+  <noscript />
+  <span
+    data-component="withI18nextTranslation(App)"
+    data-props="{
+  \\"syntaxList\\": [
+    {
+      \\"id\\": \\"testJS\\",
+      \\"name\\": \\"Testing JS\\"
+    },
+    {
+      \\"id\\": \\"other\\",
+      \\"name\\": \\"Other\\"
     }
+  ],
+  \\"syntax\\": \\"testJs\\",
+  \\"expr\\": \\"\\",
+  \\"permalinkUrl\\": null
+}"
   />
-</Fragment>
+</DocumentFragment>
 `;
 
 exports[`Index Page rendering with an expression on the URL 1`] = `
-<Fragment>
-  <withI18nextTranslation(Metadata)
-    description="Test description"
+<DocumentFragment>
+  <span
+    data-component="withI18nextTranslation(Metadata)"
+    data-props="{
+  \\"description\\": \\"Test description\\"
+}"
   />
-  <noscript>
-    <Message
-      heading="JavaScript Required"
-      type="error"
-    >
-      <p>
-        You need JavaScript to use Regexper.
-      </p>
-      <p>
-        If you have concerns regarding the use of tracking code on Regexper, please see the 
-        <mockConstructor
-          to="/privacy"
-        >
-          Privacy Policy
-        </mockConstructor>
-        .
-      </p>
-    </Message>
-  </noscript>
-  <withI18nextTranslation(App)
-    expr="testing"
-    permalinkUrl="http://example.com"
-    syntax="test"
-    syntaxList={
-      Array [
-        Object {
-          "id": "testJS",
-          "name": "Testing JS",
-        },
-        Object {
-          "id": "other",
-          "name": "Other",
-        },
-      ]
+  <noscript />
+  <span
+    data-component="withI18nextTranslation(App)"
+    data-props="{
+  \\"syntaxList\\": [
+    {
+      \\"id\\": \\"testJS\\",
+      \\"name\\": \\"Testing JS\\"
+    },
+    {
+      \\"id\\": \\"other\\",
+      \\"name\\": \\"Other\\"
     }
+  ],
+  \\"syntax\\": \\"test\\",
+  \\"expr\\": \\"testing\\",
+  \\"permalinkUrl\\": \\"http://example.com\\"
+}"
   />
-</Fragment>
+</DocumentFragment>
 `;
