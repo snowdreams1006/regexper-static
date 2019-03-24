@@ -18,75 +18,62 @@ Object {
 `;
 
 exports[`Text positioning text 1`] = `
-<text
-  style={
-    Object {
-      "fontFamily": "Arial",
-      "fontSize": "16px",
-    }
-  }
-  transform="translate(1 2)"
->
-  Example
-</text>
+<DocumentFragment>
+  <svg>
+    <text
+      style="font-size: 16px; font-family: Arial;"
+      transform="translate(1 2)"
+    >
+      Example
+    </text>
+  </svg>
+</DocumentFragment>
 `;
 
 exports[`Text rendering 1`] = `
-<text
-  style={
-    Object {
-      "fontFamily": "Arial",
-      "fontSize": "16px",
-    }
-  }
->
-  Example
-</text>
+<DocumentFragment>
+  <svg>
+    <text
+      style="font-size: 16px; font-family: Arial;"
+    >
+      Example
+    </text>
+  </svg>
+</DocumentFragment>
 `;
 
 exports[`Text rendering quoted text 1`] = `
-<text
-  style={
-    Object {
-      "fontFamily": "Arial",
-      "fontSize": "16px",
-    }
-  }
->
-  <tspan
-    style={
-      Object {
-        "fill": "#908c83",
-      }
-    }
-  >
-    “
-  </tspan>
-  <tspan>
-    Example
-  </tspan>
-  <tspan
-    style={
-      Object {
-        "fill": "#908c83",
-      }
-    }
-  >
-    ”
-  </tspan>
-</text>
+<DocumentFragment>
+  <svg>
+    <text
+      style="font-size: 16px; font-family: Arial;"
+    >
+      <tspan
+        style="fill: #908c83;"
+      >
+        “
+      </tspan>
+      <tspan>
+        Example
+      </tspan>
+      <tspan
+        style="fill: #908c83;"
+      >
+        ”
+      </tspan>
+    </text>
+  </svg>
+</DocumentFragment>
 `;
 
 exports[`Text rendering with a theme 1`] = `
-<text
-  style={
-    Object {
-      "fill": "#fff",
-      "fontFamily": "Arial",
-      "fontSize": "16px",
-    }
-  }
->
-  Example
-</text>
+<DocumentFragment>
+  <svg>
+    <text
+      style="font-size: 16px; font-family: Arial; fill: #fff;"
+    >
+      Example
+    </text>
+  </svg>
+</DocumentFragment>
 `;

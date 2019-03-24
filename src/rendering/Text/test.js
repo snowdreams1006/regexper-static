@@ -1,35 +1,43 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from 'react-testing-library';
 
 import Text, { layout } from 'rendering/Text';
 
 describe('Text', () => {
   test('rendering', () => {
-    const component = shallow(
-      <Text>Example</Text>
+    const { asFragment } = render(
+      <svg>
+        <Text>Example</Text>
+      </svg>
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('positioning text', () => {
-    const component = shallow(
-      <Text transform="translate(1 2)">Example</Text>
+    const { asFragment } = render(
+      <svg>
+        <Text transform="translate(1 2)">Example</Text>
+      </svg>
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('rendering with a theme', () => {
-    const component = shallow(
-      <Text theme="anchor">Example</Text>
+    const { asFragment } = render(
+      <svg>
+        <Text theme="anchor">Example</Text>
+      </svg>
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('rendering quoted text', () => {
-    const component = shallow(
-      <Text quoted={ true }>Example</Text>
+    const { asFragment } = render(
+      <svg>
+        <Text quoted={ true }>Example</Text>
+      </svg>
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('layout', () => {
