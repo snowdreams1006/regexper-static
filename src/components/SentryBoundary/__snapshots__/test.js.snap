@@ -1,7 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SentryBoundary error handling 1`] = `<Child />`;
+exports[`SentryBoundary error handling 1`] = `
+<DocumentFragment>
+  Example content
+</DocumentFragment>
+`;
 
-exports[`SentryBoundary error handling 2`] = `<withI18nextTranslation(SentryError) />`;
+exports[`SentryBoundary error handling 2`] = `
+<DocumentFragment>
+  <span
+    data-component="withI18nextTranslation(SentryError)"
+    data-props="{}"
+  />
+</DocumentFragment>
+`;
 
-exports[`SentryBoundary rendering 1`] = `"Example content"`;
+exports[`SentryBoundary rendering 1`] = `
+<DocumentFragment>
+  Example content
+</DocumentFragment>
+`;
