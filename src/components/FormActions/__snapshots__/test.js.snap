@@ -1,172 +1,196 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FormActions rendering 1`] = `
-<ul
-  className="actions"
-/>
+<DocumentFragment>
+  <ul
+    class="actions"
+  />
+</DocumentFragment>
 `;
 
 exports[`FormActions rendering download links 1`] = `
-<ul
-  className="actions"
->
-  <li>
-    <a
-      download="image.png"
-      href="http://example.com/image.png"
-      type="image/png"
-    >
-      <Download
-        color="currentColor"
-        size="24"
-      />
-      TRANSLATE(Example PNG Link)
-    </a>
-  </li>
-  <li>
-    <a
-      download="image.svg"
-      href="http://example.com/image.svg"
-      type="image/svg+xml"
-    >
-      <Download
-        color="currentColor"
-        size="24"
-      />
-      TRANSLATE(Example SVG Link)
-    </a>
-  </li>
-</ul>
+<DocumentFragment>
+  <ul
+    class="actions"
+  >
+    <li>
+      <a
+        download="image.png"
+        href="http://example.com/image.png"
+        type="image/png"
+      >
+        <span
+          data-component="Download"
+          data-props="{}"
+        />
+        TRANSLATE(Example PNG Link)
+      </a>
+    </li>
+    <li>
+      <a
+        download="image.svg"
+        href="http://example.com/image.svg"
+        type="image/svg+xml"
+      >
+        <span
+          data-component="Download"
+          data-props="{}"
+        />
+        TRANSLATE(Example SVG Link)
+      </a>
+    </li>
+  </ul>
+</DocumentFragment>
 `;
 
 exports[`FormActions rendering download links with data after mounting 1`] = `
-<ul
-  className="actions"
->
-  <li>
-    <a
-      href="http://example.com"
-    >
-      <Link
-        color="currentColor"
-        size="24"
-      />
-      <Trans>
-        Permalink
-      </Trans>
-    </a>
-  </li>
-</ul>
+<DocumentFragment>
+  <ul
+    class="actions"
+  >
+    <li>
+      <a
+        href="http://example.com"
+      >
+        <span
+          data-component="Link"
+          data-props="{}"
+        />
+        <span
+          data-component="Trans"
+          data-props="{}"
+        >
+          Permalink
+        </span>
+      </a>
+    </li>
+  </ul>
+</DocumentFragment>
 `;
 
 exports[`FormActions rendering download links with data after mounting 2`] = `
-<ul
-  className="actions"
->
-  <li>
-    <a
-      download="image.png"
-      href="http://example.com/image.png"
-      type="image/png"
-    >
-      <Download
-        color="currentColor"
-        size="24"
-      />
-      TRANSLATE(Example PNG Link)
-    </a>
-  </li>
-  <li>
-    <a
-      download="image.svg"
-      href="http://example.com/image.svg"
-      type="image/svg+xml"
-    >
-      <Download
-        color="currentColor"
-        size="24"
-      />
-      TRANSLATE(Example SVG Link)
-    </a>
-  </li>
-  <li>
-    <a
-      href="http://example.com"
-    >
-      <Link
-        color="currentColor"
-        size="24"
-      />
-      <Trans>
-        Permalink
-      </Trans>
-    </a>
-  </li>
-</ul>
+<DocumentFragment>
+  <ul
+    class="actions"
+  >
+    <li>
+      <a
+        download="image.png"
+        href="http://example.com/image.png"
+        type="image/png"
+      >
+        <span
+          data-component="Download"
+          data-props="{}"
+        />
+        TRANSLATE(Example PNG Link)
+      </a>
+    </li>
+    <li>
+      <a
+        download="image.svg"
+        href="http://example.com/image.svg"
+        type="image/svg+xml"
+      >
+        <span
+          data-component="Download"
+          data-props="{}"
+        />
+        TRANSLATE(Example SVG Link)
+      </a>
+    </li>
+    <li>
+      <a
+        href="http://example.com"
+      >
+        <span
+          data-component="Link"
+          data-props="{}"
+        />
+        <span
+          data-component="Trans"
+          data-props="{}"
+        >
+          Permalink
+        </span>
+      </a>
+    </li>
+  </ul>
+</DocumentFragment>
 `;
 
 exports[`FormActions rendering download links with data after mounting 3`] = `
-<ul
-  className="actions"
->
-  <li>
-    <a
-      download="image.png"
-      href="http://example.com/image.png"
-      type="image/png"
-    >
-      <Download
-        color="currentColor"
-        size="24"
-      />
-      TRANSLATE(Example PNG Link)
-    </a>
-  </li>
-  <li>
-    <a
-      download="image.svg"
-      href="http://example.com/image.svg"
-      type="image/svg+xml"
-    >
-      <Download
-        color="currentColor"
-        size="24"
-      />
-      TRANSLATE(Example SVG Link)
-    </a>
-  </li>
-  <li>
-    <a
-      href="http://example.com"
-    >
-      <Link
-        color="currentColor"
-        size="24"
-      />
-      <Trans>
-        Permalink
-      </Trans>
-    </a>
-  </li>
-</ul>
+<DocumentFragment>
+  <ul
+    class="actions"
+  >
+    <li>
+      <a
+        download="image.png"
+        href="http://example.com/image.png"
+        type="image/png"
+      >
+        <span
+          data-component="Download"
+          data-props="{}"
+        />
+        TRANSLATE(Example PNG Link)
+      </a>
+    </li>
+    <li>
+      <a
+        download="image.svg"
+        href="http://example.com/image.svg"
+        type="image/svg+xml"
+      >
+        <span
+          data-component="Download"
+          data-props="{}"
+        />
+        TRANSLATE(Example SVG Link)
+      </a>
+    </li>
+    <li>
+      <a
+        href="http://example.com"
+      >
+        <span
+          data-component="Link"
+          data-props="{}"
+        />
+        <span
+          data-component="Trans"
+          data-props="{}"
+        >
+          Permalink
+        </span>
+      </a>
+    </li>
+  </ul>
+</DocumentFragment>
 `;
 
 exports[`FormActions rendering with a permalink 1`] = `
-<ul
-  className="actions"
->
-  <li>
-    <a
-      href="http://example.com"
-    >
-      <Link
-        color="currentColor"
-        size="24"
-      />
-      <Trans>
-        Permalink
-      </Trans>
-    </a>
-  </li>
-</ul>
+<DocumentFragment>
+  <ul
+    class="actions"
+  >
+    <li>
+      <a
+        href="http://example.com"
+      >
+        <span
+          data-component="Link"
+          data-props="{}"
+        />
+        <span
+          data-component="Trans"
+          data-props="{}"
+        >
+          Permalink
+        </span>
+      </a>
+    </li>
+  </ul>
+</DocumentFragment>
 `;

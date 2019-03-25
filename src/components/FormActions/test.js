@@ -1,4 +1,10 @@
 jest.mock('./links');
+jest.mock('react-feather/dist/icons/download', () =>
+  require('__mocks__/component-mock')(
+    'react-feather/dist/icons/download'));
+jest.mock('react-feather/dist/icons/link', () =>
+  require('__mocks__/component-mock')(
+    'react-feather/dist/icons/link'));
 
 import React from 'react';
 import { render } from 'react-testing-library';
@@ -21,68 +27,70 @@ createSvgLink.mockResolvedValue({
 });
 
 describe('FormActions', () => {
-  test.skip('rendering', () => {
-    const component = shallow(
+  test('rendering', () => {
+    const { asFragment } = render(
       <FormActions t={ mockT } />
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  test.skip('rendering with a permalink', () => {
-    const component = shallow(
+  test('rendering with a permalink', () => {
+    const { asFragment } = render(
       <FormActions permalinkUrl="http://example.com" t={ mockT } />
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  test.skip('rendering download links', async () => {
+  test('rendering download links', async () => {
     const imageDetails = {
       svg: 'test image',
       width: 10,
       height: 20
     };
 
-    const component = shallow(
+    const { asFragment } = render(
       <FormActions imageDetails={ imageDetails } t={ mockT } />
     );
 
     // Give a beat for mocked promises to resolve
     await new Promise(resolve => setTimeout(resolve));
 
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  test.skip('rendering download links with data after mounting', async () => {
-    const component = shallow(
+  test('rendering download links with data after mounting', async () => {
+    const { asFragment, rerender } = render(
       <FormActions t={ mockT } />
     );
 
-    component.setProps({ permalinkUrl: 'http://example.com' });
+    rerender(
+      <FormActions permalinkUrl="http://example.com" t={ mockT } />
+    );
 
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
 
-    component.setProps({
-      imageDetails: {
-        svg: 'test image'
-      }
-    });
-
-    // Give a beat for mocked promises to resolve
-    await new Promise(resolve => setTimeout(resolve));
-
-    expect(component).toMatchSnapshot();
-
-    component.setProps({
-      imageDetails: {
-        svg: 'test image',
-        width: 10,
-        height: 20
-      }
-    });
+    rerender(
+      <FormActions
+        permalinkUrl="http://example.com"
+        imageDetails={ { svg: 'test-image' } }
+        t={ mockT } />
+    );
 
     // Give a beat for mocked promises to resolve
     await new Promise(resolve => setTimeout(resolve));
 
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
+
+    rerender(
+      <FormActions
+        permalinkUrl="http://example.com"
+        imageDetails={ { svg: 'test-image', width: 10, height: 20 } }
+        t={ mockT } />
+    );
+
+    // Give a beat for mocked promises to resolve
+    await new Promise(resolve => setTimeout(resolve));
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });
