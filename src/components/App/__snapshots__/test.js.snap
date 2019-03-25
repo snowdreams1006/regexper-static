@@ -1,293 +1,255 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App removing rendered expression 1`] = `
-<Fragment>
-  <withI18nextTranslation(Form)
-    expr="test expression"
-    onSubmit={[Function]}
-    syntax="js"
-    syntaxList={
-      Array [
-        Object {
-          "id": "testJS",
-          "label": "Testing JS",
-        },
-        Object {
-          "id": "other",
-          "label": "Other",
-        },
-      ]
+<DocumentFragment>
+  <span
+    data-component="withI18nextTranslation(Form)"
+    data-props="{
+  \\"syntax\\": \\"js\\",
+  \\"expr\\": \\"test expression\\",
+  \\"syntaxList\\": [
+    {
+      \\"id\\": \\"testJS\\",
+      \\"label\\": \\"Testing JS\\"
+    },
+    {
+      \\"id\\": \\"other\\",
+      \\"label\\": \\"Other\\"
     }
+  ]
+}"
   >
-    <withI18nextTranslation(FormActions) />
-  </withI18nextTranslation(Form)>
-  <Render
-    data="LAYOUT(PARSED(test expression))"
-    onRender={[Function]}
+    <span
+      data-component="withI18nextTranslation(FormActions)"
+      data-props="{}"
+    />
+  </span>
+  <span
+    data-component="Render"
+    data-props="{
+  \\"data\\": \\"LAYOUT(PARSED(test expression))\\"
+}"
   />
-</Fragment>
+</DocumentFragment>
 `;
 
 exports[`App removing rendered expression 2`] = `
-<Fragment>
-  <withI18nextTranslation(Form)
-    expr=""
-    onSubmit={[Function]}
-    syntax="js"
-    syntaxList={
-      Array [
-        Object {
-          "id": "testJS",
-          "label": "Testing JS",
-        },
-        Object {
-          "id": "other",
-          "label": "Other",
-        },
-      ]
+<DocumentFragment>
+  <span
+    data-component="withI18nextTranslation(Form)"
+    data-props="{
+  \\"syntax\\": \\"js\\",
+  \\"expr\\": \\"\\",
+  \\"syntaxList\\": [
+    {
+      \\"id\\": \\"testJS\\",
+      \\"label\\": \\"Testing JS\\"
+    },
+    {
+      \\"id\\": \\"other\\",
+      \\"label\\": \\"Other\\"
     }
+  ]
+}"
   />
-</Fragment>
+</DocumentFragment>
 `;
 
 exports[`App rendering 1`] = `
-<Fragment>
-  <withI18nextTranslation(Form)
-    expr=""
-    onSubmit={[Function]}
-    syntax="js"
-    syntaxList={
-      Array [
-        Object {
-          "id": "testJS",
-          "label": "Testing JS",
-        },
-        Object {
-          "id": "other",
-          "label": "Other",
-        },
-      ]
+<DocumentFragment>
+  <span
+    data-component="withI18nextTranslation(Form)"
+    data-props="{
+  \\"syntax\\": \\"js\\",
+  \\"expr\\": \\"\\",
+  \\"syntaxList\\": [
+    {
+      \\"id\\": \\"testJS\\",
+      \\"label\\": \\"Testing JS\\"
+    },
+    {
+      \\"id\\": \\"other\\",
+      \\"label\\": \\"Other\\"
     }
+  ]
+}"
   />
-</Fragment>
+</DocumentFragment>
 `;
 
 exports[`App rendering an expression 1`] = `
-<Fragment>
-  <withI18nextTranslation(Form)
-    expr=""
-    onSubmit={[Function]}
-    syntax="js"
-    syntaxList={
-      Array [
-        Object {
-          "id": "testJS",
-          "label": "Testing JS",
-        },
-        Object {
-          "id": "other",
-          "label": "Other",
-        },
-      ]
+<DocumentFragment>
+  <span
+    data-component="withI18nextTranslation(Form)"
+    data-props="{
+  \\"syntax\\": \\"js\\",
+  \\"expr\\": \\"\\",
+  \\"syntaxList\\": [
+    {
+      \\"id\\": \\"testJS\\",
+      \\"label\\": \\"Testing JS\\"
+    },
+    {
+      \\"id\\": \\"other\\",
+      \\"label\\": \\"Other\\"
     }
+  ]
+}"
   />
-</Fragment>
+</DocumentFragment>
 `;
 
 exports[`App rendering an expression 2`] = `
-<Fragment>
-  <withI18nextTranslation(Form)
-    expr="test expression"
-    onSubmit={[Function]}
-    syntax="js"
-    syntaxList={
-      Array [
-        Object {
-          "id": "testJS",
-          "label": "Testing JS",
-        },
-        Object {
-          "id": "other",
-          "label": "Other",
-        },
-      ]
+<DocumentFragment>
+  <span
+    data-component="withI18nextTranslation(Form)"
+    data-props="{
+  \\"syntax\\": \\"js\\",
+  \\"expr\\": \\"test expression\\",
+  \\"syntaxList\\": [
+    {
+      \\"id\\": \\"testJS\\",
+      \\"label\\": \\"Testing JS\\"
+    },
+    {
+      \\"id\\": \\"other\\",
+      \\"label\\": \\"Other\\"
     }
+  ]
+}"
   />
-  <withI18nextTranslation(Loader) />
-</Fragment>
+  <span
+    data-component="withI18nextTranslation(Loader)"
+    data-props="{}"
+  />
+</DocumentFragment>
 `;
 
 exports[`App rendering an expression 3`] = `
-<Fragment>
-  <withI18nextTranslation(Form)
-    expr="test expression"
-    onSubmit={[Function]}
-    syntax="js"
-    syntaxList={
-      Array [
-        Object {
-          "id": "testJS",
-          "label": "Testing JS",
-        },
-        Object {
-          "id": "other",
-          "label": "Other",
-        },
-      ]
+<DocumentFragment>
+  <span
+    data-component="withI18nextTranslation(Form)"
+    data-props="{
+  \\"syntax\\": \\"js\\",
+  \\"expr\\": \\"test expression\\",
+  \\"syntaxList\\": [
+    {
+      \\"id\\": \\"testJS\\",
+      \\"label\\": \\"Testing JS\\"
+    },
+    {
+      \\"id\\": \\"other\\",
+      \\"label\\": \\"Other\\"
     }
+  ]
+}"
   >
-    <withI18nextTranslation(FormActions) />
-  </withI18nextTranslation(Form)>
-  <Render
-    data="LAYOUT(PARSED(test expression))"
-    onRender={[Function]}
-  />
-</Fragment>
-`;
-
-exports[`App rendering image details 1`] = `
-<Fragment>
-  <withI18nextTranslation(Form)
-    expr="test expression"
-    onSubmit={[Function]}
-    syntax="js"
-    syntaxList={
-      Array [
-        Object {
-          "id": "testJS",
-          "label": "Testing JS",
-        },
-        Object {
-          "id": "other",
-          "label": "Other",
-        },
-      ]
-    }
-  >
-    <withI18nextTranslation(FormActions) />
-  </withI18nextTranslation(Form)>
-  <Render
-    data="LAYOUT(PARSED(test expression))"
-    onRender={[Function]}
-  />
-</Fragment>
-`;
-
-exports[`App rendering image details 2`] = `
-<Fragment>
-  <withI18nextTranslation(Form)
-    expr="test expression"
-    onSubmit={[Function]}
-    syntax="js"
-    syntaxList={
-      Array [
-        Object {
-          "id": "testJS",
-          "label": "Testing JS",
-        },
-        Object {
-          "id": "other",
-          "label": "Other",
-        },
-      ]
-    }
-  >
-    <withI18nextTranslation(FormActions)
-      imageDetails={
-        Object {
-          "svg": "test svg content",
-        }
-      }
+    <span
+      data-component="withI18nextTranslation(FormActions)"
+      data-props="{}"
     />
-  </withI18nextTranslation(Form)>
-  <Render
-    data="LAYOUT(PARSED(test expression))"
-    onRender={[Function]}
+  </span>
+  <span
+    data-component="Render"
+    data-props="{
+  \\"data\\": \\"LAYOUT(PARSED(test expression))\\"
+}"
   />
-</Fragment>
+</DocumentFragment>
 `;
 
 exports[`App rendering with an invalid syntax 1`] = `
-<Fragment>
-  <withI18nextTranslation(Form)
-    expr=""
-    onSubmit={[Function]}
-    syntax="invalid"
-    syntaxList={
-      Array [
-        Object {
-          "id": "testJS",
-          "label": "Testing JS",
-        },
-        Object {
-          "id": "other",
-          "label": "Other",
-        },
-      ]
+<DocumentFragment>
+  <span
+    data-component="withI18nextTranslation(Form)"
+    data-props="{
+  \\"syntax\\": \\"invalid\\",
+  \\"expr\\": \\"\\",
+  \\"syntaxList\\": [
+    {
+      \\"id\\": \\"testJS\\",
+      \\"label\\": \\"Testing JS\\"
+    },
+    {
+      \\"id\\": \\"other\\",
+      \\"label\\": \\"Other\\"
     }
+  ]
+}"
   />
-</Fragment>
+</DocumentFragment>
 `;
 
 exports[`App rendering with an invalid syntax 2`] = `
-<Fragment>
-  <withI18nextTranslation(Form)
-    expr="test expression"
-    onSubmit={[Function]}
-    syntax="invalid"
-    syntaxList={
-      Array [
-        Object {
-          "id": "testJS",
-          "label": "Testing JS",
-        },
-        Object {
-          "id": "other",
-          "label": "Other",
-        },
-      ]
+<DocumentFragment>
+  <span
+    data-component="withI18nextTranslation(Form)"
+    data-props="{
+  \\"syntax\\": \\"invalid\\",
+  \\"expr\\": \\"test expression\\",
+  \\"syntaxList\\": [
+    {
+      \\"id\\": \\"testJS\\",
+      \\"label\\": \\"Testing JS\\"
+    },
+    {
+      \\"id\\": \\"other\\",
+      \\"label\\": \\"Other\\"
     }
+  ]
+}"
   />
-  <withI18nextTranslation(Loader) />
-</Fragment>
+  <span
+    data-component="withI18nextTranslation(Loader)"
+    data-props="{}"
+  />
+</DocumentFragment>
 `;
 
 exports[`App rendering with an invalid syntax 3`] = `
-<Fragment>
-  <withI18nextTranslation(Form)
-    expr="test expression"
-    onSubmit={[Function]}
-    syntax="invalid"
-    syntaxList={
-      Array [
-        Object {
-          "id": "testJS",
-          "label": "Testing JS",
-        },
-        Object {
-          "id": "other",
-          "label": "Other",
-        },
-      ]
+<DocumentFragment>
+  <span
+    data-component="withI18nextTranslation(Form)"
+    data-props="{
+  \\"syntax\\": \\"invalid\\",
+  \\"expr\\": \\"test expression\\",
+  \\"syntaxList\\": [
+    {
+      \\"id\\": \\"testJS\\",
+      \\"label\\": \\"Testing JS\\"
+    },
+    {
+      \\"id\\": \\"other\\",
+      \\"label\\": \\"Other\\"
     }
+  ]
+}"
   />
-  <Message
-    heading="TRANSLATE(Render Failure)"
-    type="error"
+  <span
+    data-component="Message"
+    data-props="{
+  \\"type\\": \\"error\\",
+  \\"heading\\": \\"TRANSLATE(Render Failure)\\"
+}"
   >
     <p>
-      <Trans>
+      <span
+        data-component="Trans"
+        data-props="{}"
+      >
         An error occurred while rendering the regular expression.
-      </Trans>
+      </span>
     </p>
     <a
       href="#retry"
-      onClick={[Function]}
     >
-      <Trans>
+      <span
+        data-component="Trans"
+        data-props="{}"
+      >
         Retry
-      </Trans>
+      </span>
     </a>
-  </Message>
-</Fragment>
+  </span>
+</DocumentFragment>
 `;
