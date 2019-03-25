@@ -1,53 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Form rendering 1`] = `
-<div
-  className="form"
-  data-requires-js={true}
->
-  <form
-    onSubmit={[Function]}
+<DocumentFragment>
+  <div
+    class="form"
+    data-requires-js="true"
   >
-    <textarea
-      autoFocus={true}
-      name="expr"
-      onChange={[Function]}
-      onKeyPress={[Function]}
-      placeholder="TRANSLATE(Enter regular expression to display)"
-    />
-    <button
-      type="submit"
+    <form
+      data-testid="form"
     >
-      <Trans>
-        Display
-      </Trans>
-    </button>
-    <div
-      className="select"
-    >
-      <select
-        name="syntax"
-        onChange={[Function]}
-      >
-        <option
-          key="testJS"
-          value="testJS"
-        >
-          TRANSLATE(Testing JS)
-        </option>
-        <option
-          key="other"
-          value="other"
-        >
-          TRANSLATE(Other)
-        </option>
-      </select>
-      <ChevronsDown
-        color="currentColor"
-        size="24"
+      <textarea
+        data-testid="expr-input"
+        name="expr"
+        placeholder="TRANSLATE(Enter regular expression to display)"
       />
-    </div>
-    Actions
-  </form>
-</div>
+      <button
+        type="submit"
+      >
+        <span
+          data-component="Trans"
+          data-props="{}"
+        >
+          Display
+        </span>
+      </button>
+      <div
+        class="select"
+      >
+        <select
+          data-testid="syntax-select"
+          name="syntax"
+        >
+          <option
+            value="testJS"
+          >
+            TRANSLATE(Testing JS)
+          </option>
+          <option
+            value="other"
+          >
+            TRANSLATE(Other)
+          </option>
+        </select>
+        <span
+          data-component="ChevronsDown"
+          data-props="{}"
+        />
+      </div>
+      Actions
+    </form>
+  </div>
+</DocumentFragment>
 `;
