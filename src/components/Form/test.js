@@ -1,5 +1,9 @@
+jest.mock('react-feather/dist/icons/chevrons-down', () =>
+  require('__mocks__/component-mock')(
+    'react-feather/dist/icons/chevrons-down'));
+
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, fireEvent } from 'react-testing-library';
 
 import { mockT } from 'i18n';
 import { Form } from 'components/Form';
@@ -12,76 +16,66 @@ const commonProps = { syntaxList, t: mockT };
 
 describe('Form', () => {
   test('rendering', () => {
-    const component = shallow(
+    const { asFragment } = render(
       <Form onSubmit={ jest.fn() } { ...commonProps }>
         Actions
       </Form>
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   describe('submitting expression', () => {
     test('submitting form', () => {
       const onSubmit = jest.fn();
-      const component = shallow(
+      const { getByTestId } = render(
         <Form onSubmit={ onSubmit } { ...commonProps } />
       );
 
-      const exprInput = component.find('[name="expr"]');
-      const syntaxInput = component.find('[name="syntax"]');
-      exprInput.simulate('change', {
-        target: {
-          name: 'expr',
-          value: 'Test expression'
-        }
+      fireEvent.change(getByTestId('expr-input'), {
+        target: { value: 'Test expression' }
       });
-      syntaxInput.simulate('change', {
-        target: {
-          name: 'syntax',
-          value: 'test'
-        }
+      fireEvent.change(getByTestId('syntax-select'), {
+        target: { value: 'other' }
       });
 
-      const eventObj = { preventDefault: jest.fn() };
-      component.find('form').simulate('submit', eventObj);
+      const event = new Event('submit');
+      jest.spyOn(event, 'preventDefault');
 
-      expect(eventObj.preventDefault).toHaveBeenCalled();
+      fireEvent(getByTestId('form'), event);
+
+      expect(event.preventDefault).toHaveBeenCalled();
       expect(onSubmit).toHaveBeenCalledWith({
         expr: 'Test expression',
-        syntax: 'test'
+        syntax: 'other'
       });
     });
 
     test('submitting form with Shift+Enter', () => {
-      const component = shallow(
-        <Form onSubmit={ jest.fn() } { ...commonProps } />
+      const onSubmit = jest.fn();
+      const { getByTestId } = render(
+        <Form onSubmit={ onSubmit } { ...commonProps } />
       );
-      const form = component.instance();
-      const eventObj = {
-        preventDefault: Function.prototype,
+
+      fireEvent.keyPress(getByTestId('expr-input'), {
         charCode: 13,
         shiftKey: true
-      };
-      jest.spyOn(form, 'handleSubmit');
-      component.find('textarea').simulate('keypress', eventObj);
+      });
 
-      expect(form.handleSubmit).toHaveBeenCalled();
+      expect(onSubmit).toHaveBeenCalled();
     });
 
     test('not submitting with just Enter', () => {
-      const component = shallow(
-        <Form onSubmit={ jest.fn() } { ...commonProps } />
+      const onSubmit = jest.fn();
+      const { getByTestId } = render(
+        <Form onSubmit={ onSubmit } { ...commonProps } />
       );
-      const form = component.instance();
-      const eventObj = {
-        preventDefault: Function.prototype,
+
+      fireEvent.keyPress(getByTestId('expr-input'), {
         charCode: 13,
         shiftKey: false
-      };
-      jest.spyOn(form, 'handleSubmit');
-      component.find('textarea').simulate('keypress', eventObj);
+      });
 
-      expect(form.handleSubmit).not.toHaveBeenCalled();
+      expect(onSubmit).not.toHaveBeenCalled();
     });
   });
 });

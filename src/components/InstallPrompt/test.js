@@ -1,88 +1,86 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, fireEvent } from 'react-testing-library';
 
 import { InstallPrompt } from 'components/InstallPrompt';
 
 describe('InstallPrompt', () => {
   test('rendering', () => {
-    const component = shallow(
+    const { asFragment } = render(
       <InstallPrompt />
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('rendering after an install prompt has been requested', () => {
-    const component = shallow(
+    const { asFragment } = render(
       <InstallPrompt />
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
 
-    component.instance().handleInstallPrompt({
+    const event = new Event('beforeinstallprompt', {
       prompt: jest.fn()
     });
+    fireEvent(window, event);
 
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  test('adding and removing event listener', () => {
+  test('removing event listener', () => {
     jest.spyOn(window, 'addEventListener');
     jest.spyOn(window, 'removeEventListener');
 
-    const component = shallow(
+    const { unmount } = render(
       <InstallPrompt />
     );
-    const handleInstallPrompt = component.instance().handleInstallPrompt;
 
-    expect(window.addEventListener).toHaveBeenCalledWith(
-      'beforeinstallprompt',
-      handleInstallPrompt);
-
-    component.unmount();
+    unmount();
 
     expect(window.removeEventListener).toHaveBeenCalledWith(
       'beforeinstallprompt',
-      handleInstallPrompt);
+      expect.any(Function));
   });
 
   test('accepting install prompt', async () => {
-    const component = shallow(
+    const { asFragment, getByTestId } = render(
       <InstallPrompt />
     );
-    const promptObj = {
-      prompt: jest.fn(),
-      userChoice: Promise.resolve()
-    };
-    const eventObj = { preventDefault: jest.fn() };
+    const promptEvent = new Event('beforeinstallprompt');
+    promptEvent.prompt = jest.fn();
+    promptEvent.userChoice = Promise.resolve();
+    const clickEvent = new MouseEvent('click', { bubbles: true });
+    jest.spyOn(clickEvent, 'preventDefault');
 
-    component.instance().handleInstallPrompt(promptObj);
-    component.find('a').simulate('click', eventObj);
+    fireEvent(window, promptEvent);
+    expect(asFragment()).toMatchSnapshot();
+    fireEvent(getByTestId('install'), clickEvent);
 
     // Allow async code to run
     await new Promise(resolve => setTimeout(resolve));
 
-    expect(eventObj.preventDefault).toHaveBeenCalled();
-    expect(promptObj.prompt).toHaveBeenCalled();
-    expect(component.state('installPrompt')).toBeNull();
+    expect(clickEvent.preventDefault).toHaveBeenCalled();
+    expect(promptEvent.prompt).toHaveBeenCalled();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('rejecting install prompt', async () => {
-    const component = shallow(
+    const { asFragment, getByTestId } = render(
       <InstallPrompt />
     );
-    const promptObj = {
-      prompt: jest.fn(),
-      userChoice: Promise.reject()
-    };
-    const eventObj = { preventDefault: jest.fn() };
+    const promptEvent = new Event('beforeinstallprompt');
+    promptEvent.prompt = jest.fn();
+    promptEvent.userChoice = Promise.reject();
+    const clickEvent = new MouseEvent('click', { bubbles: true });
+    jest.spyOn(clickEvent, 'preventDefault');
 
-    component.instance().handleInstallPrompt(promptObj);
-    component.find('a').simulate('click', eventObj);
+    fireEvent(window, promptEvent);
+    expect(asFragment()).toMatchSnapshot();
+    fireEvent(getByTestId('install'), clickEvent);
 
     // Allow async code to run
     await new Promise(resolve => setTimeout(resolve));
 
-    expect(eventObj.preventDefault).toHaveBeenCalled();
-    expect(promptObj.prompt).toHaveBeenCalled();
-    expect(component.state('installPrompt')).toBeNull();
+    expect(clickEvent.preventDefault).toHaveBeenCalled();
+    expect(promptEvent.prompt).toHaveBeenCalled();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

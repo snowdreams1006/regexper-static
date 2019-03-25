@@ -1,99 +1,105 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Message rendering 1`] = `
-<div
-  className="message"
->
+<DocumentFragment>
   <div
-    className="header"
+    class="message"
   >
-    <h2>
-      Testing
-    </h2>
+    <div
+      class="header"
+    >
+      <h2>
+        Testing
+      </h2>
+    </div>
+    <div
+      class="content"
+    >
+      <p>
+        Message content
+      </p>
+    </div>
   </div>
-  <div
-    className="content"
-  >
-    <p>
-      Message content
-    </p>
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Message rendering with a close button 1`] = `
-<div
-  className="message"
->
+<DocumentFragment>
   <div
-    className="header"
+    class="message"
   >
-    <h2>
-      Testing
-    </h2>
-    <button
-      onClick={[MockFunction]}
+    <div
+      class="header"
     >
-      <XSquare
-        color="currentColor"
-        size="24"
-      />
-       Close
-    </button>
+      <h2>
+        Testing
+      </h2>
+      <button>
+        <span
+          data-component="XSquare"
+          data-props="{}"
+        />
+         Close
+      </button>
+    </div>
+    <div
+      class="content"
+    >
+      <p>
+        Message content
+      </p>
+    </div>
   </div>
-  <div
-    className="content"
-  >
-    <p>
-      Message content
-    </p>
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Message rendering with icon 1`] = `
-<div
-  className="message"
->
+<DocumentFragment>
   <div
-    className="header"
+    class="message"
   >
-    <Icon />
-    <h2>
-      Testing
-    </h2>
+    <div
+      class="header"
+    >
+      Sample icon SVG
+      <h2>
+        Testing
+      </h2>
+    </div>
+    <div
+      class="content"
+    >
+      <p>
+        Message content
+      </p>
+    </div>
   </div>
-  <div
-    className="content"
-  >
-    <p>
-      Message content
-    </p>
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Message rendering with type 1`] = `
-<div
-  className="message error"
->
+<DocumentFragment>
   <div
-    className="header"
+    class="message error"
   >
-    <AlertOctagon
-      color="currentColor"
-      size="24"
-    />
-    <h2>
-      Testing
-    </h2>
+    <div
+      class="header"
+    >
+      <span
+        data-component="AlertOctagon"
+        data-props="{}"
+      />
+      <h2>
+        Testing
+      </h2>
+    </div>
+    <div
+      class="content"
+    >
+      <p>
+        Message content
+      </p>
+    </div>
   </div>
-  <div
-    className="content"
-  >
-    <p>
-      Message content
-    </p>
-  </div>
-</div>
+</DocumentFragment>
 `;

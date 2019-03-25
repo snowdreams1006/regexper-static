@@ -1,5 +1,14 @@
+jest.mock('components/Form', () =>
+  require('__mocks__/component-mock')('components/Form'));
+jest.mock('components/FormActions', () =>
+  require('__mocks__/component-mock')('components/FormActions'));
+jest.mock('components/Loader', () =>
+  require('__mocks__/component-mock')('components/Loader'));
+jest.mock('components/Message', () =>
+  require('__mocks__/component-mock')('components/Message'));
+
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from 'react-testing-library';
 
 import { mockT } from 'i18n';
 import { App } from 'components/App';
@@ -7,7 +16,7 @@ import { App } from 'components/App';
 jest.mock('syntax/js', () => ({
   parse: expr => `PARSED(${ expr })`,
   layout: parsed => `LAYOUT(${ parsed })`,
-  Render: () => ''
+  Render: require('__mocks__/component-mock').buildMock(function Render() {})
 }));
 
 const syntaxList = [
@@ -18,115 +27,64 @@ const commonProps = { syntaxList, t: mockT };
 
 describe('App', () => {
   test('rendering', () => {
-    const component = shallow(
+    const { asFragment } = render(
       <App expr="" syntax="js" { ...commonProps } />
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('rendering an expression', async () => {
-    const component = shallow(
+    const { asFragment, rerender } = render(
       <App expr="" syntax="js" { ...commonProps } />
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
 
-    component.setProps({
-      expr: 'test expression'
-    });
+    rerender(
+      <App expr="test expression" syntax="js" { ...commonProps } />
+    );
 
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
 
     // Give a beat for module to load
     await new Promise(resolve => setTimeout(resolve));
 
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('rendering with an invalid syntax', async () => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
 
-    const component = shallow(
+    const { asFragment, rerender } = render(
       <App expr="" syntax="invalid" { ...commonProps } />
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
 
-    component.setProps({
-      expr: 'test expression'
-    });
-
-    expect(component).toMatchSnapshot();
-
-    // Give a beat for module to load
-    await new Promise(resolve => setTimeout(resolve));
-
-    expect(component).toMatchSnapshot();
-  });
-
-  test('removing rendered expression', async () => {
-    const component = shallow(
-      <App expr="test expression" syntax="js" { ...commonProps } />
-    );
-
-    // Give a beat for module to load
-    await new Promise(resolve => setTimeout(resolve));
-
-    expect(component).toMatchSnapshot();
-
-    component.setProps({
-      expr: ''
-    });
-
-    expect(component).toMatchSnapshot();
-  });
-
-  test('rendering image details', async () => {
-    const component = shallow(
-      <App expr="test expression" syntax="js" { ...commonProps } />
-    );
-
-    // Give a beat for module to load
-    await new Promise(resolve => setTimeout(resolve));
-
-    expect(component).toMatchSnapshot();
-
-    component.instance().handleSvg({
-      svg: 'test svg content'
-    });
-
-    expect(component).toMatchSnapshot();
-  });
-
-  test('retrying expression rendering', () => {
-    jest.spyOn(console, 'error').mockImplementation(() => {});
-
-    const component = shallow(
+    rerender(
       <App expr="test expression" syntax="invalid" { ...commonProps } />
     );
 
-    const instance = component.instance();
-    const event = { preventDefault: jest.fn() };
+    expect(asFragment()).toMatchSnapshot();
 
-    jest.spyOn(instance, 'handleRender');
+    // Give a beat for module to load
+    await new Promise(resolve => setTimeout(resolve));
 
-    instance.handleRetry(event);
-
-    expect(event.preventDefault).toHaveBeenCalled();
-    expect(instance.handleRender).toHaveBeenCalled();
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  test('submitting an expression to render', () => {
-    const component = shallow(
+  test('removing rendered expression', async () => {
+    const { asFragment, rerender } = render(
+      <App expr="test expression" syntax="js" { ...commonProps } />
+    );
+
+    // Give a beat for module to load
+    await new Promise(resolve => setTimeout(resolve));
+
+    expect(asFragment()).toMatchSnapshot();
+
+    rerender(
       <App expr="" syntax="js" { ...commonProps } />
     );
 
-    const instance = component.instance();
-
-    instance.handleSubmit({ syntax: 'test', expr: '' });
-
-    expect(document.location.hash).toEqual('');
-
-    instance.handleSubmit({ syntax: 'test', expr: 'test expression' });
-
-    expect(document.location.hash).toEqual('#syntax=test&expr=test+expression');
+    expect(asFragment()).toMatchSnapshot();
   });
 });

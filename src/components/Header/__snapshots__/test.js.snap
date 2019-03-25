@@ -1,182 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header closing the Privacy Policy modal 1`] = `
-<Fragment>
-  <Modal
-    ariaHideApp={true}
-    bodyOpenClassName="ReactModal__Body--open"
-    closeTimeoutMS={0}
-    isOpen={true}
-    onRequestClose={[Function]}
-    parentSelector={[Function]}
-    portalClassName="ReactModalPortal"
-    role="dialog"
-    shouldCloseOnEsc={true}
-    shouldCloseOnOverlayClick={true}
-    shouldFocusAfterRender={true}
-    shouldReturnFocusAfterClose={true}
-  >
-    <withI18nextTranslation(PrivacyPolicy)
-      onClose={[Function]}
-    />
-  </Modal>
-  <header
-    className="header"
-    data-banner={null}
-  >
-    <h1>
-      <mockConstructor
-        to="/"
-      >
-        Regexper
-      </mockConstructor>
-    </h1>
-    <ul
-      className="list"
-    >
-      <li>
-        <a
-          href="https://gitlab.com/javallone/regexper-static"
-          rel="external noopener noreferrer"
-          target="_blank"
-        >
-          <Gitlab
-            color="currentColor"
-            size="24"
-          />
-          <Trans>
-            Source on GitLab
-          </Trans>
-        </a>
-      </li>
-      <li>
-        <mockConstructor
-          onClick={[Function]}
-          to="/privacy"
-        >
-          <Trans>
-            Privacy Policy
-          </Trans>
-        </mockConstructor>
-      </li>
-      <li>
-        <withI18nextTranslation(InstallPrompt) />
-      </li>
-      <li
-        data-requires-js={true}
-      >
-        <withI18nextTranslation(LocaleSwitcher) />
-      </li>
-    </ul>
-  </header>
-</Fragment>
-`;
-
-exports[`Header closing the Privacy Policy modal 2`] = `
-<Fragment>
-  <Modal
-    ariaHideApp={true}
-    bodyOpenClassName="ReactModal__Body--open"
-    closeTimeoutMS={0}
-    isOpen={false}
-    onRequestClose={[Function]}
-    parentSelector={[Function]}
-    portalClassName="ReactModalPortal"
-    role="dialog"
-    shouldCloseOnEsc={true}
-    shouldCloseOnOverlayClick={true}
-    shouldFocusAfterRender={true}
-    shouldReturnFocusAfterClose={true}
-  >
-    <withI18nextTranslation(PrivacyPolicy)
-      onClose={[Function]}
-    />
-  </Modal>
-  <header
-    className="header"
-    data-banner={null}
-  >
-    <h1>
-      <mockConstructor
-        to="/"
-      >
-        Regexper
-      </mockConstructor>
-    </h1>
-    <ul
-      className="list"
-    >
-      <li>
-        <a
-          href="https://gitlab.com/javallone/regexper-static"
-          rel="external noopener noreferrer"
-          target="_blank"
-        >
-          <Gitlab
-            color="currentColor"
-            size="24"
-          />
-          <Trans>
-            Source on GitLab
-          </Trans>
-        </a>
-      </li>
-      <li>
-        <mockConstructor
-          onClick={[Function]}
-          to="/privacy"
-        >
-          <Trans>
-            Privacy Policy
-          </Trans>
-        </mockConstructor>
-      </li>
-      <li>
-        <withI18nextTranslation(InstallPrompt) />
-      </li>
-      <li
-        data-requires-js={true}
-      >
-        <withI18nextTranslation(LocaleSwitcher) />
-      </li>
-    </ul>
-  </header>
-</Fragment>
-`;
-
 exports[`Header opening the Privacy Policy modal 1`] = `
-<Fragment>
-  <Modal
-    ariaHideApp={true}
-    bodyOpenClassName="ReactModal__Body--open"
-    closeTimeoutMS={0}
-    isOpen={true}
-    onRequestClose={[Function]}
-    parentSelector={[Function]}
-    portalClassName="ReactModalPortal"
-    role="dialog"
-    shouldCloseOnEsc={true}
-    shouldCloseOnOverlayClick={true}
-    shouldFocusAfterRender={true}
-    shouldReturnFocusAfterClose={true}
+<DocumentFragment>
+  <span
+    data-component="Modal"
+    data-props="{
+  \\"isOpen\\": true
+}"
   >
-    <withI18nextTranslation(PrivacyPolicy)
-      onClose={[Function]}
+    <span
+      data-component="withI18nextTranslation(PrivacyPolicy)"
+      data-props="{}"
     />
-  </Modal>
+  </span>
   <header
-    className="header"
-    data-banner={null}
+    class="header"
   >
     <h1>
-      <mockConstructor
-        to="/"
+      <a
+        href="/"
       >
         Regexper
-      </mockConstructor>
+      </a>
     </h1>
     <ul
-      className="list"
+      class="list"
     >
       <li>
         <a
@@ -184,71 +32,380 @@ exports[`Header opening the Privacy Policy modal 1`] = `
           rel="external noopener noreferrer"
           target="_blank"
         >
-          <Gitlab
-            color="currentColor"
-            size="24"
+          <span
+            data-component="Gitlab"
+            data-props="{}"
           />
-          <Trans>
+          <span
+            data-component="Trans"
+            data-props="{}"
+          >
             Source on GitLab
-          </Trans>
+          </span>
         </a>
       </li>
       <li>
-        <mockConstructor
-          onClick={[Function]}
-          to="/privacy"
+        <a
+          data-testid="privacy-link"
+          href="/privacy"
         >
-          <Trans>
+          <span
+            data-component="Trans"
+            data-props="{}"
+          >
             Privacy Policy
-          </Trans>
-        </mockConstructor>
+          </span>
+        </a>
       </li>
       <li>
-        <withI18nextTranslation(InstallPrompt) />
+        <span
+          data-component="withI18nextTranslation(InstallPrompt)"
+          data-props="{}"
+        />
       </li>
       <li
-        data-requires-js={true}
+        data-requires-js="true"
       >
-        <withI18nextTranslation(LocaleSwitcher) />
+        <span
+          data-component="withI18nextTranslation(LocaleSwitcher)"
+          data-props="{}"
+        />
       </li>
     </ul>
   </header>
-</Fragment>
+</DocumentFragment>
+`;
+
+exports[`Header opening the Privacy Policy modal while holding alt key 1`] = `
+<DocumentFragment>
+  <span
+    data-component="Modal"
+    data-props="{
+  \\"isOpen\\": false
+}"
+  >
+    <span
+      data-component="withI18nextTranslation(PrivacyPolicy)"
+      data-props="{}"
+    />
+  </span>
+  <header
+    class="header"
+  >
+    <h1>
+      <a
+        href="/"
+      >
+        Regexper
+      </a>
+    </h1>
+    <ul
+      class="list"
+    >
+      <li>
+        <a
+          href="https://gitlab.com/javallone/regexper-static"
+          rel="external noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            data-component="Gitlab"
+            data-props="{}"
+          />
+          <span
+            data-component="Trans"
+            data-props="{}"
+          >
+            Source on GitLab
+          </span>
+        </a>
+      </li>
+      <li>
+        <a
+          data-testid="privacy-link"
+          href="/privacy"
+        >
+          <span
+            data-component="Trans"
+            data-props="{}"
+          >
+            Privacy Policy
+          </span>
+        </a>
+      </li>
+      <li>
+        <span
+          data-component="withI18nextTranslation(InstallPrompt)"
+          data-props="{}"
+        />
+      </li>
+      <li
+        data-requires-js="true"
+      >
+        <span
+          data-component="withI18nextTranslation(LocaleSwitcher)"
+          data-props="{}"
+        />
+      </li>
+    </ul>
+  </header>
+</DocumentFragment>
+`;
+
+exports[`Header opening the Privacy Policy modal while holding ctrl key 1`] = `
+<DocumentFragment>
+  <span
+    data-component="Modal"
+    data-props="{
+  \\"isOpen\\": false
+}"
+  >
+    <span
+      data-component="withI18nextTranslation(PrivacyPolicy)"
+      data-props="{}"
+    />
+  </span>
+  <header
+    class="header"
+  >
+    <h1>
+      <a
+        href="/"
+      >
+        Regexper
+      </a>
+    </h1>
+    <ul
+      class="list"
+    >
+      <li>
+        <a
+          href="https://gitlab.com/javallone/regexper-static"
+          rel="external noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            data-component="Gitlab"
+            data-props="{}"
+          />
+          <span
+            data-component="Trans"
+            data-props="{}"
+          >
+            Source on GitLab
+          </span>
+        </a>
+      </li>
+      <li>
+        <a
+          data-testid="privacy-link"
+          href="/privacy"
+        >
+          <span
+            data-component="Trans"
+            data-props="{}"
+          >
+            Privacy Policy
+          </span>
+        </a>
+      </li>
+      <li>
+        <span
+          data-component="withI18nextTranslation(InstallPrompt)"
+          data-props="{}"
+        />
+      </li>
+      <li
+        data-requires-js="true"
+      >
+        <span
+          data-component="withI18nextTranslation(LocaleSwitcher)"
+          data-props="{}"
+        />
+      </li>
+    </ul>
+  </header>
+</DocumentFragment>
+`;
+
+exports[`Header opening the Privacy Policy modal while holding meta key 1`] = `
+<DocumentFragment>
+  <span
+    data-component="Modal"
+    data-props="{
+  \\"isOpen\\": false
+}"
+  >
+    <span
+      data-component="withI18nextTranslation(PrivacyPolicy)"
+      data-props="{}"
+    />
+  </span>
+  <header
+    class="header"
+  >
+    <h1>
+      <a
+        href="/"
+      >
+        Regexper
+      </a>
+    </h1>
+    <ul
+      class="list"
+    >
+      <li>
+        <a
+          href="https://gitlab.com/javallone/regexper-static"
+          rel="external noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            data-component="Gitlab"
+            data-props="{}"
+          />
+          <span
+            data-component="Trans"
+            data-props="{}"
+          >
+            Source on GitLab
+          </span>
+        </a>
+      </li>
+      <li>
+        <a
+          data-testid="privacy-link"
+          href="/privacy"
+        >
+          <span
+            data-component="Trans"
+            data-props="{}"
+          >
+            Privacy Policy
+          </span>
+        </a>
+      </li>
+      <li>
+        <span
+          data-component="withI18nextTranslation(InstallPrompt)"
+          data-props="{}"
+        />
+      </li>
+      <li
+        data-requires-js="true"
+      >
+        <span
+          data-component="withI18nextTranslation(LocaleSwitcher)"
+          data-props="{}"
+        />
+      </li>
+    </ul>
+  </header>
+</DocumentFragment>
+`;
+
+exports[`Header opening the Privacy Policy modal while holding shift key 1`] = `
+<DocumentFragment>
+  <span
+    data-component="Modal"
+    data-props="{
+  \\"isOpen\\": false
+}"
+  >
+    <span
+      data-component="withI18nextTranslation(PrivacyPolicy)"
+      data-props="{}"
+    />
+  </span>
+  <header
+    class="header"
+  >
+    <h1>
+      <a
+        href="/"
+      >
+        Regexper
+      </a>
+    </h1>
+    <ul
+      class="list"
+    >
+      <li>
+        <a
+          href="https://gitlab.com/javallone/regexper-static"
+          rel="external noopener noreferrer"
+          target="_blank"
+        >
+          <span
+            data-component="Gitlab"
+            data-props="{}"
+          />
+          <span
+            data-component="Trans"
+            data-props="{}"
+          >
+            Source on GitLab
+          </span>
+        </a>
+      </li>
+      <li>
+        <a
+          data-testid="privacy-link"
+          href="/privacy"
+        >
+          <span
+            data-component="Trans"
+            data-props="{}"
+          >
+            Privacy Policy
+          </span>
+        </a>
+      </li>
+      <li>
+        <span
+          data-component="withI18nextTranslation(InstallPrompt)"
+          data-props="{}"
+        />
+      </li>
+      <li
+        data-requires-js="true"
+      >
+        <span
+          data-component="withI18nextTranslation(LocaleSwitcher)"
+          data-props="{}"
+        />
+      </li>
+    </ul>
+  </header>
+</DocumentFragment>
 `;
 
 exports[`Header rendering 1`] = `
-<Fragment>
-  <Modal
-    ariaHideApp={true}
-    bodyOpenClassName="ReactModal__Body--open"
-    closeTimeoutMS={0}
-    isOpen={false}
-    onRequestClose={[Function]}
-    parentSelector={[Function]}
-    portalClassName="ReactModalPortal"
-    role="dialog"
-    shouldCloseOnEsc={true}
-    shouldCloseOnOverlayClick={true}
-    shouldFocusAfterRender={true}
-    shouldReturnFocusAfterClose={true}
+<DocumentFragment>
+  <span
+    data-component="Modal"
+    data-props="{
+  \\"isOpen\\": false
+}"
   >
-    <withI18nextTranslation(PrivacyPolicy)
-      onClose={[Function]}
+    <span
+      data-component="withI18nextTranslation(PrivacyPolicy)"
+      data-props="{}"
     />
-  </Modal>
+  </span>
   <header
-    className="header"
+    class="header"
     data-banner="testing"
   >
     <h1>
-      <mockConstructor
-        to="/"
+      <a
+        href="/"
       >
         Regexper
-      </mockConstructor>
+      </a>
     </h1>
     <ul
-      className="list"
+      class="list"
     >
       <li>
         <a
@@ -256,71 +413,75 @@ exports[`Header rendering 1`] = `
           rel="external noopener noreferrer"
           target="_blank"
         >
-          <Gitlab
-            color="currentColor"
-            size="24"
+          <span
+            data-component="Gitlab"
+            data-props="{}"
           />
-          <Trans>
+          <span
+            data-component="Trans"
+            data-props="{}"
+          >
             Source on GitLab
-          </Trans>
+          </span>
         </a>
       </li>
       <li>
-        <mockConstructor
-          onClick={[Function]}
-          to="/privacy"
+        <a
+          data-testid="privacy-link"
+          href="/privacy"
         >
-          <Trans>
+          <span
+            data-component="Trans"
+            data-props="{}"
+          >
             Privacy Policy
-          </Trans>
-        </mockConstructor>
+          </span>
+        </a>
       </li>
       <li>
-        <withI18nextTranslation(InstallPrompt) />
+        <span
+          data-component="withI18nextTranslation(InstallPrompt)"
+          data-props="{}"
+        />
       </li>
       <li
-        data-requires-js={true}
+        data-requires-js="true"
       >
-        <withI18nextTranslation(LocaleSwitcher) />
+        <span
+          data-component="withI18nextTranslation(LocaleSwitcher)"
+          data-props="{}"
+        />
       </li>
     </ul>
   </header>
-</Fragment>
+</DocumentFragment>
 `;
 
 exports[`Header rendering with no banner 1`] = `
-<Fragment>
-  <Modal
-    ariaHideApp={true}
-    bodyOpenClassName="ReactModal__Body--open"
-    closeTimeoutMS={0}
-    isOpen={false}
-    onRequestClose={[Function]}
-    parentSelector={[Function]}
-    portalClassName="ReactModalPortal"
-    role="dialog"
-    shouldCloseOnEsc={true}
-    shouldCloseOnOverlayClick={true}
-    shouldFocusAfterRender={true}
-    shouldReturnFocusAfterClose={true}
+<DocumentFragment>
+  <span
+    data-component="Modal"
+    data-props="{
+  \\"isOpen\\": false
+}"
   >
-    <withI18nextTranslation(PrivacyPolicy)
-      onClose={[Function]}
+    <span
+      data-component="withI18nextTranslation(PrivacyPolicy)"
+      data-props="{}"
     />
-  </Modal>
+  </span>
   <header
-    className="header"
-    data-banner={null}
+    class="header"
   >
     <h1>
-      <mockConstructor
-        to="/"
+      <a
+        href="/"
       >
         Regexper
-      </mockConstructor>
+      </a>
     </h1>
     <ul
-      className="list"
+      class="list"
     >
       <li>
         <a
@@ -328,34 +489,46 @@ exports[`Header rendering with no banner 1`] = `
           rel="external noopener noreferrer"
           target="_blank"
         >
-          <Gitlab
-            color="currentColor"
-            size="24"
+          <span
+            data-component="Gitlab"
+            data-props="{}"
           />
-          <Trans>
+          <span
+            data-component="Trans"
+            data-props="{}"
+          >
             Source on GitLab
-          </Trans>
+          </span>
         </a>
       </li>
       <li>
-        <mockConstructor
-          onClick={[Function]}
-          to="/privacy"
+        <a
+          data-testid="privacy-link"
+          href="/privacy"
         >
-          <Trans>
+          <span
+            data-component="Trans"
+            data-props="{}"
+          >
             Privacy Policy
-          </Trans>
-        </mockConstructor>
+          </span>
+        </a>
       </li>
       <li>
-        <withI18nextTranslation(InstallPrompt) />
+        <span
+          data-component="withI18nextTranslation(InstallPrompt)"
+          data-props="{}"
+        />
       </li>
       <li
-        data-requires-js={true}
+        data-requires-js="true"
       >
-        <withI18nextTranslation(LocaleSwitcher) />
+        <span
+          data-component="withI18nextTranslation(LocaleSwitcher)"
+          data-props="{}"
+        />
       </li>
     </ul>
   </header>
-</Fragment>
+</DocumentFragment>
 `;

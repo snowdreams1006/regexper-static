@@ -1,14 +1,14 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from 'react-testing-library';
 
 import SVG, { layout } from 'rendering/SVG';
 
 describe('SVG', () => {
   test('rendering', () => {
-    const component = shallow(
+    const { asFragment } = render(
       <SVG width={ 100 } height={ 20 }>Content</SVG>
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('layout', () => {

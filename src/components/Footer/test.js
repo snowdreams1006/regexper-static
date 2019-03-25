@@ -1,14 +1,14 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from 'react-testing-library';
 
 import { mockT } from 'i18n';
 import { Footer } from 'components/Footer';
 
 describe('Footer', () => {
   test('rendering', () => {
-    const component = shallow(
+    const { asFragment } = render(
       <Footer buildId="abc-123" t={ mockT } />
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

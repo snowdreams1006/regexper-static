@@ -1,60 +1,62 @@
+jest.mock('react-modal', () =>
+  require('__mocks__/component-mock')('react-modal'));
+jest.mock('react-feather/dist/icons/gitlab', () =>
+  require('__mocks__/component-mock')('react-feather/dist/icons/gitlab'));
+jest.mock('components/LocaleSwitcher', () =>
+  require('__mocks__/component-mock')('components/LocaleSwitcher'));
+jest.mock('components/InstallPrompt', () =>
+  require('__mocks__/component-mock')('components/InstallPrompt'));
+jest.mock('components/PrivacyPolicy', () =>
+  require('__mocks__/component-mock')('components/PrivacyPolicy'));
+
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, fireEvent } from 'react-testing-library';
 
 import { Header } from 'components/Header';
 
 describe('Header', () => {
   test('rendering', () => {
-    const component = shallow(
+    const { asFragment } = render(
       <Header banner="testing" />
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('rendering with no banner', () => {
-    const component = shallow(
+    const { asFragment } = render(
       <Header banner={ false } />
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('opening the Privacy Policy modal', () => {
-    const component = shallow(
+    const { asFragment, getByTestId } = render(
       <Header banner={ false } />
     );
-    const eventObj = { preventDefault: jest.fn() };
+    const event = new MouseEvent('click', { bubbles: true });
+    jest.spyOn(event, 'preventDefault');
 
-    component.instance().handleOpen(eventObj);
+    fireEvent(getByTestId('privacy-link'), event);
 
-    expect(eventObj.preventDefault).toHaveBeenCalled();
-    expect(component).toMatchSnapshot();
+    expect(event.preventDefault).toHaveBeenCalled();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   ['shift', 'ctrl', 'alt', 'meta'].forEach(key => {
     test(`opening the Privacy Policy modal while holding ${ key } key`, () => {
-      const component = shallow(
+      const { asFragment, getByTestId } = render(
         <Header banner={ false } />
       );
-      const eventObj = { preventDefault: jest.fn() };
+      const event = new MouseEvent('click', {
+        bubbles: true,
+        [key + 'Key']: true
+      });
+      jest.spyOn(event, 'preventDefault');
 
-      component.instance().handleOpen({ [key + 'Key']: true, ...eventObj });
+      fireEvent(getByTestId('privacy-link'), event);
 
-      expect(eventObj.preventDefault).not.toHaveBeenCalled();
-      expect(component.state('showModal')).toEqual(false);
+      expect(event.preventDefault).not.toHaveBeenCalled();
+      expect(asFragment()).toMatchSnapshot();
     });
-  });
-
-  test('closing the Privacy Policy modal', () => {
-    const component = shallow(
-      <Header banner={ false } />
-    );
-
-    component.setState({ showModal: true });
-
-    expect(component).toMatchSnapshot();
-
-    component.instance().handleClose();
-
-    expect(component).toMatchSnapshot();
   });
 });

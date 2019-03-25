@@ -1,7 +1,10 @@
 jest.mock('@sentry/browser');
 
+jest.mock('components/Message', () =>
+  require('__mocks__/component-mock')('components/Message'));
+
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, fireEvent } from 'react-testing-library';
 import * as Sentry from '@sentry/browser';
 
 import { mockT } from 'i18n';
@@ -9,34 +12,36 @@ import { SentryError } from 'components/SentryError';
 
 describe('SentryError', () => {
   test('rendering', () => {
-    const component = shallow(
+    const { asFragment } = render(
       <SentryError t={ mockT }/>
     );
-    expect(component).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   describe('error reporting', () => {
     test('fill out a report when an event has been logged', () => {
       Sentry.lastEventId.mockReturnValue(1);
-      const component = shallow(
+      const { getByTestId } = render(
         <SentryError t={ mockT } />
       );
-      const eventObj = { preventDefault: jest.fn() };
-      component.find('a').simulate('click', eventObj);
+      const event = new MouseEvent('click', { bubbles: true });
+      jest.spyOn(event, 'preventDefault');
+      fireEvent(getByTestId('error-report'), event);
 
-      expect(eventObj.preventDefault).toHaveBeenCalled();
+      expect(event.preventDefault).toHaveBeenCalled();
       expect(Sentry.showReportDialog).toHaveBeenCalled();
     });
 
     test('fill out a report when an event has not been logged', () => {
       Sentry.lastEventId.mockReturnValue(false);
-      const component = shallow(
+      const { getByTestId } = render(
         <SentryError t={ mockT } />
       );
-      const eventObj = { preventDefault: jest.fn() };
-      component.find('a').simulate('click', eventObj);
+      const event = new MouseEvent('click', { bubbles: true });
+      jest.spyOn(event, 'preventDefault');
+      fireEvent(getByTestId('error-report'), event);
 
-      expect(eventObj.preventDefault).toHaveBeenCalled();
+      expect(event.preventDefault).toHaveBeenCalled();
       expect(Sentry.showReportDialog).not.toHaveBeenCalled();
     });
   });

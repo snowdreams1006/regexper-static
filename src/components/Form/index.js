@@ -54,8 +54,9 @@ class Form extends React.PureComponent {
     const { expr, syntax } = this.state;
 
     return <div className={ style.form } data-requires-js>
-      <form onSubmit={ this.handleSubmit }>
+      <form data-testid="form" onSubmit={ this.handleSubmit }>
         <textarea
+          data-testid="expr-input"
           name="expr"
           value={ expr }
           onKeyPress={ this.handleKeyPress }
@@ -65,6 +66,7 @@ class Form extends React.PureComponent {
         <button type="submit"><Trans>Display</Trans></button>
         <div className={ style.select }>
           <select
+            data-testid="syntax-select"
             name="syntax"
             value={ syntax }
             onChange={ this.handleChange } >

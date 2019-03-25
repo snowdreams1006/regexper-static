@@ -16,7 +16,9 @@ const reportError = event => {
 export const SentryError = ({ t }) => (
   <Message type="error" heading={ t('An error has occurred') }>
     <p>
-      <Trans>This error has been logged. You may also <a href="#error-report"
+      <Trans>This error has been logged. You may also <a
+        href="#error-report"
+        data-testid="error-report"
         onClick={ reportError }>fill out a report</a>.</Trans>
     </p>
   </Message>

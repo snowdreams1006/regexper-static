@@ -156,174 +156,149 @@ Object {
 `;
 
 exports[`Box rendering 1`] = `
-<Fragment>
-  <rect
-    rx={3}
-    ry={3}
-  />
-  <g>
-    Example
-  </g>
-</Fragment>
+<DocumentFragment>
+  <svg>
+    <rect
+      rx="3"
+      ry="3"
+    />
+    <g>
+      Example
+    </g>
+  </svg>
+</DocumentFragment>
 `;
 
 exports[`Box rendering with a corner radius 1`] = `
-<Fragment>
-  <rect
-    rx={5}
-    ry={5}
-  />
-  <g>
-    Example
-  </g>
-</Fragment>
+<DocumentFragment>
+  <svg>
+    <rect
+      rx="5"
+      ry="5"
+    />
+    <g>
+      Example
+    </g>
+  </svg>
+</DocumentFragment>
 `;
 
 exports[`Box rendering with a label 1`] = `
-<Fragment>
-  <rect
-    rx={3}
-    ry={3}
-  />
-  <text
-    style={
-      Object {
-        "fontFamily": "Arial",
-        "fontSize": "12px",
-      }
-    }
-  >
-    Test box
-  </text>
-  <g>
-    Example
-  </g>
-</Fragment>
+<DocumentFragment>
+  <svg>
+    <rect
+      rx="3"
+      ry="3"
+    />
+    <text
+      style="font-size: 12px; font-family: Arial;"
+    >
+      Test box
+    </text>
+    <g>
+      Example
+    </g>
+  </svg>
+</DocumentFragment>
 `;
 
 exports[`Box rendering with props from layout 1`] = `
-<Fragment>
-  <rect
-    height={50}
-    rx={3}
-    ry={3}
-    style={
-      Object {
-        "fill": "#dae9e5",
-        "stroke": "#6b6659",
-        "strokeWidth": "1px",
-      }
-    }
-    transform="RECT TRANSFORM"
-    width={100}
-  />
-  <text
-    style={
-      Object {
-        "fontFamily": "Arial",
-        "fontSize": "12px",
-      }
-    }
-    transform="LABEL TRANSFORM"
-  >
-    Test box
-  </text>
-  <g
-    transform="CONTENT TRANSFORM"
-  >
-    Example
-  </g>
-</Fragment>
+<DocumentFragment>
+  <svg>
+    <rect
+      height="50"
+      rx="3"
+      ry="3"
+      style="fill: #dae9e5; stroke-width: 1px; stroke: #6b6659;"
+      transform="RECT TRANSFORM"
+      width="100"
+    />
+    <text
+      style="font-size: 12px; font-family: Arial;"
+      transform="LABEL TRANSFORM"
+    >
+      Test box
+    </text>
+    <g
+      transform="CONTENT TRANSFORM"
+    >
+      Example
+    </g>
+  </svg>
+</DocumentFragment>
 `;
 
 exports[`Box themes rendering a "anchor" Box 1`] = `
-<Fragment>
-  <rect
-    rx={3}
-    ry={3}
-    style={
-      Object {
-        "fill": "#6b6659",
-      }
-    }
-  />
-  <g>
-    Example
-  </g>
-</Fragment>
+<DocumentFragment>
+  <svg>
+    <rect
+      rx="3"
+      ry="3"
+      style="fill: #6b6659;"
+    />
+    <g>
+      Example
+    </g>
+  </svg>
+</DocumentFragment>
 `;
 
 exports[`Box themes rendering a "capture" Box 1`] = `
-<Fragment>
-  <rect
-    rx={3}
-    ry={3}
-    style={
-      Object {
-        "fillOpacity": 0,
-        "stroke": "#908c83",
-        "strokeDasharray": "6,2",
-        "strokeWidth": "2px",
-      }
-    }
-  />
-  <g>
-    Example
-  </g>
-</Fragment>
+<DocumentFragment>
+  <svg>
+    <rect
+      rx="3"
+      ry="3"
+      style="fill-opacity: 0; stroke-width: 2px; stroke: #908c83; stroke-dasharray: 6,2;"
+    />
+    <g>
+      Example
+    </g>
+  </svg>
+</DocumentFragment>
 `;
 
 exports[`Box themes rendering a "charClass" Box 1`] = `
-<Fragment>
-  <rect
-    rx={3}
-    ry={3}
-    style={
-      Object {
-        "fill": "#cbcbba",
-      }
-    }
-  />
-  <g>
-    Example
-  </g>
-</Fragment>
+<DocumentFragment>
+  <svg>
+    <rect
+      rx="3"
+      ry="3"
+      style="fill: #cbcbba;"
+    />
+    <g>
+      Example
+    </g>
+  </svg>
+</DocumentFragment>
 `;
 
 exports[`Box themes rendering a "escape" Box 1`] = `
-<Fragment>
-  <rect
-    rx={3}
-    ry={3}
-    style={
-      Object {
-        "fill": "#bada55",
-        "stroke": "#6b6659",
-        "strokeWidth": "1px",
-      }
-    }
-  />
-  <g>
-    Example
-  </g>
-</Fragment>
+<DocumentFragment>
+  <svg>
+    <rect
+      rx="3"
+      ry="3"
+      style="fill: #bada55; stroke-width: 1px; stroke: #6b6659;"
+    />
+    <g>
+      Example
+    </g>
+  </svg>
+</DocumentFragment>
 `;
 
 exports[`Box themes rendering a "literal" Box 1`] = `
-<Fragment>
-  <rect
-    rx={3}
-    ry={3}
-    style={
-      Object {
-        "fill": "#dae9e5",
-        "stroke": "#6b6659",
-        "strokeWidth": "1px",
-      }
-    }
-  />
-  <g>
-    Example
-  </g>
-</Fragment>
+<DocumentFragment>
+  <svg>
+    <rect
+      rx="3"
+      ry="3"
+      style="fill: #dae9e5; stroke-width: 1px; stroke: #6b6659;"
+    />
+    <g>
+      Example
+    </g>
+  </svg>
+</DocumentFragment>
 `;

@@ -1,155 +1,510 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render debugging 1`] = `
-<div
-  className="render"
->
-  <SVG
-    onReflow={[Function]}
+<DocumentFragment>
+  <div
+    class="render"
   >
-    <Text>
-      Example
-    </Text>
-    <rect
-      height={50}
-      style={
-        Object {
-          "fill": "transparent",
-          "opacity": 0.5,
-          "stroke": "red",
-          "strokeDasharray": "2,2",
-          "strokeWidth": "1px",
-        }
-      }
-      width={100}
-    />
-    <circle
-      cx={5}
-      cy={10}
-      r="3"
-      style={
-        Object {
-          "fill": "red",
-          "opacity": 0.5,
-        }
-      }
-    />
-    <circle
-      cx={95}
-      cy={10}
-      r="3"
-      style={
-        Object {
-          "fill": "red",
-          "opacity": 0.5,
-        }
-      }
-    />
-  </SVG>
-</div>
+    <svg
+      style="background-color: rgb(255, 255, 255);"
+      viewBox="0 0  "
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:cc="http://creativecommons.org/ns#"
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    >
+      <metadata>
+        <rdf:rdf>
+          
+  
+          <cc:license
+            rdf:about="http://creativecommons.org/licenses/by/3.0/"
+          >
+            
+    
+            <cc:permits
+              rdf:resource="http://creativecommons.org/ns#Reproduction"
+            />
+            
+    
+            <cc:permits
+              rdf:resource="http://creativecommons.org/ns#Distribution"
+            />
+            
+    
+            <cc:requires
+              rdf:resource="http://creativecommons.org/ns#Notice"
+            />
+            
+    
+            <cc:requires
+              rdf:resource="http://creativecommons.org/ns#Attribution"
+            />
+            
+    
+            <cc:permits
+              rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+            />
+            
+  
+          </cc:license>
+          
+
+        </rdf:rdf>
+      </metadata>
+      <g
+        transform="translate(10 10)"
+      >
+        <span
+          data-component="Text"
+          data-props="{}"
+        >
+          Example
+        </span>
+        <rect
+          height="50"
+          style="fill: transparent; stroke: red; stroke-width: 1px; stroke-dasharray: 2,2; opacity: 0.5;"
+          width="100"
+        />
+        <circle
+          cx="5"
+          cy="10"
+          r="3"
+          style="fill: red; opacity: 0.5;"
+        />
+        <circle
+          cx="95"
+          cy="10"
+          r="3"
+          style="fill: red; opacity: 0.5;"
+        />
+      </g>
+    </svg>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Render types Box 1`] = `
-<div
-  className="render"
->
-  <SVG
-    onReflow={[Function]}
+<DocumentFragment>
+  <div
+    class="render"
   >
-    <Box
-      padding={5}
-      radius={3}
+    <svg
+      style="background-color: rgb(255, 255, 255);"
+      viewBox="0 0  "
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:cc="http://creativecommons.org/ns#"
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     >
-      <Text>
-        Example
-      </Text>
-    </Box>
-  </SVG>
-</div>
+      <metadata>
+        <rdf:rdf>
+          
+  
+          <cc:license
+            rdf:about="http://creativecommons.org/licenses/by/3.0/"
+          >
+            
+    
+            <cc:permits
+              rdf:resource="http://creativecommons.org/ns#Reproduction"
+            />
+            
+    
+            <cc:permits
+              rdf:resource="http://creativecommons.org/ns#Distribution"
+            />
+            
+    
+            <cc:requires
+              rdf:resource="http://creativecommons.org/ns#Notice"
+            />
+            
+    
+            <cc:requires
+              rdf:resource="http://creativecommons.org/ns#Attribution"
+            />
+            
+    
+            <cc:permits
+              rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+            />
+            
+  
+          </cc:license>
+          
+
+        </rdf:rdf>
+      </metadata>
+      <g
+        transform="translate(10 10)"
+      >
+        <span
+          data-component="Box"
+          data-props="{}"
+        >
+          <span
+            data-component="Text"
+            data-props="{}"
+          >
+            Example
+          </span>
+        </span>
+      </g>
+    </svg>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Render types HorizontalLayout 1`] = `
-<div
-  className="render"
->
-  <SVG
-    onReflow={[Function]}
+<DocumentFragment>
+  <div
+    class="render"
   >
-    <HorizontalLayout
-      spacing={10}
-      withConnectors={false}
+    <svg
+      style="background-color: rgb(255, 255, 255);"
+      viewBox="0 0  "
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:cc="http://creativecommons.org/ns#"
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     >
-      <Text>
-        Example
-      </Text>
-      <Text>
-        Another Example
-      </Text>
-    </HorizontalLayout>
-  </SVG>
-</div>
+      <metadata>
+        <rdf:rdf>
+          
+  
+          <cc:license
+            rdf:about="http://creativecommons.org/licenses/by/3.0/"
+          >
+            
+    
+            <cc:permits
+              rdf:resource="http://creativecommons.org/ns#Reproduction"
+            />
+            
+    
+            <cc:permits
+              rdf:resource="http://creativecommons.org/ns#Distribution"
+            />
+            
+    
+            <cc:requires
+              rdf:resource="http://creativecommons.org/ns#Notice"
+            />
+            
+    
+            <cc:requires
+              rdf:resource="http://creativecommons.org/ns#Attribution"
+            />
+            
+    
+            <cc:permits
+              rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+            />
+            
+  
+          </cc:license>
+          
+
+        </rdf:rdf>
+      </metadata>
+      <g
+        transform="translate(10 10)"
+      >
+        <span
+          data-component="HorizontalLayout"
+          data-props="{}"
+        >
+          <span
+            data-component="Text"
+            data-props="{}"
+          >
+            Example
+          </span>
+          <span
+            data-component="Text"
+            data-props="{}"
+          >
+            Another Example
+          </span>
+        </span>
+      </g>
+    </svg>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Render types Loop 1`] = `
-<div
-  className="render"
->
-  <SVG
-    onReflow={[Function]}
+<DocumentFragment>
+  <div
+    class="render"
   >
-    <Loop>
-      <Text>
-        Example
-      </Text>
-    </Loop>
-  </SVG>
-</div>
+    <svg
+      style="background-color: rgb(255, 255, 255);"
+      viewBox="0 0  "
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:cc="http://creativecommons.org/ns#"
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    >
+      <metadata>
+        <rdf:rdf>
+          
+  
+          <cc:license
+            rdf:about="http://creativecommons.org/licenses/by/3.0/"
+          >
+            
+    
+            <cc:permits
+              rdf:resource="http://creativecommons.org/ns#Reproduction"
+            />
+            
+    
+            <cc:permits
+              rdf:resource="http://creativecommons.org/ns#Distribution"
+            />
+            
+    
+            <cc:requires
+              rdf:resource="http://creativecommons.org/ns#Notice"
+            />
+            
+    
+            <cc:requires
+              rdf:resource="http://creativecommons.org/ns#Attribution"
+            />
+            
+    
+            <cc:permits
+              rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+            />
+            
+  
+          </cc:license>
+          
+
+        </rdf:rdf>
+      </metadata>
+      <g
+        transform="translate(10 10)"
+      >
+        <span
+          data-component="Loop"
+          data-props="{}"
+        >
+          <span
+            data-component="Text"
+            data-props="{}"
+          >
+            Example
+          </span>
+        </span>
+      </g>
+    </svg>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Render types Pin 1`] = `
-<div
-  className="render"
->
-  <SVG
-    onReflow={[Function]}
+<DocumentFragment>
+  <div
+    class="render"
   >
-    <Pin />
-  </SVG>
-</div>
+    <svg
+      style="background-color: rgb(255, 255, 255);"
+      viewBox="0 0  "
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:cc="http://creativecommons.org/ns#"
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    >
+      <metadata>
+        <rdf:rdf>
+          
+  
+          <cc:license
+            rdf:about="http://creativecommons.org/licenses/by/3.0/"
+          >
+            
+    
+            <cc:permits
+              rdf:resource="http://creativecommons.org/ns#Reproduction"
+            />
+            
+    
+            <cc:permits
+              rdf:resource="http://creativecommons.org/ns#Distribution"
+            />
+            
+    
+            <cc:requires
+              rdf:resource="http://creativecommons.org/ns#Notice"
+            />
+            
+    
+            <cc:requires
+              rdf:resource="http://creativecommons.org/ns#Attribution"
+            />
+            
+    
+            <cc:permits
+              rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+            />
+            
+  
+          </cc:license>
+          
+
+        </rdf:rdf>
+      </metadata>
+      <g
+        transform="translate(10 10)"
+      >
+        <span
+          data-component="Pin"
+          data-props="{}"
+        />
+      </g>
+    </svg>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Render types Text 1`] = `
-<div
-  className="render"
->
-  <SVG
-    onReflow={[Function]}
+<DocumentFragment>
+  <div
+    class="render"
   >
-    <Text>
-      Example
-    </Text>
-  </SVG>
-</div>
+    <svg
+      style="background-color: rgb(255, 255, 255);"
+      viewBox="0 0  "
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:cc="http://creativecommons.org/ns#"
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    >
+      <metadata>
+        <rdf:rdf>
+          
+  
+          <cc:license
+            rdf:about="http://creativecommons.org/licenses/by/3.0/"
+          >
+            
+    
+            <cc:permits
+              rdf:resource="http://creativecommons.org/ns#Reproduction"
+            />
+            
+    
+            <cc:permits
+              rdf:resource="http://creativecommons.org/ns#Distribution"
+            />
+            
+    
+            <cc:requires
+              rdf:resource="http://creativecommons.org/ns#Notice"
+            />
+            
+    
+            <cc:requires
+              rdf:resource="http://creativecommons.org/ns#Attribution"
+            />
+            
+    
+            <cc:permits
+              rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+            />
+            
+  
+          </cc:license>
+          
+
+        </rdf:rdf>
+      </metadata>
+      <g
+        transform="translate(10 10)"
+      >
+        <span
+          data-component="Text"
+          data-props="{}"
+        >
+          Example
+        </span>
+      </g>
+    </svg>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`Render types VerticalLayout 1`] = `
-<div
-  className="render"
->
-  <SVG
-    onReflow={[Function]}
+<DocumentFragment>
+  <div
+    class="render"
   >
-    <VerticalLayout
-      spacing={10}
-      withConnectors={false}
+    <svg
+      style="background-color: rgb(255, 255, 255);"
+      viewBox="0 0  "
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:cc="http://creativecommons.org/ns#"
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     >
-      <Text>
-        Example
-      </Text>
-      <Text>
-        Another Example
-      </Text>
-    </VerticalLayout>
-  </SVG>
-</div>
+      <metadata>
+        <rdf:rdf>
+          
+  
+          <cc:license
+            rdf:about="http://creativecommons.org/licenses/by/3.0/"
+          >
+            
+    
+            <cc:permits
+              rdf:resource="http://creativecommons.org/ns#Reproduction"
+            />
+            
+    
+            <cc:permits
+              rdf:resource="http://creativecommons.org/ns#Distribution"
+            />
+            
+    
+            <cc:requires
+              rdf:resource="http://creativecommons.org/ns#Notice"
+            />
+            
+    
+            <cc:requires
+              rdf:resource="http://creativecommons.org/ns#Attribution"
+            />
+            
+    
+            <cc:permits
+              rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+            />
+            
+  
+          </cc:license>
+          
+
+        </rdf:rdf>
+      </metadata>
+      <g
+        transform="translate(10 10)"
+      >
+        <span
+          data-component="VerticalLayout"
+          data-props="{}"
+        >
+          <span
+            data-component="Text"
+            data-props="{}"
+          >
+            Example
+          </span>
+          <span
+            data-component="Text"
+            data-props="{}"
+          >
+            Another Example
+          </span>
+        </span>
+      </g>
+    </svg>
+  </div>
+</DocumentFragment>
 `;

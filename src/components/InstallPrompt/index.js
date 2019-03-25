@@ -43,7 +43,10 @@ class InstallPrompt extends React.PureComponent {
       return null;
     }
 
-    return <a href="#install" onClick={ this.handleInstall }>
+    return <a href="#install"
+      data-testid="install"
+      onClick={ this.handleInstall }
+    >
       <Trans>Add to Home Screen</Trans>
     </a>;
   }
