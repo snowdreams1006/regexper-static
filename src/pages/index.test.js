@@ -8,7 +8,7 @@ jest.mock('components/App', () =>
 import React from 'react';
 import { render } from 'react-testing-library';
 
-import { IndexPage } from 'pages/index';
+import IndexPage from 'pages/index';
 
 const queryResult = {
   site: {
