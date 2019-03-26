@@ -119,7 +119,7 @@ exports[`App rendering an expression 2`] = `
 }"
   />
   <span
-    data-component="withI18nextTranslation(Loader)"
+    data-component="Loader"
     data-props="{}"
   />
 </DocumentFragment>
@@ -200,7 +200,7 @@ exports[`App rendering with an invalid syntax 2`] = `
 }"
   />
   <span
-    data-component="withI18nextTranslation(Loader)"
+    data-component="Loader"
     data-props="{}"
   />
 </DocumentFragment>
