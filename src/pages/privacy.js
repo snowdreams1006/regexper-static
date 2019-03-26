@@ -1,17 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 import Metadata from 'components/Metadata';
 import PrivacyPolicy from 'components/PrivacyPolicy';
 
-export const PrivacyPage = ({ t }) => <>
-  <Metadata title={ t('Privacy Policy') } />
-  <PrivacyPolicy />
-</>;
+export const PrivacyPage = () => {
+  const { t } = useTranslation();
 
-PrivacyPage.propTypes = {
-  t: PropTypes.func.isRequired
+  return <>
+    <Metadata title={ t('Privacy Policy') } />
+    <PrivacyPolicy />
+  </>;
 };
 
-export default withTranslation()(PrivacyPage);
+export default PrivacyPage;

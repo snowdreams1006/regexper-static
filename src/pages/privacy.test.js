@@ -6,13 +6,12 @@ jest.mock('components/PrivacyPolicy', () =>
 import React from 'react';
 import { render } from 'react-testing-library';
 
-import { mockT } from 'i18n';
-import { PrivacyPage } from 'pages/privacy';
+import PrivacyPage from 'pages/privacy';
 
 describe('Privacy Page', () => {
   test('rendering', () => {
     const { asFragment } = render(
-      <PrivacyPage t={ mockT } />
+      <PrivacyPage/>
     );
     expect(asFragment()).toMatchSnapshot();
   });
