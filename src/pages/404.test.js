@@ -6,13 +6,12 @@ jest.mock('components/Message', () =>
 import React from 'react';
 import { render } from 'react-testing-library';
 
-import { mockT } from 'i18n';
-import { ErrorPage } from 'pages/404';
+import ErrorPage from 'pages/404';
 
 describe('Error Page', () => {
   test('rendering', () => {
     const { asFragment } = render(
-      <ErrorPage t={ mockT } />
+      <ErrorPage/>
     );
     expect(asFragment()).toMatchSnapshot();
   });
