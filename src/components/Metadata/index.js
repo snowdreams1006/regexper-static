@@ -1,29 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
 
-class Metadata extends React.PureComponent {
-  static propTypes = {
-    title: PropTypes.string,
-    description: PropTypes.string,
-    i18n: PropTypes.shape({
-      language: PropTypes.string.isRequired
-    }).isRequired
-  }
+const Metadata = ({ title, description }) => {
+  const { i18n } = useTranslation();
+  const htmlAttributes = {
+    lang: i18n.language
+  };
 
-  render() {
-    const { title, description, i18n } = this.props;
-    const htmlAttributes = {
-      lang: i18n.language
-    };
+  return <Helmet htmlAttributes={ htmlAttributes }>
+    <title>{ title ? `Regexper - ${ title }` : 'Regexper' }</title>
+    { description && <meta name="description" content={ description } /> }
+  </Helmet>;
+};
 
-    return <Helmet htmlAttributes={ htmlAttributes }>
-      <title>{ title ? `Regexper - ${ title }` : 'Regexper' }</title>
-      { description && <meta name="description" content={ description } /> }
-    </Helmet>;
-  }
-}
+Metadata.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string
+};
 
-export { Metadata };
-export default withTranslation()(Metadata);
+export default Metadata;

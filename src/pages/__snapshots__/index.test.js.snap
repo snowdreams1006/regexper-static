@@ -3,7 +3,7 @@
 exports[`Index Page rendering 1`] = `
 <DocumentFragment>
   <span
-    data-component="withI18nextTranslation(Metadata)"
+    data-component="Metadata"
     data-props="{
   \\"description\\": \\"Test description\\"
 }"
@@ -33,7 +33,7 @@ exports[`Index Page rendering 1`] = `
 exports[`Index Page rendering with an expression on the URL 1`] = `
 <DocumentFragment>
   <span
-    data-component="withI18nextTranslation(Metadata)"
+    data-component="Metadata"
     data-props="{
   \\"description\\": \\"Test description\\"
 }"

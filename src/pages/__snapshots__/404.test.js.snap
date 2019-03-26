@@ -3,7 +3,7 @@
 exports[`Error Page rendering 1`] = `
 <DocumentFragment>
   <span
-    data-component="withI18nextTranslation(Metadata)"
+    data-component="Metadata"
     data-props="{
   \\"title\\": \\"TRANSLATE(Page Not Found)\\"
 }"
