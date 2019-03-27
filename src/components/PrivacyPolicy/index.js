@@ -1,11 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withTranslation, Trans } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 
 import Message from 'components/Message';
 
-export const PrivacyPolicy = ({ t, ...props }) => (
-  <Message type="info" heading={ t('Privacy Policy') } { ...props }>
+export const PrivacyPolicy = props => {
+  const { t } = useTranslation();
+
+  return <Message type="info" heading={ t('Privacy Policy') } { ...props }>
     <Trans i18nKey="Privacy policy copy">
       <p>
         Regexper and the tools used to create it are all open source. If you are
@@ -44,11 +45,7 @@ export const PrivacyPolicy = ({ t, ...props }) => (
         Regexper is not supported by ad revenue or sales of any kind.
       </p>
     </Trans>
-  </Message>
-);
-
-PrivacyPolicy.propTypes = {
-  t: PropTypes.func.isRequired
+  </Message>;
 };
 
-export default withTranslation()(PrivacyPolicy);
+export default PrivacyPolicy;

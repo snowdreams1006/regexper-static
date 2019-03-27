@@ -9,7 +9,7 @@ exports[`Privacy Page rendering 1`] = `
 }"
   />
   <span
-    data-component="withI18nextTranslation(PrivacyPolicy)"
+    data-component="PrivacyPolicy"
     data-props="{}"
   />
 </DocumentFragment>
