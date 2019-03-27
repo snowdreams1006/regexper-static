@@ -67,7 +67,7 @@ exports[`Header opening the Privacy Policy modal 1`] = `
         data-requires-js="true"
       >
         <span
-          data-component="withI18nextTranslation(LocaleSwitcher)"
+          data-component="LocaleSwitcher"
           data-props="{}"
         />
       </li>
@@ -143,7 +143,7 @@ exports[`Header opening the Privacy Policy modal while holding alt key 1`] = `
         data-requires-js="true"
       >
         <span
-          data-component="withI18nextTranslation(LocaleSwitcher)"
+          data-component="LocaleSwitcher"
           data-props="{}"
         />
       </li>
@@ -219,7 +219,7 @@ exports[`Header opening the Privacy Policy modal while holding ctrl key 1`] = `
         data-requires-js="true"
       >
         <span
-          data-component="withI18nextTranslation(LocaleSwitcher)"
+          data-component="LocaleSwitcher"
           data-props="{}"
         />
       </li>
@@ -295,7 +295,7 @@ exports[`Header opening the Privacy Policy modal while holding meta key 1`] = `
         data-requires-js="true"
       >
         <span
-          data-component="withI18nextTranslation(LocaleSwitcher)"
+          data-component="LocaleSwitcher"
           data-props="{}"
         />
       </li>
@@ -371,7 +371,7 @@ exports[`Header opening the Privacy Policy modal while holding shift key 1`] = `
         data-requires-js="true"
       >
         <span
-          data-component="withI18nextTranslation(LocaleSwitcher)"
+          data-component="LocaleSwitcher"
           data-props="{}"
         />
       </li>
@@ -448,7 +448,7 @@ exports[`Header rendering 1`] = `
         data-requires-js="true"
       >
         <span
-          data-component="withI18nextTranslation(LocaleSwitcher)"
+          data-component="LocaleSwitcher"
           data-props="{}"
         />
       </li>
@@ -524,7 +524,7 @@ exports[`Header rendering with no banner 1`] = `
         data-requires-js="true"
       >
         <span
-          data-component="withI18nextTranslation(LocaleSwitcher)"
+          data-component="LocaleSwitcher"
           data-props="{}"
         />
       </li>

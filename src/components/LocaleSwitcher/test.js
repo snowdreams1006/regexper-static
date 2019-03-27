@@ -3,10 +3,10 @@ jest.mock('react-feather/dist/icons/chevrons-down', () =>
     'react-feather/dist/icons/chevrons-down'));
 
 import React from 'react';
-import { render, fireEvent } from 'react-testing-library';
+import { render, fireEvent, act } from 'react-testing-library';
 
 import i18n from 'i18n';
-import { LocaleSwitcher } from 'components/LocaleSwitcher';
+import LocaleSwitcher from 'components/LocaleSwitcher';
 
 // Ensure initial locale is always "en" during tests
 jest.mock('./locale-to-available', () => jest.fn(() => 'en'));
@@ -40,7 +40,11 @@ describe('LocaleSwitcher', () => {
     );
 
     expect(getByTestId('language-select').value).toEqual('en');
-    i18n.emit('languageChanged', 'other');
+
+    act(() => {
+      i18n.emit('languageChanged', 'other');
+    });
+
     expect(getByTestId('language-select').value).toEqual('other');
   });
 
