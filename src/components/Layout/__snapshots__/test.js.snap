@@ -20,7 +20,7 @@ exports[`Layout rendering 1`] = `
       Example content
     </span>
     <span
-      data-component="withI18nextTranslation(Footer)"
+      data-component="Footer"
       data-props="{
   \\"buildId\\": \\"test-buildid\\"
 }"

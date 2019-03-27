@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withTranslation, Trans } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 
 import ccLogo from './cc-by.svg';
 
 import style from './style.module.css';
 
-export const Footer = ({ t, buildId }) => (
-  <footer className={ style.footer }>
+export const Footer = ({ buildId }) => {
+  const { t } = useTranslation();
+
+  return <footer className={ style.footer }>
     <ul className={ style.list }>
       <li>
         <Trans>Created by <a
@@ -26,12 +28,11 @@ export const Footer = ({ t, buildId }) => (
     <div className={ style.buildId }>
       { buildId }
     </div>
-  </footer>
-);
+  </footer>;
+};
 
 Footer.propTypes = {
-  t: PropTypes.func.isRequired,
   buildId: PropTypes.string.isRequired
 };
 
-export default withTranslation()(Footer);
+export default Footer;

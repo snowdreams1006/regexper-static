@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-testing-library';
 
 import { mockT } from 'i18n';
-import { Footer } from 'components/Footer';
+import Footer from 'components/Footer';
 
 describe('Footer', () => {
   test('rendering', () => {
