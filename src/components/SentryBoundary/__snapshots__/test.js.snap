@@ -9,7 +9,7 @@ exports[`SentryBoundary error handling 1`] = `
 exports[`SentryBoundary error handling 2`] = `
 <DocumentFragment>
   <span
-    data-component="withI18nextTranslation(SentryError)"
+    data-component="SentryError"
     data-props="{}"
   />
 </DocumentFragment>

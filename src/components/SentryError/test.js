@@ -7,13 +7,12 @@ import React from 'react';
 import { render, fireEvent } from 'react-testing-library';
 import * as Sentry from '@sentry/browser';
 
-import { mockT } from 'i18n';
-import { SentryError } from 'components/SentryError';
+import SentryError from 'components/SentryError';
 
 describe('SentryError', () => {
   test('rendering', () => {
     const { asFragment } = render(
-      <SentryError t={ mockT }/>
+      <SentryError/>
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -22,7 +21,7 @@ describe('SentryError', () => {
     test('fill out a report when an event has been logged', () => {
       Sentry.lastEventId.mockReturnValue(1);
       const { getByTestId } = render(
-        <SentryError t={ mockT } />
+        <SentryError/>
       );
       const event = new MouseEvent('click', { bubbles: true });
       jest.spyOn(event, 'preventDefault');
@@ -35,7 +34,7 @@ describe('SentryError', () => {
     test('fill out a report when an event has not been logged', () => {
       Sentry.lastEventId.mockReturnValue(false);
       const { getByTestId } = render(
-        <SentryError t={ mockT } />
+        <SentryError/>
       );
       const event = new MouseEvent('click', { bubbles: true });
       jest.spyOn(event, 'preventDefault');
