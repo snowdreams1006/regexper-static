@@ -1,41 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InstallPrompt accepting install prompt 1`] = `
-<DocumentFragment>
-  <a
-    data-testid="install"
-    href="#install"
-  >
-    <span
-      data-component="Trans"
-      data-props="{}"
-    >
-      Add to Home Screen
-    </span>
-  </a>
-</DocumentFragment>
-`;
-
-exports[`InstallPrompt accepting install prompt 2`] = `<DocumentFragment />`;
-
-exports[`InstallPrompt rejecting install prompt 1`] = `
-<DocumentFragment>
-  <a
-    data-testid="install"
-    href="#install"
-  >
-    <span
-      data-component="Trans"
-      data-props="{}"
-    >
-      Add to Home Screen
-    </span>
-  </a>
-</DocumentFragment>
-`;
-
-exports[`InstallPrompt rejecting install prompt 2`] = `<DocumentFragment />`;
-
 exports[`InstallPrompt rendering 1`] = `<DocumentFragment />`;
 
 exports[`InstallPrompt rendering after an install prompt has been requested 1`] = `<DocumentFragment />`;

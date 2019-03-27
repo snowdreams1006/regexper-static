@@ -1,29 +1,11 @@
-import React from 'react';
-import { withTranslation, Trans } from 'react-i18next';
+import React, { useState, useEffect, useCallback } from 'react';
+import { Trans } from 'react-i18next';
 
-class InstallPrompt extends React.PureComponent {
-  state = {
-    installPrompt: null
-  }
+const InstallPrompt = () => {
+  const [ installPrompt, updateInstallPrompt ] = useState(null);
 
-  componentDidMount() {
-    window.addEventListener('beforeinstallprompt', this.handleInstallPrompt);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('beforeinstallprompt', this.handleInstallPrompt);
-  }
-
-  handleInstallPrompt = event => {
-    this.setState({
-      installPrompt: event
-    });
-  }
-
-  handleInstall = async event => {
+  const handleInstall = useCallback(async event => {
     event.preventDefault();
-
-    const { installPrompt } = this.state;
 
     try {
       installPrompt.prompt();
@@ -33,24 +15,27 @@ class InstallPrompt extends React.PureComponent {
       // User cancelled install
     }
 
-    this.setState({ installPrompt: null });
+    updateInstallPrompt(null);
+  }, [installPrompt, updateInstallPrompt]);
+
+  useEffect(() => {
+    window.addEventListener('beforeinstallprompt', updateInstallPrompt);
+
+    return () => {
+      window.removeEventListener('beforeinstallprompt', updateInstallPrompt);
+    };
+  });
+
+  if (!installPrompt) {
+    return null;
   }
 
-  render() {
-    const { installPrompt } = this.state;
+  return <a href="#install"
+    data-testid="install"
+    onClick={ handleInstall }
+  >
+    <Trans>Add to Home Screen</Trans>
+  </a>;
+};
 
-    if (!installPrompt) {
-      return null;
-    }
-
-    return <a href="#install"
-      data-testid="install"
-      onClick={ this.handleInstall }
-    >
-      <Trans>Add to Home Screen</Trans>
-    </a>;
-  }
-}
-
-export { InstallPrompt };
-export default withTranslation()(InstallPrompt);
+export default InstallPrompt;
