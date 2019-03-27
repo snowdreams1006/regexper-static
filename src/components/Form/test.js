@@ -5,14 +5,13 @@ jest.mock('react-feather/dist/icons/chevrons-down', () =>
 import React from 'react';
 import { render, fireEvent } from 'react-testing-library';
 
-import { mockT } from 'i18n';
-import { Form } from 'components/Form';
+import Form from 'components/Form';
 
 const syntaxList = [
   { id: 'testJS', label: 'Testing JS' },
   { id: 'other', label: 'Other' }
 ];
-const commonProps = { syntaxList, t: mockT };
+const commonProps = { syntaxList };
 
 describe('Form', () => {
   test('rendering', () => {

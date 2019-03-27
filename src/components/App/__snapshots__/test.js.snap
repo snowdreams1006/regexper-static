@@ -3,7 +3,7 @@
 exports[`App removing rendered expression 1`] = `
 <DocumentFragment>
   <span
-    data-component="withI18nextTranslation(Form)"
+    data-component="Form"
     data-props="{
   \\"syntax\\": \\"js\\",
   \\"expr\\": \\"test expression\\",
@@ -36,7 +36,7 @@ exports[`App removing rendered expression 1`] = `
 exports[`App removing rendered expression 2`] = `
 <DocumentFragment>
   <span
-    data-component="withI18nextTranslation(Form)"
+    data-component="Form"
     data-props="{
   \\"syntax\\": \\"js\\",
   \\"expr\\": \\"\\",
@@ -58,7 +58,7 @@ exports[`App removing rendered expression 2`] = `
 exports[`App rendering 1`] = `
 <DocumentFragment>
   <span
-    data-component="withI18nextTranslation(Form)"
+    data-component="Form"
     data-props="{
   \\"syntax\\": \\"js\\",
   \\"expr\\": \\"\\",
@@ -80,7 +80,7 @@ exports[`App rendering 1`] = `
 exports[`App rendering an expression 1`] = `
 <DocumentFragment>
   <span
-    data-component="withI18nextTranslation(Form)"
+    data-component="Form"
     data-props="{
   \\"syntax\\": \\"js\\",
   \\"expr\\": \\"\\",
@@ -102,7 +102,7 @@ exports[`App rendering an expression 1`] = `
 exports[`App rendering an expression 2`] = `
 <DocumentFragment>
   <span
-    data-component="withI18nextTranslation(Form)"
+    data-component="Form"
     data-props="{
   \\"syntax\\": \\"js\\",
   \\"expr\\": \\"test expression\\",
@@ -128,7 +128,7 @@ exports[`App rendering an expression 2`] = `
 exports[`App rendering an expression 3`] = `
 <DocumentFragment>
   <span
-    data-component="withI18nextTranslation(Form)"
+    data-component="Form"
     data-props="{
   \\"syntax\\": \\"js\\",
   \\"expr\\": \\"test expression\\",
@@ -161,7 +161,7 @@ exports[`App rendering an expression 3`] = `
 exports[`App rendering with an invalid syntax 1`] = `
 <DocumentFragment>
   <span
-    data-component="withI18nextTranslation(Form)"
+    data-component="Form"
     data-props="{
   \\"syntax\\": \\"invalid\\",
   \\"expr\\": \\"\\",
@@ -183,7 +183,7 @@ exports[`App rendering with an invalid syntax 1`] = `
 exports[`App rendering with an invalid syntax 2`] = `
 <DocumentFragment>
   <span
-    data-component="withI18nextTranslation(Form)"
+    data-component="Form"
     data-props="{
   \\"syntax\\": \\"invalid\\",
   \\"expr\\": \\"test expression\\",
@@ -209,7 +209,7 @@ exports[`App rendering with an invalid syntax 2`] = `
 exports[`App rendering with an invalid syntax 3`] = `
 <DocumentFragment>
   <span
-    data-component="withI18nextTranslation(Form)"
+    data-component="Form"
     data-props="{
   \\"syntax\\": \\"invalid\\",
   \\"expr\\": \\"test expression\\",
