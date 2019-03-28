@@ -12,7 +12,7 @@ jest.mock('components/PrivacyPolicy', () =>
 import React from 'react';
 import { render, fireEvent } from 'react-testing-library';
 
-import { Header } from 'components/Header';
+import Header from 'components/Header';
 
 describe('Header', () => {
   test('rendering', () => {

@@ -8,7 +8,7 @@ exports[`Layout rendering 1`] = `
   >
     <noscript />
     <span
-      data-component="withI18nextTranslation(Header)"
+      data-component="Header"
       data-props="{
   \\"banner\\": \\"Test Banner\\"
 }"
