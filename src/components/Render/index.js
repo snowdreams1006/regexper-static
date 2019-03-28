@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import nodeTypes from 'rendering/types';
@@ -40,48 +40,40 @@ const render = (data, key) => {
   </React.Fragment>;
 };
 
-class Render extends React.PureComponent {
-  static propTypes = {
-    data: PropTypes.object.isRequired,
-    onRender: PropTypes.func.isRequired
-  }
+const Render = ({ data, onRender }) => {
+  const svgContainer = useRef();
 
-  svgContainer = React.createRef()
-
-  componentDidMount() {
-    this.provideSVGData();
-  }
-
-  componentDidUpdate() {
-    this.provideSVGData();
-  }
-
-  provideSVGData() {
-    if (!this.svgContainer.current) {
+  const provideSVGData = useCallback(() => {
+    if (!svgContainer.current) {
       return;
     }
 
-    const svg = this.svgContainer.current.querySelector('svg');
-    this.props.onRender({
+    const svg = svgContainer.current.querySelector('svg');
+    onRender({
       svg: svg.outerHTML,
       width: Number(svg.getAttribute('width')),
       height: Number(svg.getAttribute('height'))
     });
-  }
+  }, [svgContainer, onRender]);
 
-  render() {
-    const { data } = this.props;
+  useEffect(() => {
+    provideSVGData();
+  }, [provideSVGData]);
 
-    return <div className={ style.render } ref={ this.svgContainer }>
-      { render({
-        ...data,
-        props: {
-          ...data.props,
-          onReflow: this.provideSVGData
-        }
-      }) }
-    </div>;
-  }
-}
+  return <div className={ style.render } ref={ svgContainer }>
+    { render({
+      ...data,
+      props: {
+        ...data.props,
+        onReflow: provideSVGData
+      }
+    }) }
+  </div>;
+};
+
+Render.propTypes = {
+  data: PropTypes.object.isRequired,
+  onRender: PropTypes.func.isRequired
+};
 
 export default Render;
