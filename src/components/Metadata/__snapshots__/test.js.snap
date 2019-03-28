@@ -5,13 +5,15 @@ exports[`Metadata rendering 1`] = `
   <span
     data-component="HelmetWrapper"
     data-props="{
-  \\"htmlAttributes\\": {}
+  \\"title\\": \\"Regexper\\",
+  \\"htmlAttributes\\": {},
+  \\"meta\\": [
+    {
+      \\"name\\": \\"description\\"
+    }
+  ]
 }"
-  >
-    <title>
-      Regexper
-    </title>
-  </span>
+  />
 </DocumentFragment>
 `;
 
@@ -20,16 +22,15 @@ exports[`Metadata rendering with a title and description 1`] = `
   <span
     data-component="HelmetWrapper"
     data-props="{
-  \\"htmlAttributes\\": {}
+  \\"title\\": \\"Regexper - Testing\\",
+  \\"htmlAttributes\\": {},
+  \\"meta\\": [
+    {
+      \\"name\\": \\"description\\",
+      \\"content\\": \\"Test description\\"
+    }
+  ]
 }"
-  >
-    <title>
-      Regexper - Testing
-    </title>
-    <meta
-      content="Test description"
-      name="description"
-    />
-  </span>
+  />
 </DocumentFragment>
 `;

@@ -5,14 +5,20 @@ import { Helmet } from 'react-helmet';
 
 const Metadata = ({ title, description }) => {
   const { i18n } = useTranslation();
-  const htmlAttributes = {
-    lang: i18n.language
+  const helmetProps = {
+    title: title ? `Regexper - ${ title }` : 'Regexper',
+    htmlAttributes: {
+      lang: i18n.language
+    },
+    meta: [
+      {
+        name: 'description',
+        content: description
+      }
+    ]
   };
 
-  return <Helmet htmlAttributes={ htmlAttributes }>
-    <title>{ title ? `Regexper - ${ title }` : 'Regexper' }</title>
-    { description && <meta name="description" content={ description } /> }
-  </Helmet>;
+  return <Helmet { ...helmetProps }></Helmet>;
 };
 
 Metadata.propTypes = {
