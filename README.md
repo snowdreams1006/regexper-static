@@ -24,9 +24,11 @@ When sending pull requests, please keep them focused on a single issue. I would 
 yarn install
 ```
 
-To start a development server, run:
+开启开发模式,请运行:
 
-    $ yarn start
+```bash
+yarn start
+```
 
 This will build the site into the ./build directory, start a local start on port 8080, and begin watching the source files for modifications. The site will automatically be rebuilt when files are changed. Also, if you browser has the LiveReload extension, then the page will be reloaded.
 
