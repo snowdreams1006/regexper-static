@@ -36,4 +36,4 @@ These other gulp tasks are available:
 
 ## 许可证
 
-See [LICENSE.txt](/LICENSE.txt) file for licensing details.
+详情请参考 [LICENSE.txt](./LICENSE.txt)
