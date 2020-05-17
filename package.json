@@ -1,11 +1,11 @@
 {
-  "name": "regexper",
-  "version": "1.0.0",
-  "description": "Regular expression visualization tool",
-  "homepage": "http://regexper.com",
+  "name": "regex",
+  "version": "0.0.1",
+  "description": "JavaScript 正则表达式可视化工具",
+  "homepage": "http://regex.snowdreams1006.cn",
   "author": {
-    "name": "Jeffrey Avallone",
-    "email": "jeff.avallone@gmail.com"
+    "name": "snowdreams1006",
+    "email": "snowdreams1006@163.com"
   },
   "license": "MIT",
   "private": true,

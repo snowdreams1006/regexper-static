@@ -15,26 +15,26 @@
     <link rel="author" href="humans.txt" />
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Bangers&text=Regxpr" />
     <link rel="stylesheet" href="/css/main.css" />
-    <!-- Built: 2020-05-17T06:32:25.930Z -->
+    <!-- Built: 2020-05-17T07:40:47.395Z -->
   </head>
   <body>
     <header>
       <div class="logo">
-        <h1><a href="/">Regexper</a></h1>
+        <h1><a href="/">Regex</a></h1>
         <!-- n. One who regexpes -->
-        <span>You thought you only had two problems&hellip;</span>
+        <span>可视化正则表达式...</span>
       </div>
 
       <nav>
         <ul>
           <li>
-            <a class="inline-icon" href="/changelog.html"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8"><use xlink:href="#list-rich" /></svg>Changelog</a>
+            <a class="inline-icon" href="/changelog.html" target="_blank" ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8"><use xlink:href="#list-rich" /></svg>版本</a>
           </li>
           <li>
-            <a class="inline-icon" href="/documentation.html"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8"><use xlink:href="#document" /></svg>Documentation</a>
+            <a class="inline-icon" href="/documentation.html" target="_blank" ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8"><use xlink:href="#document" /></svg>文档</a>
           </li>
           <li>
-            <a class="inline-icon" href="https://gitlab.com/javallone/regexper-static"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8"><use xlink:href="#code" /></svg>Source on GitLab</a>
+            <a class="inline-icon" href="https://gitee.com/snowdreams1006/regexper-static" target="_blank" ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8"><use xlink:href="#code" /></svg>源码</a>
           </li>
         </ul>
       </nav>
@@ -43,90 +43,9 @@
     <main id="content">
       		<div class="copy changelog">
 			<dl>
-					<dt>June 4, 2018 Release</dt>
-						<dd>Moving source to GitLab and updating some links on the site.</dd>
-					<dt>May 24, 2018 Release</dt>
-						<dd>Supporting browser "Do Not Track" setting. When enabled, this will prevent use of Google Analytics and Sentry error reporting.</dd>
-					<dt>February 10, 2018 Release</dt>
-						<dd>Adding 'sticky' and 'unicode' flag support</dd>
-						<dd>Encoding parenthesis in the permalink and browser URLs</dd>
-						<dd>Adding PNG download support</dd>
-					<dt>July 31, 2016 Release</dt>
-						<dd>Merged code to enable automated testing with Travis CI from <a href="https://github.com/Byron">Sebastian Thiel</a></dd>
-						<dd>Merged feature to show an informational tooltip on loop labels from <a href="https://github.com/ThibWeb">Thibaud Colas</a></dd>
-						<dd>Fixed issue with '^' and '$' not being allowed in the middle of a fragment (see <a href="https://github.com/javallone/regexper-static/issues/29">GitHub issue</a>)</dd>
-						<dd>Updating several dependencies</dd>
-						<dd>Some stylistic code cleanup</dd>
-					<dt>May 31, 2016 Release</dt>
-						<dd>Putting separate CSS for generated SVG images back into the build. Downloaded images have been broken since the March 10 release because the SVG styles were merged into the page styles.</dd>
-					<dt>May 23, 2016 Release</dt>
-						<dd>Refactored tracking code to support latest Google Analytics setup</dd>
-					<dt>March 10, 2016 Release</dt>
-						<dd>Embedding SVG icon images into markup</dd>
-						<dd>Some changes for minor performance improvements</dd>
-						<dd>Updating several dependencies</dd>
-					<dt>March 8, 2016 Release</dt>
-						<dd>Replaced icon font with individual SVG images</dd>
-					<dt>March 3, 2016 Release</dt>
-						<dd>Merged some code cleanup and a bugfix from <a href="https://github.com/Byron">Sebastian Thiel</a></dd>
-						<dd>Updated notice for IE8 users to no longer include link to legacy site</dd>
-					<dt>December 21, 2015 Release</dt>
-						<dd>Updating NPM dependencies to fix JS error that only appeared when running site from a local development environment (see <a href="https://github.com/javallone/regexper-static/issues/21">GitHub issue</a>)</dd>
-					<dt>November 10, 2015 Release</dt>
-						<dd>Fixing Babel integration to include polyfills</dd>
-					<dt>November 1, 2015 Release</dt>
-						<dd>Switching from Compass to node-sass and Bourbon (no more need for Ruby)</dd>
-						<dd>Switching to Babel instead of es6ify</dd>
-						<dd>Improving sourcemap generation</dd>
-						<dd>Cleanup of the build process</dd>
-					<dt>October 31, 2015 Release</dt>
-						<dd>Reducing file size for title font</dd>
-						<dd>Cleaning up gulpfile</dd>
-						<dd>Upgrading most dependencies</dd>
-						<dd>Switching to Handlebars for template rendering</dd>
-					<dt>September 17, 2015 Release</dt>
-						<dd>Fixing styling of labels on repetitions</dd>
-						<dd>Fixing issue with vertical centering of alternation expressions that include empty expressions (see <a href="https://github.com/javallone/regexper-static/pull/16">GitHub issue</a>)</dd>
-					<dt>September 2, 2015 Release</dt>
-						<dd>Merging fix for error reporting from (see <a href="https://github.com/javallone/regexper-static/pull/15">GitHub pull request</a>)</dd>
-					<dt>July 5, 2015 Release</dt>
-						<dd>Updating Creative Commons license badge URL so it isn't pointing to a redirecting URL anymore</dd>
-					<dt>June 22, 2015 Release</dt>
-						<dd>Tweaking buggy Firefox hash detection code based on JavaScript errors that were logged</dd>
-					<dt>June 16, 2015 Release</dt>
-						<dd>Fixes issue with expressions containing a "%" not rendering in Firefox (see <a href="https://github.com/javallone/regexper-static/issues/12">GitHub issue</a>)</dd>
-						<dd>Fixed rendering in IE that was causing "--&gt;" to display at the top of the page.</dd>
-					<dt>April 14, 2015 Release</dt>
-						<dd>Rendering speed improved. Most users will probably not see much improvement since logging data indicates that expressing rendering time is typically less than 1 second. Using the <a href="http://www.ex-parrot.com/pdw/Mail-RFC822-Address.html">RFC822 email regular expression</a> though shows a rendering speed improvement from ~120 seconds down to ~80 seconds.</dd>
-						<dd>Fixing a bug that would only occur when attempting to render an expression while another is in the process of rendering</dd>
-					<dt>March 14, 2015 Release</dt>
-						<dd>Removing use of Q for promises in favor of "native" ES6 promises (even though they aren't quite native everywhere yet)</dd>
-					<dt>March 13, 2015 Release</dt>
-						<dd>Fixes bug with numbering of nested subexpressions (see <a href="https://github.com/javallone/regexper-static/issues/7">GitHub issue</a>)</dd>
-					<dt>February 11, 2015 Release</dt>
-						<dd>Various adjustments to analytics: tracking expression rendering time and JS errors</dd>
-						<dd>Escape sequences that match to a specific character now display their hexadecimal code (actually done on January 25, but I forgot to update the changelog)</dd>
-						<dd>Fixing styling issue with header links (see <a href="https://github.com/javallone/regexper-static/issues/5">GitHub issue</a>)</dd>
-					<dt>December 30, 2014 Release</dt>
-						<dd>Fixing bug that prevented rendering empty subexpressions</dd>
-						<dd>Fixing minor styling bug when permalink is disabled</dd>
-						<dd>Cleaning up some duplicated styles and JS</dd>
-					<dt>December 29, 2014 Release</dt>
-						<dd>Tweaking analytics data to help with addressing issues in deployed code (work will likely continue on this)</dd>
-						<dd>Added progress bars on the documentation page</dd>
-						<dd>Removed the loading spinner everywhere</dd>
-						<dd>Animated the progress bars</dd>
-					<dt>December 26, 2014 Release</dt>
-						<dd>Freshened up design</dd>
-						<dd>Multiline regular expression input field (press Shift-Enter to render)</dd>
-						<dd>Added a changelog</dd>
-						<dd>Added documentation</dd>
-						<dd>All parsing and rendering happens client-side (using <a href="http://canopy.jcoglan.com/">Canopy</a> and <a href="http://snapsvg.io/">Snap.svg</a>)</dd>
-						<dd>Added Download link (not available in older browsers)</dd>
-						<dd>Added display of regular expression flags (ignore case, global, multiline)</dd>
-						<dd>Added indicator of quantifier greedy-ness</dd>
-						<dd>Various improvements to parsing of regular expression</dd>
-						<dd>Rendering of a regular expression can be canceled by pressing Escape</dd>
+					<dt>v0.0.1 - 2020年05月17日</dt>
+						<dd>自定义设置并部署网站</dd>
+						<dd>直接部署编译文件夹</dd>
 			</dl>
 		</div>
 
@@ -134,10 +53,10 @@
 
     <footer>
         <ul class="inline-list">
-          <li>Created by <a href="mailto:jeff.avallone@gmail.com">Jeff Avallone</a></li>
+          <li>本项目由<a href="mailto:snowdreams1006@163.com" target="_blank" >snowdreams1006</a>二次开发,参考 <a href="https://regexper.com/" target="_blank" >https://regexper.com/</a></li>
           <li>
-            Generated images licensed:
-            <a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" src="https://licensebuttons.net/l/by/3.0/80x15.png" /></a>
+            版权声明:
+            <a rel="license" href="http://creativecommons.org/licenses/by/3.0/" target="_blank" ><img alt="Creative Commons License" src="https://licensebuttons.net/l/by/3.0/80x15.png" /></a>
           </li>
         </ul>
 

@@ -1,16 +1,16 @@
 # humanstxt.org/
-# The humans responsible & technology colophon
+# 责任和合作
 
-# TEAM
+# 作者
 
-    Creator: Jeff Avallone
-    Site: http://gitlab.com/javallone
-    Twitter: @javallone
+    Creator: snowdreams1006
+    Site: https://gitee.com/snowdreams1006
+    Gieee: @snowdreams1006
 
-# THANKS
+# 感谢
 
-    strfriend.com for the idea, whatever happened to you?
+    感谢原作者无私的开源分享
 
-# TECHNOLOGY COLOPHON
+# 技术栈
 
     HTML5, CSS3, SVG, Sass, Open Iconic
