@@ -47,10 +47,6 @@ application. This includes event handlers for all user interactions.</p>
     <span class="hljs-keyword">this</span>.warnings = root.querySelector(<span class="hljs-string">'#warnings'</span>);
 
     <span class="hljs-keyword">this</span>.links = <span class="hljs-keyword">this</span>.form.querySelector(<span class="hljs-string">'ul'</span>);
-    <span class="hljs-keyword">this</span>.permalink = <span class="hljs-keyword">this</span>.links.querySelector(<span class="hljs-string">'a[data-action="permalink"]'</span>);
-    <span class="hljs-keyword">this</span>.downloadSvg = <span class="hljs-keyword">this</span>.links.querySelector(<span class="hljs-string">'a[data-action="download-svg"]'</span>);
-    <span class="hljs-keyword">this</span>.downloadPng = <span class="hljs-keyword">this</span>.links.querySelector(<span class="hljs-string">'a[data-action="download-png"]'</span>);
-
     <span class="hljs-keyword">this</span>.svgContainer = root.querySelector(<span class="hljs-string">'#regexp-render'</span>);
   }</pre></div></div>
             
@@ -382,121 +378,6 @@ URLs.</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-17">&#182;</a>
               </div>
-              <p>Update the URLs of the ‘download’ and ‘permalink’ links.</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>  updateLinks() {
-    <span class="hljs-keyword">let</span> classes = _.without(<span class="hljs-keyword">this</span>.links.className.split(<span class="hljs-string">' '</span>), [<span class="hljs-string">'hide-download-svg'</span>, <span class="hljs-string">'hide-permalink'</span>]);
-    <span class="hljs-keyword">let</span> svg = <span class="hljs-keyword">this</span>.svgContainer.querySelector(<span class="hljs-string">'.svg'</span>);</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-18">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-18">&#182;</a>
-              </div>
-              <p>Create the SVG ‘download’ image URL.</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">try</span> {
-      <span class="hljs-keyword">this</span>.downloadSvg.parentNode.style.display = <span class="hljs-literal">null</span>;
-      <span class="hljs-keyword">this</span>.downloadSvg.href = <span class="hljs-keyword">this</span>.buildBlobURL(svg.innerHTML);
-    }
-    <span class="hljs-keyword">catch</span>(e) {</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-19">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-19">&#182;</a>
-              </div>
-              <p>Blobs or URLs created from a blob URL don’t work in the current
-browser. Giving up on the download link.</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>      classes.push(<span class="hljs-string">'hide-download-svg'</span>);
-    }</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-20">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-20">&#182;</a>
-              </div>
-              <p>Create the PNG ‘download’ image URL.</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">try</span> {
-      <span class="hljs-keyword">let</span> canvas = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'canvas'</span>);
-      <span class="hljs-keyword">let</span> context = canvas.getContext(<span class="hljs-string">'2d'</span>);
-      <span class="hljs-keyword">let</span> loader = <span class="hljs-keyword">new</span> Image;
-
-      loader.width = canvas.width = <span class="hljs-built_in">Number</span>(svg.querySelector(<span class="hljs-string">'svg'</span>).getAttribute(<span class="hljs-string">'width'</span>));
-      loader.height = canvas.height = <span class="hljs-built_in">Number</span>(svg.querySelector(<span class="hljs-string">'svg'</span>).getAttribute(<span class="hljs-string">'height'</span>));
-      loader.onload = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-        <span class="hljs-keyword">try</span> {
-          context.drawImage(loader, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, loader.width, loader.height);
-          canvas.toBlob(<span class="hljs-function"><span class="hljs-params">blob</span> =&gt;</span> {
-            <span class="hljs-keyword">try</span> {
-              <span class="hljs-built_in">window</span>.pngBlob = blob;
-              <span class="hljs-keyword">this</span>.downloadPng.href = URL.createObjectURL(<span class="hljs-built_in">window</span>.pngBlob);
-              <span class="hljs-keyword">this</span>.links.className = <span class="hljs-keyword">this</span>.links.className.replace(<span class="hljs-regexp">/\bhide-download-png\b/</span>, <span class="hljs-string">''</span>);
-            }
-            <span class="hljs-keyword">catch</span>(e) {}
-          }, <span class="hljs-string">'image/png'</span>);
-        }
-        <span class="hljs-keyword">catch</span>(e) {}
-      };
-      loader.src = <span class="hljs-string">'data:image/svg+xml,'</span> + <span class="hljs-built_in">encodeURIComponent</span>(svg.innerHTML);
-      classes.push(<span class="hljs-string">'hide-download-png'</span>);
-    }
-    <span class="hljs-keyword">catch</span>(e) {}</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-21">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-21">&#182;</a>
-              </div>
-              <p>Create the ‘permalink’ URL.</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.permalinkEnabled) {
-      <span class="hljs-keyword">this</span>.permalink.parentNode.style.display = <span class="hljs-literal">null</span>;
-      <span class="hljs-keyword">this</span>.permalink.href = location.toString();
-    } <span class="hljs-keyword">else</span> {
-      classes.push(<span class="hljs-string">'hide-permalink'</span>);
-    }
-
-    <span class="hljs-keyword">this</span>.links.className = classes.join(<span class="hljs-string">' '</span>);
-  }</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-22">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-22">&#182;</a>
-              </div>
               <p>Display any warnings that were generated while rendering a regular expression.</p>
 <ul>
 <li><strong>warnings</strong> - Array of warning messages to display.</li>
@@ -513,11 +394,11 @@ browser. Giving up on the download link.</p>
         </li>
         
         
-        <li id="section-23">
+        <li id="section-18">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-23">&#182;</a>
+                <a class="pilcrow" href="#section-18">&#182;</a>
               </div>
               <p>Render regular expression</p>
 <ul>
@@ -533,11 +414,11 @@ browser. Giving up on the download link.</p>
         </li>
         
         
-        <li id="section-24">
+        <li id="section-19">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-24">&#182;</a>
+                <a class="pilcrow" href="#section-19">&#182;</a>
               </div>
               <p>When a render is already in progress, cancel it and try rendering again
 after a short delay (canceling a render is not instantaneous).</p>
@@ -561,11 +442,11 @@ after a short delay (canceling a render is not instantaneous).</p>
         </li>
         
         
-        <li id="section-25">
+        <li id="section-20">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-25">&#182;</a>
+                <a class="pilcrow" href="#section-20">&#182;</a>
               </div>
               <p>Parse the expression.</p>
 
@@ -576,11 +457,11 @@ after a short delay (canceling a render is not instantaneous).</p>
         </li>
         
         
-        <li id="section-26">
+        <li id="section-21">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-26">&#182;</a>
+                <a class="pilcrow" href="#section-21">&#182;</a>
               </div>
               <p>Display any error messages from the parser and abort the render.</p>
 
@@ -599,11 +480,11 @@ after a short delay (canceling a render is not instantaneous).</p>
         </li>
         
         
-        <li id="section-27">
+        <li id="section-22">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-27">&#182;</a>
+                <a class="pilcrow" href="#section-22">&#182;</a>
               </div>
               <p>When parsing is successful, render the parsed expression.</p>
 
@@ -614,11 +495,11 @@ after a short delay (canceling a render is not instantaneous).</p>
         </li>
         
         
-        <li id="section-28">
+        <li id="section-23">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-28">&#182;</a>
+                <a class="pilcrow" href="#section-23">&#182;</a>
               </div>
               <p>Once rendering is complete:</p>
 <ul>
@@ -631,7 +512,6 @@ after a short delay (canceling a render is not instantaneous).</p>
             
             <div class="content"><div class='highlight'><pre>      .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
         <span class="hljs-keyword">this</span>.state = <span class="hljs-string">'has-results'</span>;
-        <span class="hljs-keyword">this</span>.updateLinks();
         <span class="hljs-keyword">this</span>.displayWarnings(<span class="hljs-keyword">this</span>.running.warnings);
         util.track(<span class="hljs-string">'send'</span>, <span class="hljs-string">'event'</span>, <span class="hljs-string">'visualization'</span>, <span class="hljs-string">'complete'</span>);
 
@@ -642,11 +522,11 @@ after a short delay (canceling a render is not instantaneous).</p>
         </li>
         
         
-        <li id="section-29">
+        <li id="section-24">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-29">&#182;</a>
+                <a class="pilcrow" href="#section-24">&#182;</a>
               </div>
               <p>Handle any errors that happened during the rendering pipeline.
 Swallows parse errors and render cancellations. Any other exceptions
@@ -668,11 +548,11 @@ are allowed to continue on to be tracked by the global error handler.</p>
         </li>
         
         
-        <li id="section-30">
+        <li id="section-25">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-30">&#182;</a>
+                <a class="pilcrow" href="#section-25">&#182;</a>
               </div>
               <p>Finally, mark rendering as complete (and pass along any exceptions
 that were thrown).</p>
