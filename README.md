@@ -18,9 +18,11 @@ When sending pull requests, please keep them focused on a single issue. I would 
 
 `nodejs` 是项目基本环境,请确保已安装并配置 `nodejs` 开发环境.
 
-To start with, install the necessary dependencies:
+开始项目之前,请安装必要环境依赖:
 
-    $ yarn install
+```bash
+yarn install
+```
 
 To start a development server, run:
 
