@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>match_fragment.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="..\..\..\docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>match_fragment.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p>MatchFragment nodes are part of a <a href="./match.html">Match</a> followed by an
+optional <a href="./repeat.html">Repeat</a> node. If no repeat is applied, then
+rendering is proxied to the content node.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">import</span> _ <span class="hljs-keyword">from</span> <span class="hljs-string">'lodash'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">type</span>: <span class="hljs-string">'match-fragment'</span>,
+
+  <span class="hljs-attr">definedProperties</span>: {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Default anchor is overridden to apply an transforms from the fragment
+to its content’s anchor. Essentially, the fragment inherits the anchor
+of its content.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    _anchor: {
+      <span class="hljs-attr">get</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">var</span> anchor = <span class="hljs-keyword">this</span>.content.getBBox(),
+            matrix = <span class="hljs-keyword">this</span>.transform().localMatrix;
+
+        <span class="hljs-keyword">return</span> {
+          <span class="hljs-attr">ax</span>: matrix.x(anchor.ax, anchor.ay),
+          <span class="hljs-attr">ax2</span>: matrix.x(anchor.ax2, anchor.ay),
+          <span class="hljs-attr">ay</span>: matrix.y(anchor.ax, anchor.ay)
+        };
+      }
+    }
+  },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Renders the fragment into the currently set container.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  _render() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.content.render(<span class="hljs-keyword">this</span>.container.group())
+      .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        <span class="hljs-keyword">let</span> box, paths;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Contents must be transformed based on the repeat that is applied.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">this</span>.content.transform(<span class="hljs-keyword">this</span>.repeat.contentPosition);
+
+        box = <span class="hljs-keyword">this</span>.content.getBBox();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Add skip or repeat paths to the container.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        paths = _.flatten([
+          <span class="hljs-keyword">this</span>.repeat.skipPath(box),
+          <span class="hljs-keyword">this</span>.repeat.loopPath(box)
+        ]);
+
+        <span class="hljs-keyword">this</span>.container.prepend(
+          <span class="hljs-keyword">this</span>.container.path(paths.join(<span class="hljs-string">''</span>)));
+
+        <span class="hljs-keyword">this</span>.loopLabel();
+      });
+  },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>Renders label for the loop path indicating how many times the content may
+be matched.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  loopLabel() {
+    <span class="hljs-keyword">let</span> labelStr = <span class="hljs-keyword">this</span>.repeat.label,
+        tooltipStr = <span class="hljs-keyword">this</span>.repeat.tooltip;
+
+    <span class="hljs-keyword">if</span> (labelStr) {
+      <span class="hljs-keyword">let</span> label = <span class="hljs-keyword">this</span>.container.text(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, [labelStr])
+            .addClass(<span class="hljs-string">'repeat-label'</span>),
+          labelBox = label.getBBox(),
+          box = <span class="hljs-keyword">this</span>.getBBox();
+
+      <span class="hljs-keyword">if</span> (tooltipStr) {
+        <span class="hljs-keyword">let</span> tooltip = <span class="hljs-keyword">this</span>.container.el(<span class="hljs-string">'title'</span>)
+          .append(<span class="hljs-keyword">this</span>.container.text(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, tooltipStr));
+        label.append(tooltip);
+      }
+
+      label.transform(Snap.matrix().translate(
+        box.x2 - labelBox.width - (<span class="hljs-keyword">this</span>.repeat.hasSkip ? <span class="hljs-number">5</span> : <span class="hljs-number">0</span>),
+        box.y2 + labelBox.height));
+    }
+  },
+
+  setup() {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>Then content of the fragment.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.content = <span class="hljs-keyword">this</span>.properties.content;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>The repetition rule for the fragment.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.repeat = <span class="hljs-keyword">this</span>.properties.repeat;
+
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.repeat.hasLoop &amp;&amp; !<span class="hljs-keyword">this</span>.repeat.hasSkip) {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>For fragments without a skip or loop, rendering is proxied to the
+content. Also set flag indicating that contents can be merged if the
+content is a literal node.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">this</span>.canMerge = (<span class="hljs-keyword">this</span>.content.type === <span class="hljs-string">'literal'</span>);
+      <span class="hljs-keyword">this</span>.proxy = <span class="hljs-keyword">this</span>.content;
+    } <span class="hljs-keyword">else</span> {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p>Fragments that have skip or loop lines cannot be merged with others.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">this</span>.canMerge = <span class="hljs-literal">false</span>;
+    }
+  }
+};</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

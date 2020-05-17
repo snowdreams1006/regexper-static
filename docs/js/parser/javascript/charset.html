@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>charset.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="..\..\..\docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>charset.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p>Charset nodes are used for <code>[abc1-9]</code> regular expression syntax. It is
+rendered as a labeled box with each literal, escape, and range rendering
+handled by the nested node(s).</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">import</span> util <span class="hljs-keyword">from</span> <span class="hljs-string">'../../util.js'</span>;
+<span class="hljs-keyword">import</span> _ <span class="hljs-keyword">from</span> <span class="hljs-string">'lodash'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">type</span>: <span class="hljs-string">'charset'</span>,
+
+  <span class="hljs-attr">definedProperties</span>: {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Default anchor is overridden to move it down so that it connects at the
+middle of the box that wraps all of the charset parts, instead of the
+middle of the container, which would take the label into account.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    _anchor: {
+      <span class="hljs-attr">get</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">var</span> matrix = <span class="hljs-keyword">this</span>.transform().localMatrix;
+
+        <span class="hljs-keyword">return</span> {
+          <span class="hljs-attr">ay</span>: matrix.y(<span class="hljs-number">0</span>, <span class="hljs-keyword">this</span>.partContainer.getBBox().cy)
+        };
+      }
+    }
+  },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Renders the charset into the currently set container.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  _render() {
+    <span class="hljs-keyword">this</span>.partContainer = <span class="hljs-keyword">this</span>.container.group();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Renders each part of the charset into the part container.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.all(_.map(<span class="hljs-keyword">this</span>.elements,
+      part =&gt; part.render(<span class="hljs-keyword">this</span>.partContainer.group())
+    ))
+      .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Space the parts of the charset vertically in the part container.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        util.spaceVertically(<span class="hljs-keyword">this</span>.elements, {
+          <span class="hljs-attr">padding</span>: <span class="hljs-number">5</span>
+        });</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>Label the part container.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.renderLabeledBox(<span class="hljs-keyword">this</span>.label, <span class="hljs-keyword">this</span>.partContainer, {
+          <span class="hljs-attr">padding</span>: <span class="hljs-number">5</span>
+        });
+      });
+  },
+
+  setup() {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>The label for the charset will be:</p>
+<ul>
+<li>“One of:” for charsets of the form: <code>[abc]</code>.</li>
+<li>“None of:” for charsets of the form: <code>[^abc]</code>.</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.label = (<span class="hljs-keyword">this</span>.properties.invert.textValue === <span class="hljs-string">'^'</span>) ? <span class="hljs-string">'None of:'</span> : <span class="hljs-string">'One of:'</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>Removes any duplicate parts from the charset. This is based on the type
+and text value of the part, so <code>[aa]</code> will have only one item, but
+<code>[a\x61]</code> will contain two since the first matches “a” and the second
+matches 0x61 (even though both are an “a”).</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.elements = _.uniqBy(<span class="hljs-keyword">this</span>.properties.parts.elements,
+      part =&gt; <span class="hljs-string">`<span class="hljs-subst">${part.type}</span>:<span class="hljs-subst">${part.textValue}</span>`</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>Include a warning for charsets that attempt to match <code>\c</code> followed by
+any character other than A-Z (case insensitive). Charsets like <code>[\c@]</code>
+behave differently in different browsers. Some match the character
+reference by the control charater escape, others match “\”, “c”, or “@”,
+and some do not appear to match anything.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.textValue.match(<span class="hljs-regexp">/\\c[^a-zA-Z]/</span>)) {
+      <span class="hljs-keyword">this</span>.state.warnings.push(<span class="hljs-string">`The character set "<span class="hljs-subst">${<span class="hljs-keyword">this</span>.textValue}</span>" contains the \\c escape followed by a character other than A-Z. This can lead to different behavior depending on browser. The representation here is the most common interpretation.`</span>);
+    }
+  }
+}</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
