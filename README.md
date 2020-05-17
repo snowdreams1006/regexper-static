@@ -1,14 +1,14 @@
-# Regex
+# JavaScript 正则表达式可视化
 
-> Code for the http://regexper.com/ site.
+> 感谢[http://regexper.com/](http://regexper.com/)开源项目
 
-## Contributing
+## 如何贡献
 
 I greatly appreciate any contributions that you may have for the site. Feel free to fork the project and work on any of the reported issues, or let me know about any improvements you think would be beneficial.
 
 When sending pull requests, please keep them focused on a single issue. I would rather deal with a dozen pull requests for a dozen issues with one change each over one pull request fixing a dozen issues. Also, I appreciate tests to be included with feature development, but for minor changes I will probably not put up much of a fuss if they're missing.
 
-### Working with the code
+### 开发文档
 
 Node is required for working with this site.
 
@@ -28,6 +28,6 @@ These other gulp tasks are available:
     $ gulp build # Build the site into the ./build directory
     $ yarn test # Run JSCS lint and Karma tests
 
-## License
+## 许可证
 
 See [LICENSE.txt](/LICENSE.txt) file for licensing details.
