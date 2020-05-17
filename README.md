@@ -2,6 +2,12 @@
 
 > 感谢[http://regexper.com/](http://regexper.com/)开源项目
 
+## 在线体验
+
+- 推荐: [https://regex.snowdreams1006.cn/](https://regex.snowdreams1006.cn/)
+
+> 备用: [https://snowdreams1006.gitee.io/regexper-static/](https://snowdreams1006.gitee.io/regexper-static/)
+
 ## 如何贡献
 
 I greatly appreciate any contributions that you may have for the site. Feel free to fork the project and work on any of the reported issues, or let me know about any improvements you think would be beneficial.
