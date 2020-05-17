@@ -13,7 +13,9 @@
     "pretest": "jscs lib/ src/ spec/",
     "test": "karma start --single-run",
     "build": "gulp build",
-    "start": "gulp"
+    "docs": "gulp docs",
+    "start": "gulp",
+    "prod": "gulp build && gulp build"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
