@@ -16,7 +16,7 @@ When sending pull requests, please keep them focused on a single issue. I would 
 
 ### 开发文档
 
-Node is required for working with this site.
+`nodejs` 是项目基本环境,请确保已安装并配置 `nodejs` 开发环境.
 
 To start with, install the necessary dependencies:
 
