@@ -30,13 +30,20 @@ yarn install
 yarn start
 ```
 
-This will build the site into the ./build directory, start a local start on port 8080, and begin watching the source files for modifications. The site will automatically be rebuilt when files are changed. Also, if you browser has the LiveReload extension, then the page will be reloaded.
+运行结果将在 `./build` 目录下生成网站,监听本地 `8080` 端口,开启热加载模式.如果浏览器已安装热加载插件,页面会重新加载.
 
-These other gulp tasks are available:
+除此之外,还有一些其他 `gulp` 任务:
 
-    $ gulp docs # Build documentation into the ./docs directory
-    $ gulp build # Build the site into the ./build directory
-    $ yarn test # Run JSCS lint and Karma tests
+```bash
+# Build documentation into the ./docs directory
+gulp docs 
+
+# Build the site into the ./build directory
+gulp build 
+
+# Run JSCS lint and Karma tests
+yarn test 
+```  
 
 ## 许可证
 
