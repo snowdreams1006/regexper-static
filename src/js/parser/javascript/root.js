@@ -7,11 +7,11 @@ export default {
   type: 'root',
 
   flagLabels: {
-    i: 'Ignore Case',
-    g: 'Global',
-    m: 'Multiline',
-    y: 'Sticky',
-    u: 'Unicode'
+    i: '忽略大小写',
+    g: '全局模式',
+    m: '多行模式',
+    y: 'Sticky模式',
+    u: 'Unicode模式'
   },
 
   // Renders the root into the currently set container.

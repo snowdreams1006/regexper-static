@@ -36,7 +36,7 @@ export default {
 
     // Report invalid expression when extents of the range are out of order.
     if (this.first.ordinal > this.last.ordinal) {
-      throw `Range out of order in character class: ${this.textValue}`;
+      throw `字符集乱序: ${this.textValue}`;
     }
   }
 };

@@ -25,8 +25,8 @@ export default {
 
   labelMap: {
     '?:': '',
-    '?=': 'positive lookahead',
-    '?!': 'negative lookahead'
+    '?=': '正向前瞻',
+    '?!': '负向前瞻'
   },
 
   // Renders the subexp into the currently set container.
