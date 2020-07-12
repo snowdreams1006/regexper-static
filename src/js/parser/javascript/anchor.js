@@ -5,9 +5,9 @@ export default {
 
   setup() {
     if (this.textValue === '^') {
-      this.label = 'Start of line';
+      this.label = '开始位置';
     } else {
-      this.label = 'End of line';
+      this.label = '结束位置';
     }
   }
 };
