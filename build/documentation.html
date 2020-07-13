@@ -58,11 +58,11 @@
       <section>
         <h1>什么是铁路图</h1>
 
-        <p>正则表达式生成的图像通常被称为"铁路图".These diagram are a straight-forward way to illustrate what can sometimes become very complicated processing in a regular expression, with nested looping and optional elements. The easiest way to read these diagrams to to start at the left and follow the lines to the right. If you encounter a branch, then there is the option of following one of multiple paths (and those paths can loop back to earlier parts of the diagram). In order for a string to successfully match the regular expression in a diagram, you must be able to fulfill each part of the diagram as you move from left to right and proceed through the entire diagram to the end.</p>
+        <p>正则表达式生成的图像通常被称为"铁路图".非常简单直观地阐述了嵌套循环和多选结构等复杂问题. 阅读铁路图的最简单方式是从最左边位置开始并沿着右边的线直到最右边位置. 如果遇到分支,然后可以选择多种分支结构之一(这些路径可以循环回到先前位置).为了使字符串成功匹配图中的正则表达式,你必须能够在从左到右移动并完成整个图直到最后过程.
 
         <figure class="shift-right" data-expr="Lions(?: and|,) tigers,? and bears\. Oh my!"></figure>
 
-        <p>As an example, this expression will match "Lions and tigers and bears. Oh my!" or the more grammatically correct "Lions, tigers, and bears. Oh my!" (with or without an Oxford comma). The diagram first matches the string "Lions"; you cannot proceed without that in your input. Then there is a choice between a comma or the string " and". No matter what choice you make, the input string must then contain " tigers" followed by an optional comma (your path can either go through the comma or around it). Finally the string must end with " and bears. Oh my!".</p>
+        <p>例如: this expression will match "Lions and tigers and bears. Oh my!" or the more grammatically correct "Lions, tigers, and bears. Oh my!" (with or without an Oxford comma). The diagram first matches the string "Lions"; you cannot proceed without that in your input. Then there is a choice between a comma or the string " and". No matter what choice you make, the input string must then contain " tigers" followed by an optional comma (your path can either go through the comma or around it). Finally the string must end with " and bears. Oh my!".</p>
 
         <section>
           <h2>基础组成</h2>
