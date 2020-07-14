@@ -78,6 +78,7 @@ export default {
     return [`${String.fromCharCode(parseInt(this.arg, 16))}(hex: 0x${this.arg.toUpperCase()})`,parseInt(this.arg, 16), false];
   },
   u() {
-    return [`U+${this.arg.toUpperCase()}`, parseInt(this.arg, 16), false];
+    var unicode = unescape("%u" + this.arg.replace(/\%u/g, "%u"));
+    return [`${unicode}(unicode: U+${this.arg.toUpperCase()})`, parseInt(this.arg, 16), false];
   }
 };
