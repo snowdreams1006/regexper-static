@@ -8,14 +8,9 @@ export default {
 
   // Renders the literal into the currently set container.
   _render() {
-    return this.renderLabel(['\u201c', this.literal, '\u201d'])
+    return this.renderLabel([this.literal])
       .then(label => {
         let spans = label.selectAll('tspan');
-
-        // The quote marks get some styling to lighten their color so they are
-        // distinct from the actual literal value.
-        spans[0].addClass('quote');
-        spans[2].addClass('quote');
 
         label.select('rect').attr({
           rx: 3,

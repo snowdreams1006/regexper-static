@@ -52,26 +52,9 @@ rendered as labels with the value of the literal quoted.</p>
             </div>
             
             <div class="content"><div class='highlight'><pre>  _render() {
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.renderLabel([<span class="hljs-string">'\u201c'</span>, <span class="hljs-keyword">this</span>.literal, <span class="hljs-string">'\u201d'</span>])
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.renderLabel([<span class="hljs-keyword">this</span>.literal])
       .then(<span class="hljs-function"><span class="hljs-params">label</span> =&gt;</span> {
-        <span class="hljs-keyword">let</span> spans = label.selectAll(<span class="hljs-string">'tspan'</span>);</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-3">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-3">&#182;</a>
-              </div>
-              <p>The quote marks get some styling to lighten their color so they are
-distinct from the actual literal value.</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>        spans[<span class="hljs-number">0</span>].addClass(<span class="hljs-string">'quote'</span>);
-        spans[<span class="hljs-number">2</span>].addClass(<span class="hljs-string">'quote'</span>);
+        <span class="hljs-keyword">let</span> spans = label.selectAll(<span class="hljs-string">'tspan'</span>);
 
         label.select(<span class="hljs-string">'rect'</span>).attr({
           <span class="hljs-attr">rx</span>: <span class="hljs-number">3</span>,
@@ -85,11 +68,11 @@ distinct from the actual literal value.</p>
         </li>
         
         
-        <li id="section-4">
+        <li id="section-3">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-4">&#182;</a>
+                <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
               <p>Merges this literal with another. Literals come back as single characters
 during parsing, and must be post-processed into multi-character literals
@@ -106,11 +89,11 @@ for rendering. This processing is done in <a href="./match.html">Match</a>.</p>
         </li>
         
         
-        <li id="section-5">
+        <li id="section-4">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-5">&#182;</a>
+                <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
               <p>Value of the literal.</p>
 
@@ -121,11 +104,11 @@ for rendering. This processing is done in <a href="./match.html">Match</a>.</p>
         </li>
         
         
-        <li id="section-6">
+        <li id="section-5">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-6">&#182;</a>
+                <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
               <p>Ordinal value of the literal for use in
 <a href="./charset_range.html">CharsetRange</a>.</p>
