@@ -145,7 +145,7 @@ export default class Node {
   // - __options.padding__ - Pixels of padding to place between the content and
   //    the box.
   renderLabeledBox(text, content, options) {
-    let label = this.container.text(0, 0, _.flatten([text]))
+    let label = this.container.text(3, -3, _.flatten([text]))
           .addClass(`${this.type}-label`),
         box = this.container.rect()
           .addClass(`${this.type}-box`)
