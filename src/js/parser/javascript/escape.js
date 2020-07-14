@@ -66,7 +66,11 @@ export default {
   9: ['向后引用 (普通分组 = 9)', -1, false],
   0: function() {
     if (this.arg) {
-      return [`octal: ${this.arg}`, parseInt(this.arg, 8), true];
+      return [`${String.fromCharCode(parseInt(this.arg, 8))}(octal: ${this.arg.toUpperCase()})`,-1, true];
+
+      // return [`octal: ${this.arg}`, parseInt(this.arg, 8), true];
+
+      // return [`octal: ${this.arg}`, parseInt(this.arg, 8), true];
     } else {
       return ['null', 0, true];
     }
@@ -75,7 +79,7 @@ export default {
     return [`ctrl-${this.arg.toUpperCase()}`, this.arg.toUpperCase().charCodeAt(0) - 64, true];
   },
   x() {
-    return [`${String.fromCharCode(parseInt(this.arg, 16))}(0x${this.arg.toUpperCase()})`,-1, false];
+    return [`${String.fromCharCode(parseInt(this.arg, 16))}(hex: 0x${this.arg.toUpperCase()})`,-1, false];
   },
   u() {
     return [`U+${this.arg.toUpperCase()}`, parseInt(this.arg, 16), false];
