@@ -84,7 +84,7 @@ export default class Regexper {
   detectBuggyHash() {
     if (typeof window.URL === 'function') {
       try {
-        let url = new URL('http://regexper.com/#%25');
+        let url = new URL('https://regex.snowdreams1006.cn/#%25');
         this.buggyHash = (url.hash === '#%');
       }
       catch(e) {

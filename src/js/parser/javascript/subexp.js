@@ -49,7 +49,7 @@ export default {
     if (_.has(this.labelMap, this.properties.capture.textValue)) {
       return this.labelMap[this.properties.capture.textValue];
     } else {
-      return `group #${this.state.groupCounter++}`;
+      return `普通捕获分组 #${this.state.groupCounter++}`;
     }
   },
 

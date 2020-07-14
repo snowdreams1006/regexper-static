@@ -227,7 +227,7 @@ long). Turn off display of the permalink and just show the expression.</p>
             <div class="content"><div class='highlight'><pre>  detectBuggyHash() {
     <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">window</span>.URL === <span class="hljs-string">'function'</span>) {
       <span class="hljs-keyword">try</span> {
-        <span class="hljs-keyword">let</span> url = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">'http://regexper.com/#%25'</span>);
+        <span class="hljs-keyword">let</span> url = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">'https://regex.snowdreams1006.cn/#%25'</span>);
         <span class="hljs-keyword">this</span>.buggyHash = (url.hash === <span class="hljs-string">'#%'</span>);
       }
       <span class="hljs-keyword">catch</span>(e) {
