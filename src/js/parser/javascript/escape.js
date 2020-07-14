@@ -66,16 +66,16 @@ export default {
   9: ['向后引用 (普通分组 = 9)', -1, false],
   0: function() {
     if (this.arg) {
-      return [`${String.fromCharCode(parseInt(this.arg, 8))}(octal: ${this.arg.toUpperCase()})`,-1, false];
+      return [`${String.fromCharCode(parseInt(this.arg, 8))}(octal: 0${this.arg.toUpperCase()})`,parseInt(this.arg, 8), false];
     } else {
       return ['null', 0, true];
     }
   },
   c() {
-    return [`ctrl-${this.arg.toUpperCase()}`, this.arg.toUpperCase().charCodeAt(0) - 64, true];
+    return [`ctrl-${this.arg.toUpperCase()}`, this.arg.toUpperCase().charCodeAt(0) - 64, false];
   },
   x() {
-    return [`${String.fromCharCode(parseInt(this.arg, 16))}(hex: 0x${this.arg.toUpperCase()})`,-1, false];
+    return [`${String.fromCharCode(parseInt(this.arg, 16))}(hex: 0x${this.arg.toUpperCase()})`,parseInt(this.arg, 16), false];
   },
   u() {
     return [`U+${this.arg.toUpperCase()}`, parseInt(this.arg, 16), false];
