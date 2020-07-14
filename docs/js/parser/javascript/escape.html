@@ -120,7 +120,8 @@ from the escape code mappings</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    [<span class="hljs-keyword">this</span>.label, <span class="hljs-keyword">this</span>.ordinal, addHex] = _.result(<span class="hljs-keyword">this</span>, <span class="hljs-keyword">this</span>.code);</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    [<span class="hljs-keyword">this</span>.label, <span class="hljs-keyword">this</span>.ordinal, addHex] = _.result(<span class="hljs-keyword">this</span>, <span class="hljs-keyword">this</span>.code);
+  },</pre></div></div>
             
         </li>
         
@@ -131,24 +132,6 @@ from the escape code mappings</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
-              <p>When requested, add hex code to the label.</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span> (addHex) {
-      <span class="hljs-keyword">this</span>.label = <span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-keyword">this</span>.label}</span> <span class="hljs-subst">${hex(<span class="hljs-keyword">this</span>.ordinal)}</span>`</span>;
-    }
-  },</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-7">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-7">&#182;</a>
-              </div>
               <p>Escape code mappings</p>
 
             </div>
@@ -157,13 +140,13 @@ from the escape code mappings</p>
   <span class="hljs-attr">B</span>: [<span class="hljs-string">'非单词边界'</span>, <span class="hljs-number">-1</span>, <span class="hljs-literal">false</span>],
   <span class="hljs-attr">d</span>: [<span class="hljs-string">'数字'</span>, <span class="hljs-number">-1</span>, <span class="hljs-literal">false</span>],
   <span class="hljs-attr">D</span>: [<span class="hljs-string">'非数字'</span>, <span class="hljs-number">-1</span>, <span class="hljs-literal">false</span>],
-  <span class="hljs-attr">f</span>: [<span class="hljs-string">'换页符'</span>, <span class="hljs-number">0x0c</span>, <span class="hljs-literal">true</span>],
-  <span class="hljs-attr">n</span>: [<span class="hljs-string">'换行符'</span>, <span class="hljs-number">0x0a</span>, <span class="hljs-literal">true</span>],
-  <span class="hljs-attr">r</span>: [<span class="hljs-string">'回车符'</span>, <span class="hljs-number">0x0d</span>, <span class="hljs-literal">true</span>],
+  <span class="hljs-attr">f</span>: [<span class="hljs-string">'换页符'</span>, <span class="hljs-number">-1</span>, <span class="hljs-literal">true</span>],
+  <span class="hljs-attr">n</span>: [<span class="hljs-string">'换行符'</span>, <span class="hljs-number">-1</span>, <span class="hljs-literal">true</span>],
+  <span class="hljs-attr">r</span>: [<span class="hljs-string">'回车符'</span>, <span class="hljs-number">-1</span>, <span class="hljs-literal">true</span>],
   <span class="hljs-attr">s</span>: [<span class="hljs-string">'空白字符'</span>, <span class="hljs-number">-1</span>, <span class="hljs-literal">false</span>],
   <span class="hljs-attr">S</span>: [<span class="hljs-string">'非空白字符'</span>, <span class="hljs-number">-1</span>, <span class="hljs-literal">false</span>],
-  <span class="hljs-attr">t</span>: [<span class="hljs-string">'制表符'</span>, <span class="hljs-number">0x09</span>, <span class="hljs-literal">true</span>],
-  <span class="hljs-attr">v</span>: [<span class="hljs-string">'垂直制表符'</span>, <span class="hljs-number">0x0b</span>, <span class="hljs-literal">true</span>],
+  <span class="hljs-attr">t</span>: [<span class="hljs-string">'水平制表符'</span>, <span class="hljs-number">-1</span>, <span class="hljs-literal">true</span>],
+  <span class="hljs-attr">v</span>: [<span class="hljs-string">'垂直制表符'</span>, <span class="hljs-number">-1</span>, <span class="hljs-literal">true</span>],
   <span class="hljs-attr">w</span>: [<span class="hljs-string">'单词'</span>, <span class="hljs-number">-1</span>, <span class="hljs-literal">false</span>],
   <span class="hljs-attr">W</span>: [<span class="hljs-string">'非单词'</span>, <span class="hljs-number">-1</span>, <span class="hljs-literal">false</span>],
   <span class="hljs-number">1</span>: [<span class="hljs-string">'向后引用 (普通分组 = 1)'</span>, <span class="hljs-number">-1</span>, <span class="hljs-literal">false</span>],

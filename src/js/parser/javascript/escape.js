@@ -39,11 +39,6 @@ export default {
     // Retrieves the label, ordinal value, an flag to control adding hex value
     // from the escape code mappings
     [this.label, this.ordinal, addHex] = _.result(this, this.code);
-
-    // When requested, add hex code to the label.
-    if (addHex) {
-      this.label = `${this.label} ${hex(this.ordinal)}`;
-    }
   },
 
   // Escape code mappings
@@ -51,13 +46,13 @@ export default {
   B: ['非单词边界', -1, false],
   d: ['数字', -1, false],
   D: ['非数字', -1, false],
-  f: ['换页符', 0x0c, true],
-  n: ['换行符', 0x0a, true],
-  r: ['回车符', 0x0d, true],
+  f: ['换页符', -1, true],
+  n: ['换行符', -1, true],
+  r: ['回车符', -1, true],
   s: ['空白字符', -1, false],
   S: ['非空白字符', -1, false],
-  t: ['制表符', 0x09, true],
-  v: ['垂直制表符', 0x0b, true],
+  t: ['水平制表符', -1, true],
+  v: ['垂直制表符', -1, true],
   w: ['单词', -1, false],
   W: ['非单词', -1, false],
   1: ['向后引用 (普通分组 = 1)', -1, false],
