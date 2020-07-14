@@ -33,6 +33,9 @@ svg {
 .charset .charset-box {
   fill: #cbcbba; }
 
+.charset .charset-reverse-box {
+  fill: #ffc0c0; }
+
 .subexp .subexp-label tspan,
 .charset .charset-label tspan,
 .match-fragment .repeat-label tspan {

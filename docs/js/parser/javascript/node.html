@@ -341,18 +341,26 @@ rendered in.</p>
             </div>
             
             <div class="content"><div class='highlight'><pre>  renderLabeledBox(text, content, options) {
-    <span class="hljs-keyword">let</span> label = <span class="hljs-keyword">this</span>.container.text(<span class="hljs-number">3</span>, <span class="hljs-number">-3</span>, _.flatten([text]))
-          .addClass(<span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-keyword">this</span>.type}</span>-label`</span>),
-        box = <span class="hljs-keyword">this</span>.container.rect()
+    <span class="hljs-keyword">let</span> label = <span class="hljs-keyword">this</span>.container.text(<span class="hljs-number">3</span>, <span class="hljs-number">-3</span>, _.flatten([text])).addClass(<span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-keyword">this</span>.type}</span>-label`</span>);
+
+    options = _.defaults(options || {}, {
+      <span class="hljs-attr">padding</span>: <span class="hljs-number">0</span>
+    });
+
+    <span class="hljs-keyword">let</span> box = <span class="hljs-keyword">this</span>.container.rect()
           .addClass(<span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-keyword">this</span>.type}</span>-box`</span>)
           .attr({
             <span class="hljs-attr">rx</span>: <span class="hljs-number">3</span>,
             <span class="hljs-attr">ry</span>: <span class="hljs-number">3</span>
           });
-
-    options = _.defaults(options || {}, {
-      <span class="hljs-attr">padding</span>: <span class="hljs-number">0</span>
-    });
+    <span class="hljs-keyword">if</span>(options.type){
+      box = <span class="hljs-keyword">this</span>.container.rect()
+          .addClass(<span class="hljs-string">`<span class="hljs-subst">${options.type}</span>-box`</span>)
+          .attr({
+            <span class="hljs-attr">rx</span>: <span class="hljs-number">3</span>,
+            <span class="hljs-attr">ry</span>: <span class="hljs-number">3</span>
+          });
+    }
 
     <span class="hljs-keyword">this</span>.container.prepend(label);
     <span class="hljs-keyword">this</span>.container.prepend(box);
@@ -367,9 +375,8 @@ rendered in.</p>
         label.transform(Snap.matrix()
           .translate(<span class="hljs-number">0</span>, labelBox.height));
 
-        box
-          .transform(Snap.matrix()
-            .translate(<span class="hljs-number">0</span>, labelBox.height))
+        box.transform(Snap.matrix()
+          .translate(<span class="hljs-number">0</span>, labelBox.height))
           .attr({
             <span class="hljs-attr">width</span>: boxWidth,
             <span class="hljs-attr">height</span>: boxHeight

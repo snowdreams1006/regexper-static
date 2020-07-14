@@ -132,8 +132,10 @@ middle of the container, which would take the label into account.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.renderLabeledBox(<span class="hljs-keyword">this</span>.label, <span class="hljs-keyword">this</span>.partContainer, {
-          <span class="hljs-attr">padding</span>: <span class="hljs-number">5</span>
+            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">let</span> type = (<span class="hljs-keyword">this</span>.properties.invert.textValue === <span class="hljs-string">'^'</span>) ? <span class="hljs-string">'charset-reverse'</span> : <span class="hljs-string">'charset'</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.renderLabeledBox(<span class="hljs-keyword">this</span>.label, <span class="hljs-keyword">this</span>.partContainer, {
+          <span class="hljs-attr">padding</span>: <span class="hljs-number">5</span>,
+          <span class="hljs-attr">type</span>: type
         });
       });
   },

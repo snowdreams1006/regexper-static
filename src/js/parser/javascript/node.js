@@ -145,18 +145,26 @@ export default class Node {
   // - __options.padding__ - Pixels of padding to place between the content and
   //    the box.
   renderLabeledBox(text, content, options) {
-    let label = this.container.text(3, -3, _.flatten([text]))
-          .addClass(`${this.type}-label`),
-        box = this.container.rect()
+    let label = this.container.text(3, -3, _.flatten([text])).addClass(`${this.type}-label`);
+
+    options = _.defaults(options || {}, {
+      padding: 0
+    });
+
+    let box = this.container.rect()
           .addClass(`${this.type}-box`)
           .attr({
             rx: 3,
             ry: 3
           });
-
-    options = _.defaults(options || {}, {
-      padding: 0
-    });
+    if(options.type){
+      box = this.container.rect()
+          .addClass(`${options.type}-box`)
+          .attr({
+            rx: 3,
+            ry: 3
+          });
+    }
 
     this.container.prepend(label);
     this.container.prepend(box);
@@ -171,9 +179,8 @@ export default class Node {
         label.transform(Snap.matrix()
           .translate(0, labelBox.height));
 
-        box
-          .transform(Snap.matrix()
-            .translate(0, labelBox.height))
+        box.transform(Snap.matrix()
+          .translate(0, labelBox.height))
           .attr({
             width: boxWidth,
             height: boxHeight

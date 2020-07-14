@@ -38,8 +38,10 @@ export default {
         });
 
         // Label the part container.
+        let type = (this.properties.invert.textValue === '^') ? 'charset-reverse' : 'charset';
         return this.renderLabeledBox(this.label, this.partContainer, {
-          padding: 5
+          padding: 5,
+          type: type
         });
       });
   },
