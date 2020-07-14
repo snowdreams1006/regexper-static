@@ -66,11 +66,7 @@ export default {
   9: ['向后引用 (普通分组 = 9)', -1, false],
   0: function() {
     if (this.arg) {
-      return [`${String.fromCharCode(parseInt(this.arg, 8))}(octal: ${this.arg.toUpperCase()})`,-1, true];
-
-      // return [`octal: ${this.arg}`, parseInt(this.arg, 8), true];
-
-      // return [`octal: ${this.arg}`, parseInt(this.arg, 8), true];
+      return [`${String.fromCharCode(parseInt(this.arg, 8))}(octal: ${this.arg.toUpperCase()})`,-1, false];
     } else {
       return ['null', 0, true];
     }
