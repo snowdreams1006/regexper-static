@@ -72,7 +72,7 @@ export default {
     }
   },
   c() {
-    return [`ctrl-${this.arg.toUpperCase()}`, this.arg.toUpperCase().charCodeAt(0) - 64, false];
+    return [`Ctrl + ${this.arg.toUpperCase()}`, this.arg.toUpperCase().charCodeAt(0) - 64, false];
   },
   x() {
     return [`${String.fromCharCode(parseInt(this.arg, 16))}(hex: 0x${this.arg.toUpperCase()})`,parseInt(this.arg, 16), false];
