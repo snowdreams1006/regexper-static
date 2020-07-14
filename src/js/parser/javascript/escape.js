@@ -75,7 +75,7 @@ export default {
     return [`ctrl-${this.arg.toUpperCase()}`, this.arg.toUpperCase().charCodeAt(0) - 64, true];
   },
   x() {
-    return [`0x${this.arg.toUpperCase()}`, parseInt(this.arg, 16), false];
+    return [`${String.fromCharCode(parseInt(this.arg, 16))}(0x${this.arg.toUpperCase()})`,-1, false];
   },
   u() {
     return [`U+${this.arg.toUpperCase()}`, parseInt(this.arg, 16), false];
