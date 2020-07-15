@@ -3,11 +3,7 @@
 // rendering of [MatchFragment](./match_fragment.html) nodes.
 
 function formatTimes(times) {
-  if (times === 1) {
-    return '一次';
-  } else {
-    return `${times} 次`;
-  }
+  return `${times} 次`;
 }
 
 export default {
@@ -33,16 +29,14 @@ export default {
       get: function() {
         if (this.minimum === this.maximum) {
           if (this.minimum === 0) {
-            return undefined;
+            return '直接跳过';
           }
-          return formatTimes(this.minimum - 1);
-        } else if (this.minimum <= 1 && this.maximum >= 2) {
-          return `至多重复 ${formatTimes(this.maximum - 1)} 次`;
-        } else if (this.minimum >= 2) {
+          return `匹配 ${formatTimes(this.minimum)}`;
+        } else {
           if (this.maximum === -1) {
-            return `${this.minimum - 1} + times`;
+            return `至少匹配 ${formatTimes(this.minimum)}`;
           } else {
-            return `${this.minimum - 1}\u2026${formatTimes(this.maximum - 1)}`;
+            return `匹配 ${formatTimes(this.minimum)} ~ ${formatTimes(this.maximum)}`;
           }
         }
       }
@@ -64,7 +58,7 @@ export default {
           if (this.maximum === -1) {
             repeatCount = `${this.minimum}+ times`;
           } else {
-            repeatCount = `${this.minimum}\u2026${formatTimes(this.maximum)}`;
+            repeatCount = `至少匹配 ${this.minimum},至多匹配 ${formatTimes(this.maximum)}`;
           }
         }
         return repeatCount ? `repeats ${repeatCount} in total` : repeatCount;
