@@ -48,20 +48,18 @@ export default {
         let repeatCount;
         if (this.minimum === this.maximum) {
           if (this.minimum === 0) {
-            repeatCount = undefined;
+            repeatCount = '直接跳过';
           } else {
-            repeatCount = formatTimes(this.minimum);
+            repeatCount = `匹配 ${formatTimes(this.minimum)}`;
           }
-        } else if (this.minimum <= 1 && this.maximum >= 2) {
-          repeatCount = `at most ${formatTimes(this.maximum)}`;
-        } else if (this.minimum >= 2) {
+        } else {
           if (this.maximum === -1) {
-            repeatCount = `${this.minimum}+ times`;
+            repeatCount = `至少匹配 ${formatTimes(this.minimum)}`;
           } else {
-            repeatCount = `至少匹配 ${this.minimum},至多匹配 ${formatTimes(this.maximum)}`;
+            repeatCount = `匹配 ${formatTimes(this.minimum)} ~ ${formatTimes(this.maximum)}`;
           }
         }
-        return repeatCount ? `repeats ${repeatCount} in total` : repeatCount;
+        return repeatCount;
       }
     }
   },

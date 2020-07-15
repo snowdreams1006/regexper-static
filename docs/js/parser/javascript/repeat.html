@@ -117,20 +117,18 @@ may be followed.</p>
         <span class="hljs-keyword">let</span> repeatCount;
         <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.minimum === <span class="hljs-keyword">this</span>.maximum) {
           <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.minimum === <span class="hljs-number">0</span>) {
-            repeatCount = <span class="hljs-literal">undefined</span>;
+            repeatCount = <span class="hljs-string">'直接跳过'</span>;
           } <span class="hljs-keyword">else</span> {
-            repeatCount = formatTimes(<span class="hljs-keyword">this</span>.minimum);
+            repeatCount = <span class="hljs-string">`匹配 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.minimum)}</span>`</span>;
           }
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.minimum &lt;= <span class="hljs-number">1</span> &amp;&amp; <span class="hljs-keyword">this</span>.maximum &gt;= <span class="hljs-number">2</span>) {
-          repeatCount = <span class="hljs-string">`at most <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.maximum)}</span>`</span>;
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.minimum &gt;= <span class="hljs-number">2</span>) {
+        } <span class="hljs-keyword">else</span> {
           <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.maximum === <span class="hljs-number">-1</span>) {
-            repeatCount = <span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-keyword">this</span>.minimum}</span>+ times`</span>;
+            repeatCount = <span class="hljs-string">`至少匹配 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.minimum)}</span>`</span>;
           } <span class="hljs-keyword">else</span> {
-            repeatCount = <span class="hljs-string">`至少匹配 <span class="hljs-subst">${<span class="hljs-keyword">this</span>.minimum}</span>,至多匹配 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.maximum)}</span>`</span>;
+            repeatCount = <span class="hljs-string">`匹配 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.minimum)}</span> ~ <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.maximum)}</span>`</span>;
           }
         }
-        <span class="hljs-keyword">return</span> repeatCount ? <span class="hljs-string">`repeats <span class="hljs-subst">${repeatCount}</span> in total`</span> : repeatCount;
+        <span class="hljs-keyword">return</span> repeatCount;
       }
     }
   },</pre></div></div>
