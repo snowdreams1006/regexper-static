@@ -36,9 +36,9 @@ rendering of <a href="./match_fragment.html">MatchFragment</a> nodes.</p>
             <div class="content"><div class='highlight'><pre>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatTimes</span>(<span class="hljs-params">times</span>) </span>{
   <span class="hljs-keyword">if</span> (times === <span class="hljs-number">1</span>) {
-    <span class="hljs-keyword">return</span> <span class="hljs-string">'once'</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'一次'</span>;
   } <span class="hljs-keyword">else</span> {
-    <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${times}</span> times`</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${times}</span> 次`</span>;
   }
 }
 
@@ -62,7 +62,6 @@ and skip lines.</p>
             <div class="content"><div class='highlight'><pre>    contentPosition: {
       <span class="hljs-attr">get</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
         <span class="hljs-keyword">var</span> matrix = Snap.matrix();
-
         <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.hasSkip) {
           <span class="hljs-keyword">return</span> matrix.translate(<span class="hljs-number">15</span>, <span class="hljs-number">10</span>);
         } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.hasLoop) {
@@ -95,10 +94,10 @@ may be followed.</p>
           }
           <span class="hljs-keyword">return</span> formatTimes(<span class="hljs-keyword">this</span>.minimum - <span class="hljs-number">1</span>);
         } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.minimum &lt;= <span class="hljs-number">1</span> &amp;&amp; <span class="hljs-keyword">this</span>.maximum &gt;= <span class="hljs-number">2</span>) {
-          <span class="hljs-keyword">return</span> <span class="hljs-string">`at most <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.maximum - <span class="hljs-number">1</span>)}</span>`</span>;
+          <span class="hljs-keyword">return</span> <span class="hljs-string">`至多重复 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.maximum - <span class="hljs-number">1</span>)}</span> 次`</span>;
         } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.minimum &gt;= <span class="hljs-number">2</span>) {
           <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.maximum === <span class="hljs-number">-1</span>) {
-            <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-keyword">this</span>.minimum - <span class="hljs-number">1</span>}</span>+ times`</span>;
+            <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-keyword">this</span>.minimum - <span class="hljs-number">1</span>}</span> + times`</span>;
           } <span class="hljs-keyword">else</span> {
             <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-keyword">this</span>.minimum - <span class="hljs-number">1</span>}</span>\u2026<span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.maximum - <span class="hljs-number">1</span>)}</span>`</span>;
           }
@@ -236,6 +235,7 @@ fragments that are matched more than once.</p>
     <span class="hljs-keyword">this</span>.hasSkip = (<span class="hljs-keyword">this</span>.minimum === <span class="hljs-number">0</span>);
     <span class="hljs-keyword">this</span>.hasLoop = (<span class="hljs-keyword">this</span>.maximum === <span class="hljs-number">-1</span> || <span class="hljs-keyword">this</span>.maximum &gt; <span class="hljs-number">1</span>);
   }
+
 }</pre></div></div>
             
         </li>

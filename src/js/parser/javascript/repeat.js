@@ -4,9 +4,9 @@
 
 function formatTimes(times) {
   if (times === 1) {
-    return 'once';
+    return '一次';
   } else {
-    return `${times} times`;
+    return `${times} 次`;
   }
 }
 
@@ -17,7 +17,6 @@ export default {
     contentPosition: {
       get: function() {
         var matrix = Snap.matrix();
-
         if (this.hasSkip) {
           return matrix.translate(15, 10);
         } else if (this.hasLoop) {
@@ -38,10 +37,10 @@ export default {
           }
           return formatTimes(this.minimum - 1);
         } else if (this.minimum <= 1 && this.maximum >= 2) {
-          return `at most ${formatTimes(this.maximum - 1)}`;
+          return `至多重复 ${formatTimes(this.maximum - 1)} 次`;
         } else if (this.minimum >= 2) {
           if (this.maximum === -1) {
-            return `${this.minimum - 1}+ times`;
+            return `${this.minimum - 1} + times`;
           } else {
             return `${this.minimum - 1}\u2026${formatTimes(this.maximum - 1)}`;
           }
@@ -119,4 +118,5 @@ export default {
     this.hasSkip = (this.minimum === 0);
     this.hasLoop = (this.maximum === -1 || this.maximum > 1);
   }
+
 }
