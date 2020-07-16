@@ -153,22 +153,6 @@ export default class Regexper {
     return URL.createObjectURL(window.blob);
   }
 
-  // Copy text to clipboard
-  copyToClipboard(content) {
-    let transfer = document.createElement('input');
-    document.body.appendChild(transfer);
-    transfer.value = content;
-    transfer.focus();
-    transfer.select();
-    if (document.execCommand('copy')) {
-        document.execCommand('copy');
-    }
-    transfer.blur();
-    alert('复制成功');
-    document.body.removeChild(transfer);
-  }
-
-
   // Update the URLs of the 'download' and 'permalink' links.
   updateLinks() {
     let classes = _.without(this.links.className.split(' '), ['hide-download-svg', 'hide-permalink']);
@@ -216,7 +200,19 @@ export default class Regexper {
     if (this.permalinkEnabled) {
       this.permalink.parentNode.style.display = null;
       this.permalink.href = location.toString();
-      this.permalink.onclick = this.copyToClipboard(location.href);
+      this.permalink.onclick = function(e){
+        let transfer = document.createElement('input');
+        transfer.type = 'hidden';
+        transfer.value = location.toString();
+        document.body.appendChild(transfer);
+        transfer.focus();
+        transfer.select();
+        if (document.execCommand('copy')) {
+            document.execCommand('copy');
+        }
+        transfer.blur();
+        document.body.removeChild(transfer);
+      }
     } else {
       classes.push('hide-permalink');
     }
