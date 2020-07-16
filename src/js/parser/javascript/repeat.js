@@ -3,7 +3,11 @@
 // rendering of [MatchFragment](./match_fragment.html) nodes.
 
 function formatTimes(times) {
-  return `${times} 次`;
+  if (times === -1) {
+    return '多次';
+  } else {
+    return `${times} 次`;
+  }
 }
 
 export default {
@@ -14,9 +18,9 @@ export default {
       get: function() {
         var matrix = Snap.matrix();
         if (this.hasSkip) {
-          return matrix.translate(15, 10);
+          return matrix.translate(30, 30);
         } else if (this.hasLoop) {
-          return matrix.translate(10, 0);
+          return matrix.translate(100, 0);
         } else {
           return matrix.translate(0, 0);
         }
@@ -27,18 +31,17 @@ export default {
     // may be followed.
     label: {
       get: function() {
+        let repeatCount;
+        let greedy = this.greedy;
         if (this.minimum === this.maximum) {
           if (this.minimum === 0) {
-            return '直接跳过';
+            repeatCount = '匹配零次';
           }
-          return `匹配 ${formatTimes(this.minimum)}`;
+          repeatCount = `匹配 ${formatTimes(this.minimum)}`;
         } else {
-          if (this.maximum === -1) {
-            return `至少匹配 ${formatTimes(this.minimum)}`;
-          } else {
-            return `匹配 ${formatTimes(this.minimum)} ~ ${formatTimes(this.maximum)}`;
-          }
+          repeatCount = `匹配 ${formatTimes(this.minimum)} 到 ${formatTimes(this.maximum)}`;
         }
+        return greedy ? '贪婪' + repeatCount : '非贪婪' + repeatCount;
       }
     },
 
@@ -46,19 +49,17 @@ export default {
     tooltip: {
       get: function() {
         let repeatCount;
+        let greedy = this.greedy;
         if (this.minimum === this.maximum) {
           if (this.minimum === 0) {
-            repeatCount = '直接跳过';
+            repeatCount = '匹配零次';
           } else {
             repeatCount = `匹配 ${formatTimes(this.minimum)}`;
           }
         } else {
-          if (this.maximum === -1) {
-            repeatCount = `至少匹配 ${formatTimes(this.minimum)}`;
-          } else {
-            repeatCount = `匹配 ${formatTimes(this.minimum)} ~ ${formatTimes(this.maximum)}`;
-          }
+          repeatCount = `匹配 ${formatTimes(this.minimum)} 到 ${formatTimes(this.maximum)}`;
         }
+        
         return repeatCount;
       }
     }

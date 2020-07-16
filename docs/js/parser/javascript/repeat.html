@@ -35,7 +35,11 @@ rendering of <a href="./match_fragment.html">MatchFragment</a> nodes.</p>
             
             <div class="content"><div class='highlight'><pre>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatTimes</span>(<span class="hljs-params">times</span>) </span>{
-  <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${times}</span> 次`</span>;
+  <span class="hljs-keyword">if</span> (times === <span class="hljs-number">-1</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'多次'</span>;
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${times}</span> 次`</span>;
+  }
 }
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
@@ -59,9 +63,9 @@ and skip lines.</p>
       <span class="hljs-attr">get</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
         <span class="hljs-keyword">var</span> matrix = Snap.matrix();
         <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.hasSkip) {
-          <span class="hljs-keyword">return</span> matrix.translate(<span class="hljs-number">15</span>, <span class="hljs-number">10</span>);
+          <span class="hljs-keyword">return</span> matrix.translate(<span class="hljs-number">30</span>, <span class="hljs-number">30</span>);
         } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.hasLoop) {
-          <span class="hljs-keyword">return</span> matrix.translate(<span class="hljs-number">10</span>, <span class="hljs-number">0</span>);
+          <span class="hljs-keyword">return</span> matrix.translate(<span class="hljs-number">100</span>, <span class="hljs-number">0</span>);
         } <span class="hljs-keyword">else</span> {
           <span class="hljs-keyword">return</span> matrix.translate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
         }
@@ -84,18 +88,17 @@ may be followed.</p>
             
             <div class="content"><div class='highlight'><pre>    label: {
       <span class="hljs-attr">get</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">let</span> repeatCount;
+        <span class="hljs-keyword">let</span> greedy = <span class="hljs-keyword">this</span>.greedy;
         <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.minimum === <span class="hljs-keyword">this</span>.maximum) {
           <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.minimum === <span class="hljs-number">0</span>) {
-            <span class="hljs-keyword">return</span> <span class="hljs-string">'直接跳过'</span>;
+            repeatCount = <span class="hljs-string">'匹配零次'</span>;
           }
-          <span class="hljs-keyword">return</span> <span class="hljs-string">`匹配 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.minimum)}</span>`</span>;
+          repeatCount = <span class="hljs-string">`匹配 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.minimum)}</span>`</span>;
         } <span class="hljs-keyword">else</span> {
-          <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.maximum === <span class="hljs-number">-1</span>) {
-            <span class="hljs-keyword">return</span> <span class="hljs-string">`至少匹配 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.minimum)}</span>`</span>;
-          } <span class="hljs-keyword">else</span> {
-            <span class="hljs-keyword">return</span> <span class="hljs-string">`匹配 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.minimum)}</span> ~ <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.maximum)}</span>`</span>;
-          }
+          repeatCount = <span class="hljs-string">`匹配 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.minimum)}</span> 到 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.maximum)}</span>`</span>;
         }
+        <span class="hljs-keyword">return</span> greedy ? <span class="hljs-string">'贪婪'</span> + repeatCount : <span class="hljs-string">'非贪婪'</span> + repeatCount;
       }
     },</pre></div></div>
             
@@ -115,19 +118,17 @@ may be followed.</p>
             <div class="content"><div class='highlight'><pre>    tooltip: {
       <span class="hljs-attr">get</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
         <span class="hljs-keyword">let</span> repeatCount;
+        <span class="hljs-keyword">let</span> greedy = <span class="hljs-keyword">this</span>.greedy;
         <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.minimum === <span class="hljs-keyword">this</span>.maximum) {
           <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.minimum === <span class="hljs-number">0</span>) {
-            repeatCount = <span class="hljs-string">'直接跳过'</span>;
+            repeatCount = <span class="hljs-string">'匹配零次'</span>;
           } <span class="hljs-keyword">else</span> {
             repeatCount = <span class="hljs-string">`匹配 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.minimum)}</span>`</span>;
           }
         } <span class="hljs-keyword">else</span> {
-          <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.maximum === <span class="hljs-number">-1</span>) {
-            repeatCount = <span class="hljs-string">`至少匹配 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.minimum)}</span>`</span>;
-          } <span class="hljs-keyword">else</span> {
-            repeatCount = <span class="hljs-string">`匹配 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.minimum)}</span> ~ <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.maximum)}</span>`</span>;
-          }
+          repeatCount = <span class="hljs-string">`匹配 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.minimum)}</span> 到 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.maximum)}</span>`</span>;
         }
+        
         <span class="hljs-keyword">return</span> repeatCount;
       }
     }
