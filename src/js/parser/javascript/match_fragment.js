@@ -42,8 +42,13 @@ export default {
           this.repeat.loopPath(box)
         ]);
 
-        this.container.prepend(
-          this.container.path(paths.join('')));
+        let path = this.container.path(paths.join(''));
+        if (!this.repeat.greedy) {
+          path.attr({
+            strokeDasharray: '6,2'
+          });
+        }
+        this.container.prepend(path);
 
         this.loopLabel();
       });
@@ -57,7 +62,7 @@ export default {
 
     if (labelStr) {
       let label = this.container.text(0, 0, [labelStr])
-            .addClass('repeat-label123'),
+            .addClass('repeat-label'),
           labelBox = label.getBBox(),
           box = this.getBBox();
 

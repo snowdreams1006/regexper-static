@@ -123,8 +123,13 @@ of its content.</p>
           <span class="hljs-keyword">this</span>.repeat.loopPath(box)
         ]);
 
-        <span class="hljs-keyword">this</span>.container.prepend(
-          <span class="hljs-keyword">this</span>.container.path(paths.join(<span class="hljs-string">''</span>)));
+        <span class="hljs-keyword">let</span> path = <span class="hljs-keyword">this</span>.container.path(paths.join(<span class="hljs-string">''</span>));
+        <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.repeat.greedy) {
+          path.attr({
+            <span class="hljs-attr">strokeDasharray</span>: <span class="hljs-string">'6,2'</span>
+          });
+        }
+        <span class="hljs-keyword">this</span>.container.prepend(path);
 
         <span class="hljs-keyword">this</span>.loopLabel();
       });
@@ -150,7 +155,7 @@ be matched.</p>
 
     <span class="hljs-keyword">if</span> (labelStr) {
       <span class="hljs-keyword">let</span> label = <span class="hljs-keyword">this</span>.container.text(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, [labelStr])
-            .addClass(<span class="hljs-string">'repeat-label123'</span>),
+            .addClass(<span class="hljs-string">'repeat-label'</span>),
           labelBox = label.getBBox(),
           box = <span class="hljs-keyword">this</span>.getBBox();
 
