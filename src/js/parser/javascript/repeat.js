@@ -3,7 +3,11 @@
 // rendering of [MatchFragment](./match_fragment.html) nodes.
 
 function formatTimes(times) {
-  return `${times} 次`;
+  if (times === -1) {
+    return '多次';
+  } else {
+    return `${times} 次`;
+  }
 }
 
 export default {
@@ -23,26 +27,6 @@ export default {
       }
     },
 
-    // label: {
-    //   get: function() {
-    //     if (this.minimum === this.maximum) {
-    //       if (this.minimum === 0) {
-    //         return undefined;
-    //       }
-    //       return formatTimes(this.minimum - 1);
-    //     } else if (this.minimum <= 1 && this.maximum >= 2) {
-    //       return `at most ${formatTimes(this.maximum - 1)}`;
-    //     } else if (this.minimum >= 2) {
-    //       if (this.maximum === -1) {
-    //         return `${this.minimum - 1}+ times`;
-    //       } else {
-    //         return `${this.minimum - 1}\u2026${formatTimes(this.maximum - 1)}`;
-    //       }
-    //     }
-    //   }
-    // },
-
-
     // Label to place of loop path to indicate the number of times that path
     // may be followed.
     label: {
@@ -53,42 +37,9 @@ export default {
           }
           return `匹配 ${formatTimes(this.minimum)}`;
         } else {
-          // repeat_any_spec * {0,-1} {0,} 匹配零次或多次
-          if (this.minimum === 0 && this.maximum === -1) {
-            return '匹配零次或多次';
-          }
-          // repeat_optional_spec ? {0,1} 匹配零次或一次
-          if (this.minimum === 0 && this.maximum === 1) {
-            return '匹配零次或一次';
-          }
-          // repeat_required_spec + {1,-1} {1,} 至少匹配一次
-          if (this.minimum === 1 && this.maximum === -1) {
-            return '至少匹配一次';
-          }
-          if (this.maximum === -1) {
-            return `至少匹配 ${formatTimes(this.minimum)}`;
-          } else {
-            return `匹配 ${this.minimum} 到 ${formatTimes(this.maximum)}`;
-          }
+          return `匹配 ${formatTimes(this.minimum)} 到 ${formatTimes(this.maximum)}`;
         }
       }
-
-      // if (this.minimum === this.maximum) {
-      //     if (this.minimum === 0) {
-      //       return '直接跳过';
-      //     }
-      //     return `匹配 ${formatTimes(this.minimum)}`;
-      //   } else if (this.minimum <= 1 && this.maximum >= 2) {
-      //     return `at most ${formatTimes(this.maximum - 1)}`;
-      //   } else if (this.minimum >= 2) {
-      //     if (this.maximum === -1) {
-      //       return `${this.minimum - 1}+ times`;
-      //     } else {
-      //       return `${this.minimum - 1}\u2026${formatTimes(this.maximum - 1)}`;
-      //     }
-      //   }
-      // }
-
     },
 
     // Tooltip to place of loop path label to provide further details.
