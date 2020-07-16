@@ -370,8 +370,23 @@ rendered in.</p>
         <span class="hljs-keyword">let</span> labelBox = label.getBBox(),
             contentBox = content.getBBox(),
             boxWidth = <span class="hljs-built_in">Math</span>.max(contentBox.width + options.padding * <span class="hljs-number">2</span>, labelBox.width),
-            boxHeight = contentBox.height + options.padding * <span class="hljs-number">2</span>;
+            boxHeight = contentBox.height + options.padding * <span class="hljs-number">2</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-15">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-15">&#182;</a>
+              </div>
+              <p>//matrix(1,0,0,1,-6,75)
+matrix = matrix.add(1,0,0,1,0,10);</p>
 
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
         label.transform(Snap.matrix()
           .translate(<span class="hljs-number">0</span>, labelBox.height));
 

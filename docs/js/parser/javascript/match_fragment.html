@@ -150,7 +150,7 @@ be matched.</p>
 
     <span class="hljs-keyword">if</span> (labelStr) {
       <span class="hljs-keyword">let</span> label = <span class="hljs-keyword">this</span>.container.text(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, [labelStr])
-            .addClass(<span class="hljs-string">'repeat-label'</span>),
+            .addClass(<span class="hljs-string">'repeat-label123'</span>),
           labelBox = label.getBBox(),
           box = <span class="hljs-keyword">this</span>.getBBox();
 
@@ -160,9 +160,12 @@ be matched.</p>
         label.append(tooltip);
       }
 
-      label.transform(Snap.matrix().translate(
-        box.x2 - labelBox.width - (<span class="hljs-keyword">this</span>.repeat.hasSkip ? <span class="hljs-number">5</span> : <span class="hljs-number">0</span>),
-        box.y2 + labelBox.height));
+      label.transform(
+        Snap.matrix().translate(
+          box.x2 - labelBox.width - (<span class="hljs-keyword">this</span>.repeat.hasSkip ? <span class="hljs-number">5</span> : <span class="hljs-number">0</span>),
+          box.y2 + labelBox.height + <span class="hljs-number">10</span>
+          )
+      );
     }
   },
 

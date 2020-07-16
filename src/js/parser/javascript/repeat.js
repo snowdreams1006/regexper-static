@@ -18,9 +18,9 @@ export default {
       get: function() {
         var matrix = Snap.matrix();
         if (this.hasSkip) {
-          return matrix.translate(30, 30);
+          return matrix.translate(15, 10);
         } else if (this.hasLoop) {
-          return matrix.translate(100, 0);
+          return matrix.translate(10, 0);
         } else {
           return matrix.translate(0, 0);
         }

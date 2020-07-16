@@ -176,6 +176,9 @@ export default class Node {
             boxWidth = Math.max(contentBox.width + options.padding * 2, labelBox.width),
             boxHeight = contentBox.height + options.padding * 2;
 
+        // //matrix(1,0,0,1,-6,75)
+        // matrix = matrix.add(1,0,0,1,0,10);
+
         label.transform(Snap.matrix()
           .translate(0, labelBox.height));
 

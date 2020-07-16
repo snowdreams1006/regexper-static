@@ -57,7 +57,7 @@ export default {
 
     if (labelStr) {
       let label = this.container.text(0, 0, [labelStr])
-            .addClass('repeat-label'),
+            .addClass('repeat-label123'),
           labelBox = label.getBBox(),
           box = this.getBBox();
 
@@ -67,9 +67,12 @@ export default {
         label.append(tooltip);
       }
 
-      label.transform(Snap.matrix().translate(
-        box.x2 - labelBox.width - (this.repeat.hasSkip ? 5 : 0),
-        box.y2 + labelBox.height));
+      label.transform(
+        Snap.matrix().translate(
+          box.x2 - labelBox.width - (this.repeat.hasSkip ? 5 : 0),
+          box.y2 + labelBox.height + 10
+          )
+      );
     }
   },
 
