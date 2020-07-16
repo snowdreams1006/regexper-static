@@ -65,13 +65,10 @@ export default {
           if (this.minimum === 1 && this.maximum === -1) {
             return '至少匹配一次';
           }
-
-          
-
           if (this.maximum === -1) {
             return `至少匹配 ${formatTimes(this.minimum)}`;
           } else {
-            return `匹配 ${formatTimes(this.minimum)} ~ ${formatTimes(this.maximum)}`;
+            return `匹配 ${this.minimum} 到 ${formatTimes(this.maximum)}`;
           }
         }
       }

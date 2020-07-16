@@ -171,13 +171,10 @@ may be followed.</p>
             <div class="content"><div class='highlight'><pre>          <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.minimum === <span class="hljs-number">1</span> &amp;&amp; <span class="hljs-keyword">this</span>.maximum === <span class="hljs-number">-1</span>) {
             <span class="hljs-keyword">return</span> <span class="hljs-string">'至少匹配一次'</span>;
           }
-
-          
-
           <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.maximum === <span class="hljs-number">-1</span>) {
             <span class="hljs-keyword">return</span> <span class="hljs-string">`至少匹配 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.minimum)}</span>`</span>;
           } <span class="hljs-keyword">else</span> {
-            <span class="hljs-keyword">return</span> <span class="hljs-string">`匹配 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.minimum)}</span> ~ <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.maximum)}</span>`</span>;
+            <span class="hljs-keyword">return</span> <span class="hljs-string">`匹配 <span class="hljs-subst">${<span class="hljs-keyword">this</span>.minimum}</span> 到 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.maximum)}</span>`</span>;
           }
         }
       }</pre></div></div>
