@@ -70,7 +70,7 @@
           <p>这些图中最简单的部分是与某些特定文本匹配的部分，没有选项。它们是：文字，转义序列和“任何字符”。</p>
 
           <div class="section">
-            <h3>字面量</h3>
+            <h3>字面量 literal</h3>
 
             <figure class="shift-left" data-expr="literal"></figure>
 
@@ -78,7 +78,7 @@
           </div>
 
           <div class="section">
-            <h3>转义字符</h3>
+            <h3>转义字符 \</h3>
 
             <figure class="shift-left" data-expr="\w\s\d"></figure>
 
@@ -86,7 +86,7 @@
           </div>
 
           <div class="section">
-            <h3>任意字符</h3>
+            <h3>任意字符 .</h3>
 
             <figure class="shift-left" data-expr="."></figure>
 
@@ -95,7 +95,7 @@
         </section>
 
         <section>
-          <h2>字符集合</h2>
+          <h2>字符集合 []</h2>
 
           <figure class="shift-left" data-expr="[#a-z\n][^$0-9\b]"></figure>
 
@@ -103,7 +103,7 @@
         </section>
 
         <section>
-          <h2>子表达式</h2>
+          <h2>子表达式 ()</h2>
 
           <figure class="shift-left" data-expr="(?:non-capture group)(capture group)(?=followed by content)"></figure>
 
@@ -111,7 +111,7 @@
         </section>
 
         <section>
-          <h2>选择项</h2>
+          <h2>选择项 |</h2>
 
           <figure class="shift-left" data-expr="one\s|two\W|three\t|four\n"></figure>
 
@@ -124,7 +124,7 @@
           <p>量词指示表达式的一部分是否应该重复或可选。通过图分支的路径（和可能循环返回本身），它们与“交替”类似地显示。除非路径上的箭头指示，否则首选路径是继续直行。</p>
 
           <div class="section">
-            <h3>零个或多个</h3>
+            <h3>零个或多个 *</h3>
 
             <figure class="shift-left" data-expr="(?:greedy)*">
               <figcaption>贪婪匹配</figcaption>
@@ -138,7 +138,7 @@
           </div>
 
           <div class="section">
-            <h3>必选的</h3>
+            <h3>必选的 +</h3>
 
             <figure class="shift-left" data-expr="(?:greedy)+">
               <figcaption>贪婪匹配</figcaption>
@@ -152,7 +152,7 @@
           </div>
 
           <div class="section">
-            <h3>可选的</h3>
+            <h3>可选的 ?</h3>
 
             <figure class="shift-left" data-expr="(?:greedy)?">
               <figcaption>贪婪匹配</figcaption>
@@ -166,7 +166,7 @@
           </div>
 
           <div class="section">
-            <h3>范围值</h3>
+            <h3>范围值 {n,m}</h3>
 
             <figure class="shift-left" data-expr="(?:greedy){5,10}">
               <figcaption>贪婪匹配</figcaption>
