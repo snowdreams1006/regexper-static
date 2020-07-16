@@ -63,9 +63,9 @@ and skip lines.</p>
       <span class="hljs-attr">get</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
         <span class="hljs-keyword">var</span> matrix = Snap.matrix();
         <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.hasSkip) {
-          <span class="hljs-keyword">return</span> matrix.translate(<span class="hljs-number">15</span>, <span class="hljs-number">10</span>);
+          <span class="hljs-keyword">return</span> matrix.translate(<span class="hljs-number">30</span>, <span class="hljs-number">30</span>);
         } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.hasLoop) {
-          <span class="hljs-keyword">return</span> matrix.translate(<span class="hljs-number">10</span>, <span class="hljs-number">0</span>);
+          <span class="hljs-keyword">return</span> matrix.translate(<span class="hljs-number">100</span>, <span class="hljs-number">0</span>);
         } <span class="hljs-keyword">else</span> {
           <span class="hljs-keyword">return</span> matrix.translate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
         }
@@ -128,7 +128,8 @@ may be followed.</p>
         } <span class="hljs-keyword">else</span> {
           repeatCount = <span class="hljs-string">`匹配 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.minimum)}</span> 到 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.maximum)}</span>`</span>;
         }
-        <span class="hljs-keyword">return</span> greedy ? <span class="hljs-string">'贪婪'</span> + repeatCount : <span class="hljs-string">'非贪婪'</span> + repeatCount;
+        
+        <span class="hljs-keyword">return</span> repeatCount;
       }
     }
   },</pre></div></div>

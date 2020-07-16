@@ -18,9 +18,9 @@ export default {
       get: function() {
         var matrix = Snap.matrix();
         if (this.hasSkip) {
-          return matrix.translate(15, 10);
+          return matrix.translate(30, 30);
         } else if (this.hasLoop) {
-          return matrix.translate(10, 0);
+          return matrix.translate(100, 0);
         } else {
           return matrix.translate(0, 0);
         }
@@ -59,7 +59,8 @@ export default {
         } else {
           repeatCount = `匹配 ${formatTimes(this.minimum)} 到 ${formatTimes(this.maximum)}`;
         }
-        return greedy ? '贪婪' + repeatCount : '非贪婪' + repeatCount;
+        
+        return repeatCount;
       }
     }
   },
