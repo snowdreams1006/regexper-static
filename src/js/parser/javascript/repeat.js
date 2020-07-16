@@ -31,14 +31,17 @@ export default {
     // may be followed.
     label: {
       get: function() {
+        let repeatCount;
+        let greedy = this.greedy;
         if (this.minimum === this.maximum) {
           if (this.minimum === 0) {
-            return '直接跳过';
+            repeatCount = '匹配零次';
           }
-          return `匹配 ${formatTimes(this.minimum)}`;
+          repeatCount = `匹配 ${formatTimes(this.minimum)}`;
         } else {
-          return `匹配 ${formatTimes(this.minimum)} 到 ${formatTimes(this.maximum)}`;
+          repeatCount = `匹配 ${formatTimes(this.minimum)} 到 ${formatTimes(this.maximum)}`;
         }
+        return greedy ? '贪婪' + repeatCount : '非贪婪' + repeatCount;
       }
     },
 
@@ -46,20 +49,17 @@ export default {
     tooltip: {
       get: function() {
         let repeatCount;
+        let greedy = this.greedy;
         if (this.minimum === this.maximum) {
           if (this.minimum === 0) {
-            repeatCount = '直接跳过';
+            repeatCount = '匹配零次';
           } else {
             repeatCount = `匹配 ${formatTimes(this.minimum)}`;
           }
         } else {
-          if (this.maximum === -1) {
-            repeatCount = `至少匹配 ${formatTimes(this.minimum)}`;
-          } else {
-            repeatCount = `匹配 ${formatTimes(this.minimum)} ~ ${formatTimes(this.maximum)}`;
-          }
+          repeatCount = `匹配 ${formatTimes(this.minimum)} 到 ${formatTimes(this.maximum)}`;
         }
-        return repeatCount;
+        return greedy ? '贪婪' + repeatCount : '非贪婪' + repeatCount;
       }
     }
   },
