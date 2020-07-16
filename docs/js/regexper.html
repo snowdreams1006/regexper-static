@@ -483,7 +483,6 @@ browser. Giving up on the download link.</p>
       <span class="hljs-keyword">this</span>.permalink.href = location.toString();
       <span class="hljs-keyword">this</span>.permalink.onclick = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)</span>{
         <span class="hljs-keyword">let</span> transfer = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'input'</span>);
-        transfer.type = <span class="hljs-string">'hidden'</span>;
         transfer.value = location.toString();
         <span class="hljs-built_in">document</span>.body.appendChild(transfer);
         transfer.focus();

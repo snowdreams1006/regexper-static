@@ -202,7 +202,6 @@ export default class Regexper {
       this.permalink.href = location.toString();
       this.permalink.onclick = function(e){
         let transfer = document.createElement('input');
-        transfer.type = 'hidden';
         transfer.value = location.toString();
         document.body.appendChild(transfer);
         transfer.focus();
