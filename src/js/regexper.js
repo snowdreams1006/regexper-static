@@ -15,6 +15,10 @@ export default class Regexper {
     this.warnings = root.querySelector('#warnings');
 
     this.links = this.form.querySelector('ul');
+    this.permalink = this.links.querySelector('a[data-action="permalink"]');
+    this.downloadSvg = this.links.querySelector('a[data-action="download-svg"]');
+    this.downloadPng = this.links.querySelector('a[data-action="download-png"]');
+
     this.svgContainer = root.querySelector('#regexp-render');
   }
 
@@ -84,7 +88,7 @@ export default class Regexper {
   detectBuggyHash() {
     if (typeof window.URL === 'function') {
       try {
-        let url = new URL('https://regex.snowdreams1006.cn/#%25');
+        let url = new URL('http://regexper.com/#%25');
         this.buggyHash = (url.hash === '#%');
       }
       catch(e) {
@@ -149,6 +153,60 @@ export default class Regexper {
     return URL.createObjectURL(window.blob);
   }
 
+  // Update the URLs of the 'download' and 'permalink' links.
+  updateLinks() {
+    let classes = _.without(this.links.className.split(' '), ['hide-download-svg', 'hide-permalink']);
+    let svg = this.svgContainer.querySelector('.svg');
+
+    // Create the SVG 'download' image URL.
+    try {
+      this.downloadSvg.parentNode.style.display = null;
+      this.downloadSvg.href = this.buildBlobURL(svg.innerHTML);
+    }
+    catch(e) {
+      // Blobs or URLs created from a blob URL don't work in the current
+      // browser. Giving up on the download link.
+      classes.push('hide-download-svg');
+    }
+
+    //Create the PNG 'download' image URL.
+    try {
+      let canvas = document.createElement('canvas');
+      let context = canvas.getContext('2d');
+      let loader = new Image;
+
+      loader.width = canvas.width = Number(svg.querySelector('svg').getAttribute('width'));
+      loader.height = canvas.height = Number(svg.querySelector('svg').getAttribute('height'));
+      loader.onload = () => {
+        try {
+          context.drawImage(loader, 0, 0, loader.width, loader.height);
+          canvas.toBlob(blob => {
+            try {
+              window.pngBlob = blob;
+              this.downloadPng.href = URL.createObjectURL(window.pngBlob);
+              this.links.className = this.links.className.replace(/\bhide-download-png\b/, '');
+            }
+            catch(e) {}
+          }, 'image/png');
+        }
+        catch(e) {}
+      };
+      loader.src = 'data:image/svg+xml,' + encodeURIComponent(svg.innerHTML);
+      classes.push('hide-download-png');
+    }
+    catch(e) {}
+
+    // Create the 'permalink' URL.
+    if (this.permalinkEnabled) {
+      this.permalink.parentNode.style.display = null;
+      this.permalink.href = location.toString();
+    } else {
+      classes.push('hide-permalink');
+    }
+
+    this.links.className = classes.join(' ');
+  }
+
   // Display any warnings that were generated while rendering a regular expression.
   //
   // - __warnings__ - Array of warning messages to display.
@@ -200,6 +258,7 @@ export default class Regexper {
       //  - Track the completion of the render and how long it took
       .then(() => {
         this.state = 'has-results';
+        this.updateLinks();
         this.displayWarnings(this.running.warnings);
         util.track('send', 'event', 'visualization', 'complete');
 
