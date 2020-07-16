@@ -183,24 +183,25 @@ export default class Regexper {
           canvas.toBlob(blob => {
             try {
               window.pngBlob = blob;
-              let previewSrc = URL.createObjectURL(window.pngBlob);
-              this.downloadPng.href = previewSrc;
+              this.downloadPng.href = URL.createObjectURL(window.pngBlob);
               this.links.className = this.links.className.replace(/\bhide-download-png\b/, '');
-              this.permalink.onclick = function(e){
-                let transfer = document.createElement('input');
-                transfer.value = `![${location.toString()}](${previewSrc})`;
-                document.body.appendChild(transfer);
-                transfer.focus();
-                transfer.select();
-                if (document.execCommand('copy')) {
-                    document.execCommand('copy');
-                }
-                transfer.blur();
-                document.body.removeChild(transfer);
-              }
             }
             catch(e) {}
           }, 'image/png');
+
+          let image64 = canvas.toDataURL('image/png',1);
+          this.permalink.onclick = function(e){
+            let transfer = document.createElement('input');
+            transfer.value = `![${location.toString()}](${image64})`;
+            document.body.appendChild(transfer);
+            transfer.focus();
+            transfer.select();
+            if (document.execCommand('copy')) {
+                document.execCommand('copy');
+            }
+            transfer.blur();
+            document.body.removeChild(transfer);
+          }
         }
         catch(e) {}
       };

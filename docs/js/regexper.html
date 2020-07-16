@@ -452,24 +452,25 @@ browser. Giving up on the download link.</p>
           canvas.toBlob(<span class="hljs-function"><span class="hljs-params">blob</span> =&gt;</span> {
             <span class="hljs-keyword">try</span> {
               <span class="hljs-built_in">window</span>.pngBlob = blob;
-              <span class="hljs-keyword">let</span> previewSrc = URL.createObjectURL(<span class="hljs-built_in">window</span>.pngBlob);
-              <span class="hljs-keyword">this</span>.downloadPng.href = previewSrc;
+              <span class="hljs-keyword">this</span>.downloadPng.href = URL.createObjectURL(<span class="hljs-built_in">window</span>.pngBlob);
               <span class="hljs-keyword">this</span>.links.className = <span class="hljs-keyword">this</span>.links.className.replace(<span class="hljs-regexp">/\bhide-download-png\b/</span>, <span class="hljs-string">''</span>);
-              <span class="hljs-keyword">this</span>.permalink.onclick = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)</span>{
-                <span class="hljs-keyword">let</span> transfer = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'input'</span>);
-                transfer.value = <span class="hljs-string">`![<span class="hljs-subst">${location.toString()}</span>](<span class="hljs-subst">${previewSrc}</span>)`</span>;
-                <span class="hljs-built_in">document</span>.body.appendChild(transfer);
-                transfer.focus();
-                transfer.select();
-                <span class="hljs-keyword">if</span> (<span class="hljs-built_in">document</span>.execCommand(<span class="hljs-string">'copy'</span>)) {
-                    <span class="hljs-built_in">document</span>.execCommand(<span class="hljs-string">'copy'</span>);
-                }
-                transfer.blur();
-                <span class="hljs-built_in">document</span>.body.removeChild(transfer);
-              }
             }
             <span class="hljs-keyword">catch</span>(e) {}
           }, <span class="hljs-string">'image/png'</span>);
+
+          <span class="hljs-keyword">let</span> image64 = canvas.toDataURL(<span class="hljs-string">'image/png'</span>,<span class="hljs-number">1</span>);
+          <span class="hljs-keyword">this</span>.permalink.onclick = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)</span>{
+            <span class="hljs-keyword">let</span> transfer = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'input'</span>);
+            transfer.value = <span class="hljs-string">`![<span class="hljs-subst">${location.toString()}</span>](<span class="hljs-subst">${image64}</span>)`</span>;
+            <span class="hljs-built_in">document</span>.body.appendChild(transfer);
+            transfer.focus();
+            transfer.select();
+            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">document</span>.execCommand(<span class="hljs-string">'copy'</span>)) {
+                <span class="hljs-built_in">document</span>.execCommand(<span class="hljs-string">'copy'</span>);
+            }
+            transfer.blur();
+            <span class="hljs-built_in">document</span>.body.removeChild(transfer);
+          }
         }
         <span class="hljs-keyword">catch</span>(e) {}
       };
