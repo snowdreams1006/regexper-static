@@ -20,7 +20,7 @@ export default {
 
     // Render a label for any flags that have been set of the expression.
     if (this.flags.length > 0) {
-      flagText = this.container.text(0, 0, `Flags: ${this.flags.join(', ')}`);
+      flagText = this.container.text(0, 0, `标志位: ${this.flags.join(', ')}`);
     }
 
     // Render the content of the regular expression.
