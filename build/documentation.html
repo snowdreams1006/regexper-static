@@ -62,12 +62,12 @@
 
         <figure class="shift-right" data-expr="Lions(?: and|,) tigers,? and bears\. Oh my!"></figure>
 
-        <p>例如: this expression will match "Lions and tigers and bears. Oh my!" or the more grammatically correct "Lions, tigers, and bears. Oh my!" (with or without an Oxford comma). The diagram first matches the string "Lions"; you cannot proceed without that in your input. Then there is a choice between a comma or the string " and". No matter what choice you make, the input string must then contain " tigers" followed by an optional comma (your path can either go through the comma or around it). Finally the string must end with " and bears. Oh my!".</p>
+        <p>例如: 此表达式将匹配“狮子，老虎和熊。噢，我的天！”或者在语法上更正确的是“狮子，老虎和熊。噢，我的天！”（带或不带牛津逗号）。该图首先匹配字符串“ Lions”。如果没有输入，您将无法继续。然后可以在逗号或字符串“和”之间选择。无论您做出什么选择，输入字符串都必须包含“ tigers”，后跟一个可选的逗号（您的路径可以通过逗号或在逗号周围）。最后，字符串必须以“和承担。哦，我的天！”结尾。</p>
 
         <section>
           <h2>基础组成</h2>
 
-          <p>The simplest pieces of these diagrams to understand are the parts that match some specific bit of text without an options. They are: Literals, Escape sequences, and "Any charater".</p>
+          <p>这些图中最简单的部分是与某些特定文本匹配的部分，没有选项。它们是：文字，转义序列和“任何字符”。</p>
 
           <div class="section">
             <h3>字面量</h3>
@@ -127,56 +127,56 @@
             <h3>零个或多个</h3>
 
             <figure class="shift-left" data-expr="(?:greedy)*">
-              <figcaption>Greedy quantifier</figcaption>
+              <figcaption>贪婪匹配</figcaption>
             </figure>
 
             <figure class="shift-left" data-expr="(?:non-greedy)*?">
-              <figcaption>Non-greedy quantifier</figcaption>
+              <figcaption>非贪婪匹配</figcaption>
             </figure>
 
-            <p>The zero-or-more quantifier matches any number of repetitions of the pattern.</p>
+            <p>零或更多量词匹配模式的任意数量的重复。</p>
           </div>
 
           <div class="section">
             <h3>必选的</h3>
 
             <figure class="shift-left" data-expr="(?:greedy)+">
-              <figcaption>Greedy quantifier</figcaption>
+              <figcaption>贪婪匹配</figcaption>
             </figure>
 
             <figure class="shift-left" data-expr="(?:non-greedy)+?">
-              <figcaption>Non-greedy quantifier</figcaption>
+              <figcaption>非贪婪匹配</figcaption>
             </figure>
 
-            <p>The required quantifier matches one or more repetitions of the pattern. Note that it does not have the path that allows the pattern to be skipped like the zero-or-more quantifier.</p>
+            <p>所需的量词与模式的一个或多个重复匹配。请注意，它没有像零个或多个量词一样允许跳过模式的路径。</p>
           </div>
 
           <div class="section">
             <h3>可选的</h3>
 
             <figure class="shift-left" data-expr="(?:greedy)?">
-              <figcaption>Greedy quantifier</figcaption>
+              <figcaption>贪婪匹配</figcaption>
             </figure>
 
             <figure class="shift-left" data-expr="(?:non-greedy)??">
-              <figcaption>Non-greedy quantifier</figcaption>
+              <figcaption>非贪婪匹配</figcaption>
             </figure>
 
-            <p>The optional quantifier matches the pattern at most once. Note that it does not have the path that allows the pattern to loop back on itself like the zero-or-more or required quantifiers.</p>
+            <p>可选的量词最多匹配一次模式。请注意，它没有允许模式像零或更多或所需的量词一样循环返回自身的路径。</p>
           </div>
 
           <div class="section">
             <h3>范围值</h3>
 
             <figure class="shift-left" data-expr="(?:greedy){5,10}">
-              <figcaption>Greedy quantifier</figcaption>
+              <figcaption>贪婪匹配</figcaption>
             </figure>
 
             <figure class="shift-left" data-expr="(?:non-greedy){5,10}?">
-              <figcaption>Non-greedy quantifier</figcaption>
+              <figcaption>非贪婪匹配</figcaption>
             </figure>
 
-            <p>The ranged quantifier specifies a number of times the pattern may be repeated. The two examples provided here both have a range of "{5,10}", the label for the looping branch indicates the number of times that branch may be followed. The values are one less than specified in the expression since the pattern would have to be matched once before repeating it is an option. So, for these examples, the pattern would be matched once and then the loop would be followed 4 to 9 times, for a total of 5 to 10 matches of the pattern.</p>
+            <p>远程量词指定可重复图案的次数。此处提供的两个示例的范围均为“ {5,10}”，循环分支的标签指示可以遵循该分支的次数。该值比表达式中指定的值小1，因为在重复该模式之前，该模式必须匹配一次。因此，对于这些示例，模式将被匹配一次，然后循环将被跟踪4到9次，总共有5到10个模式匹配。</p>
           </div>
         </section>
       </section>
