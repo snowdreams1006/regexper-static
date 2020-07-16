@@ -183,8 +183,21 @@ export default class Regexper {
           canvas.toBlob(blob => {
             try {
               window.pngBlob = blob;
-              this.downloadPng.href = URL.createObjectURL(window.pngBlob);
+              let previewSrc = URL.createObjectURL(window.pngBlob);
+              this.downloadPng.href = previewSrc;
               this.links.className = this.links.className.replace(/\bhide-download-png\b/, '');
+              this.permalink.onclick = function(e){
+                let transfer = document.createElement('input');
+                transfer.value = `![${location.toString()}](${previewSrc})`;
+                document.body.appendChild(transfer);
+                transfer.focus();
+                transfer.select();
+                if (document.execCommand('copy')) {
+                    document.execCommand('copy');
+                }
+                transfer.blur();
+                document.body.removeChild(transfer);
+              }
             }
             catch(e) {}
           }, 'image/png');
@@ -200,18 +213,6 @@ export default class Regexper {
     if (this.permalinkEnabled) {
       this.permalink.parentNode.style.display = null;
       this.permalink.href = location.toString();
-      this.permalink.onclick = function(e){
-        let transfer = document.createElement('input');
-        transfer.value = location.toString();
-        document.body.appendChild(transfer);
-        transfer.focus();
-        transfer.select();
-        if (document.execCommand('copy')) {
-            document.execCommand('copy');
-        }
-        transfer.blur();
-        document.body.removeChild(transfer);
-      }
     } else {
       classes.push('hide-permalink');
     }
