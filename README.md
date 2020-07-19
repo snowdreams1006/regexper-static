@@ -6,6 +6,7 @@
 
 - 推荐: [https://regex.snowdreams1006.cn/](https://regex.snowdreams1006.cn/)
 - 备用: [https://snowdreams1006.gitee.io/regexper-static/](https://snowdreams1006.gitee.io/regexper-static/)
+- 文档: [https://snowdreams1006.github.io/regexper-static/](https://snowdreams1006.github.io/regexper-static/)
 
 ### 开发文档
 
