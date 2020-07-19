@@ -15,7 +15,7 @@
     "build": "gulp build",
     "docs": "gulp docs",
     "start": "gulp",
-    "prod": "gulp build && gulp build && git push"
+    "prod": "gulp build && gulp build"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
