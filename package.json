@@ -1,6 +1,6 @@
 {
   "name": "regex",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "JavaScript 正则表达式可视化工具",
   "homepage": "http://regex.snowdreams1006.cn",
   "author": {
@@ -15,7 +15,7 @@
     "build": "gulp build",
     "docs": "gulp docs",
     "start": "gulp",
-    "prod": "gulp build && gulp build"
+    "prod": "gulp build && gulp build && git push"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
