@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>javascript.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="..\..\docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>javascript.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p>Entry point for the JavaScript-flavor regular expression parsing and
+rendering. Actual parsing code is in
+<a href="./javascript/parser.html">parser.js</a> and the grammar file. Rendering code
+is contained in the various subclasses of
+<a href="./javascript/node.html">Node</a></p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">import</span> Snap <span class="hljs-keyword">from</span> <span class="hljs-string">'snapsvg'</span>;
+<span class="hljs-keyword">import</span> _ <span class="hljs-keyword">from</span> <span class="hljs-string">'lodash'</span>;
+
+<span class="hljs-keyword">import</span> util <span class="hljs-keyword">from</span> <span class="hljs-string">'../util.js'</span>;
+<span class="hljs-keyword">import</span> javascript <span class="hljs-keyword">from</span> <span class="hljs-string">'./javascript/parser.js'</span>;
+<span class="hljs-keyword">import</span> ParserState <span class="hljs-keyword">from</span> <span class="hljs-string">'./javascript/parser_state.js'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Parser</span> </span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <ul>
+<li><strong>container</strong> - DOM node that will contain the rendered expression</li>
+<li><strong>options.keepContent</strong> - Boolean indicating if content of the container
+ should be preserved after rendering. Defaults to false (don’t keep
+ contents)</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">constructor</span>(container, options) {
+    <span class="hljs-keyword">this</span>.options = options || {};
+    _.defaults(<span class="hljs-keyword">this</span>.options, {
+      <span class="hljs-attr">keepContent</span>: <span class="hljs-literal">false</span>
+    });
+
+    <span class="hljs-keyword">this</span>.container = container;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>The <a href="./javascript/parser_state.html">ParserState</a> instance is used to
+communicate between the parser and a running render, and to update the
+progress bar for the running render.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.state = <span class="hljs-keyword">new</span> ParserState(<span class="hljs-keyword">this</span>.container.querySelector(<span class="hljs-string">'.progress div'</span>));
+  }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>DOM node that will contain the rendered expression. Setting this will add
+the base markup necessary for rendering the expression, and set the
+<code>svg-container</code> class</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  set container(cont) {
+    <span class="hljs-keyword">this</span>._container = cont;
+    <span class="hljs-keyword">this</span>._container.innerHTML = [
+      <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#svg-container-base'</span>).innerHTML,
+      <span class="hljs-keyword">this</span>.options.keepContent ? <span class="hljs-keyword">this</span>.container.innerHTML : <span class="hljs-string">''</span>
+    ].join(<span class="hljs-string">''</span>);
+    <span class="hljs-keyword">this</span>._addClass(<span class="hljs-string">'svg-container'</span>);
+  }
+
+  get container() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._container;
+  }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Helper method to simplify adding classes to the container.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  _addClass(className) {
+    <span class="hljs-keyword">this</span>.container.className = _(<span class="hljs-keyword">this</span>.container.className.split(<span class="hljs-string">' '</span>))
+      .union([className])
+      .join(<span class="hljs-string">' '</span>);
+  }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>Helper method to simplify removing classes from the container.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  _removeClass(className) {
+    <span class="hljs-keyword">this</span>.container.className = _(<span class="hljs-keyword">this</span>.container.className.split(<span class="hljs-string">' '</span>))
+      .without(className)
+      .join(<span class="hljs-string">' '</span>);
+  }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>Parse a regular expression into a tree of
+<a href="./javascript/node.html">Nodes</a> that can then be used to render an SVG.</p>
+<ul>
+<li><strong>expression</strong> - Regular expression to parse.</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  parse(expression) {
+    <span class="hljs-keyword">this</span>._addClass(<span class="hljs-string">'loading'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>Allow the browser to repaint before parsing so that the loading bar is
+displayed before the (possibly lengthy) parsing begins.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">return</span> util.tick().then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+      javascript.Parser.SyntaxNode.state = <span class="hljs-keyword">this</span>.state;
+
+      <span class="hljs-keyword">this</span>.parsed = javascript.parse(expression.replace(<span class="hljs-regexp">/\n/g</span>, <span class="hljs-string">'\\n'</span>));
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+    });
+  }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>Render the parsed expression to an SVG.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  render() {
+    <span class="hljs-keyword">let</span> svg = Snap(<span class="hljs-keyword">this</span>.container.querySelector(<span class="hljs-string">'svg'</span>));
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.parsed.render(svg.group())</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p>Once rendering is complete, the rendered expression is positioned and
+the SVG resized to create some padding around the image contents.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      .then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {
+        <span class="hljs-keyword">let</span> box = result.getBBox();
+
+        result.transform(Snap.matrix()
+          .translate(<span class="hljs-number">10</span> - box.x, <span class="hljs-number">10</span> - box.y));
+        svg.attr({
+          <span class="hljs-attr">width</span>: box.width + <span class="hljs-number">20</span>,
+          <span class="hljs-attr">height</span>: box.height + <span class="hljs-number">20</span>
+        });
+      })</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <p>Stop and remove loading indicator after render is totally complete.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        <span class="hljs-keyword">this</span>._removeClass(<span class="hljs-string">'loading'</span>);
+        <span class="hljs-keyword">this</span>.container.removeChild(<span class="hljs-keyword">this</span>.container.querySelector(<span class="hljs-string">'.progress'</span>));
+      });
+  }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <p>Cancels any currently in-progress render.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  cancel() {
+    <span class="hljs-keyword">this</span>.state.cancelRender = <span class="hljs-literal">true</span>;
+  }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-13">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-13">&#182;</a>
+              </div>
+              <p>Returns any warnings that may have been set during the rendering process.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  get warnings() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.state.warnings;
+  }
+}</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

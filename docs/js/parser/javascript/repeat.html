@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>repeat.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="..\..\..\docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>repeat.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p>Repeat nodes are for the various repetition syntaxes (<code>a*</code>, <code>a+</code>, <code>a?</code>, and
+<code>a{1,3}</code>). It is not rendered directly, but contains data used for the
+rendering of <a href="./match_fragment.html">MatchFragment</a> nodes.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatTimes</span>(<span class="hljs-params">times</span>) </span>{
+  <span class="hljs-keyword">if</span> (times === <span class="hljs-number">-1</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'多次'</span>;
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${times}</span> 次`</span>;
+  }
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">definedProperties</span>: {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Translation to apply to content to be repeated to account for the loop
+and skip lines.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    contentPosition: {
+      <span class="hljs-attr">get</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">var</span> matrix = Snap.matrix();
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.hasSkip) {
+          <span class="hljs-keyword">return</span> matrix.translate(<span class="hljs-number">15</span>, <span class="hljs-number">10</span>);
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.hasLoop) {
+          <span class="hljs-keyword">return</span> matrix.translate(<span class="hljs-number">10</span>, <span class="hljs-number">0</span>);
+        } <span class="hljs-keyword">else</span> {
+          <span class="hljs-keyword">return</span> matrix.translate(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+        }
+      }
+    },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Label to place of loop path to indicate the number of times that path
+may be followed.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    label: {
+      <span class="hljs-attr">get</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">let</span> repeatCount;
+        <span class="hljs-keyword">let</span> greedy = <span class="hljs-keyword">this</span>.greedy;
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.minimum === <span class="hljs-keyword">this</span>.maximum) {
+          <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.minimum === <span class="hljs-number">0</span>) {
+            repeatCount = <span class="hljs-string">'匹配零次'</span>;
+          }
+          repeatCount = <span class="hljs-string">`匹配 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.minimum)}</span>`</span>;
+        } <span class="hljs-keyword">else</span> {
+          repeatCount = <span class="hljs-string">`匹配 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.minimum)}</span> 到 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.maximum)}</span>`</span>;
+        }
+        <span class="hljs-keyword">return</span> greedy ? <span class="hljs-string">'贪婪'</span> + repeatCount : <span class="hljs-string">'非贪婪'</span> + repeatCount;
+      }
+    },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Tooltip to place of loop path label to provide further details.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    tooltip: {
+      <span class="hljs-attr">get</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">let</span> repeatCount;
+        <span class="hljs-keyword">let</span> greedy = <span class="hljs-keyword">this</span>.greedy;
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.minimum === <span class="hljs-keyword">this</span>.maximum) {
+          <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.minimum === <span class="hljs-number">0</span>) {
+            repeatCount = <span class="hljs-string">'匹配零次'</span>;
+          } <span class="hljs-keyword">else</span> {
+            repeatCount = <span class="hljs-string">`匹配 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.minimum)}</span>`</span>;
+          }
+        } <span class="hljs-keyword">else</span> {
+          repeatCount = <span class="hljs-string">`匹配 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.minimum)}</span> 到 <span class="hljs-subst">${formatTimes(<span class="hljs-keyword">this</span>.maximum)}</span>`</span>;
+        }
+        
+        <span class="hljs-keyword">return</span> repeatCount;
+      }
+    }
+  },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Returns the path spec to render the line that skips over the content for
+fragments that are optionally matched.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  skipPath(box) {
+    <span class="hljs-keyword">let</span> paths = [];
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.hasSkip) {
+      <span class="hljs-keyword">let</span> vert = <span class="hljs-built_in">Math</span>.max(<span class="hljs-number">0</span>, box.ay - box.y - <span class="hljs-number">10</span>),
+          horiz = box.width - <span class="hljs-number">10</span>;
+
+      paths.push(<span class="hljs-string">`M0,<span class="hljs-subst">${box.ay}</span>q10,0 10,-10v<span class="hljs-subst">${-vert}</span>q0,-10 10,-10h<span class="hljs-subst">${horiz}</span>q10,0 10,10v<span class="hljs-subst">${vert}</span>q0,10 10,10`</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>When the repeat is not greedy, the skip path gets a preference arrow.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.greedy) {
+        paths.push(<span class="hljs-string">`M10,<span class="hljs-subst">${box.ay - <span class="hljs-number">15</span>}</span>l5,5m-5,-5l-5,5`</span>);
+      }
+    }
+
+    <span class="hljs-keyword">return</span> paths;
+  },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>Returns the path spec to render the line that repeats the content for
+fragments that are matched more than once.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  loopPath(box) {
+    <span class="hljs-keyword">let</span> paths = [];
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.hasLoop) {
+      <span class="hljs-keyword">let</span> vert = box.y2 - box.ay - <span class="hljs-number">10</span>;
+
+      paths.push(<span class="hljs-string">`M<span class="hljs-subst">${box.x}</span>,<span class="hljs-subst">${box.ay}</span>q-10,0 -10,10v<span class="hljs-subst">${vert}</span>q0,10 10,10h<span class="hljs-subst">${box.width}</span>q10,0 10,-10v<span class="hljs-subst">${-vert}</span>q0,-10 -10,-10`</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>When the repeat is greedy, the loop path gets the preference arrow.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.greedy) {
+        paths.push(<span class="hljs-string">`M<span class="hljs-subst">${box.x2 + <span class="hljs-number">10</span>}</span>,<span class="hljs-subst">${box.ay + <span class="hljs-number">15</span>}</span>l5,-5m-5,5l-5,-5`</span>);
+      }
+    }
+
+    <span class="hljs-keyword">return</span> paths;
+  },
+
+  setup() {
+    <span class="hljs-keyword">this</span>.minimum = <span class="hljs-keyword">this</span>.properties.spec.minimum;
+    <span class="hljs-keyword">this</span>.maximum = <span class="hljs-keyword">this</span>.properties.spec.maximum;
+    <span class="hljs-keyword">this</span>.greedy = (<span class="hljs-keyword">this</span>.properties.greedy.textValue === <span class="hljs-string">''</span>);
+    <span class="hljs-keyword">this</span>.hasSkip = (<span class="hljs-keyword">this</span>.minimum === <span class="hljs-number">0</span>);
+    <span class="hljs-keyword">this</span>.hasLoop = (<span class="hljs-keyword">this</span>.maximum === <span class="hljs-number">-1</span> || <span class="hljs-keyword">this</span>.maximum &gt; <span class="hljs-number">1</span>);
+  }
+
+}</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

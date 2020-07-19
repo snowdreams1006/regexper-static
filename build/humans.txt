@@ -1,0 +1,16 @@
+# humanstxt.org/
+# 责任和合作
+
+# 作者
+
+    Creator: snowdreams1006
+    Site: https://gitee.com/snowdreams1006
+    Gieee: @snowdreams1006
+
+# 感谢
+
+    感谢原作者无私的开源分享
+
+# 技术栈
+
+    HTML5, CSS3, SVG, Sass, Open Iconic

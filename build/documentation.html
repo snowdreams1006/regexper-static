@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>JavaScript正则表达式可视化</title>
+    <meta name="description" content="铁路图实现的JavaScript正则表达式可视化" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#bada55" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="author" href="./humans.txt" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Bangers&text=Regxpr" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?3881a2eb63d815d20870092f75648f38";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140787039-7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-140787039-7');
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h1><a href="./">Regex</a></h1>
+        <!-- n. One who regexpes -->
+        <span>可视化正则表达式...</span>
+      </div>
+
+      <nav>
+        <ul>
+          <li>
+            <a class="inline-icon" href="./changelog.html" target="_blank" ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8"><use xlink:href="#list-rich" /></svg>版本</a>
+          </li>
+          <li>
+            <a class="inline-icon" href="./documentation.html" target="_blank" ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8"><use xlink:href="#document" /></svg>文档</a>
+          </li>
+          <li>
+            <a class="inline-icon" href="https://gitee.com/snowdreams1006/regexper-static" target="_blank" ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8"><use xlink:href="#code" /></svg>源码</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="content">
+          <div class="copy documentation">
+      <section>
+        <h1>什么是铁路图</h1>
+
+        <p>正则表达式生成的图像通常被称为"铁路图".非常简单直观地阐述了嵌套循环和多选结构等复杂问题. 阅读铁路图的最简单方式是从最左边位置开始并沿着右边的线直到最右边位置. 如果遇到分支,然后可以选择多种分支结构之一(这些路径可以循环回到先前位置).为了使字符串成功匹配图中的正则表达式,你必须能够在从左到右移动并完成整个图直到最后过程.
+
+        <figure class="shift-right" data-expr="Lions(?: and|,) tigers,? and bears\. Oh my!"></figure>
+
+        <p>例如: 此表达式将匹配“狮子，老虎和熊。噢，我的天！”或者在语法上更正确的是“狮子，老虎和熊。噢，我的天！”（带或不带牛津逗号）。该图首先匹配字符串“ Lions”。如果没有输入，您将无法继续。然后可以在逗号或字符串“和”之间选择。无论您做出什么选择，输入字符串都必须包含“ tigers”，后跟一个可选的逗号（您的路径可以通过逗号或在逗号周围）。最后，字符串必须以“和承担。哦，我的天！”结尾。</p>
+
+        <section>
+          <h2>基础组成</h2>
+
+          <p>这些图中最简单的部分是与某些特定文本匹配的部分，没有选项。它们是：文字，转义序列和“任何字符”。</p>
+
+          <div class="section">
+            <h3>字面量 literal</h3>
+
+            <figure class="shift-left" data-expr="literal"></figure>
+
+            <p>文字匹配精确的文本字符串。它们显示在一个浅蓝色框中，并用引号引起来（以便于查看任何前导或尾随空格）。</p>
+          </div>
+
+          <div class="section">
+            <h3>转义字符 \</h3>
+
+            <figure class="shift-left" data-expr="\w\s\d"></figure>
+
+            <p>转义序列显示在绿色框中，并包含将与之匹配的字符类型的描述。</p>
+          </div>
+
+          <div class="section">
+            <h3>任意字符 .</h3>
+
+            <figure class="shift-left" data-expr="."></figure>
+
+            <p>“任何字符”类似于转义序列。它与任何单个字符匹配。</p>
+          </div>
+        </section>
+
+        <section>
+          <h2>字符集合 []</h2>
+
+          <figure class="shift-left" data-expr="[#a-z\n][^$0-9\b]"></figure>
+
+          <p>字符集将匹配或不匹配单个字符的集合。它们显示为包含文字和转义序列的框。顶部的标签指示该字符集将与包含的项目“之一”或包含的项目“无”相匹配。</p>
+        </section>
+
+        <section>
+          <h2>子表达式 ()</h2>
+
+          <figure class="shift-left" data-expr="(?:non-capture group)(capture group)(?=followed by content)"></figure>
+
+          <p>子表达式由表达式中各项周围的虚线轮廓指示。捕获的子表达式带有将在其下捕获的组号标记。正向和负向提前标记为此类。</p>
+        </section>
+
+        <section>
+          <h2>选择项 |</h2>
+
+          <figure class="shift-left" data-expr="one\s|two\W|three\t|four\n"></figure>
+
+          <p>交替提供正则表达式的选择。表达式展开成多种选择的路径表明了这一点。</p>
+        </section>
+
+        <section>
+          <h2>量词</h2>
+
+          <p>量词指示表达式的一部分是否应该重复或可选。通过图分支的路径（和可能循环返回本身），它们与“交替”类似地显示。除非路径上的箭头指示，否则首选路径是继续直行。</p>
+
+          <div class="section">
+            <h3>零个或多个 *</h3>
+
+            <figure class="shift-left" data-expr="(?:greedy)*">
+              <figcaption>贪婪匹配</figcaption>
+            </figure>
+
+            <figure class="shift-left" data-expr="(?:non-greedy)*?">
+              <figcaption>非贪婪匹配</figcaption>
+            </figure>
+
+            <p>零或更多量词匹配模式的任意数量的重复。</p>
+          </div>
+
+          <div class="section">
+            <h3>必选的 +</h3>
+
+            <figure class="shift-left" data-expr="(?:greedy)+">
+              <figcaption>贪婪匹配</figcaption>
+            </figure>
+
+            <figure class="shift-left" data-expr="(?:non-greedy)+?">
+              <figcaption>非贪婪匹配</figcaption>
+            </figure>
+
+            <p>所需的量词与模式的一个或多个重复匹配。请注意，它没有像零个或多个量词一样允许跳过模式的路径。</p>
+          </div>
+
+          <div class="section">
+            <h3>可选的 ?</h3>
+
+            <figure class="shift-left" data-expr="(?:greedy)?">
+              <figcaption>贪婪匹配</figcaption>
+            </figure>
+
+            <figure class="shift-left" data-expr="(?:non-greedy)??">
+              <figcaption>非贪婪匹配</figcaption>
+            </figure>
+
+            <p>可选的量词最多匹配一次模式。请注意，它没有允许模式像零或更多或所需的量词一样循环返回自身的路径。</p>
+          </div>
+
+          <div class="section">
+            <h3>范围值 {n,m}</h3>
+
+            <figure class="shift-left" data-expr="(?:greedy){5,10}">
+              <figcaption>贪婪匹配</figcaption>
+            </figure>
+
+            <figure class="shift-left" data-expr="(?:non-greedy){5,10}?">
+              <figcaption>非贪婪匹配</figcaption>
+            </figure>
+
+            <p>远程量词指定可重复图案的次数。此处提供的两个示例的范围均为“ {5,10}”，循环分支的标签指示可以遵循该分支的次数。该值比表达式中指定的值小1，因为在重复该模式之前，该模式必须匹配一次。因此，对于这些示例，模式将被匹配一次，然后循环将被跟踪4到9次，总共有5到10个模式匹配。</p>
+          </div>
+        </section>
+      </section>
+    </div>
+
+    </main>
+
+    <footer>
+        <ul class="inline-list">
+          <li>本项目<a href="mailto:snowdreams1006@163.com" target="_blank" >snowdreams1006</a>基于<a href="https://regexper.com/" target="_blank" >regexper</a>项目进行二次开发</li>
+          <li>
+              <a href="http://www.beian.miit.gov.cn/" target="blank">
+                  浙ICP备18042346号
+              </a>
+            </li>
+          <li>
+            版权声明
+            <a rel="license" href="http://creativecommons.org/licenses/by/3.0/" target="_blank" ><img alt="Creative Commons License" src="https://licensebuttons.net/l/by/3.0/80x15.png" /></a>
+          </li>
+        </ul>
+
+        <script type="text/html" id="svg-container-base">
+          <div class="svg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:cc="http://creativecommons.org/ns#"
+              xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+              version="1.1">
+              <defs>
+                <style type="text/css">svg {
+            background-color: #fff; }
+          
+          .root text,
+          .root tspan {
+            font: 12px Arial; }
+          
+          .root path {
+            fill-opacity: 0;
+            stroke-width: 2px;
+            stroke: #000; }
+          
+          .root circle {
+            fill: #6b6659;
+            stroke-width: 2px;
+            stroke: #000; }
+          
+          .anchor text, .any-character text {
+            fill: #fff; }
+          
+          .anchor rect, .any-character rect {
+            fill: #6b6659; }
+          
+          .escape text, .charset-escape text, .literal text {
+            fill: #000; }
+          
+          .escape rect, .charset-escape rect {
+            fill: #bada55; }
+          
+          .literal rect {
+            fill: #dae9e5; }
+          
+          .charset .charset-box {
+            fill: #cbcbba; }
+          
+          .charset .charset-reverse-box {
+            fill: #ffc0c0; }
+          
+          .subexp .subexp-label tspan,
+          .charset .charset-label tspan,
+          .match-fragment .repeat-label tspan {
+            font-size: 10px; }
+          
+          .repeat-label {
+            cursor: help; }
+          
+          .subexp .subexp-label tspan,
+          .charset .charset-label tspan {
+            dominant-baseline: text-after-edge; }
+          
+          .subexp .subexp-box {
+            stroke: #908c83;
+            stroke-dasharray: 6,2;
+            stroke-width: 2px;
+            fill-opacity: 0; }
+          
+          .quote {
+            fill: #908c83; }
+          </style>
+              </defs>
+              <metadata>
+                <rdf:RDF>
+                  <cc:License rdf:about="http://creativecommons.org/licenses/by/3.0/">
+                    <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction" />
+                    <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution" />
+                    <cc:requires rdf:resource="http://creativecommons.org/ns#Notice" />
+                    <cc:requires rdf:resource="http://creativecommons.org/ns#Attribution" />
+                    <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+                  </cc:License>
+                </rdf:RDF>
+              </metadata>
+            </svg>
+          </div>
+          <div class="progress">
+            <div style="width:0;"></div>
+          </div>
+        </script>
+
+    <script src="./js/main.js" async defer></script>
+    </footer>
+
+    <svg xmlns="http://www.w3.org/2000/svg" id="open-iconic">
+      <!-- These icon are from the Open Iconic project https://useiconic.com/open/ -->
+      <defs>
+        <g id="code">
+          <path d="M5 0l-3 6h1l3-6h-1zm-4 1l-1 2 1 2h1l-1-2 1-2h-1zm5 0l1 2-1 2h1l1-2-1-2h-1z" transform="translate(0 1)" />
+        </g>
+        <g id="data-transfer-download">
+          <path d="M3 0v3h-2l3 3 3-3h-2v-3h-2zm-3 7v1h8v-1h-8z" />
+        </g>
+        <g id="document">
+          <path d="M0 0v8h7v-4h-4v-4h-3zm4 0v3h3l-3-3zm-3 2h1v1h-1v-1zm0 2h1v1h-1v-1zm0 2h4v1h-4v-1z" />
+        </g>
+        <g id="link-intact">
+          <path d="M5.88.03c-.18.01-.36.03-.53.09-.27.1-.53.25-.75.47a.5.5 0 1 0 .69.69c.11-.11.24-.17.38-.22.35-.12.78-.07 1.06.22.39.39.39 1.04 0 1.44l-1.5 1.5c-.44.44-.8.48-1.06.47-.26-.01-.41-.13-.41-.13a.5.5 0 1 0-.5.88s.34.22.84.25c.5.03 1.2-.16 1.81-.78l1.5-1.5c.78-.78.78-2.04 0-2.81-.28-.28-.61-.45-.97-.53-.18-.04-.38-.04-.56-.03zm-2 2.31c-.5-.02-1.19.15-1.78.75l-1.5 1.5c-.78.78-.78 2.04 0 2.81.56.56 1.36.72 2.06.47.27-.1.53-.25.75-.47a.5.5 0 1 0-.69-.69c-.11.11-.24.17-.38.22-.35.12-.78.07-1.06-.22-.39-.39-.39-1.04 0-1.44l1.5-1.5c.4-.4.75-.45 1.03-.44.28.01.47.09.47.09a.5.5 0 1 0 .44-.88s-.34-.2-.84-.22z" />
+        </g>
+        <g id="list-rich">
+          <path d="M0 0v3h3v-3h-3zm4 0v1h4v-1h-4zm0 2v1h3v-1h-3zm-4 2v3h3v-3h-3zm4 0v1h4v-1h-4zm0 2v1h3v-1h-3z" />
+        </g>
+        <g id="warning">
+          <path d="M3.09 0c-.06 0-.1.04-.13.09l-2.94 6.81c-.02.05-.03.13-.03.19v.81c0 .05.04.09.09.09h6.81c.05 0 .09-.04.09-.09v-.81c0-.05-.01-.14-.03-.19l-2.94-6.81c-.02-.05-.07-.09-.13-.09h-.81zm-.09 3h1v2h-1v-2zm0 3h1v1h-1v-1z" />
+        </g>
+      </defs>
+    </svg>
+  </body>
+</html>

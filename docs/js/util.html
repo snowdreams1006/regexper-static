@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>util.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="..\docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>util.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p>Utility functions used elsewhere in the codebase. Most JavaScript files on
+the site use some functions defined in this file.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">import</span> _ <span class="hljs-keyword">from</span> <span class="hljs-string">'lodash'</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Generate an <code>Event</code> object for triggering a custom event.</p>
+<ul>
+<li><strong>name</strong> - Name of the custom event. This should be a String.</li>
+<li><strong>detail</strong> - Event details. The event details are provided to the event
+ handler.</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">customEvent</span>(<span class="hljs-params">name, detail</span>) </span>{
+  <span class="hljs-keyword">var</span> evt = <span class="hljs-built_in">document</span>.createEvent(<span class="hljs-string">'Event'</span>);
+  evt.initEvent(name, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>);
+  evt.detail = detail;
+  <span class="hljs-keyword">return</span> evt;
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Add extra fields to a bounding box returned by <code>getBBox</code>. Specifically adds
+details about the box’s axis points (used when positioning elements for
+display).</p>
+<ul>
+<li><strong>box</strong> - Bounding box object to update. Attributes <code>ax</code>, <code>ax2</code>, and <code>ay</code>
+ will be added if they are not already defined.</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">normalizeBBox</span>(<span class="hljs-params">box</span>) </span>{
+  <span class="hljs-keyword">return</span> _.defaults(box, {
+    <span class="hljs-attr">ax</span>: box.x,
+    <span class="hljs-attr">ax2</span>: box.x2,
+    <span class="hljs-attr">ay</span>: box.cy
+  });
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Positions a collection of items with their axis points aligned along a
+horizontal line. This leads to the items being spaced horizontally and
+effectively centered vertically.</p>
+<ul>
+<li><strong>items</strong> - Array of items to be positioned</li>
+<li><strong>options.padding</strong> - Number of pixels to leave between items</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">spaceHorizontally</span>(<span class="hljs-params">items, options</span>) </span>{
+  <span class="hljs-keyword">var</span> verticalCenter,
+      values;
+
+  options = _.defaults(options || {}, {
+    <span class="hljs-attr">padding</span>: <span class="hljs-number">0</span>
+  });
+
+  values = _.map(items, item =&gt; ({
+    <span class="hljs-attr">box</span>: normalizeBBox(item.getBBox()),
+    item
+  }));</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Calculate where the axis points should be positioned vertically.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  verticalCenter = _.reduce(values,
+    (center, { box }) =&gt; <span class="hljs-built_in">Math</span>.max(center, box.ay),
+    <span class="hljs-number">0</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>Position items with padding between them and aligned their axis points.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  _.reduce(values, (offset, { item, box }) =&gt; {
+    item.transform(Snap.matrix()
+      .translate(offset, verticalCenter - box.ay));
+
+    <span class="hljs-keyword">return</span> offset + options.padding + box.width;
+  }, <span class="hljs-number">0</span>);
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>Positions a collection of items centered horizontally in a vertical stack.</p>
+<ul>
+<li><strong>items</strong> - Array of items to be positioned</li>
+<li><strong>options.padding</strong> - Number of pixels to leave between items</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">spaceVertically</span>(<span class="hljs-params">items, options</span>) </span>{
+  <span class="hljs-keyword">var</span> horizontalCenter,
+      values;
+
+  options = _.defaults(options || {}, {
+    <span class="hljs-attr">padding</span>: <span class="hljs-number">0</span>
+  });
+
+  values = _.map(items, item =&gt; ({
+    <span class="hljs-attr">box</span>: item.getBBox(),
+    item
+  }));</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>Calculate where the center of each item should be positioned horizontally.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  horizontalCenter = _.reduce(values,
+    (center, { box }) =&gt;  <span class="hljs-built_in">Math</span>.max(center, box.cx),
+    <span class="hljs-number">0</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>Position items with padding between them and align their centers.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  _.reduce(values, (offset, { item, box }) =&gt; {
+    item.transform(Snap.matrix()
+      .translate(horizontalCenter - box.cx, offset));
+
+    <span class="hljs-keyword">return</span> offset + options.padding + box.height;
+  }, <span class="hljs-number">0</span>);
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p>Creates a Promise that will be resolved after a specified delay.</p>
+<ul>
+<li><strong>delay</strong> - Time in milliseconds to wait before resolving promise.</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">wait</span>(<span class="hljs-params">delay</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+    setTimeout(resolve, delay);
+  });
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <p>Creates a Promise that will be resolved after 0 milliseconds. This is used
+to create a short delay that allows the browser to address any pending tasks
+while the JavaScript VM is not active.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">tick</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> wait(<span class="hljs-number">0</span>);
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <p>Re-throws an exception asynchronously. This is used to expose an exception
+that was created during a Promise operation to be handled by global error
+handlers (and to be displayed in the browser’s debug console).</p>
+<ul>
+<li><strong>error</strong> - Error/exception object to be re-thrown to the browser.</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">exposeError</span>(<span class="hljs-params">error</span>) </span>{
+  setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-keyword">throw</span> error;
+  }, <span class="hljs-number">0</span>);
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-13">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-13">&#182;</a>
+              </div>
+              <p>Renders an SVG icon.</p>
+<ul>
+<li><strong>selector</strong> - Selector to the SVG icon to render.</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">icon</span>(<span class="hljs-params">selector</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-string">`&lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8"&gt;&lt;use xlink:href="<span class="hljs-subst">${selector}</span>" /&gt;&lt;/svg&gt;`</span>;
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-14">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-14">&#182;</a>
+              </div>
+              <p>Send tracking data.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">track</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">window</span>.ga) {
+    ga.apply(ga, <span class="hljs-built_in">arguments</span>);
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.debug.apply(<span class="hljs-built_in">console</span>, <span class="hljs-built_in">arguments</span>);
+  }
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  customEvent,
+  normalizeBBox,
+  spaceHorizontally,
+  spaceVertically,
+  wait,
+  tick,
+  exposeError,
+  icon,
+  track
+};</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
