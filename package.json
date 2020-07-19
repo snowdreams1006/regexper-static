@@ -49,7 +49,7 @@
     "karma-notify-reporter": "^1.0.1",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^2.0.4",
-    "lodash": "^4.6.1",
+    "lodash": "^4.17.19",
     "node-bourbon": "^4.2.3",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
